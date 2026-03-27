@@ -1,8 +1,4 @@
-# Can Build Pipeline (Motion Designer Version)
-
-This is the same can-build process, explained in **motion design language** (not developer language).
-
-Think of it as: **label artwork in → wrapped on can → masked into areas → edge polish → final comp switches**.
+# Can Build Pipeline
 
 ## What this guide is based on
 
