@@ -1,32 +1,37 @@
 # Red Bull Summer Edition SL 2026 — AE Twin Documentation
 
-This repository is a **filesystem mirror of an After Effects project**.
-Each `* Content.txt` file is an exported technical log of comp/layer structure, effects, and expressions.
+This repository is a mirror of the After Effects project structure.
+Each `* Content.txt` file is an exported readout of comps, layers, effects, and expressions.
 
-## 1) Project architecture (high level)
+Use this guide as a practical map for artists/editors who need to find where things are built and what to check when outputs look wrong.
 
-The project is organized in three main stages:
+## 1) Project structure at a glance
+
+The project is organized into three production stages:
 
 1. **Setup / Data / Automation** (`01_SETUP`)
-   - Central `DATA` comp (master inputs).
-   - Automation helper comps (`DATA-Twin`, `FLAG`, `TAB`, etc.).
-   - Reusable expression libraries and JSON data in `_DATA`.
+   - Main input comp: `DATA`
+   - Automation helpers: `DATA-Twin`, `FLAG`, `TAB`, etc.
+   - Core logic/data files in `_DATA` (JSON + expression libraries)
 
-2. **Precomps / Compositing** (`02_PRECOMPS/COMPOSITING`)
-   - Shot-level assemblies (`SHOT01` to `SHOT04`) with can renders, backgrounds, depth/DOF, particles, and control nulls.
+2. **Precomps / Shot Compositing** (`02_PRECOMPS/COMPOSITING`)
+   - Shot assemblies (`SHOT01` to `SHOT04`)
+   - Can renders, background integration, depth/DOF, particles, and control layers
 
-3. **Playout outputs** (`00_PLAYOUT`)
-   - Delivery comps for KV/social formats and durations (5s/6s/10s, 1 can / 2 can / twin / multipack).
+3. **Playout / Delivery** (`00_PLAYOUT`)
+   - Final output comps for KV and social
+   - Durations and formats: 5s / 6s / 10s, 1 can / 2 can / twin / multipack
 
 ---
 
-## 2) Most important compositions
+## 2) Most important comps to know
 
-## A) `DATA` (master input comp)
+### A) `DATA` (main input hub)
 **File:** `01_SETUP/01_SETUP Content.txt`
 
-`DATA` is the main source of truth for text/content switches used throughout the template.
-Key text layers include:
+`DATA` is the central place for market and variant inputs used across the template.
+Typical fields include:
+
 - `COUNTRY`
 - `VARIANT`
 - `RHOMBUS VARIANT`
@@ -37,35 +42,32 @@ Key text layers include:
 - `CAL`
 - `ARTIFICIALLY FLAVOURED`
 - `AUDIO ON/OFF`
-- `DISRUPTOR` / `DISRUPTOR TYPE` / `DISRUPTOR DEFAULT COLOR`
-- `LEGAL DISCLAIMER` / `LEGAL DISCLAIMER TYPE`
+- `DISRUPTOR`, `DISRUPTOR TYPE`, `DISRUPTOR DEFAULT COLOR`
+- `LEGAL DISCLAIMER`, `LEGAL DISCLAIMER TYPE`
 
-These are the values most downstream expressions read.
+If text, language, color behavior, or variant routing looks wrong, check `DATA` first.
 
-## B) `DATA-Twin` (mirrored automation input)
+### B) `DATA-Twin` (mirrored input for twin logic)
 **File:** `01_SETUP/AUTOMATION/01_COMPS/Automation Comps Content.txt`
 
-`DATA-Twin` mirrors fields from `DATA` via direct expressions like:
-- `comp("DATA").layer("COUNTRY")...`
-- `comp("DATA").layer("VARIANT")...`
-- `comp("DATA").layer("PRODUCT NAME")...`
+`DATA-Twin` mirrors `DATA` fields using direct expressions (`comp("DATA")...`).
+It is a linked mirror, not a separate master.
 
-This enables a twin workflow while keeping `DATA` as the primary source.
-
-## C) `MAIN TEXT` / `HEADLINE BLOCK` (typography engine)
+### C) `MAIN TEXT` / `HEADLINE BLOCK` (type layout engine)
 **Files:**
 - `01_SETUP/_EDITABLE COMPS (Special Formats)/Editable Comps (Special Formats) content.txt`
 - `01_SETUP/AUTOMATION/02_PARTS/TEXT MASTER/TEXT MASTER Content.txt`
 
-These comps drive headline/subline logic, bounding boxes, logo locking, scaling and line behavior.
-They also ingest external data layers (`countryData.json`, `labelData.json`, expression libraries).
+These comps manage text behavior:
+- headline/subline logic
+- auto-sizing and scaling
+- alignment and logo lockups
+- fit to safe area via corner bounds (`Top Left`, `Top Right`, etc.)
 
-The `HEADLINE BLOCK` comp is important because many playout comps compute scaling based on its corner/null bounds (`Top Left`, `Top Right`, etc.) to auto-fit text blocks.
-
-## D) `SHOT04_CLEAN` (hero control comp)
+### D) `SHOT04_CLEAN` (hero shot control center)
 **File:** `02_PRECOMPS/COMPOSITING/SHOT04/SHOT04 Content.txt`
 
-`SHOT04_CLEAN` contains a `Control` null with key global controls:
+`SHOT04_CLEAN` contains a `Control` null with global switches such as:
 - `Asset Type`
 - `Summer Edition`
 - `Energy Drink`
@@ -74,209 +76,86 @@ The `HEADLINE BLOCK` comp is important because many playout comps compute scalin
 - `FCO_Color`
 - flag offset/scale controls
 
-Many comps and expressions reference these controls for asset switching and flag behavior.
+These controls drive shot-level asset and look decisions.
 
-## E) Playout masters (10s/6s/5s + formats)
+### E) Playout masters (final delivery comps)
 **Files:** under `00_PLAYOUT/_KV/...` and `00_PLAYOUT/_SOCIAL_KV/...`
 
-Examples:
-- `10s_1x1_1CanKV` (in `.../_KV 10s (Master)/1 Can/...`)
-- other 1 can / 2 can / twin / multipack variants
-
-These are final delivery comps, combining shot renders, typography precomps, FCO assets, and guide-driven scaling expressions.
+Examples include 10s/6s/5s masters for 1 can, 2 can, twin, and multipack outputs.
+These comps combine shot renders, text precomps, FCO assets, and fitting guides for delivery.
 
 ---
 
-## 3) Expressions that are critical for template behavior
+## 3) Core logic systems that affect many outputs
 
-## A) Centralized expression libraries
+### A) Expression libraries (global behavior)
 **Files:**
 - `01_SETUP/AUTOMATION/02_PARTS/_DATA/expressionLibrary.jsx`
 - `01_SETUP/AUTOMATION/02_PARTS/_DATA/expressionLibraryTwin.jsx`
 
-These libraries implement reusable logic used across many layers/comps, including:
-- Variant checks (`variantCheck`, `actualVariant`, `sfCheck`)
-- Country/variant matching (`countryCheck`, `countryVariantCheck`, `countryOnlyCheck`)
-- Product-name matching
-- Tab/rhombus visibility logic
-- Audio on/off positioning (`audioCheck`)
-- Label/shadow color logic (`labelColor`, `shadowTint`)
-- Multilingual font assignment by script (`rbFont`)
+These libraries contain shared checks used in many places, for example:
+- variant and sugarfree checks
+- country + variant matching
+- tab/rhombus visibility
+- audio on/off layout behavior
+- label/shadow color decisions
+- language-aware font selection
 
-Twin-specific library functions are equivalent but reference `DATA-Twin` instead of `DATA`.
+### B) Auto-layout expressions (text positioning)
+Common in `DATA`, `TEXT MASTER`, `FLAG`, and playout comps:
+- sourceRect-based anchor and position logic
+- dynamic fitting for localized copy
 
-## B) SourceRect / anchor-point auto-layout expressions
-Seen repeatedly in `DATA`, `TEXT MASTER`, `FLAG`, and playout comps:
-- `Lock Anchor Point To...` + `When to Sample`
-- `sourceRectAtTime()` driven anchor/position calculations
+### C) Auto scale-to-fit text block behavior
+Playout comps use `HEADLINE BLOCK` corner bounds plus guides to keep text inside safe framing as copy length changes.
 
-This is core for dynamic text fitting and reliable alignment across localized strings.
-
-## C) Auto scale-to-fit text block expressions
-In playout comps, text containers scale using guide limits and `HEADLINE BLOCK` corner nulls (`Top Left`, `Top Right`, `Bottom Left`, `Bottom Right`).
-This ensures headline blocks stay within safe framing while adapting to text length.
-
-## D) Control-driven shot logic
-`SHOT04_CLEAN` control effects are referenced by expressions to switch assets and flag color/placement behavior.
-The expression library `flagColor()` also combines `VARIANT`, `DISRUPTOR DEFAULT COLOR`, and shot control state.
+### D) Shot control-driven logic
+Shot comps (especially around `SHOT04_CLEAN`) reference control values to switch assets, color behavior, and flag treatment.
 
 ---
 
-## 4) Master DATA files and where they get information from
+## 4) Master data files and how they are used
 
-## Primary master input
+### Primary input
 1. **`DATA` comp** (`01_SETUP/01_SETUP Content.txt`)
-   - Main editable text/value fields for country, variant, label metadata, legal copy, and toggles.
-   - Acts as the top-level source consumed by automation and expression logic.
+   - Main editable source for market/variant/product/legal fields.
 
-## Mirrored / derived input
+### Mirrored input
 2. **`DATA-Twin` comp** (`01_SETUP/AUTOMATION/01_COMPS/Automation Comps Content.txt`)
-   - Pulls values directly from `DATA` via expressions.
-   - Used for twin-specific render logic.
+   - Pulls values from `DATA` for twin-specific logic paths.
 
-## External data sources (loaded as footage/layers)
+### External support data
 3. **`labelData.json`** (`01_SETUP/AUTOMATION/02_PARTS/_DATA/labelData.json`)
-   - Provides label rule sets and variables (e.g., `basicLabel`, `glossyVariants`, etc.) used by expression checks.
-
 4. **`countryData.json`** (`01_SETUP/AUTOMATION/02_PARTS/_DATA/countryData.json`)
-   - Provides font mappings and locale-specific character/font behavior.
-   - Used by `rbFont()` for script-aware type styling.
-
 5. **`expressionLibrary.jsx` / `expressionLibraryTwin.jsx`**
-   - Loaded as source-data footage and called by expressions in comps.
 
-## Where the data is consumed
-- `MAIN TEXT` editable comp includes the four key external layers:
-  - `countryData.json`
-  - `expressionLibrary.jsx`
-  - `expressionLibraryTwin.jsx`
-  - `labelData.json`
-- Automation parts such as `TAB`, `FLAG`, and modular label comps use `DATA` / `DATA-Twin` + library functions.
-- Playout comps consume these prepared precomps and shot outputs for final deliveries.
+These files provide rules for label behavior, locale/font behavior, and shared expression logic.
+
+### Where these are consumed
+- `MAIN TEXT` includes the main JSON/library layers.
+- Automation parts (`TAB`, `FLAG`, modular label families) read `DATA`/`DATA-Twin` and library functions.
+- Shot comps consume prepared precomps.
+- Playout comps package everything into final deliverables.
 
 ---
 
-## 5) Practical “if this breaks” checklist
+## 5) Quick troubleshooting order
 
-1. Verify `DATA` text layers are populated with expected tokens (country/variant/product/label fields).
-2. Verify external `_DATA` files are present and linked (`labelData.json`, `countryData.json`, expression libraries).
-3. Verify `SHOT04_CLEAN > Control` menu/checkbox values (asset type, summer edition, flag color controls).
-4. Verify `HEADLINE BLOCK` corner null logic and guide layers in playout comps (text fit/scale).
-5. If twin outputs are wrong, check whether expression calls should target `DATA` vs `DATA-Twin`.
+If outputs are incorrect, check in this sequence:
+
+1. **`DATA` values** (country, variant, product, label/legal fields)
+2. **Linked support files** (`labelData.json`, `countryData.json`, expression libraries)
+3. **Shot control values** (`SHOT04_CLEAN > Control` settings)
+4. **Text fit setup** (`HEADLINE BLOCK` bounds + playout guides)
+5. **Twin routing** (confirm whether a setup should read `DATA` or `DATA-Twin`)
+
+This order usually resolves issues fastest because it follows the project dependency path.
 
 ---
 
-## 6) Key folders quick map
+## 6) Quick folder map
 
-- `01_SETUP/` → data entry, automation building blocks, editable text systems
+- `01_SETUP/` → inputs, automation building blocks, editable text systems
 - `01_SETUP/AUTOMATION/02_PARTS/_DATA/` → JSON + expression libraries (core dependency)
 - `02_PRECOMPS/COMPOSITING/` → shot assembly comps
-- `00_PLAYOUT/` → final playout deliverables (KV + social, multiple durations/pack formats)
-
-
-
-# Master `DATA` Comp Documentation
-
-This file documents **only** how the master `DATA` composition works and which layers/comps are connected to it in this AE twin repository.
-
-## 1) What `DATA` is
-
-`DATA` is the primary control comp for content and logic.
-It is a 1-frame comp used as a centralized text/value source that downstream expressions read.
-
-In practice: if text, locale behavior, variant behavior, legal strings, or automation switches are wrong, `DATA` is the first comp to verify.
-
----
-
-## 2) Master `DATA` layers (source fields)
-
-Main fields exposed by `DATA`:
-
-- `COUNTRY`
-- `VARIANT`
-- `RHOMBUS VARIANT`
-- `PRODUCT NAME`
-- `LABEL TYPE`
-- `BANDEROLE`
-- `FOP`
-- `CAL`
-- `ARTIFICIALLY FLAVOURED`
-- `AUDIO ON/OFF`
-- `DISRUPTOR`
-- `DISRUPTOR TYPE`
-- `DISRUPTOR DEFAULT COLOR`
-- `LEGAL DISCLAIMER`
-- `LEGAL DISCLAIMER TYPE`
-- `V1.2` (version/info layer)
-- `sublineFont`, `headlineFont`, `varnish`
-
-These layers are the primary values consumed by automation comps and expressions.
-
----
-
-## 3) How `DATA` is connected (dependency map)
-
-## A) Direct mirror connection: `DATA-Twin`
-
-`DATA-Twin` (automation comp) reads directly from `DATA` using expressions such as:
-
-- `comp("DATA").layer("COUNTRY")...`
-- `comp("DATA").layer("VARIANT")...`
-- `comp("DATA").layer("PRODUCT NAME")...`
-- `comp("DATA").layer("LABEL TYPE")...`
-- `comp("DATA").layer("BANDEROLE")...`
-- `comp("DATA").layer("FOP")...`
-- `comp("DATA").layer("CAL")...`
-- `comp("DATA").layer("ARTIFICIALLY FLAVOURED")...`
-
-This means `DATA-Twin` is a derived view of `DATA`, not an independent source.
-
-## B) Expression-library connection (global logic)
-
-The expression libraries use `DATA` fields as core inputs:
-
-- `expressionLibrary.jsx`
-  - reads `COUNTRY`, `VARIANT`, `PRODUCT NAME`, `LABEL TYPE`, `AUDIO ON/OFF`, `DISRUPTOR DEFAULT COLOR`, `SKU`
-- `expressionLibraryTwin.jsx`
-  - same logic pattern, but against `DATA-Twin`
-
-These library functions drive matching logic (country/variant/product), audio on/off behavior, SF detection, color logic, and text/font behavior.
-
-## C) Automation-part connections
-
-The following parts are directly connected to `DATA` (via expressions):
-
-- `TAB`
-  - reads `COUNTRY`, `VARIANT`, `RHOMBUS VARIANT`
-- `FLAG`
-  - reads `DISRUPTOR`
-- `EXTENDED FCO`
-  - reads fields like `COUNTRY`, `VARIANT`, `LABEL TYPE`, `FCO`, `CAL`, `ARTIFICIALLY FLAVOURED`
-- `MODULAR-LABEL` / `MODULAR-LABEL-TWIN` families
-  - heavy usage of `COUNTRY`, `VARIANT`, `PRODUCT NAME`, `LABEL TYPE`, `BANDEROLE`, `FOP`, `CAL`, `ARTIFICIALLY FLAVOURED`
-
-## D) Shot/precomp connections
-
-`DATA` also feeds shot logic in precomp stage:
-
-- `SHOT02`, `SHOT03`, `SHOT04`
-  - connected to `DISRUPTOR TYPE` logic
-- `0_REDBULL` / `RHOMBUS` precomps
-  - connected to variant/rhombus and trademark-driven text behavior
-
----
-
-## 4) Data flow (single-line view)
-
-`DATA` → (`DATA-Twin`, expression libraries, TAB/FLAG/FCO/MODULAR LABEL parts) → shot precomps (`SHOT02/03/04`) → playout comps.
-
----
-
-## 5) Operational notes
-
-1. Update values in `DATA` first.
-2. Confirm `DATA-Twin` mirrors correctly.
-3. Confirm expression libraries are linked (`expressionLibrary.jsx`, `expressionLibraryTwin.jsx`) and JSON data layers are available.
-4. Then validate downstream comps (`TAB`, `FLAG`, modular labels, shot precomps, playout).
-
-If downstream behavior is inconsistent, treat `DATA` as the root source and debug outward from it.
+- `00_PLAYOUT/` → final delivery outputs (KV + social across durations and pack formats)
