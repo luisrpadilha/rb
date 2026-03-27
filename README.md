@@ -1,8 +1,5 @@
 # Red Bull Summer Edition SL 2026 — AE Twin Documentation
 
-This repository is a mirror of the After Effects project structure.
-Each `* Content.txt` file is an exported readout of comps, layers, effects, and expressions.
-
 Use this guide as a practical map for artists/editors who need to find where things are built and what to check when outputs look wrong.
 
 ## 1) Project structure at a glance
