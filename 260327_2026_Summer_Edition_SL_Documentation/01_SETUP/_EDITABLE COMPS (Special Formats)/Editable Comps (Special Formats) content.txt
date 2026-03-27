@@ -1,0 +1,1018 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 11:58:47
+Selected comps: 4
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/4: FCO
+  Size: 6500x5021
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 1.6s  (48f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: SCALE / POS [Null]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Null 1
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [50, 50, 0]
+    • Position = [1555.202, 2510.5, 0]  {animated}
+    • X Position = 1555.202  {animated}
+    • Y Position = 2510.5
+    • Z Position = 0
+    • Scale = [193.1, 193.1, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: Forest Fruits 2 [Text]
+  Parent: parented → [1] SCALE / POS
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [42.823, -38.217, 0]
+    • Position = [108.766, -86.311, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [192.976, 192.976, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: Forest Fruits [Text]
+  Parent: parented → [1] SCALE / POS
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [42.823, -38.217, 0]
+    • Position = [108.766, -86.311, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [192.976, 192.976, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: Shape Layer 2 [Shape]
+  Parent: parented → [1] SCALE / POS
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [8, 4, 0]
+    • Position = [50, 50, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: Shape Layer 1 [Shape]
+  Parent: parented → [1] SCALE / POS
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [114, -158, 0]
+    • Position = [50, 50, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [5, 5, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 2/4: FCO_tracking
+  Size: 6500x5021
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 3.233s  (97f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: SCALE / POS [Null]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Null 1
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [50, 50, 0]
+    • Position = [1555.202, 2510.5, 0]  {animated}
+    • X Position = 1555.202  {animated}
+    • Y Position = 2510.5
+    • Z Position = 0
+    • Scale = [193.1, 193.1, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: <empty text layer> [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [3070.595, 2785.449, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: Forest Fruits [Text]
+  Parent: parented → [1] SCALE / POS
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [42.823, -38.217, 0]
+    • Position = [104.871, -87.084, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [192.976, 192.976, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: Shape Layer 2 [Shape]
+  Parent: parented → [1] SCALE / POS
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [8, 4, 0]
+    • Position = [50, 50, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: Shape Layer 1 [Shape]
+  Parent: parented → [1] SCALE / POS
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [114, -158, 0]
+    • Position = [50, 50, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [5, 5, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 3/4: MAIN TEXT
+  Size: 4096x4096
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 5.967s  (179f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: DATA [Null]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Null 64
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [0, 0, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 6
+    ----------------------------------------------------------
+    EFFECT 1: Asset Type  (Pseudo/@@2nExDMpZRW6ZWO03otzQ7A)
+      • Menu = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Text Position (Offset)  (ADBE Point Control)
+      • Point = [3, 0]
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Text Lines  (Pseudo/@@Vyb2BZLSSYOY6SGvV2lWbw)
+      • Menu = 2
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: COMMA_HEADLINE  (ADBE Checkbox Control)
+      • Checkbox = 0  {animated, expr:on}
+        01 | sourceText=thisComp.layer("HEADLINE_LINE1").text.sourceText;
+        02 | 
+        03 | (sourceText.length > 0 && sourceText.charAt(sourceText.length - 1) == ",") ? 1 : 0;
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 5: GUIDE - R  (ADBE Slider Control)
+      • Slider = 57.558  {animated, expr:on}
+        01 | logoSizeH=thisComp.layer("RB_LOGO_VBAM").effect("Red Bull Logo Size (px)")("Point")[1];
+        02 | r=logoSizeH/3
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 6: SUBLINE Y POSITION ADJUST  (ADBE Slider Control)
+      • Slider = 50
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: THIRD LINE [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: -17f
+  End frame (source-based): 300f
+  Visible trimmed range: 163f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.833, -15.912, 0]
+    • Position = [2038.231, 1650.638, 0]  {animated}
+    • X Position = 2038.231
+    • Y Position = 1650.638  {animated, expr:on}
+      01 | var subline = thisComp.layer("HEADLINE_LINE2");
+      02 | var R = thisComp.layer("DATA").effect("GUIDE - R")("Slider");
+      03 | 
+      04 | // Get SUBLINE's bounding box in its own layer space
+      05 | var rect = subline.sourceRectAtTime(time, false);
+      06 | 
+      07 | // Bottom Y of the rect in layer space
+      08 | var bottomY = rect.top + rect.height;
+      09 | 
+      10 | // Convert that bottom point to comp space (includes position and scale)
+      11 | var sublineBottom = subline.toComp([0, bottomY])[1];
+      12 | 
+      13 | // Return Y = subline bottom + R
+      14 | sublineBottom + R;
+    • Z Position = 0
+    • Scale = [100, 100, 100]  {expr:on}
+      01 | var R = thisComp.layer("DATA").effect("GUIDE - R")("Slider");
+      02 | 
+      03 | // Get this layer's height via sourceRectAtTime
+      04 | var rect = thisLayer.sourceRectAtTime(time, false);
+      05 | var h = rect.height;
+      06 | 
+      07 | // Calculate scale factor needed to make height = R
+      08 | var scaleFactor = (R / h) * 100;
+      09 | 
+      10 | [scaleFactor, scaleFactor];
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | assetType=thisComp.layer("DATA").effect("Asset Type")("Menu");
+      02 | linesAmount=thisComp.layer("DATA").effect("Text Lines")("Menu");
+      03 | if (assetType==3 && linesAmount == 3)
+      04 | 	value
+      05 | else
+      06 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: TextFrame [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2046, 2048, 0]  {animated, expr:on}
+      01 | var x = thisComp.layer("RB_LOGO_VBAM").transform.position[0];
+      02 | var y = thisComp.height/2;
+      03 | [x,y]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Size  (ADBE Slider Control)
+      • Slider = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 4: , [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-29.485, -1.36, 0]
+    • Position = [2473.857, 1412.99, 0]  {animated, expr:on}
+      01 | var headline = thisComp.layer("HEADLINE_LINE1");
+      02 | var rect = headline.sourceRectAtTime(time, false);
+      03 | 
+      04 | // Bottom Y of HEADLINE in comp space
+      05 | var bottomY = headline.toComp([0, rect.top + rect.height])[1];
+      06 | 
+      07 | // Right X of HEADLINE in comp space
+      08 | var rightX = headline.toComp([rect.left + rect.width, 0])[0];
+      09 | 
+      10 | // Estimate optical space based on font size (fallback if needed)
+      11 | var fontSize = headline.text.sourceText.style.fontSize;
+      12 | var spaceOffset = fontSize * 0.33; // Approximate space width
+      13 | 
+      14 | [rightX + spaceOffset, bottomY]+value;
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [200, 200, 100]  {animated, expr:on}
+      01 | thisComp.layer("HEADLINE_LINE1").transform.scale
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | comma = thisComp.layer("DATA").effect("COMMA_HEADLINE")("Checkbox")
+      02 | if (comma == 1)
+      03 | 	100
+      04 | else
+      05 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: . [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 1f
+  End frame (source-based): 301f
+  Visible trimmed range: 1f → 301f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-11.608, 0.894, 0]
+    • Position = [2484.915, 1593.08, 0]  {animated, expr:on}
+      01 | var subline = thisComp.layer("HEADLINE_LINE2");
+      02 | var rect = subline.sourceRectAtTime(time, false);
+      03 | 
+      04 | // Bottom Y
+      05 | var bottomY = subline.toComp([0, rect.top + rect.height])[1];
+      06 | 
+      07 | // Right X
+      08 | var rightX = subline.toComp([rect.left + rect.width, 0])[0];
+      09 | 
+      10 | // Use ⅓ of font size as optical space (a rough but safe guess)
+      11 | var fontSize = subline.text.fontSize || 40;
+      12 | var spaceOffset = fontSize * 0.33;
+      13 | 
+      14 | [rightX + spaceOffset, bottomY]+value;
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [81.761, 81.761, 100]  {animated, expr:on}
+      01 | temp = thisComp.layer("HEADLINE_LINE2").transform.scale[0];
+      02 | [temp, temp]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | lines = thisComp.layer("DATA").effect("Text Lines")("Menu")
+      02 | if (lines == 1)
+      03 | 	0
+      04 | else
+      05 | 	value
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: HEADLINE_LINE2 [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: -8f
+  End frame (source-based): 300f
+  Visible trimmed range: 116f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2.067, -152.406, 0]  {animated, expr:on}
+      01 | var mysize = sourceRectAtTime();
+      02 | [mysize.left+mysize.width/2,mysize.top-(30/(transform.scale[0]/100))];
+    • Position = [2050, 1466.99, 0]  {animated}
+    • X Position = 2050  {animated, expr:on}
+      01 | transform.xPosition+thisComp.layer("DATA").effect("Text Position (Offset)")("Point")[0]
+    • Y Position = 1466.99  {animated, expr:on}
+      01 | thisComp.layer("HEADLINE_LINE1").transform.yPosition+value+thisComp.layer("DATA").effect("SUBLINE Y POSITION ADJUST")("Slider")
+    • Z Position = 0
+    • Scale = [81.761, 81.761, 100]  {animated, expr:on}
+      01 | var mysize = sourceRectAtTime().width;
+      02 | var refsize = thisComp.layer("TextFrame").content(1).content(1).size[0];
+      03 | var s = (refsize/mysize)*100;
+      04 | var auto = [s,s]; 
+      05 | auto	
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | lines = thisComp.layer("DATA").effect("Text Lines")("Menu")
+      02 | if (lines == 1)
+      03 | 	0
+      04 | else
+      05 | 	value
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: HEADLINE_LINE1 [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 116f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-0.54, 1.813, 0]  {animated, expr:on}
+      01 | var mysize = sourceRectAtTime();
+      02 | [mysize.left+mysize.width/2,mysize.top+mysize.height];
+    • Position = [2051, 1416.99, 0]  {animated}
+    • X Position = 2051  {animated, expr:on}
+      01 | transform.xPosition+thisComp.layer("DATA").effect("Text Position (Offset)")("Point")[0]
+    • Y Position = 1416.99  {animated, expr:on}
+      01 | transform.yPosition+thisComp.layer("DATA").effect("Text Position (Offset)")("Point")[1]
+    • Z Position = 0
+    • Scale = [200, 200, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated}
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: RB_LOGO_VBAM [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: RB_LOGO_VBAM
+  Time Remap: enabled
+    • Time Remap = 5.967  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1024, 1024, 0]
+    • Position = [2046, 2840, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [53, 53, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | assetType=thisComp.layer("DATA").effect("Asset Type")("Menu");
+      02 | if (assetType == 1 || assetType == 3)
+      03 | 	value
+      04 | else
+      05 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Red Bull Logo Size (px)  (ADBE Point Control)
+      • Point = [285.246, 172.674]  {animated, expr:on}
+        01 | scaleFactor=transform.scale[0]/100;
+        02 | x=essentialProperty("Red Bull Logo Size (px)")[0]*scaleFactor;
+        03 | y=essentialProperty("Red Bull Logo Size (px)")[1]*scaleFactor;
+        04 | [x,y]
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 9: countryData.json [Layer]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: countryData.json
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\_DATA\countryData.json
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.5, 0.5, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 10: expressionLibrary.jsx [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: expressionLibrary.jsx
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\_DATA\expressionLibrary.jsx
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [50, 50, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 11: expressionLibraryTwin.jsx [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: expressionLibraryTwin.jsx
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\_DATA\expressionLibraryTwin.jsx
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [50, 50, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 12: labelData.json [Layer]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: labelData.json
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\_DATA\labelData.json
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.5, 0.5, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 4/4: MULTIPACK
+  Size: 2048x2048
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 5.433s  (163f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Shape Layer 3 [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1138.568, 1037.63, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 139.96, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | assetType=comp("SHOT04_CLEAN").layer("Control").effect("Summer Edition")("Menu")
+      02 | 
+      03 | if (assetType==1)
+      04 | 	100
+      05 | else
+      06 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Fast Box Blur  (ADBE Box Blur2)
+      • Blur Radius = 0.5
+      • Iterations = 3
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: Shape Layer 2 [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1024, 1024, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 139.96, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | assetType=comp("SHOT04_CLEAN").layer("Control").effect("Summer Edition")("Menu")
+      02 | 
+      03 | if (assetType==1)
+      04 | 	100
+      05 | else
+      06 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Fast Box Blur  (ADBE Box Blur2)
+      • Blur Radius = 0.5
+      • Iterations = 3
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: Shape Layer 1 [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1024, 1024, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | assetType=comp("SHOT04_CLEAN").layer("Control").effect("Summer Edition")("Menu")
+      02 | 
+      03 | if (assetType==1)
+      04 | 	100
+      05 | else
+      06 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: GB_SF-SL_250ml_AC-4P_The Summer Edition Sugarfree_CSO_RGB_KV_Ambient_Closed_Keyvisual_REFL.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: GB_SF-SL_250ml_AC-4P_The Summer Edition Sugarfree_CSO_RGB_KV_Ambient_Closed_Keyvisual_REFL.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\Multipack\GB_SF-SL_250ml_AC-4P_The Summer Edition Sugarfree_CSO_RGB_KV_Ambient_Closed_Keyvisual_REFL.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [1113.143, 1034.286, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [45.179, 45.179, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: FLAG [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 125f
+  End frame (source-based): 425f
+  Visible trimmed range: 125f → 425f
+  Stretch: 100%
+  Source name: FLAG
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [540, 540, 0]
+    • Position = [1787.143, 655, 0]  {animated}
+    • X Position = 1787.143  {animated, expr:on}
+      01 | transform.xPosition = value + comp("SHOT04_CLEAN").layer("Control").effect("Flag_X_position")("Slider");
+    • Y Position = 655  {animated, expr:on}
+      01 | transform.yPosition = value + comp("SHOT04_CLEAN").layer("Control").effect("Flag_Y_position")("Slider");
+    • Z Position = 0
+    • Scale = [36.667, 36.667, 100]  {animated, expr:on}
+      01 | s = comp("SHOT04_CLEAN").layer("Control").effect("Flag_scale")("Slider");
+      02 | [value[0] + s, value[1] + s]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

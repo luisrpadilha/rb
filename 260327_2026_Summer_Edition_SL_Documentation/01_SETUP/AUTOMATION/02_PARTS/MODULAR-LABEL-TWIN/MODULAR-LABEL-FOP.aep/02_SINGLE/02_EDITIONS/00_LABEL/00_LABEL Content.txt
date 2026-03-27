@@ -1,0 +1,445 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:19:27
+Selected comps: 3
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/3: EDITIONS_COL
+  Size: 8000x6240
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: AR_FOP [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: AR_FOP
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | lib = footage("expressionLibrary.jsx").sourceData;
+      02 | isAnyLayerOn = comp(thisLayer.name).layer("isAnyLayerOn").transform.opacity;
+      03 | lib.countryOnlyCheck() == 100 && isAnyLayerOn == 0 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: AR STENCIL [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("AR_FOP").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: BLACK ADJUSTMENT [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Change to Color  (ADBE Change To Color)
+      • From = [0, 0, 0, 1]
+      • To = [0.095, 0.095, 0.095, 1]
+      • Change = 4
+      • Change By = 2
+      • Tolerance = "<cannot read value>"
+      • Hue = 0.1
+      • Lightness = 1
+      • Saturation = 1
+      • Saturation = "<cannot read value>"
+      • Softness = 0.5
+      • View Correction Matte = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 4: EDITIONS_FOP_DYNAMIC [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EDITIONS_FOP_DYNAMIC
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1895, 1478, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [211.082, 211.082, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | let buttonText = comp("DATA").layer("FOP").text.sourceText.toLowerCase();
+      02 | isBacklabel = thisComp.layer("EDITIONS_BACKLABEL_COLOR").transform.opacity;
+      03 | 
+      04 | (buttonText == "yes" && isBacklabel == 0) ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: EDITIONS_FOP_PERMA [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EDITIONS_FOP_PERMA
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1895, 1478, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [211.082, 211.082, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | value-thisComp.layer("EDITIONS_BACKLABEL_COLOR").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: EDITIONS_BACKLABEL_COLOR [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EDITIONS_BACKLABEL_COLOR
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1895, 1478, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [211.082, 211.082, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | isBacklabel = comp("EDITIONS_MODULAR_LABEL_UPSCALE").layer("EDITIONS_BACKLABEL").effect("Editions Backlabel")("Checkbox")
+      02 | isBacklabel == 1 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 2/3: EDITIONS_MODULAR_LABEL_UPSCALE
+  Size: 8000x6240
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: AR [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: AR
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | lib = footage("expressionLibrary.jsx").sourceData;
+      02 | isAnyLayerOn = comp(thisLayer.name).layer("isAnyLayerOn").transform.opacity;
+      03 | lib.countryOnlyCheck() == 100 && isAnyLayerOn == 0 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: AR STENCIL [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("AR").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: EDITIONS_MODULAR_LABEL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EDITIONS_MODULAR_LABEL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1895, 1478, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [211.082, 211.096, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | value-thisComp.layer("EDITIONS_BACKLABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: EDITIONS_BACKLABEL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EDITIONS_BACKLABEL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1895, 1478, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [211.082, 211.096, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | isBacklabel = effect("Editions Backlabel")("Checkbox")
+      02 | isBacklabel == 1 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Editions Backlabel  (ADBE Checkbox Control)
+      • Checkbox = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 3/3: EDITIONS_SUGARFREE_MODULAR_LABEL_UPSCALE
+  Size: 8000x6240
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: AR_SF [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: AR_SF
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | lib = footage("expressionLibrary.jsx").sourceData;
+      02 | isAnyLayerOn = comp(thisLayer.name).layer("isAnyLayerOn").transform.opacity;
+      03 | lib.countryOnlyCheck() == 100 && isAnyLayerOn == 0 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: AR STENCIL [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("AR_SF").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: EDITIONS_SUGARFREE_MODULAR_LABEL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EDITIONS_SUGARFREE_MODULAR_LABEL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1895, 1478, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [211.082, 211.082, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | value-thisComp.layer("EDITIONS_BACKLABEL_SUGARFREE").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: EDITIONS_BACKLABEL_SUGARFREE [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EDITIONS_BACKLABEL_SUGARFREE
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1895, 1478, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [211.082, 211.082, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | isBacklabel = comp("EDITIONS_MODULAR_LABEL_UPSCALE").layer("EDITIONS_BACKLABEL").effect("Editions Backlabel")("Checkbox")
+      02 | isBacklabel == 1 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

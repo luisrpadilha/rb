@@ -1,0 +1,1389 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:00:27
+Selected comps: 2
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/2: FCO
+  Size: 3790x2956
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Asset_Check [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1895, 1478, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Asset_9x16 Check  (ADBE Checkbox Control)
+      • Checkbox = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: Max Static Width [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [938.5, 572, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [2852.8, 2010.56, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 2
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: Width Rect [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [738.59, 572, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [2637, 1994.665, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 2
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: FCO MAX WIDTH  (ADBE Slider Control)
+      • Slider = 0  {animated, expr:on}
+        01 | effect("FCO MAX WIDTH")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 4: XY Global Control [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [-462.96, 1505, 0]  {animated}
+    • X Position = -462.96  {animated, expr:on}
+      01 | //change value here for Moving KVs Placement in EXTENDED FCO Comp
+      02 | effect("X Pos Global")("Slider")+value;
+    • Y Position = 1505  {animated, expr:on}
+      01 | data = footage("labelData.json").sourceData;
+      02 | basicLabel = data.variables.basicLabel;
+      03 | countrySource = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      04 | basicSource = comp("DATA").layer("LABEL TYPE").text.sourceText.toLowerCase();
+      05 | variantSource = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      06 | calSource = comp("DATA").layer("CAL").text.sourceText.toLowerCase();
+      07 | fcoSource = comp("DATA").layer("FCO").text.sourceText.toString();
+      08 | sfCheck = variantSource.split("-")[0];
+      09 | 
+      10 | var result = 1505; // Default value is set to 1505
+      11 | //add multiplier here for Moving KVs (0.7)
+      12 | var multiplier = 0.5;
+      13 | 
+      14 | if (!basicLabel.includes(basicSource)) {
+      15 |     if (countrySource == "ca") {
+      16 |         result ;
+      17 | 		//result -= (50*multiplier);
+      18 | 	}
+      19 |     if (countrySource == "us") {
+      20 | 		if (sfCheck == "sf" && calSource == "yes" && fcoSource.match(/[\r\n]+/)) {
+      21 | 			result -= (80*multiplier);
+      22 | 		} else {
+      23 | 			result -= (23*multiplier);
+      24 | 		}
+      25 | 	}
+      26 | 	if (countrySource == "lk") {
+      27 | 		result-=(77*multiplier);
+      28 | 	}
+      29 | 	if (countrySource == "kr") {
+      30 | 		result-=(200*multiplier);
+      31 | 	}
+      32 | 	if (countrySource == "az") {
+      33 | 		result -= (164*multiplier);
+      34 | 	}
+      35 | }
+      36 | 
+      37 | result;
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: X Pos Global  (ADBE Slider Control)
+      • Slider = 529.04  {animated, expr:on}
+        01 | var precomp = comp("EDITIONS_TEXT_BOTTOM");
+        02 | var xOffsetCountry = 0; //
+        03 | const xStartingOffset = thisComp.layer("XY Global Control").effect("X Starting Pos Offset (R)")("Slider");
+        04 | 
+        05 | for (var i = 1; i <= precomp.numLayers; i++) {
+        06 |     var layer = precomp.layer(i);
+        07 |     if (layer.opacity == 100) {
+        08 |         xOffsetCountry = layer.effect("X Starting Pos (R)")("Slider").value;
+        09 |         break;
+        10 |     }
+        11 | }
+        12 | //change multiplier HERE for Moving KVs (0.55)
+        13 | var multiplier = 0.54;
+        14 | xOffsetCountry = xOffsetCountry*multiplier;
+        15 | value + xOffsetCountry + xStartingOffset;
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: X Starting Pos Offset (R)  (ADBE Slider Control)
+      • Slider = 69  {animated, expr:on}
+        01 | value 
+        02 | // 0 = E, 69 = R and the first approval was with E so thats the 0 baseline. No time to null it again
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 5: LINE WIDTH CHECK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: LINE WIDTH CHECK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1500, 1500, 0]
+    • Position = [1500, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [0, 0, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: FCO Scale/Pos CNTRL [Text]
+  Parent: parented → [4] XY Global Control
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2.243, 92.166, 0]  {animated, expr:on}
+      01 | var L = thisLayer.sourceRectAtTime();
+      02 | var x =L.left;
+      03 | 
+      04 | [x, value[1]]
+    • Position = [1058, 632, 0]  {animated, expr:on}
+      01 | maxStatic = thisComp.layer("Max Static Width").content("Rectangle 1").content("Rectangle Path 1").size[0];
+      02 | layerWidth = sourceRectAtTime().width;
+      03 | 
+      04 | try {
+      05 |     stopOffset = thisComp.layer("Offset_CNTRL").effect("Max X Offset Stop")("Slider");
+      06 | 
+      07 |     if (layerWidth > maxStatic) {
+      08 |         xOffset = Math.min(layerWidth - maxStatic, stopOffset);
+      09 |         [value[0] - xOffset, value[1]];
+      10 |     } else {
+      11 |         value;
+      12 |     }
+      13 | } catch (err) {
+      14 |     value;
+      15 | }
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [138.75, 138.75, 100]  {animated, expr:on}
+      01 | maxW = thisComp.layer("Width Rect").content("Rectangle 1").content("Rectangle Path 1").size[0];
+      02 | s = 100; // Initial scale percentage
+      03 | 
+      04 | r = sourceRectAtTime(time);
+      05 | w = r.width;
+      06 | h = r.height;
+      07 | 
+      08 | if (w > maxW) {
+      09 |     s = maxW / w * s; // Scale down when width exceeds maxW
+      10 | }
+      11 | 
+      12 | // If x scaling falls below 85%, start scaling on the Y axis in relation
+      13 | if (s < 85) {
+      14 |     sY = 100 + (s - 85); // Y scale starts at 100 and decreases at the same rate as X scale
+      15 | } else {
+      16 |     sY = 100;
+      17 | }
+      18 | // Scaling FCO Text depending on Letter Count except 9x16 Addon Martin&Luis
+      19 | let asset = thisComp.layer("Asset_Check").effect("Asset_9x16 Check ")("Checkbox");
+      20 | let t = thisComp.layer("FCO_LINE 1").text.sourceText;
+      21 | let LetterCount = t.length; 
+      22 | //calculate the scaling factor 
+      23 | let  Scaleoffset = (100*1.3875)-100;
+      24 | // If asset 9x16 is true multiply the offset with 0.25 (scaledown) if not leave regular scalefactor;
+      25 | (asset==1)?Scaleoffset*=.35:Scaleoffset*=1; 
+      26 | //check FCO LetterCount if it is bigger than 14 default to 100 otherwise multiply scalefactor
+      27 | (LetterCount>13)?[s, sY]:[s, sY]+[Scaleoffset,Scaleoffset];
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: FCO ABOVE LINE [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2.243, 1.187, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [595.04, 2136.721, 0]  {animated, expr:on}
+      01 | thisComp.layer("LAST LINE ATTACHEMENT").transform.position
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [138.75, 138.75, 100]  {animated, expr:on}
+      01 | thisComp.layer("FCO_LINE 1").transform.scale
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryInput = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | jsonData = footage("labelData.json").sourceData;
+      03 | fcoData = jsonData.variables.fcoAboveLine;
+      04 | fcoInput = comp("DATA").layer("FCO").text.sourceText;
+      05 | 
+      06 | fcoInput.match(/[\r\n]+/) && fcoData.includes(countryInput) ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 8
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 8: FCO_LAST LINE [Text]
+  Parent: parented → [4] XY Global Control
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2.243, 1.388, 0]  {animated, expr:on}
+      01 | var L = thisLayer.sourceRectAtTime();
+      02 | var x =L.left;
+      03 | 
+      04 | [x, value[1]]
+    • Position = [1058, 632, 0]  {animated, expr:on}
+      01 | thisComp.layer("FCO Scale/Pos CNTRL").transform.position 
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [138.75, 138.75, 100]  {animated, expr:on}
+      01 | thisComp.layer("FCO Scale/Pos CNTRL").transform.scale
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 9: LAST LINE ATTACHEMENT [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [595.04, 2136.721, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("FCO_LAST LINE"),coordinates=[0,100];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,markerTime);
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -135
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 10: FCO_LINE 1 [Text]
+  Parent: parented → [4] XY Global Control
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2.243, 1.388, 0]  {animated, expr:on}
+      01 | var L = thisLayer.sourceRectAtTime();
+      02 | var x =L.left;
+      03 | 
+      04 | [x, value[1]]
+    • Position = [1068, 612, 0]  {animated, expr:on}
+      01 | let p = thisComp.layer("FCO Scale/Pos CNTRL").transform.position;
+      02 | p+[10,-20]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [138.75, 138.75, 100]  {animated, expr:on}
+      01 | thisComp.layer("FCO Scale/Pos CNTRL").transform.scale
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | if (thisComp.layer("FCO ABOVE LINE").transform.opacity == 100) {
+      02 |     0;
+      03 | } else {
+      04 |     100;
+      05 | }
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 11: FCO_LINE 2 [Text]
+  Parent: parented → [4] XY Global Control
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, -88.512, 0]  {animated, expr:on}
+      01 | var L = thisLayer.sourceRectAtTime();
+      02 | var x =L.left;
+      03 | 
+      04 | [x, value[1]]
+    • Position = [1058, 709.96, 0]  {animated, expr:on}
+      01 | temp = thisComp.layer("FCO Scale/Pos CNTRL").transform.position[0];
+      02 | /*
+      03 | fcoText = comp("DATA").layer("FCO").text.sourceText.split(/[\r\n]+/)[1];
+      04 | ascenders = [
+      05 |   'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'È', 'É', 'Ê', 'Ë', 'Ì', 'Í', 'Î', 'Ï', 'Ñ', 'Ò', 'Ó', 'Ô', 'Õ', 'Ö', 'Ù', 'Ú', 'Û', 'Ü', 'Ý',
+      06 |   'Ā', 'Ă', 'Ć', 'Ĉ', 'Ċ', 'Č', 'Ď', 'Ē', 'Ĕ', 'Ė', 'Ě', 'Ĝ', 'Ğ',
+      07 |   'Ġ', 'Ĥ', 'Ĩ', 'Ī', 'İ', 'Ĵ', 'Ľ', 'Ń', 'Ň', 'Ō', 'Ŏ', 'Ő', 'Ŕ', 'Ř', 'Ś', 'Ŝ', 'Š',
+      08 |   'Ť', 'Ũ', 'Ū', 'Ŭ', 'Ů', 'Ű', 'Ŵ', 'Ŷ', 'Ÿ', 'Ź', 'Ż', 'Ž',
+      09 | ];
+      10 | ascenderHeight = (ascenders.some(item => fcoText.includes(item)) ? -3 : 20);
+      11 | */
+      12 | yPos = value[1];//-ascenderHeight;
+      13 | [temp,yPos];
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [138.75, 138.75, 100]  {animated, expr:on}
+      01 | thisComp.layer("FCO Scale/Pos CNTRL").transform.scale
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | thisComp.layer("FCO_LINE 1").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 12: FCO_GRAPHIC ELEMENT [Shape]
+  Parent: parented → [4] XY Global Control
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2916.605, 2137.22, 0]
+    • Position = [1063, 622, 0]  {animated, expr:on}
+      01 | let p = thisComp.layer("FCO_LINE 1").transform.position;
+      02 | p-[5,-10]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 13: RIGHT ATTACHEMENT [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1481.986, 1944.595, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("FCO Scale/Pos CNTRL"),coordinates=[100,50];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,markerTime);
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 90
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 14: BR_AF [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.261, 8.256, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [1514.986, 2073, 0]  {animated}
+    • X Position = 1514.986  {animated, expr:on}
+      01 | thisComp.layer("RIGHT ATTACHEMENT").transform.position[0]+value
+    • Y Position = 2073  {animated, expr:on}
+      01 | thisComp.layer("XY Global Control").transform.yPosition+value
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | // Get the source text of the layer
+      02 | let countryText = comp("DATA").layer("COUNTRY").text.sourceText;
+      03 | let afText = comp("DATA").layer("ARTIFICIALLY FLAVOURED").text.sourceText;
+      04 | // Get the portion of the layer name before the first underscore
+      05 | let nameBeforeUnderscore = thisLayer.name.split("_")[0];
+      06 | // Check if source text matches the portion of the layer name before the underscore
+      07 | (countryText == nameBeforeUnderscore && afText == "yes") ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 2
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 15: CA_AF-FR [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4.588, -49.931, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [1510.986, 2210.5, 0]  {animated}
+    • X Position = 1510.986  {animated, expr:on}
+      01 | thisComp.layer("RIGHT ATTACHEMENT").transform.position[0]+29
+    • Y Position = 2210.5  {animated, expr:on}
+      01 | thisComp.layer("XY Global Control").transform.yPosition+value
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 5
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 16: CA_AF [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4.588, 60.822, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [1510.986, 2138, 0]  {animated}
+    • X Position = 1510.986  {animated, expr:on}
+      01 | thisComp.layer("RIGHT ATTACHEMENT").transform.position[0]+29
+    • Y Position = 2138  {animated, expr:on}
+      01 | thisComp.layer("XY Global Control").transform.yPosition+value
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 8
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 17: US_AF [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.25, 7.114, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [1514.986, 2082.375, 0]  {animated}
+    • X Position = 1514.986  {animated, expr:on}
+      01 | thisComp.layer("RIGHT ATTACHEMENT").transform.position[0]+value
+    • Y Position = 2082.375  {animated, expr:on}
+      01 | thisComp.layer("XY Global Control").transform.yPosition+value
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | // Get the source text of the layer
+      02 | let countryText = comp("DATA").layer("COUNTRY").text.sourceText;
+      03 | let afText = comp("DATA").layer("ARTIFICIALLY FLAVOURED").text.sourceText;
+      04 | let AF2Lines = thisComp.layer("US_AF_2LINES").transform.opacity
+      05 | // Get the portion of the layer name before the first underscore
+      06 | let nameBeforeUnderscore = thisLayer.name.split("_")[0];
+      07 | // Check if source text matches the portion of the layer name before the underscore
+      08 | (AF2Lines == 0 && countryText == nameBeforeUnderscore && afText == "yes") ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 2
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 18: US_AF_2LINES [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.25, 9.911, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [1564.986, 2164.25, 0]  {animated}
+    • X Position = 1564.986  {animated, expr:on}
+      01 | let  FCOLetterCount= comp("DATA").layer("FCO").text.sourceText.length;
+      02 | 
+      03 | (FCOLetterCount>14)?posXoffset=0:posXoffset =+50;
+      04 | thisComp.layer("RIGHT ATTACHEMENT").transform.position[0]+value+posXoffset
+    • Y Position = 2164.25  {animated, expr:on}
+      01 | thisComp.layer("XY Global Control").transform.yPosition+value
+    • Z Position = 0
+    • Scale = [879, 879, 100]  {animated, expr:on}
+      01 | let  FCOLetterCount= comp("DATA").layer("FCO").text.sourceText.length;
+      02 | 
+      03 | (FCOLetterCount>14)?value:value+[80,80];
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | // Get the source text of the layer
+      02 | let countryText = comp("DATA").layer("COUNTRY").text.sourceText;
+      03 | let afText = comp("DATA").layer("ARTIFICIALLY FLAVOURED").text.sourceText.toLocaleLowerCase();
+      04 | var textSource = comp("DATA").layer("FCO").text.sourceText.value; // Get the source text value
+      05 | var hasLineBreak = textSource.match(/[\r\n]+/);
+      06 | // Get the portion of the layer name before the first underscore
+      07 | let nameBeforeUnderscore = thisLayer.name.split("_")[0];
+      08 | // Check if source text matches the portion of the layer name before the underscore
+      09 | (hasLineBreak && countryText == nameBeforeUnderscore && afText == "yes") ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 2
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 2/2: LINE WIDTH CHECK
+  Size: 3000x3000
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: FCO LINE 1 [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1230.455, 1240.102, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: FCO LINE 2 [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1136.701, 1539.188, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: FCO LINE 3 [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1251.01, 1862.182, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: FCO LINE 4 [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1251.01, 2102.182, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

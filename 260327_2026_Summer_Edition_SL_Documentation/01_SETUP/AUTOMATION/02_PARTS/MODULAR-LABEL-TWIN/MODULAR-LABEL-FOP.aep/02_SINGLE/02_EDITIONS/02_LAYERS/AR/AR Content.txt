@@ -1,0 +1,267 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:20:24
+Selected comps: 3
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/3: AR
+  Size: 8000x6240
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: AR_SF-WPG_The Summer Edition.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: AR_SF-WPG_The Summer Edition.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\02_SINGLE\02_EDITIONS\02_LAYERS\AR\AR_SF-WPG_The Summer Edition.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: AR_FF_The Spring Edition_.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: AR_FF_The Spring Edition_.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\02_SINGLE\02_EDITIONS\02_LAYERS\AR\AR_FF_The Spring Edition_.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      02 | productNameData = comp("DATA").layer("PRODUCT NAME").text.sourceText.toLowerCase();
+      03 | layerVariant = thisLayer.name.split("_")[1].toLowerCase();
+      04 | layerProductName = thisLayer.name.split("_")[2].toLowerCase();
+      05 | variantData == layerVariant && productNameData == layerProductName ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: isAnyLayerOn [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | lib = footage("expressionLibrary.jsx").sourceData;
+      02 | lib.rhombusCheck();
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 2/3: AR_FOP
+  Size: 8000x6240
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: AR_SF-WPG_The Summer Edition_FOP.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: AR_SF-WPG_The Summer Edition_FOP.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\02_EDITIONS\02_LAYERS\AR\AR_SF-WPG_The Summer Edition_FOP.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      02 | productNameData = comp("DATA").layer("PRODUCT NAME").text.sourceText.toLowerCase();
+      03 | layerVariant = thisLayer.name.split("_")[1].toLowerCase();
+      04 | layerProductName = thisLayer.name.split("_")[2].toLowerCase();
+      05 | variantData == layerVariant && productNameData == layerProductName ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: AR_FF_The Spring Edition_FOP.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: AR_FF_The Spring Edition_FOP.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\02_SINGLE\02_EDITIONS\02_LAYERS\AR\AR_FF_The Spring Edition_FOP.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      02 | productNameData = comp("DATA").layer("PRODUCT NAME").text.sourceText.toLowerCase();
+      03 | layerVariant = thisLayer.name.split("_")[1].toLowerCase();
+      04 | layerProductName = thisLayer.name.split("_")[2].toLowerCase();
+      05 | variantData == layerVariant && productNameData == layerProductName ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: isAnyLayerOn [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | lib = footage("expressionLibrary.jsx").sourceData;
+      02 | lib.rhombusCheck();
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 3/3: AR_SF
+  Size: 8000x6240
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: AR_SF-WPG_The SUmmer Edition_SF-TAGS.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: AR_SF-WPG_The SUmmer Edition_SF-TAGS.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\02_SINGLE\02_EDITIONS\02_LAYERS\AR\AR_SF-WPG_The SUmmer Edition_SF-TAGS.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: isAnyLayerOn [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | lib = footage("expressionLibrary.jsx").sourceData;
+      02 | lib.rhombusCheck();
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

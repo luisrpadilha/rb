@@ -1,0 +1,2034 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:30:49
+Selected comps: 3
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/3: HEADLINE BLOCK
+  Size: 3000x3000
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: -2.567s  (-77f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Asset Check for Shadow Color [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1500, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Dropdown Menu Control  (Pseudo/@@+MmX23lzTWeJQ76I3Aww/w)
+      • Menu = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: When to sample SourceRect [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1500, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: When to sample SourceRect  (ADBE Slider Control)
+      • Slider = 250
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: Top Right [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2250, 1192.027, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[100,0];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 45
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: Top Left [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [750, 1192.027, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[0,0];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -45
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: Bottom Right [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2250, 1807.973, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 2 LOGIC"),coordinates=[100,100];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 135
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: Bottom Left [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [750, 1807.973, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 2 LOGIC"),coordinates=[0,100];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -135
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: LINE 1 (ANIMATE HERE) [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-212.469, -115.714, 0]  {animated, expr:on}
+      01 | posterizeTime(0);
+      02 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      03 | var when = effect("When to Sample")(1);
+      04 | switch ( dropDownIndex )
+      05 | {
+      06 | case 1:
+      07 | 	var L = thisLayer.sourceRectAtTime(when);
+      08 | 	var x =L.left+L.width/2;
+      09 | 	var y =L.top+L.height/2;
+      10 | 	[x,thisComp.layer("LINE 2 ref").transform.anchorPoint[1]];
+      11 | 	break;
+      12 | case 2:
+      13 | 	var L = thisLayer.sourceRectAtTime(when);
+      14 | 	var x =L.left;
+      15 | 	var y =L.top+L.height/2;
+      16 | 	[x,y];
+      17 | 	break;
+      18 | case 3:
+      19 | 	var L = thisLayer.sourceRectAtTime(when);
+      20 | 	var x =L.left+L.width;
+      21 | 	var y =L.top+L.height/2;
+      22 | 	[x,y];
+      23 | 	break;
+      24 | case 4:
+      25 | 	var L = thisLayer.sourceRectAtTime(when);
+      26 | 	var x =L.left+L.width/2;
+      27 | 	var y =L.top;
+      28 | 	[x,y];
+      29 | 	break;
+      30 | case 5:
+      31 | 	var L = thisLayer.sourceRectAtTime(when);
+      32 | 	var x =L.left;
+      33 | 	var y =L.top;
+      34 | 	[x,y];
+      35 | 	break;
+      36 | case 6:
+      37 | 	var L = thisLayer.sourceRectAtTime(when);
+      38 | 	var x =L.left+L.width;
+      39 | 	var y =L.top;
+      40 | 	[x,y];
+      41 | 	break;
+      42 | case 7:
+      43 | 	var L = thisLayer.sourceRectAtTime(when);
+      44 | 	var x =L.left+L.width/2;
+      45 | 	var y =L.top+L.height;
+      46 | 	[x,y];
+      47 | 	break;
+      48 | case 8:
+      49 | 	var L = thisLayer.sourceRectAtTime(when);
+      50 | 	var x =L.left;
+      51 | 	var y =L.top+L.height;
+      52 | 	[x,y];
+      53 | 	break;
+      54 | case 9:
+      55 | 	var L = thisLayer.sourceRectAtTime(when);
+      56 | 	var x =L.left+L.width;
+      57 | 	var y =L.top+L.height;
+      58 | 	[x,y];
+      59 | 	break;
+      60 | default: value
+      61 | };
+    • Position = [-91.429, 1192.027, 0]  {animated, expr:on}
+      01 | thisComp.layer("AP-Top-Left-LINE 1 LOGIC").transform.position+value
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [353.893, 353.893, 100]  {animated, expr:on}
+      01 | thisComp.layer("LINE 1 LOGIC").transform.scale+(value*thisComp.layer("LINE 1 LOGIC").transform.scale[0]/100);
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated}
+    • Appears in Reflections = 1
+  Layer Styles:
+    ▸ Drop Shadow
+      • Blend Mode = 5
+      • Color = [0.443, 0.408, 0.051, 1]  {animated, expr:on}
+        01 | let AssetCheck =   thisComp.layer("Asset Check for Shadow Color").effect("Dropdown Menu Control")("Menu")-1;
+        02 | let MainColor = hexToRgb("71680D");
+        03 | let HybridColor = hexToRgb("0000");
+        04 | let ShadowColor = [MainColor,HybridColor];
+        05 | ShadowColor[AssetCheck]
+      • Opacity = 80
+      • Use Global Light = 0
+      • Angle = 120
+      • Distance = 5
+      • Spread = 0
+      • Size = 97
+      • Noise = 0
+      • Layer Knocks Out Drop Shadow = 1
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 5
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 250  {animated, expr:on}
+        01 | thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 8: LINE 1 LOGIC [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-0.54, 1.813, 0]  {animated, expr:on}
+      01 | posterizeTime(0);
+      02 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      03 | var when = effect("When to Sample")(1);
+      04 | switch ( dropDownIndex )
+      05 | {
+      06 | case 1:
+      07 | 	var L = thisLayer.sourceRectAtTime(when);
+      08 | 	var x =L.left+L.width/2;
+      09 | 	var y =L.top+L.height/2;
+      10 | 	[x,y];
+      11 | 	break;
+      12 | case 2:
+      13 | 	var L = thisLayer.sourceRectAtTime(when);
+      14 | 	var x =L.left;
+      15 | 	var y =L.top+L.height/2;
+      16 | 	[x,y];
+      17 | 	break;
+      18 | case 3:
+      19 | 	var L = thisLayer.sourceRectAtTime(when);
+      20 | 	var x =L.left+L.width;
+      21 | 	var y =L.top+L.height/2;
+      22 | 	[x,y];
+      23 | 	break;
+      24 | case 4:
+      25 | 	var L = thisLayer.sourceRectAtTime(when);
+      26 | 	var x =L.left+L.width/2;
+      27 | 	var y =L.top;
+      28 | 	[x,y];
+      29 | 	break;
+      30 | case 5:
+      31 | 	var L = thisLayer.sourceRectAtTime(when);
+      32 | 	var x =L.left;
+      33 | 	var y =L.top;
+      34 | 	[x,y];
+      35 | 	break;
+      36 | case 6:
+      37 | 	var L = thisLayer.sourceRectAtTime(when);
+      38 | 	var x =L.left+L.width;
+      39 | 	var y =L.top;
+      40 | 	[x,y];
+      41 | 	break;
+      42 | case 7:
+      43 | 	var L = thisLayer.sourceRectAtTime(when);
+      44 | 	var x =L.left+L.width/2;
+      45 | 	var y =L.top+L.height;
+      46 | 	[x,y];
+      47 | 	break;
+      48 | case 8:
+      49 | 	var L = thisLayer.sourceRectAtTime(when);
+      50 | 	var x =L.left;
+      51 | 	var y =L.top+L.height;
+      52 | 	[x,y];
+      53 | 	break;
+      54 | case 9:
+      55 | 	var L = thisLayer.sourceRectAtTime(when);
+      56 | 	var x =L.left+L.width;
+      57 | 	var y =L.top+L.height;
+      58 | 	[x,y];
+      59 | 	break;
+      60 | default: value
+      61 | };
+    • Position = [1500, 1607.944, 0]  {animated, expr:on}
+      01 | posterizeTime(0);
+      02 | // Get the composition height
+      03 | var compHeight = thisComp.height;
+      04 | var margin = thisComp.layer("LINE 2 LOGIC").effect("Margin")("Slider");
+      05 | var sampleTime = thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      06 | 
+      07 | // Reference Text layers
+      08 | var subText = thisComp.layer("LINE 2 LOGIC");
+      09 | var subTextVisible = thisComp.layer("LINE 2 (ANIMATE HERE)");
+      10 | var mainTextVisible = thisComp.layer("LINE 1 (ANIMATE HERE)");
+      11 | 
+      12 | // Calculate the total height of all text layers
+      13 | var mainTextVisibleHeight = mainTextVisible.sourceRectAtTime(sampleTime).height * (mainTextVisible.scale[1] / 100);
+      14 | var subTextVisibleHeight = subTextVisible.sourceRectAtTime(sampleTime).height * (subTextVisible.scale[1] / 100);
+      15 | var mainTextHeight = sourceRectAtTime(sampleTime).height * (transform.scale[1] / 100);
+      16 | var subTextHeight = subText.sourceRectAtTime(sampleTime).height * (subText.scale[1] / 100);
+      17 | var mainSubtract = mainTextVisibleHeight-mainTextHeight;
+      18 | var subSubtract = subTextVisibleHeight-subTextHeight
+      19 | var totalHeight = mainTextHeight + mainSubtract + subTextHeight + subSubtract + margin;
+      20 | 
+      21 | // Center both layers vertically in the comp
+      22 | [transform.position[0], compHeight / 2 - totalHeight / 2 + mainTextHeight];
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [353.893, 353.893, 100]  {animated, expr:on}
+      01 | posterizeTime(0);
+      02 | // Get the comp dimensions
+      03 | var compWidth = thisComp.width;
+      04 | var compHeight = thisComp.height;
+      05 | 
+      06 | // Calculate scale based on the smaller dimension
+      07 | var scaleFactor = Math.min(compWidth / sourceRectAtTime().width, compHeight / sourceRectAtTime().height) * 50;
+      08 | 
+      09 | [scaleFactor, scaleFactor];
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 7
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 250  {animated, expr:on}
+        01 | thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 9: AP-Top-Left-LINE 1 LOGIC [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [750, 1192.027, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[0,0];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -45
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 10: LINE 2 (ANIMATE HERE) [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-533.591, -115.714, 0]  {animated, expr:on}
+      01 | posterizeTime(0);
+      02 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      03 | var when = effect("When to Sample")(1);
+      04 | switch ( dropDownIndex )
+      05 | {
+      06 | case 1:
+      07 | 	var L = thisLayer.sourceRectAtTime(when);
+      08 | 	var x =L.left+L.width/2;
+      09 | 	var y =L.top+L.height/2;
+      10 | 	[x,thisComp.layer("LINE 2 ref").transform.anchorPoint[1]];
+      11 | 	break;
+      12 | case 2:
+      13 | 	var L = thisLayer.sourceRectAtTime(when);
+      14 | 	var x =L.left;
+      15 | 	var y =L.top+L.height/2;
+      16 | 	[x,y];
+      17 | 	break;
+      18 | case 3:
+      19 | 	var L = thisLayer.sourceRectAtTime(when);
+      20 | 	var x =L.left+L.width;
+      21 | 	var y =L.top+L.height/2;
+      22 | 	[x,y];
+      23 | 	break;
+      24 | case 4:
+      25 | 	var L = thisLayer.sourceRectAtTime(when);
+      26 | 	var x =L.left+L.width/2;
+      27 | 	var y =L.top;
+      28 | 	[x,y];
+      29 | 	break;
+      30 | case 5:
+      31 | 	var L = thisLayer.sourceRectAtTime(when);
+      32 | 	var x =L.left;
+      33 | 	var y =L.top;
+      34 | 	[x,y];
+      35 | 	break;
+      36 | case 6:
+      37 | 	var L = thisLayer.sourceRectAtTime(when);
+      38 | 	var x =L.left+L.width;
+      39 | 	var y =L.top;
+      40 | 	[x,y];
+      41 | 	break;
+      42 | case 7:
+      43 | 	var L = thisLayer.sourceRectAtTime(when);
+      44 | 	var x =L.left+L.width/2;
+      45 | 	var y =L.top+L.height;
+      46 | 	[x,y];
+      47 | 	break;
+      48 | case 8:
+      49 | 	var L = thisLayer.sourceRectAtTime(when);
+      50 | 	var x =L.left;
+      51 | 	var y =L.top+L.height;
+      52 | 	[x,y];
+      53 | 	break;
+      54 | case 9:
+      55 | 	var L = thisLayer.sourceRectAtTime(when);
+      56 | 	var x =L.left+L.width;
+      57 | 	var y =L.top+L.height;
+      58 | 	[x,y];
+      59 | 	break;
+      60 | default: value
+      61 | };
+    • Position = [-55.416, 1637.944, 0]  {animated, expr:on}
+      01 | thisComp.layer("AP-Top-Left-LINE 2 LOGIC").transform.position+value
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [144.674, 144.674, 100]  {animated, expr:on}
+      01 | posterizeTime(0);
+      02 | thisComp.layer("LINE 2 LOGIC").transform.scale+(value*thisComp.layer("LINE 2 LOGIC").transform.scale[0]/100);
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated}
+    • Appears in Reflections = 1
+  Layer Styles:
+    ▸ Drop Shadow
+      • Blend Mode = 5
+      • Color = [0.443, 0.408, 0.051, 1]  {animated, expr:on}
+        01 | let AssetCheck =   thisComp.layer("Asset Check for Shadow Color").effect("Dropdown Menu Control")("Menu")-1;
+        02 | let MainColor = hexToRgb("71680D");
+        03 | let HybridColor = hexToRgb("0000");
+        04 | let ShadowColor = [MainColor,HybridColor];
+        05 | ShadowColor[AssetCheck]
+      • Opacity = 80
+      • Use Global Light = 0
+      • Angle = 120
+      • Distance = 5
+      • Spread = 0
+      • Size = 97
+      • Noise = 0
+      • Layer Knocks Out Drop Shadow = 1
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 5
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 250  {animated, expr:on}
+        01 | thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 11: LINE 2 LOGIC [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2.067, -115.714, 0]  {animated, expr:on}
+      01 | posterizeTime(0);
+      02 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      03 | var when = effect("When to Sample")(1);
+      04 | switch ( dropDownIndex )
+      05 | {
+      06 | case 1:
+      07 | 	var L = thisLayer.sourceRectAtTime(when);
+      08 | 	var x =L.left+L.width/2;
+      09 | 	var y =L.top+L.height/2;
+      10 | 	[x,y];
+      11 | 	break;
+      12 | case 2:
+      13 | 	var L = thisLayer.sourceRectAtTime(when);
+      14 | 	var x =L.left;
+      15 | 	var y =L.top+L.height/2;
+      16 | 	[x,y];
+      17 | 	break;
+      18 | case 3:
+      19 | 	var L = thisLayer.sourceRectAtTime(when);
+      20 | 	var x =L.left+L.width;
+      21 | 	var y =L.top+L.height/2;
+      22 | 	[x,y];
+      23 | 	break;
+      24 | case 4:
+      25 | 	var L = thisLayer.sourceRectAtTime(when);
+      26 | 	var x =L.left+L.width/2;
+      27 | 	var y =L.top;
+      28 | 	[x,y];
+      29 | 	break;
+      30 | case 5:
+      31 | 	var L = thisLayer.sourceRectAtTime(when);
+      32 | 	var x =L.left;
+      33 | 	var y =L.top;
+      34 | 	[x,y];
+      35 | 	break;
+      36 | case 6:
+      37 | 	var L = thisLayer.sourceRectAtTime(when);
+      38 | 	var x =L.left+L.width;
+      39 | 	var y =L.top;
+      40 | 	[x,y];
+      41 | 	break;
+      42 | case 7:
+      43 | 	var L = thisLayer.sourceRectAtTime(when);
+      44 | 	var x =L.left+L.width/2;
+      45 | 	var y =L.top+L.height;
+      46 | 	[x,y];
+      47 | 	break;
+      48 | case 8:
+      49 | 	var L = thisLayer.sourceRectAtTime(when);
+      50 | 	var x =L.left;
+      51 | 	var y =L.top+L.height;
+      52 | 	[x,y];
+      53 | 	break;
+      54 | case 9:
+      55 | 	var L = thisLayer.sourceRectAtTime(when);
+      56 | 	var x =L.left+L.width;
+      57 | 	var y =L.top+L.height;
+      58 | 	[x,y];
+      59 | 	break;
+      60 | default: value
+      61 | };
+    • Position = [1500, 1637.944, 0]  {animated, expr:on}
+      01 | posterizeTime(0);
+      02 | // Reference the Main Text Layer
+      03 | var mainText = thisComp.layer("LINE 1 (ANIMATE HERE)");
+      04 | var margin = effect("Margin")("Slider");
+      05 | var sampleTime = thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      06 | 
+      07 | // Calculate the height of the Main Text Layer, considering its scale
+      08 | var mainTextHeight = mainText.sourceRectAtTime(sampleTime).height * mainText.scale[1] / 100;
+      09 | 
+      10 | // Calculate the Y position of the bottom of the Main Text Layer
+      11 | var mainTextBottomY = mainText.position[1] + mainTextHeight + margin;
+      12 | 
+      13 | // Set the position of the Sub Text Layer directly below the Main Text Layer
+      14 | [1500, mainTextBottomY];
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [144.674, 144.674, 100]  {animated, expr:on}
+      01 | posterizeTime(0);
+      02 | var sourceLayer = comp("DATA").layer("HEADLINE").text.sourceText;
+      03 | var lines = sourceLayer.split(/[\r\n]+/).length; // Splits into an array of lines
+      04 | if (lines >= 2) {
+      05 | 	// Get the composition size
+      06 | 	var compWidth = thisComp.width;
+      07 | 	var compHeight = thisComp.height;
+      08 | 
+      09 | 	// Get the sourceRectAtTime dimensions of the layer
+      10 | 	var src = sourceRectAtTime();
+      11 | 	var srcWidth = src.width;
+      12 | 	var srcHeight = src.height;
+      13 | 
+      14 | 	// Calculate the target width and height (50% of the composition)
+      15 | 	var targetWidth = compWidth * 0.5;
+      16 | 	var targetHeight = compHeight * 0.5;
+      17 | 
+      18 | 	// Calculate scale percentage needed to achieve the target size
+      19 | 	var scaleWidth = (targetWidth / srcWidth) * 100;
+      20 | 	var scaleHeight = (targetHeight / srcHeight) * 100;
+      21 | 
+      22 | 	// Use the smaller scale percentage to ensure it fits within the 50% bounds
+      23 | 	var scale = Math.min(scaleWidth, scaleHeight);
+      24 | 
+      25 | 	[scale, scale];
+      26 | } else {
+      27 | 	[0,0];
+      28 | }
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 250  {animated, expr:on}
+        01 | thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Margin  (ADBE Slider Control)
+      • Slider = 30  {animated, expr:on}
+        01 | posterizeTime(0);
+        02 | try {
+        03 | 	countryData = footage("countryData.json").sourceData;
+        04 | 	specialCharacters = countryData.specialCharacters;
+        05 | 	top = specialCharacters.top;
+        06 | 	topLarge = specialCharacters.topLarge;
+        07 | 	bottom = specialCharacters.bottom;
+        08 | 	bottomLarge = specialCharacters.bottomLarge;
+        09 | 
+        10 | 	headlineText = comp("DATA").layer("HEADLINE").text.sourceText.toUpperCase();
+        11 | 	var lines = headlineText.split(/[\r\n]+/); // This splits the sourceText into an array of lines
+        12 | 
+        13 | 
+        14 | 	line1 = comp("DATA").layer("HEADLINE").text.sourceText.split(/[\r\n]+/)[0].toUpperCase();
+        15 | 	line2 = comp("DATA").layer("HEADLINE").text.sourceText.split(/[\r\n]+/)[1].toUpperCase();
+        16 | 
+        17 | 	var margin = 30;
+        18 | 
+        19 | 	//TOP LINE
+        20 | 	if (bottomLarge.some(char => line1.includes(char))) {
+        21 | 		margin -= 12;
+        22 | 	}
+        23 | 	else if (bottom.some(char => line1.includes(char))) {
+        24 | 		margin -= 16;
+        25 | 	}
+        26 | 	else if (line1.includes(","))
+        27 | 		margin -= 20;
+        28 | 
+        29 | 	//BOTTOM LINE
+        30 | 	if (top.some(char => line2.includes(char))) {
+        31 | 		margin -= 20;
+        32 | 	}
+        33 | 	else if (topLarge.some(char => line2.includes(char))) {
+        34 | 		margin -= 18;
+        35 | 	}
+        36 | 
+        37 | 	if (lines.length > 1) {
+        38 | 	  if (margin >=20) {
+        39 | 		margin;
+        40 | 	  } else {
+        41 | 		margin = 20;
+        42 | 	  }
+        43 | 	} else {
+        44 | 	  margin = 0;
+        45 | 	}
+        46 | 
+        47 | 	margin;
+        48 | } catch (err) {
+        49 | 	0
+        50 | }
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 12: AP-Top-Left-LINE 2 LOGIC [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [750, 1637.944, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 2 LOGIC"),coordinates=[0,0];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -45
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 2/3: HEADLINE SAMESIZE
+  Size: 3000x3000
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: When to sample SourceRect [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1500, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: When to sample SourceRect  (ADBE Slider Control)
+      • Slider = 250
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: Top Left [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, -5, 0]
+    • Position = [750, 1299.97, 0]  {animated}
+    • X Position = 750  {animated, expr:on}
+      01 | var line1 = thisComp.layer("Top Left LINE 1").transform.position[0];
+      02 | var line2 = thisComp.layer("Bottom Left LINE 2").transform.position[0];
+      03 | 
+      04 | line1 < line2 ? line1 : line2;
+    • Y Position = 1299.97  {animated, expr:on}
+      01 | thisComp.layer("Top Left LINE 1").transform.position[1]
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: Bottom Left [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, -5, 0]
+    • Position = [750, 1700.03, 0]  {animated}
+    • X Position = 750  {animated, expr:on}
+      01 | var line1 = thisComp.layer("Top Left LINE 1").transform.position[0];
+      02 | var line2 = thisComp.layer("Bottom Left LINE 2").transform.position[0];
+      03 | 
+      04 | line1 < line2 ? line1 : line2;
+    • Y Position = 1700.03  {animated, expr:on}
+      01 | thisComp.layer("Bottom Left LINE 2").transform.position[1]
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: Top Right [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, -5, 0]
+    • Position = [2250, 1299.97, 0]  {animated}
+    • X Position = 2250  {animated, expr:on}
+      01 | var line1 = thisComp.layer("Top Right LINE 1").transform.position[0];
+      02 | var line2 = thisComp.layer("Bottom Right LINE 2").transform.position[0];
+      03 | 
+      04 | line1 > line2 ? line1 : line2;
+    • Y Position = 1299.97  {animated, expr:on}
+      01 | thisComp.layer("Top Right LINE 1").transform.position[1]
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: Bottom Right [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, -5, 0]
+    • Position = [2250, 1700.03, 0]  {animated}
+    • X Position = 2250  {animated, expr:on}
+      01 | var line1 = thisComp.layer("Top Right LINE 1").transform.position[0];
+      02 | var line2 = thisComp.layer("Bottom Right LINE 2").transform.position[0];
+      03 | 
+      04 | line1 > line2 ? line1 : line2;
+    • Y Position = 1700.03  {animated, expr:on}
+      01 | thisComp.layer("Bottom Right LINE 2").transform.position[1]
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: Top Right LINE 1 [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1806.605, 1299.97, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[100,0];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 45
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: Top Left LINE 1 [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1193.395, 1299.97, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[0,0];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -45
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: Bottom Right LINE 2 [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2250, 1700.03, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 2 LOGIC"),coordinates=[100,100];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 135
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 9: Bottom Left LINE 2 [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [750, 1700.03, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 2 LOGIC"),coordinates=[0,100];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -135
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 10: LINE 1 (ANIMATE HERE) [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-212.469, -115.714, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,thisComp.layer("LINE 2 ref").transform.anchorPoint[1]];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [1193.395, 1299.97, 0]  {animated, expr:on}
+      01 | thisComp.layer("AP-Top-Left-LINE 1 LOGIC").transform.position+value
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [144.674, 144.674, 100]  {animated, expr:on}
+      01 | thisComp.layer("LINE 1 LOGIC").transform.scale
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 5
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 250  {animated, expr:on}
+        01 | thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 11: LINE 1 LOGIC [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-0.54, 1.813, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [1500, 1470, 0]  {animated, expr:on}
+      01 | // Get the composition height
+      02 | var compHeight = thisComp.height;
+      03 | var margin = thisComp.layer("LINE 2 LOGIC").effect("Margin")("Slider");
+      04 | var sampleTime = thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      05 | 
+      06 | // Reference Text layers
+      07 | var subText = thisComp.layer("LINE 2 LOGIC");
+      08 | var subTextVisible = thisComp.layer("LINE 2 (ANIMATE HERE)");
+      09 | var mainTextVisible = thisComp.layer("LINE 1 (ANIMATE HERE)");
+      10 | 
+      11 | // Calculate the total height of all text layers
+      12 | var mainTextVisibleHeight = mainTextVisible.sourceRectAtTime(sampleTime).height * (mainTextVisible.scale[1] / 100);
+      13 | var subTextVisibleHeight = subTextVisible.sourceRectAtTime(sampleTime).height * (subTextVisible.scale[1] / 100);
+      14 | var mainTextHeight = sourceRectAtTime(sampleTime).height * (transform.scale[1] / 100);
+      15 | var subTextHeight = subText.sourceRectAtTime(sampleTime).height * (subText.scale[1] / 100);
+      16 | var mainSubtract = mainTextVisibleHeight-mainTextHeight;
+      17 | var subSubtract = subTextVisibleHeight-subTextHeight
+      18 | var totalHeight = mainTextHeight + mainSubtract + subTextHeight + subSubtract + margin;
+      19 | 
+      20 | // Center both layers vertically in the comp
+      21 | [transform.position[0], compHeight / 2 - totalHeight / 2 + mainTextHeight];
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [144.674, 144.674, 100]  {animated, expr:on}
+      01 | thisComp.layer("LINE 2 LOGIC").transform.scale[0] > 0 ? thisComp.layer("LINE 2 LOGIC").transform.scale : [100,100];
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 7
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 250  {animated, expr:on}
+        01 | thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 12: AP-Top-Left-LINE 1 LOGIC [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1193.395, 1299.97, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[0,0];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -45
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 13: LINE 2 (ANIMATE HERE) [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-533.591, -115.714, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,thisComp.layer("LINE 2 ref").transform.anchorPoint[1]];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [750, 1530, 0]  {animated, expr:on}
+      01 | thisComp.layer("AP-Top-Left-LINE 2 LOGIC").transform.position+value
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [144.674, 144.674, 100]  {animated, expr:on}
+      01 | thisComp.layer("LINE 2 LOGIC").transform.scale+(value*thisComp.layer("LINE 2 LOGIC").transform.scale[0]/100);
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 5
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 250  {animated, expr:on}
+        01 | thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 14: LINE 2 LOGIC [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2.067, -115.714, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [1500, 1530, 0]  {animated, expr:on}
+      01 | // Reference the Main Text Layer
+      02 | var mainText = thisComp.layer("LINE 1 (ANIMATE HERE)");
+      03 | var margin = effect("Margin")("Slider");
+      04 | var sampleTime = thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      05 | 
+      06 | // Calculate the height of the Main Text Layer, considering its scale
+      07 | var mainTextHeight = mainText.sourceRectAtTime(sampleTime).height * mainText.scale[1] / 100;
+      08 | 
+      09 | // Calculate the Y position of the bottom of the Main Text Layer
+      10 | var mainTextBottomY = mainText.position[1] + mainTextHeight + margin;
+      11 | 
+      12 | // Set the position of the Sub Text Layer directly below the Main Text Layer
+      13 | [1500, mainTextBottomY];
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [144.674, 144.674, 100]  {animated, expr:on}
+      01 | var sourceLayer = comp("DATA").layer("HEADLINE").text.sourceText;
+      02 | var lines = sourceLayer.split(/[\r\n]+/).length; // Splits into an array of lines
+      03 | if (lines >= 2) {
+      04 | 	// Get the composition size
+      05 | 	var compWidth = thisComp.width;
+      06 | 	var compHeight = thisComp.height;
+      07 | 
+      08 | 	// Get the sourceRectAtTime dimensions of the layer
+      09 | 	var src = sourceRectAtTime();
+      10 | 	var srcWidth = src.width;
+      11 | 	var srcHeight = src.height;
+      12 | 
+      13 | 	// Calculate the target width and height (50% of the composition)
+      14 | 	var targetWidth = compWidth * 0.5;
+      15 | 	var targetHeight = compHeight * 0.5;
+      16 | 
+      17 | 	// Calculate scale percentage needed to achieve the target size
+      18 | 	var scaleWidth = (targetWidth / srcWidth) * 100;
+      19 | 	var scaleHeight = (targetHeight / srcHeight) * 100;
+      20 | 
+      21 | 	// Use the smaller scale percentage to ensure it fits within the 50% bounds
+      22 | 	var scale = Math.min(scaleWidth, scaleHeight);
+      23 | 
+      24 | 	[scale, scale];
+      25 | } else {
+      26 | 	[0,0];
+      27 | }
+      28 | 
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 250  {animated, expr:on}
+        01 | thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Margin  (ADBE Slider Control)
+      • Slider = 60  {animated, expr:on}
+        01 | try {
+        02 | 	countryData = footage("countryData.json").sourceData;
+        03 | 	specialCharacters = countryData.specialCharacters;
+        04 | 	top = specialCharacters.top;
+        05 | 	topLarge = specialCharacters.topLarge;
+        06 | 	bottom = specialCharacters.bottom;
+        07 | 	bottomLarge = specialCharacters.bottomLarge;
+        08 | 
+        09 | 	headlineText = comp("DATA").layer("HEADLINE").text.sourceText.toUpperCase();
+        10 | 	var lines = headlineText.split(/[\r\n]+/); // This splits the sourceText into an array of lines
+        11 | 
+        12 | 
+        13 | 	line1 = comp("DATA").layer("HEADLINE").text.sourceText.split(/[\r\n]+/)[0].toUpperCase();
+        14 | 	line2 = comp("DATA").layer("HEADLINE").text.sourceText.split(/[\r\n]+/)[1].toUpperCase();
+        15 | 
+        16 | 	var margin = 60;
+        17 | 	var multiplier = 1.7
+        18 | 	//TOP LINE
+        19 | 	if (bottomLarge.some(char => line1.includes(char))) {
+        20 | 		margin -= 12*multiplier;
+        21 | 	}
+        22 | 	else if (bottom.some(char => line1.includes(char))) {
+        23 | 		margin -= 16*multiplier;
+        24 | 	}
+        25 | 	else if (line1.includes(","))
+        26 | 		margin -= 20*multiplier;
+        27 | 
+        28 | 	//BOTTOM LINE
+        29 | 	if (top.some(char => line2.includes(char))) {
+        30 | 		margin -= 20*multiplier;
+        31 | 	}
+        32 | 	else if (topLarge.some(char => line2.includes(char))) {
+        33 | 		margin -= 18*multiplier;
+        34 | 	}
+        35 | 
+        36 | 	if (lines.length > 1) {
+        37 | 	  if (margin >= 5) {
+        38 | 		margin;
+        39 | 	  } else {
+        40 | 		margin = 5;
+        41 | 	  }
+        42 | 	} else {
+        43 | 	  margin = 0;
+        44 | 	}
+        45 | 
+        46 | 	margin;
+        47 | 
+        48 | 
+        49 | } catch (err) {
+        50 | 	0
+        51 | }
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 15: AP-Top-Left-LINE 2 LOGIC [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [750, 1530, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 2 LOGIC"),coordinates=[0,0];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -45
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 3/3: HEADLINE SINGLE LINE
+  Size: 3000x3000
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 4.967s  (149f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: When to sample SourceRect [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1500, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: When to sample SourceRect  (ADBE Slider Control)
+      • Slider = 10
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: Top Right [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2250, 1442.504, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[100,0];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 45
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: Bottom Right [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2250, 1557.496, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[100,100];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 135
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: Top Left [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [750, 1442.504, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[0,0];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -45
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: Bottom Left [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [750, 1557.496, 0]  {animated, expr:on}
+      01 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[0,100];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -135
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: LINE 1 (ANIMATE HERE) [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-767.469, -56.95, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [750, 1500, 0]  {animated, expr:on}
+      01 | thisComp.layer("AP-Middle-Left-LINE 1 LOGIC").transform.position
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [97.843, 97.843, 100]  {animated, expr:on}
+      01 | thisComp.layer("LINE 1 LOGIC").transform.scale
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 2
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 10  {animated, expr:on}
+        01 | thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 7: LINE 1 LOGIC [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-0.935, -56.95, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [1500, 1500, 0]  {animated, expr:on}
+      01 | [1500,1500]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [97.843, 97.843, 100]  {animated, expr:on}
+      01 | // Get the comp dimensions
+      02 | var compWidth = thisComp.width;
+      03 | var compHeight = thisComp.height;
+      04 | 
+      05 | // Calculate scale based on the smaller dimension
+      06 | var scaleFactor = Math.min(compWidth / sourceRectAtTime().width, compHeight / sourceRectAtTime().height) * 50;
+      07 | 
+      08 | [scaleFactor, scaleFactor];
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 10  {animated, expr:on}
+        01 | thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 8: AP-Middle-Left-LINE 1 LOGIC [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [750, 1500, 0]  {animated, expr:on}
+      01 | 
+      02 | var layer=thisComp.layer("LINE 1 LOGIC"),coordinates=[0,50];function linearInterpolation(e,r,t,i,a){if(r>t){var n=r;r=t,t=n,n=i,i=a,a=n}return i+(e-r)/(t-r)*(a-i)}function getSourceRect(e,r,t){var i=e.sourceRectAtTime(t),a=i.top,n=i.left,o=n+i.width,m=a+i.height,c=[linearInterpolation(r[0],0,100,n,o),linearInterpolation(r[1],0,100,a,m)];return e.toComp(c,t)}var markerTime=0===thisLayer.marker.numKeys?time:thisLayer.marker.key(1).time;getSourceRect(layer,coordinates,thisComp.layer("When to sample SourceRect").effect("When to sample SourceRect")("Slider"));
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -90
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

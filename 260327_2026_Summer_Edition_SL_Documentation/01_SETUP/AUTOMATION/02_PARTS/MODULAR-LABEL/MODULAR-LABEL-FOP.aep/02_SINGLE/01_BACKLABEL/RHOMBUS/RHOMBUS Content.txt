@@ -1,0 +1,749 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:05:55
+Selected comps: 2
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/2: RHOMBUS_BACKLABEL_COLOR
+  Size: 531x652
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: CL_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: CL_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: QA_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: QA_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: FR_ED_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: FR_ED_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: IQ_SF_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: IQ_SF_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: BA_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: BA_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: CA_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: CA_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: QA_SF_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: QA_SF_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: LT_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: LT_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 9: KW_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: KW_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 10: EE_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EE_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 11: GB_SF_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: GB_SF_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 12: GB_ED_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: GB_ED_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 13: ZA_ZR_ALU/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ZA_ZR_ALU/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 14: ZA_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ZA_ZR_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 15: PH_ED_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: PH_ED_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 16: PH_SF_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: PH_SF_TAMPO/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.5, 326, 0]
+    • Position = [265.5, 326, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 17: USE THIS LAYERS TRANSFORM PROPERTIES [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.039, 325.984, 0]
+    • Position = [265.039, 325.984, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 2/2: ZR_BACKLABEL_DARK-BLUE
+  Size: 3790x2956
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: CL_ZR_DARK BLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: CL_ZR_DARK BLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.039, 325.984, 0]
+    • Position = [1891.37, 1478.041, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: QA_ZR_DARK_BLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: QA_ZR_DARK_BLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.039, 325.984, 0]
+    • Position = [1891.37, 1478.041, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: BA_ZR_DARKBLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: BA_ZR_DARKBLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.039, 325.984, 0]
+    • Position = [1891.37, 1478.041, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: CA_ZR_DARK_BLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: CA_ZR_DARK_BLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.039, 325.984, 0]
+    • Position = [1891.37, 1478.041, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: LT_ZR_DARK_BLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: LT_ZR_DARK_BLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.039, 325.984, 0]
+    • Position = [1891.37, 1478.041, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: KW_ZR_DARKBLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: KW_ZR_DARKBLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.039, 325.984, 0]
+    • Position = [1891.37, 1478.041, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: EE_ZR_DARKBLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EE_ZR_DARKBLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.039, 325.984, 0]
+    • Position = [1891.37, 1478.041, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: ZA_ZR_DARKBLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ZA_ZR_DARKBLUE/250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\02_SINGLE\01_BACKLABEL\RHOMBUS\AI_IMPORT\250ml_RHOMBUS_BACKLABEL_MASTER_CPU.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.039, 325.984, 0]
+    • Position = [1891.37, 1478.041, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 9: ZR DARKBLUE [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [997.083, 2024.382, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 10: USE THIS LAYERS TRANSFORM PROPERTIES [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [265.039, 325.984, 0]
+    • Position = [1891.37, 1478.041, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [799, 799, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

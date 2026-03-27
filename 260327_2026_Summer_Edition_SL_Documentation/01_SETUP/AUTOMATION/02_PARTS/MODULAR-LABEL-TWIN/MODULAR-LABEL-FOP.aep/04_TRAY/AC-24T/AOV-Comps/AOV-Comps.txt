@@ -1,0 +1,490 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:28:02
+Selected comps: 9
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/9: AC-24T_CAN LABEL MASK
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Cans_Tray_PuzzleMatte.PuzzleMatte.[0000-0006].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: Cans_Tray_PuzzleMatte.PuzzleMatte.[0000-0006].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-24T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 2
+      • Take Red From = 2
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Simple Choker  (ADBE Simple Choker)
+      • View = 1
+      • Choke Matte = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 2/9: AC-24T_CARDBOARD MASK
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.28s  (7f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Cans_Tray_PuzzleMatte.PuzzleMatte.[0000-0006].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: Cans_Tray_PuzzleMatte.PuzzleMatte.[0000-0006].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-24T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 4
+      • Take Red From = 2
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 3/9: AC-24T_OCCLUSION
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Cans_Tray_NEW_AO.AO.[0000-0007].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: Cans_Tray_NEW_AO.AO.[0000-0007].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-24T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_AO.AO.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 4/9: AC-24T_PUZZLEMATTE-CANS
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Cans_Tray_NEW_PuzzleMatte1.PuzzleMatte1.[0000-0007].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: Cans_Tray_NEW_PuzzleMatte1.PuzzleMatte1.[0000-0007].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\04_TRAY\AC-24T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_PuzzleMatte1.PuzzleMatte1.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 5/9: AC-24T_SPECULAR
+  Size: 5120x5120
+  FPS: 25
+  Duration: 6s  (150f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Cans_Tray_NEW_SpecularLighting.SpecularLighting.[0000-0006].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: Cans_Tray_NEW_SpecularLighting.SpecularLighting.[0000-0006].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-24T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_SpecularLighting.SpecularLighting.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 6/9: AC-24T_TAB MASK
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.24s  (6f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: White Solid 5 [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: White Solid 5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: Cans_Tray_PuzzleMatte.PuzzleMatte.[0000-0006].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: Cans_Tray_PuzzleMatte.PuzzleMatte.[0000-0006].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-24T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 4
+      • Take Red From = 10
+      • Take Green From = 10
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 7/9: AC-24T_TOP MASK
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.24s  (6f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: White Solid 5 [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: White Solid 5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: Cans_Tray_PuzzleMatte.PuzzleMatte.[0000-0006].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: Cans_Tray_PuzzleMatte.PuzzleMatte.[0000-0006].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-24T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 3
+      • Take Red From = 10
+      • Take Green From = 3
+      • Take Blue From = 10
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 8/9: AC-24T_TOP-ALL_MASK
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.24s  (6f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: White Solid 5 [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: White Solid 5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: Cans_Tray_PuzzleMatte.PuzzleMatte.[0000-0006].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: Cans_Tray_PuzzleMatte.PuzzleMatte.[0000-0006].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-24T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 1
+      • Take Red From = 10
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Channels  (ADBE Set Channels)
+      • Source Layer 1 = 0
+      • Set Red To Source 1’s = 1
+      • Source Layer 2 = 0
+      • Set Green To Source 2’s = 2
+      • Source Layer 3 = 0
+      • Set Blue To Source 3’s = 3
+      • Source Layer 4 = 0
+      • Set Alpha To Source 4’s = 8
+      • If Layer Sizes Differ = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 9/9: AC-24T_UV-PASS
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: UV-PASS_AC-24T [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: UV-PASS_AC-24T
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\04_TRAY\AC-24T\AOVs\masterLayer\RB_24erTray_250ml_MASTER_01_CANrot_UV_PASS_0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

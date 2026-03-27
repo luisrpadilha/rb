@@ -1,0 +1,436 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 11:53:53
+Selected comps: 1
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/1: 10s_16x9_MultipackKV
+  Size: 1920x1080
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 10.1s  (303f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: MAIN TEXT [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 61f
+  End frame (source-based): 361f
+  Visible trimmed range: 61f → 361f
+  Stretch: 100%
+  Source name: MAIN TEXT
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [866, 730, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [50, 50, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: FCO [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 197f
+  End frame (source-based): 497f
+  Visible trimmed range: 197f → 497f
+  Stretch: 100%
+  Source name: FCO
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1467.135, 2510.5, 0]
+    • Position = [1046.904, 737.673, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [16.3, 16.3, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: guide 2 lines [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-303.111, 85.778, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [459.222, 400.778, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 4
+    ----------------------------------------------------------
+    EFFECT 1: X  (ADBE Slider Control)
+      • Slider = 668
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Y  (ADBE Slider Control)
+      • Slider = 462
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Lock Anchor Point To...  (Pseudo/@@ZOcntlraTiaMBFG10AJV3A)
+      • Menu = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 4: EXTENDED FCO [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 192f
+  End frame (source-based): 193f
+  Visible trimmed range: 197f → 321f
+  Stretch: 100%
+  Source name: EXTENDED FCO
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: 2
+    • Marker 1: 6.567s (197f)
+    • Marker 2: 7s (210f)
+  Transforms:
+    • Anchor Point = [538.127, 1723.14, 0]
+    • Position = [1042.551, 747.793, 0]  {animated}
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [40, 40, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: RB_LOGO_VBAM [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 60f
+  End frame (source-based): 360f
+  Visible trimmed range: 193f → 360f
+  Stretch: 100%
+  Source name: RB_LOGO_VBAM
+  Time Remap: enabled
+    • Time Remap = 8.1  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1024, 1024, 0]
+    • Position = [443.408, 794.27, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [34.696, 34.696, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {expr:on}
+      01 | assetType=thisComp.layer("DATA").effect("Asset Type")("Menu");
+      02 | if (assetType == 1 || assetType == 3)
+      03 | 	value
+      04 | else
+      05 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Red Bull Logo Size (px)  (ADBE Point Control)
+      • Point = [186.736, 113.041]  {animated, expr:on}
+        01 | scaleFactor=transform.scale[0]/100;
+        02 | x=essentialProperty("Red Bull Logo Size (px)")[0]*scaleFactor;
+        03 | y=essentialProperty("Red Bull Logo Size (px)")[1]*scaleFactor;
+        04 | [x,y]
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 6: HEADLINE BLOCK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 165f
+  End frame (source-based): 465f
+  Visible trimmed range: 165f → 465f
+  Stretch: 100%
+  Source name: HEADLINE BLOCK
+  Time Remap: disabled
+  Layer markers: 2
+    • Marker 1: 6.1s (183f)  comment="Opacity Start"
+    • Marker 2: 6.533s (196f)  comment="Opacity end"
+  Transforms:
+    • Anchor Point = [1500, 1500, 0]
+    • Position = [459.222, 400.778, 0]  {animated, expr:on}
+      01 | thisComp.layer("guide 2 lines").transform.position
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [44.533, 44.533, 100]  {animated, expr:on}
+      01 | let limitW = thisComp.layer("guide 2 lines").content("Rectangle 1").content("Rectangle Path 1").size[0];
+      02 | let limitH = thisComp.layer("guide 2 lines").content("Rectangle 1").content("Rectangle Path 1").size[1];
+      03 | 
+      04 | // Get the positions of the null objects in comp space
+      05 | let topLeft = comp("HEADLINE BLOCK").layer("Top Left").toComp([0,0]);
+      06 | let topRight = comp("HEADLINE BLOCK").layer("Top Right").toComp([0,0]);
+      07 | let bottomLeft = comp("HEADLINE BLOCK").layer("Bottom Left").toComp([0,0]);
+      08 | let bottomRight = comp("HEADLINE BLOCK").layer("Bottom Right").toComp([0,0]);
+      09 | 
+      10 | // Calculate the width and height of the bounding box
+      11 | let sWidth = Math.abs(topRight[0] - topLeft[0]);
+      12 | let sHeight = Math.abs(bottomLeft[1] - topLeft[1]);
+      13 | 
+      14 | let sc = Math.min(100 * limitW / sWidth, 100 * limitH / sHeight, value[0]);
+      15 | [sc, sc];
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | thisLayer.effect("HL 2 LINES BLOCK")("Checkbox")*100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: HL 2 LINES BLOCK  (ADBE Checkbox Control)
+      • Checkbox = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 7: SHOT04_CLEAN [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 155f
+  End frame (source-based): 343f
+  Visible trimmed range: 155f → 343f
+  Stretch: 100%
+  Source name: SHOT04_CLEAN
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [983.51, 547.837, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: SHOT03 [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 113f
+  End frame (source-based): 301f
+  Visible trimmed range: 113f → 157f
+  Stretch: 100%
+  Source name: SHOT03
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [50, 50, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 9: SHOT02 [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 39f
+  End frame (source-based): 130f
+  Visible trimmed range: 40f → 114f
+  Stretch: 100%
+  Source name: SHOT02
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [960, 602, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [50, 50, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 10: SHOT01 [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 90f
+  Visible trimmed range: 0f → 40f
+  Stretch: 100%
+  Source name: SHOT01
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [50, 50, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 11: 1-2_FULLMIX-10s_16x9_1Can_SummerEdition_KV_WEBMX.wav [Audio]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 301f
+  Visible trimmed range: 0f → 301f
+  Stretch: 100%
+  Source name: 1-2_FULLMIX-10s_16x9_1Can_SummerEdition_KV_WEBMX.wav
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\Audio\1-2_FULLMIX-10s_16x9_1Can_SummerEdition_KV_WEBMX.wav
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.5, 0.5, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

@@ -1,0 +1,310 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:15:22
+Selected comps: 2
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/2: AC-6x4PT_CAN LABEL MASK
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: HPDW_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0003}.exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 4f
+  Visible trimmed range: 0f → 4f
+  Stretch: 100%
+  Source name: HPDW_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0003}.exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\04_TRAY\AC-6x4PT\AOVs\HPDW\Cans_Tray_NEW\HPDW_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | labelType = comp("DATA").layer("LABEL TYPE").text.sourceText.toLowerCase();
+      02 | layerType = thisLayer.name.split("_")[0].toLowerCase();
+      03 | labelType === layerType ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 2
+      • Take Red From = 2
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Simple Choker  (ADBE Simple Choker)
+      • View = 1
+      • Choke Matte = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: CSO_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0007}.exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: CSO_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0007}.exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\04_TRAY\AC-6x4PT\AOVs\CSO\Cans_Tray_NEW\AC-6x4PT_Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | labelType = comp("DATA").layer("LABEL TYPE").text.sourceText.toLowerCase();
+      02 | layerType = thisLayer.name.split("_")[0].toLowerCase();
+      03 | labelType === layerType ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 2
+      • Take Red From = 2
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Simple Choker  (ADBE Simple Choker)
+      • View = 1
+      • Choke Matte = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 2/2: AC-6x4PT_TRAY-LABEL_MASK
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: CSCDD-GB_AC-6x4PT_Cans_Tray.PuzzleMatte.{0-5}.exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 6f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: CSCDD-GB_AC-6x4PT_Cans_Tray.PuzzleMatte.{0-5}.exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-6x4PT\AOVs\CSCDD-GB\Cans_Tray\CSCDD-GB_AC-6x4PT_Cans_Tray.PuzzleMatte.0.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | labelType = comp("DATA").layer("LABEL TYPE").text.sourceText.toLowerCase();
+      02 | layerType = thisLayer.name.split("_")[0].toLowerCase();
+      03 | labelType === layerType ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 3
+      • Take Red From = 2
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: CSCDD_AC-6x4PT_TRAY-LABEL_MASK_PRE [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: CSCDD_AC-6x4PT_TRAY-LABEL_MASK_PRE
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | labelType = comp("DATA").layer("LABEL TYPE").text.sourceText.toLowerCase();
+      02 | layerType = thisLayer.name.split("_")[0].toLowerCase();
+      03 | labelType === layerType ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: MASK [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [229.333, -997.333, 0]
+    • Position = [2560, 1578.667, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [118.539, 100, 100]  {animated}
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("HPDW_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0003}.exr").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: HPDW_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0003}.exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 4f
+  Visible trimmed range: 0f → 4f
+  Stretch: 100%
+  Source name: HPDW_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0003}.exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\04_TRAY\AC-6x4PT\AOVs\HPDW\Cans_Tray_NEW\HPDW_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | labelType = comp("DATA").layer("LABEL TYPE").text.sourceText.toLowerCase();
+      02 | layerType = thisLayer.name.split("_")[0].toLowerCase();
+      03 | labelType === layerType ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 4
+      • Take Red From = 2
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 5: CSO_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte2.PuzzleMatte2.{0000-0007}.exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: CSO_AC-6x4PT_Cans_Tray_NEW_PuzzleMatte2.PuzzleMatte2.{0000-0007}.exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-6x4PT\AOVs\CSO\Cans_Tray_NEW\AC-6x4PT_Cans_Tray_NEW_PuzzleMatte2.PuzzleMatte2.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | labelType = comp("DATA").layer("LABEL TYPE").text.sourceText.toLowerCase();
+      02 | layerType = thisLayer.name.split("_")[0].toLowerCase();
+      03 | labelType === layerType ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 4
+      • Take Red From = 2
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [0, 0, 1, 1]
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+

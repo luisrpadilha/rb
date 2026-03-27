@@ -1,0 +1,108 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:16:01
+Selected comps: 2
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/2: AC-12T_CAN LABEL MASK
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0006}.exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 7f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0006}.exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-12T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 2
+      • Take Red From = 2
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Simple Choker  (ADBE Simple Choker)
+      • View = 1
+      • Choke Matte = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 2/2: AC-12T_CARDBOARD MASK
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.28s  (7f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0006}.exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 7f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.{0000-0006}.exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-12T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_PuzzleMatte.PuzzleMatte.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 4
+      • Take Red From = 2
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+

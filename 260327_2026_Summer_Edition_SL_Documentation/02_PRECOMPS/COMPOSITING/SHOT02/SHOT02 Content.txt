@@ -1,0 +1,3892 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:32:32
+Selected comps: 10
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/10: SHOT02
+  Size: 3840x3840
+  FPS: 30
+  Duration: 3.033s  (91f)
+  Sample time: 1.7s  (51f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: SHOT02_CAN_SL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 77f
+  Stretch: 100%
+  Source name: SHOT02_CAN_SL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: SHOT02_BG.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 94f
+  Visible trimmed range: 0f → 94f
+  Stretch: 100%
+  Source name: SHOT02_BG.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\SHOT02_BG.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Selective Color  (ADBE SelectiveColor)
+      • Method: = 1
+      • Colors: = 1
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      • Details = "<cannot read value>"
+      • Reds = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Yellows = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 25
+      • Yellow = 36
+      • Black = 0
+      •  = "<cannot read value>"
+      • Greens = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Cyans = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Blues = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Magentas = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Whites = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Neutrals = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 97
+      • Black = 0
+      •  = "<cannot read value>"
+      • Blacks = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Fast Box Blur  (ADBE Box Blur2)
+      • Blur Radius = 25
+      • Iterations = 3
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: Yellow Solid 7 [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Yellow Solid 7
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Gradient Ramp  (ADBE Ramp)
+      • Start of Ramp = [3299.265, 286.787]
+      • Start Color = [0.851, 0.805, 0.092, 1]
+      • End of Ramp = [1788.641, 4484.694]
+      • End Color = [0.788, 0.6, 0.001, 1]
+      • Ramp Shape = 1
+      • Ramp Scatter = 0
+      • Blend With Original = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 2/10: SHOT02_4by5
+  Size: 3840x5500
+  FPS: 30
+  Duration: 3.033s  (91f)
+  Sample time: 8.5s  (255f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: SHOT02_CAN_SL_4by5 [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: SHOT02_CAN_SL_4by5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [105, 105, 100]  {animated}
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: SHOT02_BG_4by5.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_BG_4by5.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\SHOT02_BG_4by5.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2542, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [108, 108, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Selective Color  (ADBE SelectiveColor)
+      • Method: = 1
+      • Colors: = 1
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      • Details = "<cannot read value>"
+      • Reds = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Yellows = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 35
+      • Yellow = 64
+      • Black = 35
+      •  = "<cannot read value>"
+      • Greens = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Cyans = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Blues = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Magentas = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Whites = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 92
+      • Black = 24
+      •  = "<cannot read value>"
+      • Neutrals = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 10
+      • Yellow = 100
+      • Black = 10
+      •  = "<cannot read value>"
+      • Blacks = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Fast Box Blur  (ADBE Box Blur2)
+      • Blur Radius = 25
+      • Iterations = 3
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Lumetri Color  (ADBE Lumetri)
+      • Blob = "<cannot read value>"
+      • High Dynamic Range = 0
+      • Basic Correction = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Input LUT = 1
+      • Input LUT = 1
+      • HDR White = 100
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Intensity = 50
+      • Color = "<cannot read value>"
+      • White Balance = [0.753, 0.753, 0.753, 1]
+      • Temperature = 2
+      • Tint = 0
+      • Saturation = 107
+      •  = "<cannot read value>"
+      • Light = "<cannot read value>"
+      • Exposure = 0
+      • Contrast = 0
+      • Highlights = 0
+      • Shadows = 0
+      • Whites = 0
+      • Blacks = 0
+      • HDR Specular = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Creative = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Look = 1
+      • Look = 1
+      •  = "<cannot read value>"
+      • Color Space = 27
+      • Intensity = 100
+      • Adjustments = "<cannot read value>"
+      • Faded Film = 0
+      • Sharpen = 0
+      • Vibrance = 0
+      • Saturation = 100
+      • Split Toning = "<cannot read value>"
+      • Tint Balance = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Curves = "<cannot read value>"
+      • Active = 1
+      • RGB Curves = "<cannot read value>"
+      • Active = 1
+      • HDR Range = 100
+      • RGB Curve = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Hue Saturation Curves = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Hue vs Sat = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Hue) Selector = [0, 0, 0.004, 1]
+      • Hue vs Hue = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Luma) Selector = [0, 0, 0.004, 1]
+      • Hue vs Luma = "<cannot read value>"
+      • Active = 1
+      • Luma (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Luma vs Sat = "<cannot read value>"
+      • Active = 1
+      • Sat (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Sat vs Sat = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      • Face Detection = 1
+      •  = "<cannot read value>"
+      • HDR White = 100
+      • Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • HSL Secondary = "<cannot read value>"
+      • Active = 1
+      • Key = "<cannot read value>"
+      • Set color = [0, 0, 0, 1]
+      • Add color = [0, 0, 0, 1]
+      • Remove color = [0, 0, 0, 1]
+      • HSL Sliders = "<cannot read value>"
+      • Show Mask = 0
+      •  = 1
+      • Invert Mask = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Refine = "<cannot read value>"
+      • Denoise = 0
+      • Blur = 0
+      • Blur = "<cannot read value>"
+      • Correction = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Temperature = 0
+      • Tint = 0
+      • Contrast = 0
+      • Sharpen = 0
+      • Saturation = 100
+      • Saturation = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Vignette = "<cannot read value>"
+      • Active = 1
+      • Amount = 0
+      • Midpoint = 50
+      • Roundness = 0
+      • Feather = 50
+      •  = "<cannot read value>"
+      • SpeedGrade Custom = "<cannot read value>"
+      • Custom Layer = 1
+      • unused = "<cannot read value>"
+      • unused = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Legacy Tone And Saturation = 0
+      • Embedded LUTs = "<cannot read value>"
+      • Media Embedded LUT type = "<cannot read value>"
+      • Media Embedded Lut blob = "<cannot read value>"
+      • SemanticAutoTone Progress = -1
+      • Auto Tone Analytics Data = "<cannot read value>"
+      • Auto Color Active... = 0
+      • LUTAsset = "<cannot read value>"
+      • LookAsset = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: Shape Layer 1 [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 94
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: Yellow Solid 7 [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Yellow Solid 7
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Gradient Ramp  (ADBE Ramp)
+      • Start of Ramp = [3299.265, 286.787]
+      • Start Color = [0.804, 0.761, 0.098, 1]
+      • End of Ramp = [1788.641, 4484.694]
+      • End Color = [0.788, 0.6, 0.001, 1]
+      • Ramp Shape = 1
+      • Ramp Scatter = 0
+      • Blend With Original = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 3/10: SHOT02_CAN_SL
+  Size: 3840x3840
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 1.7s  (51f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: (oo) Motion_blur [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Adjustment Layer 120
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [3165.143, 2314.286, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Directional Blur  (ADBE Motion Blur)
+      • Direction = 90
+      • Blur Length = 0  {animated}
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: DOF_ALL [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Adjustment Layer 115
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: FL Depth Of Field  (DRFL Depth of Field)
+      • show = 1
+      • depth layer = 10
+      • radius = 60
+      • focal point = 235
+      • select depth = [1828, 2576]
+      • highlight intensity = 1
+      • gamma correction = 1
+      • -> Depth Buffer... = "<cannot read value>"
+      • invert = 0
+      • curve = 1
+      • take depth from: = 1
+      • black point = -10000
+      • white point = 10000
+      • auto range = 0
+      •  = "<cannot read value>"
+      • -> Iris.. = "<cannot read value>"
+      • alternative iris (beta) = 0
+      • facets = 3
+      • angle = 0
+      • rounded facets = 1
+      • relative border brightness = 0
+      • border thickness = 0.3
+      • x-y aspect = 0
+      •  = "<cannot read value>"
+      • -> Highlight Selection... = "<cannot read value>"
+      • enable = 0
+      • alternative Selection layer = 0
+      • -> Lightness... = "<cannot read value>"
+      • lightness start = 200
+      • lightness end = 255
+      • lightness climax = 1
+      • lightness soften = 0
+      • lightness offset = 0
+      •  = "<cannot read value>"
+      • -> Hue... = "<cannot read value>"
+      • hue start = 0
+      • hue end = 255
+      • hue climax = 1
+      • hue soften = 0
+      • hue offset = 0
+      •  = "<cannot read value>"
+      • -> Saturation... = "<cannot read value>"
+      • saturation start = 0
+      • saturation end = 255
+      • saturation climax = 1
+      • saturation soften = 0
+      • saturation offset = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • -> Outside Image... = "<cannot read value>"
+      • horizontal assume = 1
+      • vertical assume = 1
+      • outside color = [0, 0, 0, 1]
+      • outside color alpha = 255
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: Modular_Label_SF_Banderoles [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1200f
+  Visible trimmed range: 0f → 1200f
+  Stretch: 100%
+  Source name: Modular_Label_SF_Banderoles
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [1250, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: DOF_CAN [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Adjustment Layer 104
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: FL Depth Of Field  (DRFL Depth of Field)
+      • show = 1
+      • depth layer = 11
+      • radius = 35
+      • focal point = 236.6  {animated}
+      • select depth = [2098.286, 754.286]
+      • highlight intensity = 1
+      • gamma correction = 1
+      • -> Depth Buffer... = "<cannot read value>"
+      • invert = 0
+      • curve = 1
+      • take depth from: = 1
+      • black point = -10000
+      • white point = 10000
+      • auto range = 0
+      •  = "<cannot read value>"
+      • -> Iris.. = "<cannot read value>"
+      • alternative iris (beta) = 0
+      • facets = 3
+      • angle = 0
+      • rounded facets = 1
+      • relative border brightness = 0
+      • border thickness = 0.3
+      • x-y aspect = 0
+      •  = "<cannot read value>"
+      • -> Highlight Selection... = "<cannot read value>"
+      • enable = 0
+      • alternative Selection layer = 0
+      • -> Lightness... = "<cannot read value>"
+      • lightness start = 200
+      • lightness end = 255
+      • lightness climax = 1
+      • lightness soften = 0
+      • lightness offset = 0
+      •  = "<cannot read value>"
+      • -> Hue... = "<cannot read value>"
+      • hue start = 0
+      • hue end = 255
+      • hue climax = 1
+      • hue soften = 0
+      • hue offset = 0
+      •  = "<cannot read value>"
+      • -> Saturation... = "<cannot read value>"
+      • saturation start = 0
+      • saturation end = 255
+      • saturation climax = 1
+      • saturation soften = 0
+      • saturation offset = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • -> Outside Image... = "<cannot read value>"
+      • horizontal assume = 1
+      • vertical assume = 1
+      • outside color = [0, 0, 0, 1]
+      • outside color alpha = 255
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 5: EDITIONS_MODULAR_LABEL_UPSCALE [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 188f
+  Stretch: 100%
+  Source name: EDITIONS_MODULAR_LABEL_UPSCALE
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [1250, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | if (comp("DATA").layer("DISRUPTOR TYPE").text.sourceText=="FLAG")
+      02 | 	100
+      03 | else
+      04 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: EDITIONS_FOP_COL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 181f
+  Stretch: 100%
+  Source name: EDITIONS_FOP_COL
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [1250, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: UVDRPS_SF_[0000-0090].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: UVDRPS[0000-0090].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\UVDRPS\UVDRPS0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 4
+    ----------------------------------------------------------
+    EFFECT 1: EXtractoR  (EXtractoR)
+      • Channel Info = "<cannot read value>"
+      • Process = "<cannot read value>"
+      • Black Point = 0
+      • White Point = 1
+      • UnMult = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Fast Box Blur  (ADBE Box Blur2)
+      • Blur Radius = 1
+      • Iterations = 2
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: RE:Map UV  (UV Mapper Pete)
+      • Activation = "<cannot read value>"
+      • forcererender = 0
+      • Activate GPU = "<cannot read value>"
+      • Use GPU = 2
+      • Less GPU Mem = 1
+      •  = "<cannot read value>"
+      • Use GPU = 2
+      • Hidden Flag = 0
+      • Less GPU Mem = 1
+      • Warp Mode = 1
+      • Texture = 3
+      • Crop Top Left TexMap = [0, 0]
+      • Crop Bottom Right TexMap = [3840, 3840]
+      • Tile Repeat X = 1
+      • Tile Repeat Y = 1
+      • Flip = 1
+      • Tile Repeat Pattern X = 1
+      • Tile Repeat Pattern Y = 1
+      • Position Offset X = 0.006
+      • Position Offset Y = 0.001
+      • MipMap? = 1
+      • Mip Amount % = 66.66
+      • Edges Threshold % = 0.51
+      • Match Renderer = 1
+      • Adaptive Sharpening = 0
+      • Version = 40202
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: Compound Blur  (ADBE Compound Blur)
+      • Blur Layer = 11
+      • Maximum Blur = 17
+      • If Layer Sizes Differ = 1
+      • Invert Blur = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 8: UVDRPS_FOP[0000-0090].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: UVDRPS[0000-0090].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\UVDRPS\UVDRPS0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 4
+    ----------------------------------------------------------
+    EFFECT 1: EXtractoR  (EXtractoR)
+      • Channel Info = "<cannot read value>"
+      • Process = "<cannot read value>"
+      • Black Point = 0
+      • White Point = 1
+      • UnMult = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Fast Box Blur  (ADBE Box Blur2)
+      • Blur Radius = 1
+      • Iterations = 2
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: RE:Map UV  (UV Mapper Pete)
+      • Activation = "<cannot read value>"
+      • forcererender = 0
+      • Activate GPU = "<cannot read value>"
+      • Use GPU = 2
+      • Less GPU Mem = 1
+      •  = "<cannot read value>"
+      • Use GPU = 2
+      • Hidden Flag = 0
+      • Less GPU Mem = 1
+      • Warp Mode = 1
+      • Texture = 6
+      • Crop Top Left TexMap = [0, 0]
+      • Crop Bottom Right TexMap = [3840, 3840]
+      • Tile Repeat X = 1
+      • Tile Repeat Y = 1
+      • Flip = 1
+      • Tile Repeat Pattern X = 1
+      • Tile Repeat Pattern Y = 1
+      • Position Offset X = 0.006
+      • Position Offset Y = 0.001
+      • MipMap? = 1
+      • Mip Amount % = 66.66
+      • Edges Threshold % = 0.51
+      • Match Renderer = 1
+      • Adaptive Sharpening = 0
+      • Version = 40202
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: Compound Blur  (ADBE Compound Blur)
+      • Blur Layer = 11
+      • Maximum Blur = 17
+      • If Layer Sizes Differ = 1
+      • Invert Blur = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 9: UVDRPS[0000-0090].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: UVDRPS[0000-0090].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\UVDRPS\UVDRPS0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 4
+    ----------------------------------------------------------
+    EFFECT 1: EXtractoR  (EXtractoR)
+      • Channel Info = "<cannot read value>"
+      • Process = "<cannot read value>"
+      • Black Point = 0
+      • White Point = 1
+      • UnMult = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Fast Box Blur  (ADBE Box Blur2)
+      • Blur Radius = 1
+      • Iterations = 2
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: RE:Map UV  (UV Mapper Pete)
+      • Activation = "<cannot read value>"
+      • forcererender = 0
+      • Activate GPU = "<cannot read value>"
+      • Use GPU = 2
+      • Less GPU Mem = 1
+      •  = "<cannot read value>"
+      • Use GPU = 2
+      • Hidden Flag = 0
+      • Less GPU Mem = 1
+      • Warp Mode = 1
+      • Texture = 5
+      • Crop Top Left TexMap = [0, 0]
+      • Crop Bottom Right TexMap = [3840, 3840]
+      • Tile Repeat X = 1
+      • Tile Repeat Y = 1
+      • Flip = 1
+      • Tile Repeat Pattern X = 1
+      • Tile Repeat Pattern Y = 1
+      • Position Offset X = 0.006
+      • Position Offset Y = 0.001
+      • MipMap? = 1
+      • Mip Amount % = 66.66
+      • Edges Threshold % = 0.51
+      • Match Renderer = 1
+      • Adaptive Sharpening = 0
+      • Version = 40202
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: Compound Blur  (ADBE Compound Blur)
+      • Blur Layer = 11
+      • Maximum Blur = 17
+      • If Layer Sizes Differ = 1
+      • Invert Blur = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 10: SHOT02_Depth_All_SL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_Depth_All_SL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1919.5, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 11: SHOT02_Depth_can_only_SL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: SHOT02_Depth_can_only_SL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 12: Darker_FCO [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Adjustment Layer 142
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Lumetri Color  (ADBE Lumetri)
+      • Blob = "<cannot read value>"
+      • High Dynamic Range = 0
+      • Basic Correction = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Input LUT = 1
+      • Input LUT = 1
+      • HDR White = 100
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Intensity = 50
+      • Color = "<cannot read value>"
+      • White Balance = [0.753, 0.753, 0.753, 1]
+      • Temperature = 0
+      • Tint = 0
+      • Saturation = 100
+      •  = "<cannot read value>"
+      • Light = "<cannot read value>"
+      • Exposure = 0
+      • Contrast = 0
+      • Highlights = -40
+      • Shadows = 0
+      • Whites = 0
+      • Blacks = 0
+      • HDR Specular = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Creative = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Look = 1
+      • Look = 1
+      •  = "<cannot read value>"
+      • Color Space = 27
+      • Intensity = 100
+      • Adjustments = "<cannot read value>"
+      • Faded Film = 0
+      • Sharpen = 0
+      • Vibrance = 0
+      • Saturation = 100
+      • Split Toning = "<cannot read value>"
+      • Tint Balance = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Curves = "<cannot read value>"
+      • Active = 1
+      • RGB Curves = "<cannot read value>"
+      • Active = 1
+      • HDR Range = 100
+      • RGB Curve = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Hue Saturation Curves = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Hue vs Sat = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Hue) Selector = [0, 0, 0.004, 1]
+      • Hue vs Hue = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Luma) Selector = [0, 0, 0.004, 1]
+      • Hue vs Luma = "<cannot read value>"
+      • Active = 1
+      • Luma (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Luma vs Sat = "<cannot read value>"
+      • Active = 1
+      • Sat (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Sat vs Sat = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      • Face Detection = 1
+      •  = "<cannot read value>"
+      • HDR White = 100
+      • Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • HSL Secondary = "<cannot read value>"
+      • Active = 1
+      • Key = "<cannot read value>"
+      • Set color = [0, 0, 0, 1]
+      • Add color = [0, 0, 0, 1]
+      • Remove color = [0, 0, 0, 1]
+      • HSL Sliders = "<cannot read value>"
+      • Show Mask = 0
+      •  = 1
+      • Invert Mask = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Refine = "<cannot read value>"
+      • Denoise = 0
+      • Blur = 0
+      • Blur = "<cannot read value>"
+      • Correction = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Temperature = 0
+      • Tint = 0
+      • Contrast = 0
+      • Sharpen = 0
+      • Saturation = 100
+      • Saturation = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Vignette = "<cannot read value>"
+      • Active = 1
+      • Amount = 0
+      • Midpoint = 50
+      • Roundness = 0
+      • Feather = 50
+      •  = "<cannot read value>"
+      • SpeedGrade Custom = "<cannot read value>"
+      • Custom Layer = 1
+      • unused = "<cannot read value>"
+      • unused = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Legacy Tone And Saturation = 0
+      • Embedded LUTs = "<cannot read value>"
+      • Media Embedded LUT type = "<cannot read value>"
+      • Media Embedded Lut blob = "<cannot read value>"
+      • SemanticAutoTone Progress = -1
+      • Auto Tone Analytics Data = "<cannot read value>"
+      • Auto Color Active... = 0
+      • LUTAsset = "<cannot read value>"
+      • LookAsset = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 13: Right_Edge_Color_Correction 2 [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 188f
+  Stretch: 100%
+  Source name: Adjustment Layer 66
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [3840, 3840, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [68, 68, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 40  {animated}
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lumetri Color  (ADBE Lumetri)
+      • Blob = "<cannot read value>"
+      • High Dynamic Range = 0
+      • Basic Correction = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Input LUT = 1
+      • Input LUT = 1
+      • HDR White = 100
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Intensity = 50
+      • Color = "<cannot read value>"
+      • White Balance = [0.753, 0.753, 0.753, 1]
+      • Temperature = 0
+      • Tint = 0
+      • Saturation = 100
+      •  = "<cannot read value>"
+      • Light = "<cannot read value>"
+      • Exposure = 0
+      • Contrast = 0
+      • Highlights = 55
+      • Shadows = 0
+      • Whites = 0
+      • Blacks = 0
+      • HDR Specular = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Creative = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Look = 1
+      • Look = 1
+      •  = "<cannot read value>"
+      • Color Space = 27
+      • Intensity = 100
+      • Adjustments = "<cannot read value>"
+      • Faded Film = 0
+      • Sharpen = 0
+      • Vibrance = 0
+      • Saturation = 100
+      • Split Toning = "<cannot read value>"
+      • Tint Balance = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Curves = "<cannot read value>"
+      • Active = 1
+      • RGB Curves = "<cannot read value>"
+      • Active = 1
+      • HDR Range = 100
+      • RGB Curve = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Hue Saturation Curves = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Hue vs Sat = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Hue) Selector = [0, 0, 0.004, 1]
+      • Hue vs Hue = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Luma) Selector = [0, 0, 0.004, 1]
+      • Hue vs Luma = "<cannot read value>"
+      • Active = 1
+      • Luma (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Luma vs Sat = "<cannot read value>"
+      • Active = 1
+      • Sat (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Sat vs Sat = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      • Face Detection = 1
+      •  = "<cannot read value>"
+      • HDR White = 100
+      • Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • HSL Secondary = "<cannot read value>"
+      • Active = 1
+      • Key = "<cannot read value>"
+      • Set color = [0, 0, 0, 1]
+      • Add color = [0, 0, 0, 1]
+      • Remove color = [0, 0, 0, 1]
+      • HSL Sliders = "<cannot read value>"
+      • Show Mask = 0
+      •  = 1
+      • Invert Mask = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Refine = "<cannot read value>"
+      • Denoise = 0
+      • Blur = 0
+      • Blur = "<cannot read value>"
+      • Correction = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Temperature = 0
+      • Tint = 0
+      • Contrast = 0
+      • Sharpen = 0
+      • Saturation = 100
+      • Saturation = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Vignette = "<cannot read value>"
+      • Active = 1
+      • Amount = 0
+      • Midpoint = 50
+      • Roundness = 0
+      • Feather = 50
+      •  = "<cannot read value>"
+      • SpeedGrade Custom = "<cannot read value>"
+      • Custom Layer = 1
+      • unused = "<cannot read value>"
+      • unused = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Legacy Tone And Saturation = 0
+      • Embedded LUTs = "<cannot read value>"
+      • Media Embedded LUT type = "<cannot read value>"
+      • Media Embedded Lut blob = "<cannot read value>"
+      • SemanticAutoTone Progress = -1
+      • Auto Tone Analytics Data = "<cannot read value>"
+      • Auto Color Active... = 0
+      • LUTAsset = "<cannot read value>"
+      • LookAsset = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Tint  (ADBE Tint)
+      • Map Black To = [1, 0.933, 0, 1]
+      • Map White To = [1, 0.933, 0, 1]
+      • Amount to Tint = 100
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 14: SHOT02_COL_WHITE_SF [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 94f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_COL_BLUE_SF
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | const lib = footage("expressionLibrary.jsx").sourceData;
+      02 | lib.sfCheck() == 100 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 7
+      • Use For Matte = 1
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Tint  (ADBE Tint)
+      • Map Black To = [0.558, 0.558, 0.558, 1]
+      • Map White To = [1, 1, 1, 0]
+      • Amount to Tint = 100
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 15: SHOT02_COL_BLUE_SF [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 94f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_COL_BLUE_SF
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | const lib = footage("expressionLibrary.jsx").sourceData;
+      02 | lib.sfCheck() == 100 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 7
+      • Use For Matte = 2
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Hue/Saturation  (ADBE HUE SATURATION)
+      • Channel Control = 1
+      • Channel Range = "<cannot read value>"
+      • Master Hue = 0
+      • Master Saturation = 0
+      • Master Lightness = 0
+      • Colorize = 0
+      • Colorize Hue = 0
+      • Colorize Saturation = 25
+      • Colorize Lightness = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 16: SHOT02_BRAUN_DOF.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 94f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_BRAUN_DOF.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\SHOT02_BRAUN_DOF.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 4
+    ----------------------------------------------------------
+    EFFECT 1: Matte Choker  (ADBE Matte Choker)
+      • Geometric Softness 1 = 28.1
+      • Choke 1 = 105
+      • Gray Level Softness 1 = 0.1
+      • Geometric Softness 2 = 0
+      • Choke 2 = 0
+      • Gray Level Softness 2 = 1
+      • Iterations = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 9
+      • Use For Matte = 2
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Selective Color  (ADBE SelectiveColor)
+      • Method: = 1
+      • Colors: = 1
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      • Details = "<cannot read value>"
+      • Reds = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Yellows = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Greens = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Cyans = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Blues = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Magentas = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Whites = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Neutrals = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = -6
+      •  = "<cannot read value>"
+      • Blacks = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: Lumetri Color  (ADBE Lumetri)
+      • Blob = "<cannot read value>"
+      • High Dynamic Range = 0
+      • Basic Correction = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Input LUT = 1
+      • Input LUT = 1
+      • HDR White = 100
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Intensity = 50
+      • Color = "<cannot read value>"
+      • White Balance = [0.753, 0.753, 0.753, 1]
+      • Temperature = 0
+      • Tint = 0
+      • Saturation = 100
+      •  = "<cannot read value>"
+      • Light = "<cannot read value>"
+      • Exposure = 0
+      • Contrast = 31
+      • Highlights = -80
+      • Shadows = 0
+      • Whites = 0
+      • Blacks = 0
+      • HDR Specular = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Creative = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Look = 1
+      • Look = 1
+      •  = "<cannot read value>"
+      • Color Space = 27
+      • Intensity = 100
+      • Adjustments = "<cannot read value>"
+      • Faded Film = 0
+      • Sharpen = 0
+      • Vibrance = 0
+      • Saturation = 100
+      • Split Toning = "<cannot read value>"
+      • Tint Balance = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Curves = "<cannot read value>"
+      • Active = 1
+      • RGB Curves = "<cannot read value>"
+      • Active = 1
+      • HDR Range = 100
+      • RGB Curve = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Hue Saturation Curves = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Hue vs Sat = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Hue) Selector = [0, 0, 0.004, 1]
+      • Hue vs Hue = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Luma) Selector = [0, 0, 0.004, 1]
+      • Hue vs Luma = "<cannot read value>"
+      • Active = 1
+      • Luma (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Luma vs Sat = "<cannot read value>"
+      • Active = 1
+      • Sat (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Sat vs Sat = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      • Face Detection = 1
+      •  = "<cannot read value>"
+      • HDR White = 100
+      • Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • HSL Secondary = "<cannot read value>"
+      • Active = 1
+      • Key = "<cannot read value>"
+      • Set color = [0, 0, 0, 1]
+      • Add color = [0, 0, 0, 1]
+      • Remove color = [0, 0, 0, 1]
+      • HSL Sliders = "<cannot read value>"
+      • Show Mask = 0
+      •  = 1
+      • Invert Mask = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Refine = "<cannot read value>"
+      • Denoise = 0
+      • Blur = 0
+      • Blur = "<cannot read value>"
+      • Correction = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Temperature = 0
+      • Tint = 0
+      • Contrast = 0
+      • Sharpen = 0
+      • Saturation = 100
+      • Saturation = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Vignette = "<cannot read value>"
+      • Active = 1
+      • Amount = 0
+      • Midpoint = 50
+      • Roundness = 0
+      • Feather = 50
+      •  = "<cannot read value>"
+      • SpeedGrade Custom = "<cannot read value>"
+      • Custom Layer = 1
+      • unused = "<cannot read value>"
+      • unused = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Legacy Tone And Saturation = 0
+      • Embedded LUTs = "<cannot read value>"
+      • Media Embedded LUT type = "<cannot read value>"
+      • Media Embedded Lut blob = "<cannot read value>"
+      • SemanticAutoTone Progress = -1
+      • Auto Tone Analytics Data = "<cannot read value>"
+      • Auto Color Active... = 0
+      • LUTAsset = "<cannot read value>"
+      • LookAsset = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 17: SHOT02_ALU_DOF.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 94f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_ALU_DOF.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\SHOT02_ALU_DOF.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Matte Choker  (ADBE Matte Choker)
+      • Geometric Softness 1 = 46.2
+      • Choke 1 = 127
+      • Gray Level Softness 1 = 0.25
+      • Geometric Softness 2 = 2.2
+      • Choke 2 = 0
+      • Gray Level Softness 2 = 1
+      • Iterations = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 9
+      • Use For Matte = 4
+      • Invert Matte = 1
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 18: SHOT02_DRPS_DOF.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 94f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_DRPS_DOF.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\SHOT02_DRPS_DOF.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Matte Choker  (ADBE Matte Choker)
+      • Geometric Softness 1 = 4
+      • Choke 1 = 119
+      • Gray Level Softness 1 = 0.1
+      • Geometric Softness 2 = 0
+      • Choke 2 = 0
+      • Gray Level Softness 2 = 1
+      • Iterations = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Selective Color  (ADBE SelectiveColor)
+      • Method: = 1
+      • Colors: = 1
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      • Details = "<cannot read value>"
+      • Reds = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Yellows = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 24
+      • Black = 16
+      •  = "<cannot read value>"
+      • Greens = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Cyans = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Blues = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Magentas = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Whites = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Neutrals = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Blacks = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 19: SHOT02_COL_DOF.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 94f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_COL_DOF.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\SHOT02_COL_DOF.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Matte Choker  (ADBE Matte Choker)
+      • Geometric Softness 1 = 30
+      • Choke 1 = 80
+      • Gray Level Softness 1 = 0.1
+      • Geometric Softness 2 = 7
+      • Choke 2 = 0
+      • Gray Level Softness 2 = 1
+      • Iterations = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 4/10: SHOT02_CAN_SL_4by5
+  Size: 3840x5500
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 8.5s  (255f)
+  Comp markers: 2
+    • Marker 1: 2.267s (68f)  comment="1"
+    • Marker 2: 2.567s (77f)  comment="2"
+------------------------------------------------------------
+
+LAYER 1: (oo) Motion_blur [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Adjustment Layer 160
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1916, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Directional Blur  (ADBE Motion Blur)
+      • Direction = 90
+      • Blur Length = 25  {animated}
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: DOF_CAN [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Adjustment Layer 154
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: FL Depth Of Field  (DRFL Depth of Field)
+      • show = 1
+      • depth layer = 11
+      • radius = 40
+      • focal point = 255  {animated}
+      • select depth = [1801.143, 2249.143]
+      • highlight intensity = 1
+      • gamma correction = 1
+      • -> Depth Buffer... = "<cannot read value>"
+      • invert = 0
+      • curve = 1
+      • take depth from: = 1
+      • black point = -10000
+      • white point = 10000
+      • auto range = 0
+      •  = "<cannot read value>"
+      • -> Iris.. = "<cannot read value>"
+      • alternative iris (beta) = 0
+      • facets = 3
+      • angle = 0
+      • rounded facets = 1
+      • relative border brightness = 0
+      • border thickness = 0.3
+      • x-y aspect = 0
+      •  = "<cannot read value>"
+      • -> Highlight Selection... = "<cannot read value>"
+      • enable = 0
+      • alternative Selection layer = 0
+      • -> Lightness... = "<cannot read value>"
+      • lightness start = 200
+      • lightness end = 255
+      • lightness climax = 1
+      • lightness soften = 0
+      • lightness offset = 0
+      •  = "<cannot read value>"
+      • -> Hue... = "<cannot read value>"
+      • hue start = 0
+      • hue end = 255
+      • hue climax = 1
+      • hue soften = 0
+      • hue offset = 0
+      •  = "<cannot read value>"
+      • -> Saturation... = "<cannot read value>"
+      • saturation start = 0
+      • saturation end = 255
+      • saturation climax = 1
+      • saturation soften = 0
+      • saturation offset = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • -> Outside Image... = "<cannot read value>"
+      • horizontal assume = 1
+      • vertical assume = 1
+      • outside color = [0, 0, 0, 1]
+      • outside color alpha = 255
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: DOF_ALL [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Adjustment Layer 156
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: FL Depth Of Field  (DRFL Depth of Field)
+      • show = 1
+      • depth layer = 10
+      • radius = 60
+      • focal point = 235
+      • select depth = [1828, 3689.583]
+      • highlight intensity = 1
+      • gamma correction = 1
+      • -> Depth Buffer... = "<cannot read value>"
+      • invert = 0
+      • curve = 1
+      • take depth from: = 1
+      • black point = -10000
+      • white point = 10000
+      • auto range = 0
+      •  = "<cannot read value>"
+      • -> Iris.. = "<cannot read value>"
+      • alternative iris (beta) = 0
+      • facets = 3
+      • angle = 0
+      • rounded facets = 1
+      • relative border brightness = 0
+      • border thickness = 0.3
+      • x-y aspect = 0
+      •  = "<cannot read value>"
+      • -> Highlight Selection... = "<cannot read value>"
+      • enable = 0
+      • alternative Selection layer = 0
+      • -> Lightness... = "<cannot read value>"
+      • lightness start = 200
+      • lightness end = 255
+      • lightness climax = 1
+      • lightness soften = 0
+      • lightness offset = 0
+      •  = "<cannot read value>"
+      • -> Hue... = "<cannot read value>"
+      • hue start = 0
+      • hue end = 255
+      • hue climax = 1
+      • hue soften = 0
+      • hue offset = 0
+      •  = "<cannot read value>"
+      • -> Saturation... = "<cannot read value>"
+      • saturation start = 0
+      • saturation end = 255
+      • saturation climax = 1
+      • saturation soften = 0
+      • saturation offset = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • -> Outside Image... = "<cannot read value>"
+      • horizontal assume = 1
+      • vertical assume = 1
+      • outside color = [0, 0, 0, 1]
+      • outside color alpha = 255
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 4: Modular_Label_SF_Banderoles [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1200f
+  Visible trimmed range: 0f → 1200f
+  Stretch: 100%
+  Source name: Modular_Label_SF_Banderoles
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [1250, 2330, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: EDITIONS_MODULAR_LABEL_UPSCALE [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 188f
+  Stretch: 100%
+  Source name: EDITIONS_MODULAR_LABEL_UPSCALE
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [1250, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | if (comp("DATA").layer("DISRUPTOR TYPE").text.sourceText=="FLAG")
+      02 | 	100
+      03 | else
+      04 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: EDITIONS_FOP_COL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 181f
+  Stretch: 100%
+  Source name: EDITIONS_FOP_COL
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [1250, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: UVDRPS_SF[0000-0090].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: UVDRPS[0000-0090].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\UVDRPS_4by5\UVDRPS0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 4
+    ----------------------------------------------------------
+    EFFECT 1: EXtractoR  (EXtractoR)
+      • Channel Info = "<cannot read value>"
+      • Process = "<cannot read value>"
+      • Black Point = 0
+      • White Point = 1
+      • UnMult = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Fast Box Blur  (ADBE Box Blur2)
+      • Blur Radius = 1
+      • Iterations = 2
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: RE:Map UV  (UV Mapper Pete)
+      • Activation = "<cannot read value>"
+      • forcererender = 0
+      • Activate GPU = "<cannot read value>"
+      • Use GPU = 2
+      • Less GPU Mem = 1
+      •  = "<cannot read value>"
+      • Use GPU = 2
+      • Hidden Flag = 0
+      • Less GPU Mem = 1
+      • Warp Mode = 1
+      • Texture = 4
+      • Crop Top Left TexMap = [0, 0]
+      • Crop Bottom Right TexMap = [3840, 5500]
+      • Tile Repeat X = 1
+      • Tile Repeat Y = 1
+      • Flip = 1
+      • Tile Repeat Pattern X = 1
+      • Tile Repeat Pattern Y = 1
+      • Position Offset X = 0
+      • Position Offset Y = 0.002
+      • MipMap? = 1
+      • Mip Amount % = 66.66
+      • Edges Threshold % = 5
+      • Match Renderer = 1
+      • Adaptive Sharpening = 0
+      • Version = 40202
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: Compound Blur  (ADBE Compound Blur)
+      • Blur Layer = 11
+      • Maximum Blur = 17
+      • If Layer Sizes Differ = 1
+      • Invert Blur = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 8: UVDRPS_FOP[0000-0090].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: UVDRPS[0000-0090].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\UVDRPS_4by5\UVDRPS0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 4
+    ----------------------------------------------------------
+    EFFECT 1: EXtractoR  (EXtractoR)
+      • Channel Info = "<cannot read value>"
+      • Process = "<cannot read value>"
+      • Black Point = 0
+      • White Point = 1
+      • UnMult = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Fast Box Blur  (ADBE Box Blur2)
+      • Blur Radius = 1
+      • Iterations = 2
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: RE:Map UV  (UV Mapper Pete)
+      • Activation = "<cannot read value>"
+      • forcererender = 0
+      • Activate GPU = "<cannot read value>"
+      • Use GPU = 2
+      • Less GPU Mem = 1
+      •  = "<cannot read value>"
+      • Use GPU = 2
+      • Hidden Flag = 0
+      • Less GPU Mem = 1
+      • Warp Mode = 1
+      • Texture = 6
+      • Crop Top Left TexMap = [0, 0]
+      • Crop Bottom Right TexMap = [3840, 5500]
+      • Tile Repeat X = 1
+      • Tile Repeat Y = 1
+      • Flip = 1
+      • Tile Repeat Pattern X = 1
+      • Tile Repeat Pattern Y = 1
+      • Position Offset X = 0
+      • Position Offset Y = 0.002
+      • MipMap? = 1
+      • Mip Amount % = 66.66
+      • Edges Threshold % = 5
+      • Match Renderer = 1
+      • Adaptive Sharpening = 0
+      • Version = 40202
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: Compound Blur  (ADBE Compound Blur)
+      • Blur Layer = 11
+      • Maximum Blur = 17
+      • If Layer Sizes Differ = 1
+      • Invert Blur = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 9: UVDRPS[0000-0090].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: UVDRPS[0000-0090].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\UVDRPS_4by5\UVDRPS0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 4
+    ----------------------------------------------------------
+    EFFECT 1: EXtractoR  (EXtractoR)
+      • Channel Info = "<cannot read value>"
+      • Process = "<cannot read value>"
+      • Black Point = 0
+      • White Point = 1
+      • UnMult = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Fast Box Blur  (ADBE Box Blur2)
+      • Blur Radius = 1
+      • Iterations = 2
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: RE:Map UV  (UV Mapper Pete)
+      • Activation = "<cannot read value>"
+      • forcererender = 0
+      • Activate GPU = "<cannot read value>"
+      • Use GPU = 2
+      • Less GPU Mem = 1
+      •  = "<cannot read value>"
+      • Use GPU = 2
+      • Hidden Flag = 0
+      • Less GPU Mem = 1
+      • Warp Mode = 1
+      • Texture = 5
+      • Crop Top Left TexMap = [0, 0]
+      • Crop Bottom Right TexMap = [3840, 5500]
+      • Tile Repeat X = 1
+      • Tile Repeat Y = 1
+      • Flip = 1
+      • Tile Repeat Pattern X = 1
+      • Tile Repeat Pattern Y = 1
+      • Position Offset X = 0
+      • Position Offset Y = 0.002
+      • MipMap? = 1
+      • Mip Amount % = 66.66
+      • Edges Threshold % = 5
+      • Match Renderer = 1
+      • Adaptive Sharpening = 0
+      • Version = 40202
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: Compound Blur  (ADBE Compound Blur)
+      • Blur Layer = 11
+      • Maximum Blur = 17
+      • If Layer Sizes Differ = 1
+      • Invert Blur = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 10: SHOT02_Depth_All_4by5_SL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_Depth_All_4by5_SL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 11: SHOT02_Depth_can_only_4by5_SL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: SHOT02_Depth_can_only_4by5_SL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 12: Darker_FCO [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Adjustment Layer 155
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Lumetri Color  (ADBE Lumetri)
+      • Blob = "<cannot read value>"
+      • High Dynamic Range = 0
+      • Basic Correction = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Input LUT = 1
+      • Input LUT = 1
+      • HDR White = 100
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Intensity = 50
+      • Color = "<cannot read value>"
+      • White Balance = [0.753, 0.753, 0.753, 1]
+      • Temperature = 0
+      • Tint = 0
+      • Saturation = 100
+      •  = "<cannot read value>"
+      • Light = "<cannot read value>"
+      • Exposure = 0
+      • Contrast = 0
+      • Highlights = -40
+      • Shadows = 0
+      • Whites = 0
+      • Blacks = 0
+      • HDR Specular = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Creative = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Look = 1
+      • Look = 1
+      •  = "<cannot read value>"
+      • Color Space = 27
+      • Intensity = 100
+      • Adjustments = "<cannot read value>"
+      • Faded Film = 0
+      • Sharpen = 0
+      • Vibrance = 0
+      • Saturation = 100
+      • Split Toning = "<cannot read value>"
+      • Tint Balance = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Curves = "<cannot read value>"
+      • Active = 1
+      • RGB Curves = "<cannot read value>"
+      • Active = 1
+      • HDR Range = 100
+      • RGB Curve = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Hue Saturation Curves = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Hue vs Sat = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Hue) Selector = [0, 0, 0.004, 1]
+      • Hue vs Hue = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Luma) Selector = [0, 0, 0.004, 1]
+      • Hue vs Luma = "<cannot read value>"
+      • Active = 1
+      • Luma (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Luma vs Sat = "<cannot read value>"
+      • Active = 1
+      • Sat (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Sat vs Sat = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      • Face Detection = 1
+      •  = "<cannot read value>"
+      • HDR White = 100
+      • Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • HSL Secondary = "<cannot read value>"
+      • Active = 1
+      • Key = "<cannot read value>"
+      • Set color = [0, 0, 0, 1]
+      • Add color = [0, 0, 0, 1]
+      • Remove color = [0, 0, 0, 1]
+      • HSL Sliders = "<cannot read value>"
+      • Show Mask = 0
+      •  = 1
+      • Invert Mask = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Refine = "<cannot read value>"
+      • Denoise = 0
+      • Blur = 0
+      • Blur = "<cannot read value>"
+      • Correction = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Temperature = 0
+      • Tint = 0
+      • Contrast = 0
+      • Sharpen = 0
+      • Saturation = 100
+      • Saturation = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Vignette = "<cannot read value>"
+      • Active = 1
+      • Amount = 0
+      • Midpoint = 50
+      • Roundness = 0
+      • Feather = 50
+      •  = "<cannot read value>"
+      • SpeedGrade Custom = "<cannot read value>"
+      • Custom Layer = 1
+      • unused = "<cannot read value>"
+      • unused = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Legacy Tone And Saturation = 0
+      • Embedded LUTs = "<cannot read value>"
+      • Media Embedded LUT type = "<cannot read value>"
+      • Media Embedded Lut blob = "<cannot read value>"
+      • SemanticAutoTone Progress = -1
+      • Auto Tone Analytics Data = "<cannot read value>"
+      • Auto Color Active... = 0
+      • LUTAsset = "<cannot read value>"
+      • LookAsset = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 13: Right_Edge_Color_Correction 2 [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 188f
+  Stretch: 100%
+  Source name: Adjustment Layer 66
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [3840, 3840, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [68, 68, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 40  {animated}
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Lumetri Color  (ADBE Lumetri)
+      • Blob = "<cannot read value>"
+      • High Dynamic Range = 0
+      • Basic Correction = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Input LUT = 1
+      • Input LUT = 1
+      • HDR White = 100
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Intensity = 50
+      • Color = "<cannot read value>"
+      • White Balance = [0.753, 0.753, 0.753, 1]
+      • Temperature = 0
+      • Tint = 0
+      • Saturation = 100
+      •  = "<cannot read value>"
+      • Light = "<cannot read value>"
+      • Exposure = 0
+      • Contrast = 0
+      • Highlights = 47
+      • Shadows = 0
+      • Whites = 0
+      • Blacks = 0
+      • HDR Specular = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Creative = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Look = 1
+      • Look = 1
+      •  = "<cannot read value>"
+      • Color Space = 27
+      • Intensity = 100
+      • Adjustments = "<cannot read value>"
+      • Faded Film = 0
+      • Sharpen = 0
+      • Vibrance = 0
+      • Saturation = 100
+      • Split Toning = "<cannot read value>"
+      • Tint Balance = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Curves = "<cannot read value>"
+      • Active = 1
+      • RGB Curves = "<cannot read value>"
+      • Active = 1
+      • HDR Range = 100
+      • RGB Curve = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Hue Saturation Curves = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Hue vs Sat = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Hue) Selector = [0, 0, 0.004, 1]
+      • Hue vs Hue = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Luma) Selector = [0, 0, 0.004, 1]
+      • Hue vs Luma = "<cannot read value>"
+      • Active = 1
+      • Luma (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Luma vs Sat = "<cannot read value>"
+      • Active = 1
+      • Sat (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Sat vs Sat = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      • Face Detection = 1
+      •  = "<cannot read value>"
+      • HDR White = 100
+      • Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • HSL Secondary = "<cannot read value>"
+      • Active = 1
+      • Key = "<cannot read value>"
+      • Set color = [0, 0, 0, 1]
+      • Add color = [0, 0, 0, 1]
+      • Remove color = [0, 0, 0, 1]
+      • HSL Sliders = "<cannot read value>"
+      • Show Mask = 0
+      •  = 1
+      • Invert Mask = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Refine = "<cannot read value>"
+      • Denoise = 0
+      • Blur = 0
+      • Blur = "<cannot read value>"
+      • Correction = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Temperature = 0
+      • Tint = 0
+      • Contrast = 0
+      • Sharpen = 0
+      • Saturation = 100
+      • Saturation = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Vignette = "<cannot read value>"
+      • Active = 1
+      • Amount = 0
+      • Midpoint = 50
+      • Roundness = 0
+      • Feather = 50
+      •  = "<cannot read value>"
+      • SpeedGrade Custom = "<cannot read value>"
+      • Custom Layer = 1
+      • unused = "<cannot read value>"
+      • unused = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Legacy Tone And Saturation = 0
+      • Embedded LUTs = "<cannot read value>"
+      • Media Embedded LUT type = "<cannot read value>"
+      • Media Embedded Lut blob = "<cannot read value>"
+      • SemanticAutoTone Progress = -1
+      • Auto Tone Analytics Data = "<cannot read value>"
+      • Auto Color Active... = 0
+      • LUTAsset = "<cannot read value>"
+      • LookAsset = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Tint  (ADBE Tint)
+      • Map Black To = [1, 0.933, 0, 1]
+      • Map White To = [1, 0.933, 0, 1]
+      • Amount to Tint = 100
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 14: SHOT02_COL_WHITE_SF_4by5 [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 94f
+  Visible trimmed range: 0f → 94f
+  Stretch: 100%
+  Source name: SHOT02_COL_BLUE_SF_4by5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | const lib = footage("expressionLibrary.jsx").sourceData;
+      02 | lib.sfCheck() == 100 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 7
+      • Use For Matte = 1
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Tint  (ADBE Tint)
+      • Map Black To = [0.558, 0.558, 0.558, 1]
+      • Map White To = [1, 1, 1, 0]
+      • Amount to Tint = 100
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 15: SHOT02_COL_BLUE_SF_4by5 [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 94f
+  Visible trimmed range: 0f → 94f
+  Stretch: 100%
+  Source name: SHOT02_COL_BLUE_SF_4by5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | const lib = footage("expressionLibrary.jsx").sourceData;
+      02 | lib.sfCheck() == 100 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 7
+      • Use For Matte = 2
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Hue/Saturation  (ADBE HUE SATURATION)
+      • Channel Control = 1
+      • Channel Range = "<cannot read value>"
+      • Master Hue = 0
+      • Master Saturation = 0
+      • Master Lightness = 0
+      • Colorize = 0
+      • Colorize Hue = 0
+      • Colorize Saturation = 25
+      • Colorize Lightness = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 16: SHOT02_BRAUN_4by5_DOF.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_BRAUN_4by5_DOF.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\SHOT02_BRAUN_4by5_DOF.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 9
+      • Use For Matte = 2
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Selective Color  (ADBE SelectiveColor)
+      • Method: = 1
+      • Colors: = 1
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      • Details = "<cannot read value>"
+      • Reds = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Yellows = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Greens = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Cyans = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Blues = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Magentas = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Whites = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Neutrals = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = -6
+      •  = "<cannot read value>"
+      • Blacks = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Lumetri Color  (ADBE Lumetri)
+      • Blob = "<cannot read value>"
+      • High Dynamic Range = 0
+      • Basic Correction = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Input LUT = 1
+      • Input LUT = 1
+      • HDR White = 100
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Intensity = 50
+      • Color = "<cannot read value>"
+      • White Balance = [0.753, 0.753, 0.753, 1]
+      • Temperature = 0
+      • Tint = 0
+      • Saturation = 100
+      •  = "<cannot read value>"
+      • Light = "<cannot read value>"
+      • Exposure = 0
+      • Contrast = 31
+      • Highlights = -80
+      • Shadows = 0
+      • Whites = 0
+      • Blacks = 0
+      • HDR Specular = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Creative = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Look = 1
+      • Look = 1
+      •  = "<cannot read value>"
+      • Color Space = 27
+      • Intensity = 100
+      • Adjustments = "<cannot read value>"
+      • Faded Film = 0
+      • Sharpen = 0
+      • Vibrance = 0
+      • Saturation = 100
+      • Split Toning = "<cannot read value>"
+      • Tint Balance = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Curves = "<cannot read value>"
+      • Active = 1
+      • RGB Curves = "<cannot read value>"
+      • Active = 1
+      • HDR Range = 100
+      • RGB Curve = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Hue Saturation Curves = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Hue vs Sat = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Hue) Selector = [0, 0, 0.004, 1]
+      • Hue vs Hue = "<cannot read value>"
+      • Active = 1
+      • Hue (vs Luma) Selector = [0, 0, 0.004, 1]
+      • Hue vs Luma = "<cannot read value>"
+      • Active = 1
+      • Luma (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Luma vs Sat = "<cannot read value>"
+      • Active = 1
+      • Sat (vs Sat) Selector = [0, 0, 0.004, 1]
+      • Sat vs Sat = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      • Active = 1
+      •  = "<cannot read value>"
+      • Face Detection = 1
+      •  = "<cannot read value>"
+      • HDR White = 100
+      • Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • HSL Secondary = "<cannot read value>"
+      • Active = 1
+      • Key = "<cannot read value>"
+      • Set color = [0, 0, 0, 1]
+      • Add color = [0, 0, 0, 1]
+      • Remove color = [0, 0, 0, 1]
+      • HSL Sliders = "<cannot read value>"
+      • Show Mask = 0
+      •  = 1
+      • Invert Mask = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Refine = "<cannot read value>"
+      • Denoise = 0
+      • Blur = 0
+      • Blur = "<cannot read value>"
+      • Correction = "<cannot read value>"
+      • Color Wheels = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Temperature = 0
+      • Tint = 0
+      • Contrast = 0
+      • Sharpen = 0
+      • Saturation = 100
+      • Saturation = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Vignette = "<cannot read value>"
+      • Active = 1
+      • Amount = 0
+      • Midpoint = 50
+      • Roundness = 0
+      • Feather = 50
+      •  = "<cannot read value>"
+      • SpeedGrade Custom = "<cannot read value>"
+      • Custom Layer = 1
+      • unused = "<cannot read value>"
+      • unused = "<cannot read value>"
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Legacy Tone And Saturation = 0
+      • Embedded LUTs = "<cannot read value>"
+      • Media Embedded LUT type = "<cannot read value>"
+      • Media Embedded Lut blob = "<cannot read value>"
+      • SemanticAutoTone Progress = -1
+      • Auto Tone Analytics Data = "<cannot read value>"
+      • Auto Color Active... = 0
+      • LUTAsset = "<cannot read value>"
+      • LookAsset = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 17: SHOT02_ALU_4by5_DOF.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_ALU_4by5_DOF.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\SHOT02_ALU_4by5_DOF.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Matte Choker  (ADBE Matte Choker)
+      • Geometric Softness 1 = 46.2
+      • Choke 1 = 127
+      • Gray Level Softness 1 = 0.25
+      • Geometric Softness 2 = 2.2
+      • Choke 2 = 0
+      • Gray Level Softness 2 = 1
+      • Iterations = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 9
+      • Use For Matte = 4
+      • Invert Matte = 1
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 18: SHOT02_DRPS_4by5_DOF.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_DRPS_4by5_DOF.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\SHOT02_DRPS_4by5_DOF.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Matte Choker  (ADBE Matte Choker)
+      • Geometric Softness 1 = 4
+      • Choke 1 = 119
+      • Gray Level Softness 1 = 0.1
+      • Geometric Softness 2 = 0
+      • Choke 2 = 0
+      • Gray Level Softness 2 = 1
+      • Iterations = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Selective Color  (ADBE SelectiveColor)
+      • Method: = 1
+      • Colors: = 1
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      • Details = "<cannot read value>"
+      • Reds = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Yellows = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 24
+      • Black = 16
+      •  = "<cannot read value>"
+      • Greens = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Cyans = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Blues = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Magentas = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Whites = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Neutrals = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      • Blacks = "<cannot read value>"
+      • Cyan = 0
+      • Magenta = 0
+      • Yellow = 0
+      • Black = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 19: SHOT02_COL_4by5_DOF.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_COL_4by5_DOF.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\SHOT02_COL_4by5_DOF.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Matte Choker  (ADBE Matte Choker)
+      • Geometric Softness 1 = 30
+      • Choke 1 = 80
+      • Gray Level Softness 1 = 0.1
+      • Geometric Softness 2 = 7
+      • Choke 2 = 0
+      • Gray Level Softness 2 = 1
+      • Iterations = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 5/10: SHOT02_COL_BLUE_SF
+  Size: 3840x3840
+  FPS: 30
+  Duration: 3.133s  (94f)
+  Sample time: 1.7s  (51f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: SHOT02_COL_DOF.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 94f
+  Visible trimmed range: 0f → 94f
+  Stretch: 100%
+  Source name: SHOT02_COL_DOF.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\SHOT02_COL_DOF.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 6/10: SHOT02_COL_BLUE_SF_4by5
+  Size: 3840x5500
+  FPS: 30
+  Duration: 3.133s  (94f)
+  Sample time: 8.5s  (255f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: SHOT02_COL_4by5_DOF.mov [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: SHOT02_COL_4by5_DOF.mov
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\SHOT02_COL_4by5_DOF.mov
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 7/10: SHOT02_Depth_All_4by5_SL
+  Size: 3840x5500
+  FPS: 30
+  Duration: 3.033s  (91f)
+  Sample time: 8.5s  (255f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Depth[0000-0090].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: Depth[0000-0090].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\DEPTH_ALL_4by5\Depth0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: EXtractoR  (EXtractoR)
+      • Channel Info = "<cannot read value>"
+      • Process = "<cannot read value>"
+      • Black Point = 0
+      • White Point = 1
+      • UnMult = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Levels  (ADBE Easy Levels2)
+      • Channel: = 1
+      • Histogram = "<cannot read value>"
+      • Input Black = 0
+      • Input White = 1
+      • Gamma = 1
+      • Output Black = 0
+      • Output White = 1
+      • Clip To Output Black = 3
+      • Clip To Output White = 3
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 8/10: SHOT02_Depth_All_SL
+  Size: 3840x3840
+  FPS: 30
+  Duration: 3.033s  (91f)
+  Sample time: 1.7s  (51f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Depth[0000-0090].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: Depth[0000-0090].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT01\DEPTH_ALL\Depth0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1920, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: EXtractoR  (EXtractoR)
+      • Channel Info = "<cannot read value>"
+      • Process = "<cannot read value>"
+      • Black Point = 0
+      • White Point = 1
+      • UnMult = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Levels  (ADBE Easy Levels2)
+      • Channel: = 1
+      • Histogram = "<cannot read value>"
+      • Input Black = 0
+      • Input White = 1
+      • Gamma = 1
+      • Output Black = 0
+      • Output White = 1
+      • Clip To Output Black = 3
+      • Clip To Output White = 3
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 9/10: SHOT02_Depth_can_only_4by5_SL
+  Size: 3840x5500
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 8.5s  (255f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Depth_Can[0000-0090].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: Depth_Can[0000-0090].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\4by5\DEPTH_CAN_4by5\Depth_Can0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 2750, 0]
+    • Position = [1920, 2750, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: EXtractoR  (EXtractoR)
+      • Channel Info = "<cannot read value>"
+      • Process = "<cannot read value>"
+      • Black Point = 0
+      • White Point = 1
+      • UnMult = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Levels  (ADBE Easy Levels2)
+      • Channel: = 1
+      • Histogram = "<cannot read value>"  {animated}
+      • Input Black = 0
+      • Input White = 1
+      • Gamma = 1
+      • Output Black = 0
+      • Output White = 1
+      • Clip To Output Black = 3
+      • Clip To Output White = 3
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 10/10: SHOT02_Depth_can_only_SL
+  Size: 3840x3840
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 1.7s  (51f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Depth_Can[0000-0090].exr [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 91f
+  Visible trimmed range: 0f → 91f
+  Stretch: 100%
+  Source name: Depth_Can[0000-0090].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\IMPORTS\SHOT02\DEPTH_CAN\Depth_Can0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [1915, 1920, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: EXtractoR  (EXtractoR)
+      • Channel Info = "<cannot read value>"
+      • Process = "<cannot read value>"
+      • Black Point = 0
+      • White Point = 1
+      • UnMult = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Levels  (ADBE Easy Levels2)
+      • Channel: = 1
+      • Histogram = "<cannot read value>"  {animated}
+      • Input Black = 0
+      • Input White = 1
+      • Gamma = 1
+      • Output Black = 0
+      • Output White = 1
+      • Clip To Output Black = 3
+      • Clip To Output White = 3
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+

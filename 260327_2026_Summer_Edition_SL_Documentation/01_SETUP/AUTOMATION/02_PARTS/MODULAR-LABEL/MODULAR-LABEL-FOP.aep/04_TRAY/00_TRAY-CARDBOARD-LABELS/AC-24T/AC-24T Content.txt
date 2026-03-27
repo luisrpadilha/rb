@@ -1,0 +1,588 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:14:58
+Selected comps: 2
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/2: AC-24T-CARDBOARD-LABEL_INPUT
+  Size: 4096x4096
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: T_6x4x250/TRAY_LABEL.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: T_6x4x250/TRAY_LABEL.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\00_TRAY-CARDBOARD-LABELS\AC-24T\LABEL\TRAY_LABEL.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [106.667, 106.667, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {expr:on}
+      01 | skuData = comp("DATA").layer("SKU").text.sourceText.toLowerCase();
+      02 | skuData === "ac-6x4pt" ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: T_24x250/TRAY_LABEL.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: T_24x250/TRAY_LABEL.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\00_TRAY-CARDBOARD-LABELS\AC-24T\LABEL\TRAY_LABEL.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [106.667, 106.667, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | const lib = footage("expressionLibrary.jsx").sourceData;
+      02 | lib.rhombusCheck();
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: LOGO/TRAY_LABEL.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: LOGO/TRAY_LABEL.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\00_TRAY-CARDBOARD-LABELS\AC-24T\LABEL\TRAY_LABEL.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [106.667, 106.667, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: LOW CALORIES [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: LOW CALORIES/TRAY_LABEL.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\00_TRAY-CARDBOARD-LABELS\AC-24T\LABEL\TRAY_LABEL.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [106.667, 106.667, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | productData= comp("DATA").layer("PRODUCT NAME").text.sourceText.toLowerCase();
+      02 | products = ["low calories"];
+      03 | 
+      04 | products.includes(productData) ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: ZR [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ZR/TRAY_LABEL.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\00_TRAY-CARDBOARD-LABELS\AC-24T\LABEL\TRAY_LABEL.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [106.667, 106.667, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      02 | variants = ["zr","zr-ca"];
+      03 | productData= comp("DATA").layer("PRODUCT NAME").text.sourceText.toLowerCase();
+      04 | products = ["low calories"];
+      05 | 
+      06 | variants.includes(variantData) && !productData.includes(products) ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: SF [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: SF/TRAY_LABEL.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\00_TRAY-CARDBOARD-LABELS\AC-24T\LABEL\TRAY_LABEL.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [106.667, 106.667, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      02 | variant = variantData.split("-")[0]; // Gets last element after any "-"
+      03 | 
+      04 | variant == "sf" ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: ED [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ED/TRAY_LABEL.ai
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\00_TRAY-CARDBOARD-LABELS\AC-24T\LABEL\TRAY_LABEL.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1920, 1920, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [106.667, 106.667, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | SF = thisComp.layer("SF").transform.opacity;
+      02 | ZR = thisComp.layer("ZR").transform.opacity;
+      03 | LOW_CALORIES = thisComp.layer("LOW CALORIES").transform.opacity;
+      04 | 
+      05 | ZR == 0 && SF == 0 && LOW_CALORIES == 0 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: Shape Layer 1 [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 2/2: AC-24T_CARDBOARD-LABEL
+  Size: 4096x4096
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: CNTRL [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Dropdown Menu Control  (Pseudo/@@CfNCC2XmSayBnHGLIsVmFA)
+      • Menu = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: 250ml_Packtra Cardboard uv reference_CSO.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: 250ml_Packtra Cardboard uv reference_CSO.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\_DEV\250ml_Packtra Cardboard uv reference_CSO.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: TOP LEFT FIX [Shape]
+  Parent: parented → [11] LEFT
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 3f
+  Visible trimmed range: 2f → 3f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-1650, -2048, 0]
+    • Position = [507.037, 0, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: EXTEND-R [AV]
+  Parent: parented → [9] RIGHT
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-24T-CARDBOARD-LABEL_INPUT
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [2603, 2564.5, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 180
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: EXTENT-L [AV]
+  Parent: parented → [11] LEFT
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-24T-CARDBOARD-LABEL_INPUT
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [1487, 1284.5, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: TOP RIGHT FIX 2 [AV]
+  Parent: parented → [8] TOP
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-24T-CARDBOARD-LABEL_INPUT
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [5328.541, -10757.727, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [554, 554, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated}
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: TOP RIGHT FIX [AV]
+  Parent: parented → [8] TOP
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-24T-CARDBOARD-LABEL_INPUT
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [9109.464, -10626, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [554, 554, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated}
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: TOP [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-24T-CARDBOARD-LABEL_INPUT
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 9: RIGHT [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-24T-CARDBOARD-LABEL_INPUT
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 10: BOTTOM [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-24T-CARDBOARD-LABEL_INPUT
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 11: LEFT [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-24T-CARDBOARD-LABEL_INPUT
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 12: WHITE BG [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2048, 2048, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

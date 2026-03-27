@@ -1,0 +1,516 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 11:51:07
+Selected comps: 4
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/4: 5s_1x1_1CanKV
+  Size: 1080x1080
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 4.967s  (149f)
+  Comp markers: 2
+    • Marker 1: 0.733s (22f)  comment="1"
+    • Marker 2: 2.333s (70f)  comment="2"
+------------------------------------------------------------
+
+LAYER 1: 10s_1x1_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: -90f
+  End frame (source-based): 210f
+  Visible trimmed range: 66f → 165f
+  Stretch: 100%
+  Source name: 10s_1x1_1CanKV
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 960, 0]
+    • Position = [540, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [56.5, 56.5, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: 10s_1x1_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: -23f
+  End frame (source-based): 277f
+  Visible trimmed range: 22f → 67f
+  Stretch: 90%
+  Source name: 10s_1x1_1CanKV
+  Time Remap: disabled
+  Layer markers: 1
+    • Marker 1: 0.733s (22f)  comment="01:15_Time stretched 90%"
+  Transforms:
+    • Anchor Point = [960, 960, 0]
+    • Position = [540, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [56.5, 56.5, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: 10s_1x1_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 22f
+  Stretch: 90%
+  Source name: 10s_1x1_1CanKV
+  Time Remap: disabled
+  Layer markers: 1
+    • Marker 1: 0s (0f)  comment="Time stretched 90%"
+  Transforms:
+    • Anchor Point = [960, 960, 0]
+    • Position = [540, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [56.5, 56.5, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: 1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav [Audio]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: 1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\Audio\1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.5, 0.5, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 2/4: 5s_4x5_1CanKV
+  Size: 1080x1350
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 6.567s  (197f)
+  Comp markers: 2
+    • Marker 1: 0.733s (22f)  comment="1"
+    • Marker 2: 2.2s (66f)  comment="2"
+------------------------------------------------------------
+
+LAYER 1: 10s_4x5_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: -90f
+  End frame (source-based): 210f
+  Visible trimmed range: 66f → 164f
+  Stretch: 100%
+  Source name: 10s_4x5_1CanKV
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [540, 675, 0]
+    • Position = [540, 675, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: 10s_4x5_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: -23f
+  End frame (source-based): 277f
+  Visible trimmed range: 22f → 67f
+  Stretch: 90%
+  Source name: 10s_4x5_1CanKV
+  Time Remap: disabled
+  Layer markers: 1
+    • Marker 1: 1.167s (35f)  comment="01:15_Stretched 90%"
+  Transforms:
+    • Anchor Point = [540, 675, 0]
+    • Position = [540, 675, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: 10s_4x5_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 22f
+  Stretch: 90%
+  Source name: 10s_4x5_1CanKV
+  Time Remap: disabled
+  Layer markers: 1
+    • Marker 1: 0s (0f)  comment="Stretched 90%"
+  Transforms:
+    • Anchor Point = [540, 675, 0]
+    • Position = [540, 675, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: 1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav [Audio]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: 1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\Audio\1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.5, 0.5, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 3/4: 5s_9x16_1CanKV
+  Size: 1080x1920
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 6.633s  (199f)
+  Comp markers: 2
+    • Marker 1: 0.9s (27f)  comment="1"
+    • Marker 2: 2.2s (66f)  comment="2"
+------------------------------------------------------------
+
+LAYER 1: 10s_9x16_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: -90f
+  End frame (source-based): 210f
+  Visible trimmed range: 66f → 165f
+  Stretch: 100%
+  Source name: 10s_9x16_1CanKV
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [540, 960, 0]
+    • Position = [540, 960, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: 10s_9x16_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: -18f
+  End frame (source-based): 282f
+  Visible trimmed range: 27f → 67f
+  Stretch: 90%
+  Source name: 10s_9x16_1CanKV
+  Time Remap: disabled
+  Layer markers: 1
+    • Marker 1: 0.9s (27f)  comment="Stretched 90% / 1:15"
+  Transforms:
+    • Anchor Point = [540, 960, 0]
+    • Position = [540, 960, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: 10s_9x16_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 27f
+  Stretch: 90%
+  Source name: 10s_9x16_1CanKV
+  Time Remap: disabled
+  Layer markers: 1
+    • Marker 1: 0.033s (1f)  comment="Time stretched 90%"
+  Transforms:
+    • Anchor Point = [540, 960, 0]
+    • Position = [540, 960, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: 1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav [Audio]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: 1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\Audio\1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.5, 0.5, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 4/4: 5s_16x9_1CanKV
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 7.133s  (214f)
+  Comp markers: 2
+    • Marker 1: 0.9s (27f)  comment="1"
+    • Marker 2: 2.3s (69f)  comment="2"
+------------------------------------------------------------
+
+LAYER 1: Flag_control [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: Adjustment Layer 162
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Checkbox Control  (ADBE Checkbox Control)
+      • Checkbox = 0  {animated, expr:on}
+        01 | effect("Checkbox Control")(1) == comp("SHOT04_CLEAN").layer("Control").effect("Default_Color RED")("Checkbox")
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: 10s_16x9_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: -91f
+  End frame (source-based): 209f
+  Visible trimmed range: 66f → 174f
+  Stretch: 100%
+  Source name: 10s_16x9_1CanKV
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: 10s_16x9_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: -23f
+  End frame (source-based): 277f
+  Visible trimmed range: 22f → 66f
+  Stretch: 90%
+  Source name: 10s_16x9_1CanKV
+  Time Remap: disabled
+  Layer markers: 1
+    • Marker 1: 0.9s (27f)  comment="stretched90% / 1:15"
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: 10s_16x9_1CanKV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 22f
+  Stretch: 90%
+  Source name: 10s_16x9_1CanKV
+  Time Remap: disabled
+  Layer markers: 1
+    • Marker 1: 0.133s (4f)  comment="stretched90%"
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: 1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav [Audio]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: 1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\Audio\1-2_FULLMIX-5s_16x9_1Can_SummerEdition_KV_WEBMIX.wav
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.5, 0.5, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

@@ -1,0 +1,66 @@
+{
+  "variables": {
+    "glossyVariants": ["az", "bl", "cc", "ed", "ed-ca", "ly", "ph", "pr", "sf-cc", "sf-pr", "sf-yl", "sf", "sf-ca", "yl", "be"],
+    "fcoAboveLine": ["ru","ro","in","no","se","za","md","by","is","br","jp", "pl", "si", "fr", "bg", "cl", "it", "tr", "nl", "do"],
+    "basicLabel": ["basic","basic-nofco"],
+    "noFCO": ["basic-nofco","country-nofco"],
+    "sfTagOutline": ["sf-igb","sf-jb"],
+    "CSC": ["cscg","cscl","cscdd"]
+  },
+  "fcoFonts": {
+    "Candara-Italic": ["ru", "bg", "by"],
+    "ArialUnicodeMS": ["il"],
+    "ArialUnicodeMS-Bold": ["ge"],
+    "AdobeArabic-Bold": ["qa","ma","iq"],
+    "DFHSGothicPro5-W5": ["jp"],
+    "HiraKakuProN-W5": ["tw"]
+  },
+  "fcoFontMapping": {
+    "Candara-Italic": { "family": "Candara", "style": "Italic" },
+    "ArialUnicodeMS": { "family": "Arial Unicode MS", "style": "Regular" },
+    "ArialUnicodeMS-Bold": { "family": "Arial Unicode MS", "style": "Bold" },
+    "AdobeArabic-Bold": { "family": "Adobe Arabic", "style": "Bold" },
+    "DFHSGothicPro5-W5": { "family": "DFHSGothic Pro-5", "style": "5" },
+    "HiraKakuProN-W5": { "family": "Hiragino Kaku Gothic ProN", "style": "W5" },
+    "Wings-Bold": { "family": "Wings", "style": "Bold" }
+  },
+  "mixedAlphabetFCO": ["qa", "mk", "tw", "hk","iq"],
+  "mixedAlphabetFCOline2": ["ma"],
+  "RGBA": {
+    "cal": {
+      "R": ["yl","sf-yl","bl","sf-bl","gi","sf-gi"],
+      "G": ["sl","sf-sl"],
+      "B": ["blank","sf-blank"],
+      "A": ["fai","sf-fai"]
+    },
+    "fop": {
+      "R": [],
+      "G": ["sl","sf-sl"],
+      "B": ["blank","sf-blank"],
+      "A": ["wm","sf-wm", "ff", "sf-ff","pc","sf-pc"]
+    },
+    "productName": {
+      "R": [],
+      "G": ["wm","sf-wm","ly","ph", "sl","sf-sl","cs","sf-cs","gi","sf-gi"],
+      "B": ["blank","sf-blank"],
+      "A": []
+    },
+    "textBottom": {
+      "R": ["fai","sf-fai","gi","sf-gi"],
+      "G": ["sl","sf-sl"],
+      "B": ["blank","sf-blank"],
+      "A": []
+    },
+    "bulls": {
+      "R": [],
+      "G": ["gi","sf-gi"],
+      "B": ["blank","sf-blank"]
+    },
+    "redbull": {
+      "R": [],
+      "G": ["sl","sf-sl"],
+      "B": ["cs","sf-cs","blank","sf-blank","pb"],
+      "A": []
+    }
+  }
+}

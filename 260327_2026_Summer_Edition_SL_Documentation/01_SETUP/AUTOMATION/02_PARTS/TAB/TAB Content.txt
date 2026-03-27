@@ -1,0 +1,440 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:30:28
+Selected comps: 1
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/1: TAB-CONTENT
+  Size: 4500x8000
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: TAB CNTRL [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: MAIN VARIANT  (ADBE Checkbox Control)
+      • Checkbox = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: TWIN-SF  (ADBE Checkbox Control)
+      • Checkbox = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: RHOMBUS 2CAN  (ADBE Checkbox Control)
+      • Checkbox = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: ED_ALU_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: -149f
+  End frame (source-based): -149f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ED_ALU_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\ED_ALU_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("RHOMBUS 2CAN")("Checkbox");
+      03 | layerVariant = thisLayer.name.split("_")[0].toLowerCase();
+      04 | rhombusVariant = comp("DATA").layer("RHOMBUS VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      05 | countryData != "de" && checkBox == 1 && rhombusVariant == layerVariant ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: ED_DARK BLUE_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ED_DARK BLUE_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\ED_DARK BLUE_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("RHOMBUS 2CAN")("Checkbox");
+      03 | layerVariant = thisLayer.name.split("_")[0].toLowerCase();
+      04 | rhombusVariant = comp("DATA").layer("RHOMBUS VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      05 | countryData == "de" && checkBox == 1 && rhombusVariant == layerVariant ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: SF_LIGHT BLUE_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: -149f
+  End frame (source-based): -149f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: SF_LIGHT BLUE_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\SF_LIGHT BLUE_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("RHOMBUS 2CAN")("Checkbox");
+      03 | layerVariant = thisLayer.name.split("_")[0].toLowerCase();
+      04 | rhombusVariant = comp("DATA").layer("RHOMBUS VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      05 | countryData != "de" && checkBox == 1 && rhombusVariant == layerVariant ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: SF_DARK BLUE_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: SF_DARK BLUE_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\SF_DARK BLUE_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("RHOMBUS 2CAN")("Checkbox");
+      03 | layerVariant = thisLayer.name.split("_")[0].toLowerCase();
+      04 | rhombusVariant = comp("DATA").layer("RHOMBUS VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      05 | countryData == "de" && checkBox == 1 && rhombusVariant == layerVariant ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: ZR_ALU_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: -149f
+  End frame (source-based): -149f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ZR_ALU_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\ZR_ALU_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("RHOMBUS 2CAN")("Checkbox");
+      03 | layerVariant = thisLayer.name.split("_")[0].toLowerCase();
+      04 | rhombusVariant = comp("DATA").layer("RHOMBUS VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      05 | countryData != "de" && checkBox == 1 && rhombusVariant == layerVariant ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: ZR_DARK BLUE_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ZR_DARK BLUE_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\ZR_DARK BLUE_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("RHOMBUS 2CAN")("Checkbox");
+      03 | layerVariant = thisLayer.name.split("_")[0].toLowerCase();
+      04 | rhombusVariant = comp("DATA").layer("RHOMBUS VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      05 | countryData == "de" && checkBox == 1 && rhombusVariant == layerVariant ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: IGB_DARK BLUE_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: IGB_DARK BLUE_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\IGB_DARK BLUE_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("MAIN VARIANT")("Checkbox");
+      03 | variantData = comp("DATA").layer("VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      04 | countryData == "de" && checkBox == 1 && variantData != "sf" ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 9: IGB_ALU_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: IGB_ALU_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\IGB_ALU_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("MAIN VARIANT")("Checkbox");
+      03 | variantData = comp("DATA").layer("VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      04 | countryData != "de" && checkBox == 1 && variantData != "sf" ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 10: SF-IGB_DARK BLUE_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: SF-IGB_DARK BLUE_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\SF-IGB_DARK BLUE_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("MAIN VARIANT")("Checkbox");
+      03 | variantData = comp("DATA").layer("VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      04 | countryData == "de" && checkBox == 1 && variantData == "sf" ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 11: SF-IGB_LIGHT BLUE_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: SF-IGB_LIGHT BLUE_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\SF-IGB_LIGHT BLUE_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("MAIN VARIANT")("Checkbox");
+      03 | variantData = comp("DATA").layer("VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      04 | countryData != "de" && checkBox == 1 && variantData == "sf" ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 12: SF-IGB_DARK BLUE_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: SF-IGB_DARK BLUE_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\SF-IGB_DARK BLUE_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("TWIN-SF")("Checkbox");
+      03 | variantData = comp("DATA").layer("VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      04 | countryData == "de" && checkBox == 1 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 13: SF-IGB_LIGHT BLUE_TAB.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: SF-IGB_LIGHT BLUE_TAB.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\TAB\_FOOTAGE\SF-IGB_LIGHT BLUE_TAB.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | checkBox = thisComp.layer("TAB CNTRL").effect("TWIN-SF")("Checkbox");
+      03 | variantData = comp("DATA").layer("VARIANT").text.sourceText.split("-")[0].toLowerCase();
+      04 | countryData != "de" && checkBox == 1 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

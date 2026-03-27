@@ -1,0 +1,2307 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:31:08
+Selected comps: 1
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/1: DATA
+  Size: 3000x3000
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 7.067s  (212f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: V1.2 [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2639.38, 204.795, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: CA_LEGAL DISCLAIMER [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: -230f
+  End frame (source-based): 70f
+  Visible trimmed range: 0f → 70f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]  {animated, expr:on}
+      01 | var dropDownIndex = effect("Lock Anchor Point To...")(1).value;
+      02 | var when = effect("When to Sample")(1);
+      03 | switch ( dropDownIndex )
+      04 | {
+      05 | case 1:
+      06 | 	var L = thisLayer.sourceRectAtTime(when);
+      07 | 	var x =L.left+L.width/2;
+      08 | 	var y =L.top+L.height/2;
+      09 | 	[x,y];
+      10 | 	break;
+      11 | case 2:
+      12 | 	var L = thisLayer.sourceRectAtTime(when);
+      13 | 	var x =L.left;
+      14 | 	var y =L.top+L.height/2;
+      15 | 	[x,y];
+      16 | 	break;
+      17 | case 3:
+      18 | 	var L = thisLayer.sourceRectAtTime(when);
+      19 | 	var x =L.left+L.width;
+      20 | 	var y =L.top+L.height/2;
+      21 | 	[x,y];
+      22 | 	break;
+      23 | case 4:
+      24 | 	var L = thisLayer.sourceRectAtTime(when);
+      25 | 	var x =L.left+L.width/2;
+      26 | 	var y =L.top;
+      27 | 	[x,y];
+      28 | 	break;
+      29 | case 5:
+      30 | 	var L = thisLayer.sourceRectAtTime(when);
+      31 | 	var x =L.left;
+      32 | 	var y =L.top;
+      33 | 	[x,y];
+      34 | 	break;
+      35 | case 6:
+      36 | 	var L = thisLayer.sourceRectAtTime(when);
+      37 | 	var x =L.left+L.width;
+      38 | 	var y =L.top;
+      39 | 	[x,y];
+      40 | 	break;
+      41 | case 7:
+      42 | 	var L = thisLayer.sourceRectAtTime(when);
+      43 | 	var x =L.left+L.width/2;
+      44 | 	var y =L.top+L.height;
+      45 | 	[x,y];
+      46 | 	break;
+      47 | case 8:
+      48 | 	var L = thisLayer.sourceRectAtTime(when);
+      49 | 	var x =L.left;
+      50 | 	var y =L.top+L.height;
+      51 | 	[x,y];
+      52 | 	break;
+      53 | case 9:
+      54 | 	var L = thisLayer.sourceRectAtTime(when);
+      55 | 	var x =L.left+L.width;
+      56 | 	var y =L.top+L.height;
+      57 | 	[x,y];
+      58 | 	break;
+      59 | default: value
+      60 | };
+    • Position = [1823.971, 1026.006, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | legalData = comp("DATA").layer("LEGAL DISCLAIMER").text.sourceText;
+      02 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      03 | countryData == "ca" ?? legalData != "" ? value : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 4
+    ----------------------------------------------------------
+    EFFECT 1: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 9
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Drop Shadow  (ADBE Drop Shadow)
+      • Shadow Color = [0, 0, 0, 1]
+      • Opacity = 255
+      • Direction = 135
+      • Distance = 0
+      • Softness = 20
+      • Shadow Only = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: Drop Shadow 2  (ADBE Drop Shadow)
+      • Shadow Color = [0, 0, 0, 1]
+      • Opacity = 255
+      • Direction = 135
+      • Distance = 0
+      • Softness = 25
+      • Shadow Only = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: SUBLINE [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2040.744, 2353.315, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [200, 200, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 4: HEADLINE [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1487.602, 1987.264, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 5: VBAM [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1338.701, -79.413, 0]
+    • Position = [2039.972, 2523.743, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [50, 50, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 6: VBAM TRADEMARK [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [117.195, 2667.16, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 7: DISRUPTOR DEFAULT COLOR [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [725.592, 1320.845, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 8: DISRUPTOR TYPE [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [125.592, 1320.845, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 9: DISRUPTOR [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1092.392, 2814.744, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 10: LEGAL DISCLAIMER [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2048.506, 735.387, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [50, 50, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 11: LEGAL DISCLAIMER TYPE [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [118.759, 1518.341, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 12: FCO [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1300.567, 193.615, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 13: COUNTRY [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [122.41, 209.445, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 14: VARIANT [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [137.735, 487.284, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 15: RHOMBUS VARIANT [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [837.735, 487.284, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 16: PRODUCT NAME [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [130.258, 764.11, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 17: LABEL TYPE [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [118.759, 1043.006, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 18: BANDEROLE [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [118.759, 1581.579, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 19: FOP [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [132.348, 1859.419, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 20: CAL [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [132.348, 2137.258, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 21: ARTIFICIALLY FLAVOURED [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [132.348, 2415.098, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 22: AUDIO ON/OFF [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [103.713, 2987.883, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 23: EXTERNAL DATA: [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [1500, 1500, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 24: sublineFont [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2906.613, 1650.237, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 25: headlineFont [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2906.613, 1550.237, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 26: varnish [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2886.777, 1478.302, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

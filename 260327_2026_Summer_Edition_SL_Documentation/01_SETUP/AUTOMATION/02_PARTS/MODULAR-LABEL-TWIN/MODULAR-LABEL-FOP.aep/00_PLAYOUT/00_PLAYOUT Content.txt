@@ -1,0 +1,1374 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:18:06
+Selected comps: 1
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/1: AC-24T
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.28s  (7f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: LAST FRAME TURN [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 7f
+  Visible trimmed range: 6f → 7f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Transform  (ADBE Geometry2)
+      • Anchor Point = [2560, 2560]
+      • Position = [2560, 2560]
+      • Uniform Scale = 1
+      • Scale Height = 100
+      • Scale Width = 100
+      • Skew = 0
+      • Skew Axis = 0
+      • Rotation = 180
+      • Opacity = 100
+      • Use Composition’s Shutter Angle = 1
+      • Shutter Angle = 0
+      • Sampling = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: STENCIL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: AC-24T_UV-PASS
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: TAB-DARK-BLUE [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: White Solid 5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | countryData = comp("DATA").layer("COUNTRY").text.sourceText.toLowerCase();
+      02 | countryData == "de" ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: DARKBLUE  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [0.055, 0.263, 0.73, 1]  {expr:on}
+        01 | data = footage("labelColors.json").sourceData;
+        02 | hexToRgb(data.global.tabDarkblue);
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 4: TAB-SF [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: White Solid 5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | const lib = footage("expressionLibrary.jsx").sourceData;
+      02 | lib.sfCheck() == 100 &&
+      03 | thisComp.layer("TAB-DARK-BLUE").transform.opacity == 0
+      04 | ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: SF  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [0.238, 0.677, 0.88, 1]  {expr:on}
+        01 | data = footage("labelColors.json").sourceData;
+        02 | hexToRgb(data.global.tabLightblue);
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 5: AC-24T_CARDBOARD MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 7f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: AC-24T_CARDBOARD MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: AC-24T_TOP MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 6f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: AC-24T_TOP MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: AC-24T_TAB MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 6f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: AC-24T_TAB MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: AC-24T_TOP-ALL_MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 6f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: AC-24T_TOP-ALL_MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 9: AC-24T_CAN LABEL MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: AC-24T_CAN LABEL MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 10: Gradient [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 4f → 5f
+  Stretch: 100%
+  Source name: White Solid 5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Gradient Ramp  (ADBE Ramp)
+      • Start of Ramp = [2918, 2560]
+      • Start Color = [0, 0, 0, 1]
+      • End of Ramp = [2805, 2560]
+      • End Color = [1, 1, 1, 1]
+      • Ramp Shape = 1
+      • Ramp Scatter = 0
+      • Blend With Original = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 11: AC-24T_PUZZLEMATTE-CANS [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 4f → 5f
+  Stretch: 100%
+  Source name: AC-24T_PUZZLEMATTE-CANS
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Set Channels  (ADBE Set Channels)
+      • Source Layer 1 = 0
+      • Set Red To Source 1’s = 1
+      • Source Layer 2 = 0
+      • Set Green To Source 2’s = 2
+      • Source Layer 3 = 0
+      • Set Blue To Source 3’s = 3
+      • Source Layer 4 = 0
+      • Set Alpha To Source 4’s = 3
+      • If Layer Sizes Differ = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 9
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 12: AC-24T_UV-PASS [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 4f → 5f
+  Stretch: 100%
+  Source name: AC-24T_UV-PASS
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 25
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: RE:Map UV  (UV Mapper Pete)
+      • Activation = "<cannot read value>"
+      • forcererender = 0
+      • Activate GPU = "<cannot read value>"
+      • Use GPU = 2
+      • Less GPU Mem = 1
+      •  = "<cannot read value>"
+      • Use GPU = 2
+      • Hidden Flag = 0
+      • Less GPU Mem = 0
+      • Warp Mode = 1
+      • Texture = 10
+      • Crop Top Left TexMap = [0, 0]
+      • Crop Bottom Right TexMap = [5120, 5120]
+      • Tile Repeat X = 1
+      • Tile Repeat Y = 1
+      • Flip = 1
+      • Tile Repeat Pattern X = 1
+      • Tile Repeat Pattern Y = 1
+      • Position Offset X = 0
+      • Position Offset Y = 0
+      • MipMap? = 1
+      • Mip Amount % = 66.66
+      • Edges Threshold % = 30
+      • Match Renderer = 1
+      • Adaptive Sharpening = 0
+      • Version = 40202
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 11
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Tint  (ADBE Tint)
+      • Map Black To = [0, 0, 0, 1]  {animated, expr:on}
+        01 | try {
+        02 | 	variantData = comp("DATA").layer("VARIANT").text.sourceText.toUpperCase();
+        03 | 	variant = variantData.split("-").pop(); // Gets last element after any "-"
+        04 | 	data = footage("labelColors.json").sourceData;
+        05 | 	result = hexToRgb(data.variants[variant]["A"]);
+        06 | } catch (e) {
+        07 |     hexToRgb("00000");
+        08 | }
+      • Map White To = [1, 1, 1, 0]
+      • Amount to Tint = 25
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 13: Gradient [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: White Solid 5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Gradient Ramp  (ADBE Ramp)
+      • Start of Ramp = [3939, 2560]
+      • Start Color = [0, 0, 0, 1]
+      • End of Ramp = [4117, 2560]
+      • End Color = [1, 1, 1, 1]
+      • Ramp Shape = 1
+      • Ramp Scatter = 0
+      • Blend With Original = 0
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 14: AC-24T_PUZZLEMATTE-CANS [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: AC-24T_PUZZLEMATTE-CANS
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Set Channels  (ADBE Set Channels)
+      • Source Layer 1 = 0
+      • Set Red To Source 1’s = 1
+      • Source Layer 2 = 0
+      • Set Green To Source 2’s = 2
+      • Source Layer 3 = 0
+      • Set Blue To Source 3’s = 3
+      • Source Layer 4 = 0
+      • Set Alpha To Source 4’s = 2
+      • If Layer Sizes Differ = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 9
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 15: AC-24T_UV-PASS [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: AC-24T_UV-PASS
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 45
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: RE:Map UV  (UV Mapper Pete)
+      • Activation = "<cannot read value>"
+      • forcererender = 0
+      • Activate GPU = "<cannot read value>"
+      • Use GPU = 2
+      • Less GPU Mem = 1
+      •  = "<cannot read value>"
+      • Use GPU = 2
+      • Hidden Flag = 0
+      • Less GPU Mem = 0
+      • Warp Mode = 1
+      • Texture = 13
+      • Crop Top Left TexMap = [0, 0]
+      • Crop Bottom Right TexMap = [5120, 5120]
+      • Tile Repeat X = 1
+      • Tile Repeat Y = 1
+      • Flip = 1
+      • Tile Repeat Pattern X = 1
+      • Tile Repeat Pattern Y = 1
+      • Position Offset X = 0
+      • Position Offset Y = 0
+      • MipMap? = 1
+      • Mip Amount % = 66.66
+      • Edges Threshold % = 30
+      • Match Renderer = 1
+      • Adaptive Sharpening = 0
+      • Version = 40202
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 14
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Tint  (ADBE Tint)
+      • Map Black To = [0, 0, 0, 1]  {animated, expr:on}
+        01 | try {
+        02 | 	variantData = comp("DATA").layer("VARIANT").text.sourceText.toUpperCase();
+        03 | 	variant = variantData.split("-").pop(); // Gets last element after any "-"
+        04 | 	data = footage("labelColors.json").sourceData;
+        05 | 	result = hexToRgb(data.variants[variant]["A"]);
+        06 | } catch (e) {
+        07 |     hexToRgb("00000");
+        08 | }
+      • Map White To = [1, 1, 1, 0]
+      • Amount to Tint = 25
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 16: TRAY-CARDBOARD_CC [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: TRAY-CARDBOARD_CC
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 17: AC-24T_CARDBOARD-LABEL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: AC-24T_CARDBOARD-LABEL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2048, 2048, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 18: UV CARDBOARD [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: AC-24T_UV-PASS
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: RE:Map UV  (UV Mapper Pete)
+      • Activation = "<cannot read value>"
+      • forcererender = 0
+      • Activate GPU = "<cannot read value>"
+      • Use GPU = 2
+      • Less GPU Mem = 1
+      •  = "<cannot read value>"
+      • Use GPU = 2
+      • Hidden Flag = 0
+      • Less GPU Mem = 0
+      • Warp Mode = 1
+      • Texture = 17
+      • Crop Top Left TexMap = [0, 0]
+      • Crop Bottom Right TexMap = [5120, 5120]
+      • Tile Repeat X = 1
+      • Tile Repeat Y = 1
+      • Flip = 1
+      • Tile Repeat Pattern X = 1
+      • Tile Repeat Pattern Y = 1
+      • Position Offset X = 0
+      • Position Offset Y = 0
+      • MipMap? = 1
+      • Mip Amount % = 50
+      • Edges Threshold % = 0.51
+      • Match Renderer = 1
+      • Adaptive Sharpening = 0
+      • Version = 40202
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 5
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 19: SHADOWS GLOBAL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 6f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: AC-24T_shadowTint
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 55  {animated, expr:on}
+      01 | value+10;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 20: SPEC_GLOSSY [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: AC-24T_SPECULAR
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | glossyVariants = footage("labelData.json").sourceData.variables.glossyVariants
+      02 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      03 | glossyVariants.includes(variantData) ? value : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Curves  (ADBE CurvesCustom)
+      • Channel: = 1
+      • Curves = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Levels  (ADBE Easy Levels2)
+      • Channel: = 1
+      • Histogram = "<cannot read value>"
+      • Input Black = 0
+      • Input White = 1
+      • Gamma = 1
+      • Output Black = 0
+      • Output White = 1
+      • Clip To Output Black = 3
+      • Clip To Output White = 3
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Tint  (ADBE Tint)
+      • Map Black To = [0, 0, 0, 0]
+      • Map White To = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Amount to Tint = 100
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 21: SPEC_MATTE [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: AC-24T_SPECULAR
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 52  {animated, expr:on}
+      01 | glossyCheck = comp("DATA").layer("varnish").text.sourceText.toLowerCase();
+      02 | glossyCheck != "glossy" ? 52 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Curves  (ADBE CurvesCustom)
+      • Channel: = 1
+      • Curves = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Gaussian Blur  (ADBE Gaussian Blur 2)
+      • Blurriness = 50
+      • Blur Dimensions = 1
+      • Repeat Edge Pixels = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Tint  (ADBE Tint)
+      • Map Black To = [0, 0, 0, 0]
+      • Map White To = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Amount to Tint = 100
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 22: OCCLUSION GLOBAL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: AC-24T_OCCLUSION
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 80  {animated, expr:on}
+      01 | glossyVariants = footage("labelData.json").sourceData.variables.glossyVariants
+      02 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      03 | zeroVariants = ["zr","zr-ca"];
+      04 | glossyVariants.includes(variantData) || zeroVariants.includes(variantData) ? 70 : 80;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Levels  (ADBE Easy Levels2)
+      • Channel: = 1
+      • Histogram = "<cannot read value>"  {animated}
+      • Input Black = 0
+      • Input White = 1
+      • Gamma = 1
+      • Output Black = 0
+      • Output White = 1
+      • Clip To Output Black = 3
+      • Clip To Output White = 3
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 23: NOISE UV [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-24T_UV-PASS
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 15  {animated, expr:on}
+      01 | varnishData = comp("DATA").layer("varnish").text.sourceText.toLowerCase();
+      02 | 
+      03 | varnishData == "matte" ? value : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: RE:Map UV  (UV Mapper Pete)
+      • Activation = "<cannot read value>"
+      • forcererender = 0
+      • Activate GPU = "<cannot read value>"
+      • Use GPU = 2
+      • Less GPU Mem = 1
+      •  = "<cannot read value>"
+      • Use GPU = 2
+      • Hidden Flag = 0
+      • Less GPU Mem = 0
+      • Warp Mode = 1
+      • Texture = 24
+      • Crop Top Left TexMap = [0, 0]
+      • Crop Bottom Right TexMap = [5120, 5120]
+      • Tile Repeat X = 1
+      • Tile Repeat Y = 1
+      • Flip = 1
+      • Tile Repeat Pattern X = 1
+      • Tile Repeat Pattern Y = 1
+      • Position Offset X = 0
+      • Position Offset Y = 0
+      • MipMap? = 1
+      • Mip Amount % = 50
+      • Edges Threshold % = 7.21
+      • Match Renderer = 1
+      • Adaptive Sharpening = 0
+      • Version = 40202
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 9
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 24: LABEL NOISE [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: LABEL NOISE
+  Time Remap: enabled
+    • Time Remap = 0  {animated}
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 25: UV CANS [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 6f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Source name: AC-24T_UV-CAN
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 26: TRAY-ALU-VARIANTS_CC [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 9f
+  Visible trimmed range: 0f → 9f
+  Stretch: 100%
+  Source name: TRAY-ALU-VARIANTS_CC
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 27: EXPOSURE LABEL ALU [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 6f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 5
+    ----------------------------------------------------------
+    EFFECT 1: Exposure 2  (ADBE Exposure2)
+      • Channels: = 1
+      • Master = "<cannot read value>"
+      • Exposure = 0.75
+      • Offset = 0
+      • Gamma Correction = 1
+      • Master = "<cannot read value>"
+      • Red = "<cannot read value>"
+      • Red Exposure = 0
+      • Red Offset = 0
+      • Red Gamma Correction = 1
+      • Red = "<cannot read value>"
+      • Green = "<cannot read value>"
+      • Green Exposure = 0
+      • Green Offset = 0
+      • Green Gamma Correction = 1
+      • Green = "<cannot read value>"
+      • Blue = "<cannot read value>"
+      • Blue Exposure = 0
+      • Blue Offset = 0
+      • Blue Gamma Correction = 1
+      • Blue = "<cannot read value>"
+      • Bypass Linear Light Conversion = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Curves  (ADBE CurvesCustom)
+      • Channel: = 1
+      • Curves = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Photo Filter  (ADBE PhotoFilterPS)
+      • Filter = 22
+      • Color = [0.529, 0.638, 0.718, 1]
+      • Density = 50
+      • Preserve Luminosity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 4: Levels  (ADBE Easy Levels2)
+      • Channel: = 1
+      • Histogram = "<cannot read value>"
+      • Input Black = 0
+      • Input White = 1
+      • Gamma = 1
+      • Output Black = 0
+      • Output White = 1
+      • Clip To Output Black = 3
+      • Clip To Output White = 3
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 5: Apply Color LUT  (ADBE Apply Color LUT2)
+      • <LUT not set> = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 28: CC_TOP-ALU [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 6f
+  Visible trimmed range: 0f → 6f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Levels  (ADBE Easy Levels2)
+      • Channel: = 1
+      • Histogram = "<cannot read value>"
+      • Input Black = 0
+      • Input White = 1
+      • Gamma = 1
+      • Output Black = 0
+      • Output White = 1
+      • Clip To Output Black = 3
+      • Clip To Output White = 3
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Apply Color LUT  (ADBE Apply Color LUT2)
+      • <LUT not set> = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Photo Filter  (ADBE PhotoFilterPS)
+      • Filter = 22
+      • Color = [0.316, 0.473, 0.62, 1]
+      • Density = 50
+      • Preserve Luminosity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 29: EXPOSURE_TOP [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 7f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Exposure  (ADBE Exposure2)
+      • Channels: = 1
+      • Master = "<cannot read value>"
+      • Exposure = 0.39
+      • Offset = 0
+      • Gamma Correction = 1
+      • Master = "<cannot read value>"
+      • Red = "<cannot read value>"
+      • Red Exposure = 0
+      • Red Offset = 0
+      • Red Gamma Correction = 1
+      • Red = "<cannot read value>"
+      • Green = "<cannot read value>"
+      • Green Exposure = 0
+      • Green Offset = 0
+      • Green Gamma Correction = 1
+      • Green = "<cannot read value>"
+      • Blue = "<cannot read value>"
+      • Blue Exposure = 0
+      • Blue Offset = 0
+      • Blue Gamma Correction = 1
+      • Blue = "<cannot read value>"
+      • Bypass Linear Light Conversion = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 30: BEAUTY [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: Cans_Tray_NEW_Beauty.Beauty_other.[0000-0006].exr
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL-TWIN\MODULAR-LABEL-FOP.aep\04_TRAY\AC-24T\AOVs\Cans_Tray_NEW\Cans_Tray_NEW_Beauty.Beauty_other.0000.exr
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Photo Filter  (ADBE PhotoFilterPS)
+      • Filter = 6
+      • Color = [0, 0.71, 1, 0]
+      • Density = 5
+      • Preserve Luminosity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+

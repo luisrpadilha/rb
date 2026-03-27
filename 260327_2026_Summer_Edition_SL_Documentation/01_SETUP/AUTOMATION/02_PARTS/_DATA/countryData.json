@@ -1,0 +1,102 @@
+{
+  "headlineFonts": {
+    "Wings-Bold": ["dz", "bh", "dj", "eg", "jo", "kw", "lb", "mr", "om", "so", "sd", "tn", "ae"],
+    "Tensentype-ZhiHeiJ-W5": ["cn","hk","tw"],
+    "thai": ["th"],
+    "ShinGoPro-Bold": ["jp"],
+    "NotoSansCJK-Black": ["kr"],
+    "GeoGrotesk": ["ge"],
+    "armenian": ["am"],
+    "FuturaTGR-BolCon": ["gr", "cy"],
+    "Rubik-Bold": ["il"]
+  },
+  "sublineFonts": {
+    "Wings-Regular": ["dz", "bh", "dj", "eg", "jo", "kw", "lb", "mr", "om", "so", "sd", "tn", "ae"],
+    "Tensentype-ZhiHeiJ-W5": ["cn","hk","tw"],
+    "thai": ["th"],
+    "ShinGoPro-Regular": ["jp"],
+    "korean": ["kr"],
+    "GeoGrotesk": ["ge"],
+    "armenian": ["am"],
+    "FuturaTGR-Boo": ["gr", "cy"],
+    "Rubik-Regular": ["il"]
+  },
+  "headlineFontMapping": {
+    "Wings-Bold": { "family": "Wings", "style": "Bold" },
+    "Tensentype-ZhiHeiJ-W5": { "family": "Tensentype ZhiHeiJ-W5", "style": "Bold" },
+    "thai": { "family": "Noto Sans Thai", "style": "Bold" },
+    "ShinGoPro-Bold": { "family": "A-OTF Shin Go Pro", "style": "B" },
+    "NotoSansCJK-Black": { "family": "Noto Sans CJK KR", "style": "Black" },
+    "GeoGrotesk": { "family": "Geo Grotesk", "style": "Regular" },
+    "armenian": { "family": "Noto Sans Armenian", "style": "Bold" },
+    "FuturaTGR-BolCon": { "family": "FuturaTGRBolCon", "style": "Regular" },
+    "Rubik-Bold": { "family": "Rubik", "style": "Bold" }
+  },
+  "sublineFontMapping": {
+    "Wings-Regular": { "family": "Wings", "style": "Regular" },
+    "Tensentype-ZhiHeiJ-W5": { "family": "Tensentype ZhiHeiJ-W5", "style": "Bold" },
+    "FuturaTGR-Boo": { "family": "FuturaTGR", "style": "Regular" },
+    "thai": { "family": "Noto Sans Thai", "style": "Bold" },
+    "armenian": { "family": "Noto Sans Armenian", "style": "Bold" },
+    "japanese": { "family": "Noto Sans CJK JP", "style": "Regular" },
+    "korean": { "family": "Noto Sans CJK KR", "style": "Regular" },
+    "georgian": { "family": "Noto Sans Georgian", "style": "Regular" },
+    "israel": { "family": "Noto Sans Hebrew", "style": "Regular" }
+
+  },
+  "aeFonts": {
+    "headlineFonts":{
+      "Latin": "FuturaforRedBull-CondBold",
+      "Chinese": "Tensentype-ZhiHeiJ-W5",
+      "Japanese": "ShinGoPro-Bold",
+      "Korean": "NotoSansCJK-Black",
+      "Arabic": "Wings-Bold",
+      "Thai": "Noto Serif Thai",
+      "Georgian": "GeoGrotesk",
+      "Greek": "FuturaTGR-BolCon",
+      "Hebrew": "Rubik-Bold",
+      "Fallback": "FuturaforRedBull-CondBold"
+    },
+    "sublineFonts":{
+      "Latin": "FuturaforRedBull-Book",
+      "Chinese": "Tensentype-ZhiHeiJ-W5",
+      "Japanese": "ShinGoPro-Regular",
+      "Korean": "NotoSansCJK-Black",
+      "Arabic": "Wings-Regular",
+      "Thai": "Noto Serif Thai",
+      "Georgian": "GeoGrotesk",
+      "Greek": "FuturaTGR-Boo",
+      "Hebrew": "Rubik-Regular",
+      "Fallback": "FuturaforRedBull-Book"
+    },
+    "claimFonts": {
+      "Latin": "FuturaLTPro-Heavy",
+      "Chinese": "Tensentype-ZhiHeiJ-W5",
+      "Japanese": "ShinGoPro-Bold",
+      "Korean": "NotoSansCJK-Black",
+      "Arabic": "Wings-Bold",
+      "Thai": "Noto Serif Thai",
+      "Georgian": "GeoGrotesk",
+      "Greek": "FuturaTGR-BolCon",
+      "Hebrew": "Rubik-Bold",
+      "Fallback": "FuturaforRedBull-CondBold"
+    }
+  },
+  "specialCharacters": {
+    "top": [
+      "À", "Á", "Â", "Ã", "Ä", "È", "É", "Ê", "Ë", "Ì", "Í", "Î", "Ï", "Ñ", "Ò", "Ó", "Ô", "Õ",
+      "Ö", "Ù", "Ú", "Û", "Ü", "Ý", "Ā", "Ă", "Ć", "Ĉ", "Ċ", "Č", "Ď", "Ē", "Ĕ", "Ė", "Ě", "Ĝ", "Ğ",
+      "Ġ", "Ĥ", "Ĩ", "Ī", "İ", "Ĵ", "Ľ", "Ń", "Ň", "Ō", "Ŏ", "Ő", "Ŕ", "Ř", "Ś", "Ŝ", "Š", "Ť", "Ũ",
+      "Ū", "Ŭ", "Ű", "Ŵ", "Ŷ", "Ÿ", "Ź", "Ż", "Ž"
+      ],
+    "topLarge": [
+      "Ů", "Å"
+    ],
+    "bottom": [
+      "Ą", "Ę", "Į", "Ų"
+    ],
+    "bottomLarge": [
+      "Ș", "Ț", "Ţ", "Ş", "Ņ", "Ļ", "Ķ", "Ģ", "Ç", "Ŗ"
+    ]
+  }
+}

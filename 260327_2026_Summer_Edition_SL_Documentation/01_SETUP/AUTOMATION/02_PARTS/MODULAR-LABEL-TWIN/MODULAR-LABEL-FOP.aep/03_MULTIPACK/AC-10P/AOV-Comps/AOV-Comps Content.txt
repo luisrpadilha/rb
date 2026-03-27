@@ -1,0 +1,16 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:26:07
+Selected comps: 1
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/1: AC-10P_CAN LABEL MASK
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.36s  (9f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+============================================================
+

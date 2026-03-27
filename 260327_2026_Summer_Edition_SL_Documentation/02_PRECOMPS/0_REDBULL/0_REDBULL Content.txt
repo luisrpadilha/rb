@@ -1,0 +1,655 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:31:41
+Selected comps: 4
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/4: BUTTON_PRE
+  Size: 1080x1080
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 1.833s  (55f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: BUTTON TEXT SCALE [Null]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: Null 16
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [50, 50, 0]
+    • Position = [540, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [140, 140, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: Strokes [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [959.102, 525.033, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [93.985, 93.985, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 15
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: AVAILABLE NOW [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [954.793, 483.012, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [679.025, 679.025, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = -1.144
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: PULSE [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 304f
+  Visible trimmed range: 15f → 304f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [540, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [125, 125, 100]  {animated}
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated}
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: INNER_RING [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 304f
+  Visible trimmed range: 0f → 304f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [540, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]  {animated}
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Tint  (ADBE Tint)
+      • Map Black To = [1, 1, 1, 1]
+      • Map White To = [1, 1, 1, 0]
+      • Amount to Tint = 100
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 6: OUTER_RING [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 304f
+  Visible trimmed range: 0f → 304f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [540, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]  {animated}
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: WHITE_30%_OPAC [Shape]
+  Parent: parented → [8] BACKGROUND_70%_OPAC_CB_Color
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 304f
+  Visible trimmed range: 0f → 304f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: 1
+    • Marker 1: 0s (0f)  comment="Don't touch D:"
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [0, 0, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 30
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: BACKGROUND_70%_OPAC_CB_Color [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 306f
+  Visible trimmed range: 0f → 306f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: 1
+    • Marker 1: 0s (0f)  comment="Tint to Layout-Background color"
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [540, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]  {animated}
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 70
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Tint  (ADBE Tint)
+      • Map Black To = [0.65, 0.162, 0.467, 1]
+      • Map White To = [0.65, 0.162, 0.467, 1]
+      • Amount to Tint = 100
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 2/4: ED_CAN
+  Size: 4500x8000
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 0.467s  (14f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: ZERO_COUNTRY_RGB__Cold_Closed_Front.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: ZERO_COUNTRY_RGB__Cold_Closed_Front.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\ZERO_COUNTRY_RGB__Cold_Closed_Front.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | edType=comp("SHOT04_CLEAN").layer("Control").effect("Energy Drink")("Menu");
+      02 | if (edType == 3)
+      03 | 	100
+      04 | else
+      05 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: IE_SF_250ml_AC_Sugarfree_COUNTRY_RGB__Cold_Closed_Front.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: IE_SF_250ml_AC_Sugarfree_COUNTRY_RGB__Cold_Closed_Front.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\ED_SF\IE_SF_250ml_AC_Sugarfree_COUNTRY_RGB__Cold_Closed_Front.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | edType=comp("SHOT04_CLEAN").layer("Control").effect("Energy Drink")("Menu");
+      02 | if (edType == 2)
+      03 | 	100
+      04 | else
+      05 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: IE_ED_250ml_AC_Energy Drink_COUNTRY_RGB_PACKRQ-3219_Cold_Closed_Front.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: IE_ED_250ml_AC_Energy Drink_COUNTRY_RGB_PACKRQ-3219_Cold_Closed_Front.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\ED_FS\IE_ED_250ml_AC_Energy Drink_COUNTRY_RGB_PACKRQ-3219_Cold_Closed_Front.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | edType=comp("SHOT04_CLEAN").layer("Control").effect("Energy Drink")("Menu");
+      02 | if (edType == 1)
+      03 | 	100
+      04 | else
+      05 | 	0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: SL_250ml_Can_Shadow_RGB [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: SL_250ml_Can_Shadow_RGB
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2406.5, 407, 0]
+    • Position = [2242, 6626, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [95.761, 107.093, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated}
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 3/4: RB_LOGO_VBAM
+  Size: 2048x2048
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 1s  (30f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: VBAM [Text]
+  Parent: parented → [3] RB_Standard_Logo_rgb_2017.png
+  Source type: No source
+  Start frame: -1f
+  End frame (source-based): 299f
+  Visible trimmed range: -1f → 299f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-0.365, -7.702, 0]
+    • Position = [1351.425, 2416.991, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [2111.585, 2111.585, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated}
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Templater Settings  (TMPL_Settings)
+      •  = "<cannot read value>"
+      • Web = "<cannot read value>"
+      • Form = 0
+      • Required = 1
+      •  = "<cannot read value>"
+      • Text = "<cannot read value>"
+      • Min characters = 5
+      • Max characters = 25
+      • Min rows = 1
+      • Max rows = 3
+      •  = "<cannot read value>"
+      • Image = "<cannot read value>"
+      • Source min width = 1024
+      • Source min height = 768
+      •  = "<cannot read value>"
+      • Layout = "<cannot read value>"
+      • Scale factor = 0
+      • Fit Image Style = 1
+      • Alignment = "<cannot read value>"
+      • Initialize to center = 0
+      • Align To = 1
+      • Padding = 0
+      • Consider anchor point = 0
+      •  = "<cannot read value>"
+      • Attachment = "<cannot read value>"
+      • Attach to layer = 0
+      • Attach on = 1
+      • Group Position = 1
+      • Group Direction = 1
+      • Center on edges = 0
+      • Attach padding = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Time = "<cannot read value>"
+      • Comp Starts at In Point = 0
+      • Comp Ends at Out Point = 0
+      • Shift = "<cannot read value>"
+      • Shift Target = 0
+      • In Point Shifts To = 1
+      • Out Point Shifts To = 1
+      • Shift Overlap = 0
+      •  = "<cannot read value>"
+      • Trim = "<cannot read value>"
+      • Preserve Start = 0
+      • In Point Target = 0
+      • In Point Trims To = 1
+      • In Point Overlap = 0
+      • Preserve End = 0
+      • Out Point Target = 0
+      • Out Point Trims To = 1
+      • Out Point Overlap = 0
+      •  = "<cannot read value>"
+      • Stretch = "<cannot read value>"
+      • Stretch Target = 0
+      • Stretch To = 1
+      • Stretch Overlap = 0
+      •  = "<cannot read value>"
+      •  = "<cannot read value>"
+      • Data = "<cannot read value>"
+      • Iterate Pond5 Results = 0
+      •  = "<cannot read value>"
+      • Color = "<cannot read value>"
+      • Dynamic Fill = 1
+      • Default Fill = [0, 0, 0, 1]
+      •  = "<cannot read value>"
+      • Render Group = 1
+      • Registered = 0
+      • Generative AI = "<cannot read value>"
+      • ARB_FETCH_TRIGGER_PARAM = 1
+      • Default Prompt = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Lock Anchor Point To...  (Pseudo/@@/TFyY0wHRuOmFCPFeBtaUw)
+      • Menu = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: When to Sample  (ADBE Slider Control)
+      • Slider = 12
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: TM_SYMBOL [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 10f
+  End frame (source-based): 300f
+  Visible trimmed range: 128f → 300f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0.136, -9.779, 0]  {animated, expr:on}
+      01 | var mysize = sourceRectAtTime();
+      02 | [mysize.left,mysize.top+mysize.height-10];
+    • Position = [1702.211, 1292.387, 0]  {animated, expr:on}
+      01 | var mainTextLayer = thisComp.layer(index-1);
+      02 | var mainTextSize = mainTextLayer.sourceRectAtTime();
+      03 | var mainTextTopRight = [mainTextSize.left + mainTextSize.width-15, mainTextSize.top];
+      04 | var mainTextTopRightComp = mainTextLayer.toComp(mainTextTopRight);
+      05 | 
+      06 | mainTextTopRightComp;
+      07 | 
+      08 | 
+      09 | 
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [342, 342, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer(index-1).transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Transform  (ADBE Geometry2)
+      • Anchor Point = [1024, 1024]
+      • Position = [1024, 1024]
+      • Uniform Scale = 1
+      • Scale Height = 100
+      • Scale Width = 100
+      • Skew = 0
+      • Skew Axis = 0
+      • Rotation = 0
+      • Opacity = 100  {animated, expr:on}
+        01 | posterizeTime(0);
+        02 | trademarkCheck = comp("DATA").layer("VBAM TRADEMARK").text.sourceText.toLowerCase();
+        03 | trademarkCheck == "yes" ? 100 : 0;
+      • Use Composition’s Shutter Angle = 1
+      • Shutter Angle = 0
+      • Sampling = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: RB_Standard_Logo_rgb_2017.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: RB_Standard_Logo_rgb_2017.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\03_FOOTAGE\RB_Standard_Logo_rgb_2017.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [1345.5, 814.5, 0]
+    • Position = [1028, 1024, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [20, 20, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated}
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Red Bull Logo Size (px)  (ADBE Point Control)
+      • Point = [538.2, 325.8]  {animated, expr:on}
+        01 | scaleFactor=transform.scale[0]/100;
+        02 | x=thisLayer.sourceRectAtTime(2).width*scaleFactor;
+        03 | y=thisLayer.sourceRectAtTime(2).height*scaleFactor;
+        04 | [x,y]
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 4/4: RHOMBUS-CANS
+  Size: 4500x8000
+  FPS: 30
+  Duration: 10s  (300f)
+  Sample time: 0.467s  (14f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: RHOMBUS CANS [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: RHOMBUS CANS
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2250, 4000, 0]
+    • Position = [2250, 4000, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: SL_250ml_Can_Shadow_RGB [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 300f
+  Visible trimmed range: 0f → 300f
+  Stretch: 100%
+  Source name: SL_250ml_Can_Shadow_RGB
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2406.5, 407, 0]
+    • Position = [2250, 6626, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [95.761, 107.093, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+

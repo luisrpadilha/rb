@@ -1,0 +1,2213 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-03-27 12:04:59
+Selected comps: 7
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/7: CAN LABEL MASK PRECOMP
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.36s  (9f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: AC-6P_CAN LABEL MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 9f
+  Visible trimmed range: 0f → 9f
+  Stretch: 100%
+  Source name: AC-6P_CAN LABEL MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: AC-10P_CAN LABEL MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 9f
+  Visible trimmed range: 0f → 9f
+  Stretch: 100%
+  Source name: AC-10P_CAN LABEL MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: AC-12T_CAN LABEL MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-12T_CAN LABEL MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: AC-24T_CAN LABEL MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-24T_CAN LABEL MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: AC-4P_CAN LABEL MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 9f
+  Visible trimmed range: 0f → 9f
+  Stretch: 100%
+  Source name: AC-4P_CAN LABEL MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: AC-6x4PT_CAN LABEL MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-6x4PT_CAN LABEL MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 2/7: COLORED CAN LABEL
+  Size: 8000x6240
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: BRUSHED-METAL_8k.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: BRUSHED-METAL_8k.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\01_PROJECT\Footage\BRUSHED-METAL_8k.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 15
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: BRUSHED-METAL_8k.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: BRUSHED-METAL_8k.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\01_PROJECT\Footage\BRUSHED-METAL_8k.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 15
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: BRUSHED-METAL_8k.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: BRUSHED-METAL_8k.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\01_PROJECT\Footage\BRUSHED-METAL_8k.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 15
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: EDITIONS_FOP_COL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EDITIONS_FOP_COL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | thisComp.layer("EDITIONS_MODULAR_LABEL_UPSCALE").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: SF-WHITE_EDITIONS [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("EDITIONS_SUGARFREE_MODULAR_LABEL_UPSCALE").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [0.937, 0.949, 0.959, 1]  {expr:on}
+        01 | layerColor = thisLayer.name.split("_")[0].toUpperCase();
+        02 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toUpperCase();
+        03 | data = footage("labelColors.json").sourceData;
+        04 | result = hexToRgb(data.global["sf-white"]);
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 7
+      • Use For Matte = 1
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 6: SF-CYAN_EDITIONS [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("EDITIONS_SUGARFREE_MODULAR_LABEL_UPSCALE").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [0.077, 0.639, 0.86, 1]  {expr:on}
+        01 | layerColor = thisLayer.name.split("_")[0].toUpperCase();
+        02 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toUpperCase();
+        03 | data = footage("labelColors.json").sourceData;
+        04 | result = hexToRgb(data.global["sf-cyan"]);
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 7
+      • Use For Matte = 2
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 7: EDITIONS_SUGARFREE_MODULAR_LABEL_UPSCALE [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EDITIONS_SUGARFREE_MODULAR_LABEL_UPSCALE
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | variantSource = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      02 | sfCheck = variantSource.split("-")[0];
+      03 | editionCheck = thisComp.layer("R_EDITIONS").transform.opacity;
+      04 | 
+      05 | sfCheck == "sf" && editionCheck == 100  ? 100 : 0;
+      06 | 
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: R_EDITIONS [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | thisComp.layer("EDITIONS_MODULAR_LABEL_UPSCALE").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 13
+      • Use For Matte = 1
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 9: G_EDITIONS [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | thisComp.layer("EDITIONS_MODULAR_LABEL_UPSCALE").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 13
+      • Use For Matte = 2
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 10: B_EDITIONS [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | thisComp.layer("EDITIONS_MODULAR_LABEL_UPSCALE").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 13
+      • Use For Matte = 3
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 11: GRADIENT_EDITIONS [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {expr:on}
+      01 | layerColor = thisLayer.name.split("_")[0].toUpperCase();
+      02 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toUpperCase();
+      03 | lib = footage("expressionLibrary.jsx").sourceData;
+      04 | variant = lib.actualVariant().toUpperCase();
+      05 | editionsCheck = thisComp.layer("EDITIONS_MODULAR_LABEL_UPSCALE").transform.opacity;
+      06 | data = footage("labelColors.json").sourceData;
+      07 | 
+      08 | data.variants[variant].hasOwnProperty(layerColor) && editionsCheck == 100 ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 13
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 12: A_EDITIONS [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | thisComp.layer("EDITIONS_MODULAR_LABEL_UPSCALE").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 13
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 13: EDITIONS_MODULAR_LABEL_UPSCALE [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: EDITIONS_MODULAR_LABEL_UPSCALE
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | variantSource = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      02 | variantSplit = variantSource.split("-")[0];
+      03 | variantCheck = ["ed", "sf", "zr", "ed-ca", "sf-ca", "zr-ca"];
+      04 | variantCheck.includes(variantSource) || variantSplit == "or" ? 0 : 100;
+      05 | 
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Shift Channels  (ADBE Shift Channels)
+      • Take Alpha From = 1
+      • Take Red From = 2
+      • Take Green From = 3
+      • Take Blue From = 4
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [0, 0, 0, 1]  {animated, expr:on}
+        01 | try {
+        02 |     if (thisLayer.transform.opacity == 100) {
+        03 |         layerColor = thisLayer.name.split("_")[0].toUpperCase();
+        04 |         variantData = comp("Data").layer("VARIANT").text.sourceText.toUpperCase();
+        05 |         lib = footage("expressionLibrary.jsx").sourceData;
+        06 | 		variant = lib.actualVariant().toUpperCase();
+        07 |         data = footage("labelColors.json").sourceData;
+        08 |         result = hexToRgb(data.variants[variant][layerColor]);
+        09 |     }
+        10 | } catch (e) {
+        11 |     hexToRgb("00000");
+        12 | }
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 14: ALU_CC [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [160, 104, 0]
+    • Position = [4160, 3224, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | lib = footage("expressionLibrary.jsx").sourceData;
+      02 | lib.actualVariant().toUpperCase() == thisLayer.name.split("_")[1].toUpperCase() ? 100 : 0;
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 15: --------------------------------------- [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 16: ZR_COL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ZR_COL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ZR_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 17: DARKBLUE_ZR [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ZR_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 18
+      • Use For Matte = 1
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 18: ZR_DARK-BLUE_LABEL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ZR_DARK-BLUE_LABEL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ZR_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 19: R_ZR [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ZR_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 23
+      • Use For Matte = 1
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 20: G_ZR [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ZR_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 23
+      • Use For Matte = 2
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 21: B_ZR [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ZR_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 23
+      • Use For Matte = 3
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 22: A_ZR [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ZR_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 23
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 23: ZR_MODULAR_LABEL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ZR_MODULAR_LABEL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      02 | layerVariant = thisLayer.name.split("_")[0].toLowerCase();
+      03 | variantData == layerVariant || variantData == layerVariant+"-ca" ? 100 : 0;
+      04 | 
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 24: --------------------------------------- [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 25: SF_COL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: SF_COL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("SF_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 26: R_SF [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("SF_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 30
+      • Use For Matte = 1
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 27: G_SF [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("SF_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 30
+      • Use For Matte = 2
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Noise  (ADBE Noise2)
+      • Amount of Noise = 50
+      • Noise Type = 0
+      • Clipping = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 28: B_SF [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("SF_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 30
+      • Use For Matte = 3
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 29: A_SF [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("SF_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 30
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 30: SF_MODULAR_LABEL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: SF_MODULAR_LABEL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      02 | layerVariant = thisLayer.name.split("_")[0].toLowerCase();
+      03 | variantData == layerVariant || variantData == layerVariant+"-ca" ? 100 : 0;
+      04 | 
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 31: --------------------------------------- [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 32: ED_COL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ED_COL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ED_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 33: R_ED [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ED_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 37
+      • Use For Matte = 1
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 34: G_ED [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ED_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 3
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 37
+      • Use For Matte = 2
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 3: Noise  (ADBE Noise2)
+      • Amount of Noise = 50
+      • Noise Type = 0
+      • Clipping = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 35: B_ED [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ED_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 37
+      • Use For Matte = 3
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 36: A_ED [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | thisComp.layer("ED_MODULAR_LABEL").transform.opacity
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Fill  (ADBE Fill)
+      • Fill Mask = 0
+      • All Masks = 0
+      • Color = [1, 1, 1, 1]  {animated, expr:on}
+        01 | const lib = footage("expressionLibrary.jsx").sourceData;
+        02 | lib.labelColor();
+      • Invert = 0
+      • Horizontal Feather = 0
+      • Vertical Feather = 0
+      • Opacity = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Set Matte  (ADBE Set Matte3)
+      • Take Matte From Layer = 37
+      • Use For Matte = 4
+      • Invert Matte = 0
+      • If Layer Sizes Differ = 1
+      • Composite Matte with Original = 1
+      • Premultiply Matte Layer = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 37: ED_MODULAR_LABEL [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Source name: ED_MODULAR_LABEL
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [4000, 3120, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | variantData = comp("DATA").layer("VARIANT").text.sourceText.toLowerCase();
+      02 | layerVariant = thisLayer.name.split("_")[0].toLowerCase();
+      03 | variantData == layerVariant || variantData == layerVariant+"-ca" ? 100 : 0;
+      04 | 
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 3/7: LABEL NOISE
+  Size: 8000x6240
+  FPS: 30
+  Duration: 0.033s  (1f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: LABEL NOISE [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 1f
+  Visible trimmed range: 0f → 1f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [4000, 3120, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Turbulent Noise  (ADBE AIF Perlin Noise 3D)
+      • Fractal Type = 14
+      • Noise Type = 4
+      • Invert = 0
+      • Contrast = 85
+      • Brightness = 0
+      • Overflow = 4
+      • Transform = "<cannot read value>"
+      • Rotation = 0
+      • Uniform Scaling = 1
+      • Scale = 100
+      • Scale Width = 100
+      • Scale Height = 100
+      • Offset Turbulence = [4000, 3120]
+      • Perspective Offset = 0
+      •  = "<cannot read value>"
+      • Complexity = 5.3
+      • Sub Settings = "<cannot read value>"
+      • Sub Influence (%) = 160
+      • Sub Scaling = 47.8
+      • Sub Scaling = "<cannot read value>"
+      • Evolution = 0
+      • Evolution Options = "<cannot read value>"
+      • Turbulence Factor = 1.5
+      • Random Seed = 0
+      • Random Seed = "<cannot read value>"
+      • Opacity = 100
+      • Blending Mode = 2
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
+COMP 4/7: TRAY LABEL MASK PRECOMP
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0.04s  (1f)
+  Comp markers: 9
+    • Marker 1: 0s (0f)  comment="Persp1"
+    • Marker 2: 0.04s (1f)  comment="Front"
+    • Marker 3: 0.08s (2f)  comment="Right"
+    • Marker 4: 0.12s (3f)  comment="Persp2"
+    • Marker 5: 0.16s (4f)  comment="Persp3"
+    • Marker 6: 0.2s (5f)  comment="Top"
+    • Marker 7: 0.24s (6f)  comment="Bottom"
+    • Marker 8: 0.28s (7f)  comment="Persp4"
+    • Marker 9: 0.32s (8f)  comment="1"
+------------------------------------------------------------
+
+LAYER 1: AC-24T_CARDBOARD MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 7f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: AC-24T_CARDBOARD MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: AC-12T_CARDBOARD MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 7f
+  Visible trimmed range: 0f → 7f
+  Stretch: 100%
+  Source name: AC-12T_CARDBOARD MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: AC-6x4PT_TRAY-LABEL_MASK [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: AC-6x4PT_TRAY-LABEL_MASK
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 5/7: TRAY-ALU-VARIANTS_CC
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.36s  (9f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: VARIANTS-ALU [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 9f
+  Visible trimmed range: 0f → 9f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: CS  (ADBE Apply Color LUT2)
+      • <LUT not set> = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 0  {animated, expr:on}
+          01 | lib = footage("expressionLibrary.jsx").sourceData;
+          02 | 
+          03 | lib.actualVariant().toUpperCase() == thisProperty.propertyGroup(2) ? 100 : 0;
+        • GPU Rendering = 1
+
+LAYER 2: CAN LABEL MASK PRECOMP [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 9f
+  Visible trimmed range: 0f → 9f
+  Stretch: 100%
+  Source name: CAN LABEL MASK PRECOMP
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 6/7: TRAY-CARDBOARD_CC
+  Size: 5120x5120
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: TRAY-CARDBOARD_NOISE [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: TRAY-CARDBOARD_NOISE
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2562, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: CC_TRAY-CARDBOARD [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Exposure  (ADBE Exposure2)
+      • Channels: = 1
+      • Master = "<cannot read value>"
+      • Exposure = 1.15
+      • Offset = 0
+      • Gamma Correction = 1
+      • Master = "<cannot read value>"
+      • Red = "<cannot read value>"
+      • Red Exposure = 0
+      • Red Offset = 0
+      • Red Gamma Correction = 1
+      • Red = "<cannot read value>"
+      • Green = "<cannot read value>"
+      • Green Exposure = 0
+      • Green Offset = 0
+      • Green Gamma Correction = 1
+      • Green = "<cannot read value>"
+      • Blue = "<cannot read value>"
+      • Blue Exposure = 0
+      • Blue Offset = 0
+      • Blue Gamma Correction = 1
+      • Blue = "<cannot read value>"
+      • Bypass Linear Light Conversion = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Apply Color LUT  (ADBE Apply Color LUT2)
+      • <LUT not set> = "<cannot read value>"
+      •  = "<cannot read value>"
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 3: TRAY LABEL MASK PRECOMP [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 8f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: TRAY LABEL MASK PRECOMP
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2560, 2560, 0]
+    • Position = [2560, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 7/7: TRAY-CARDBOARD_NOISE
+  Size: 5124x5120
+  FPS: 25
+  Duration: 0.32s  (8f)
+  Sample time: 0.04s  (1f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: noise-tray.png [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 8f
+  Stretch: 100%
+  Source name: noise-tray.png
+  Footage path: K:\01_Projects\2026_Summer_Edition_SL_Collected\01_Summer_Edition_SL_Template\(Footage)\01_SETUP\AUTOMATION\02_PARTS\MODULAR-LABEL\MODULAR-LABEL-FOP.aep\01_PROJECT\Footage\noise-tray.png
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [2562, 2560, 0]
+    • Position = [2562, 2560, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 20
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Brightness & Contrast  (ADBE Brightness & Contrast 2)
+      • Brightness = 0
+      • Contrast = 100
+      • Use Legacy (supports HDR) = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Hue/Saturation  (ADBE HUE SATURATION)
+      • Channel Control = 1
+      • Channel Range = "<cannot read value>"
+      • Master Hue = 0
+      • Master Saturation = 0
+      • Master Lightness = 0
+      • Colorize = 0
+      • Colorize Hue = 0
+      • Colorize Saturation = 25
+      • Colorize Lightness = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+============================================================
+
