@@ -1,4 +1,4 @@
-# Can Build Pipeline (Motion Designer Version)
+# Can Build Pipeline
 
 This is the same can-build process, explained in **motion design language** (not developer language).
 
