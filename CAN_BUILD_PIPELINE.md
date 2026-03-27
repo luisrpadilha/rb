@@ -1,58 +1,61 @@
-# CAN Build Pipeline (UV maps + Set Matte + RE:Map)
+# Can Build Pipeline (Motion Designer Version)
 
-This document explains how the **can render is assembled** in this project, focused on the UV workflow and matte compositing chain.
+This is the same can-build process, explained in **motion design language** (not developer language).
 
-## Scope used for this breakdown
+Think of it as: **label artwork in → wrapped on can → masked into areas → edge polish → final comp switches**.
 
-Primary build reference:
+## What this guide is based on
+
+Main build reference:
 - `02_PRECOMPS/0_KV_CAN/0_KV_CAN Content.txt` → comp `16_BIT_CAN`
 
-Supporting shot implementations:
+Matching shot setups:
 - `02_PRECOMPS/COMPOSITING/SHOT01/SHOT01 Content.txt`
 - `02_PRECOMPS/COMPOSITING/SHOT02/SHOT02 Content.txt`
 - `02_PRECOMPS/COMPOSITING/SHOT03/SHOT03 Content.txt`
 
 ---
 
-## 1) Base can-label sources
+## 1) Start with the label sources (your artwork inputs)
 
-Inside `16_BIT_CAN`, the label content is provided by precomp sources:
+Inside `16_BIT_CAN`, the can uses these label sources as texture inputs:
 
 - `Modular_Label_SF_Banderoles`
-- `EDITIONS_MODULAR_LABEL_UPSCALE` (Time Remap enabled)
-- `EDITIONS_FOP_COL` (Time Remap enabled)
+- `EDITIONS_MODULAR_LABEL_UPSCALE` (Time Remap on)
+- `EDITIONS_FOP_COL` (Time Remap on)
 
-These are the textures that get projected onto the can using UV maps.
+In practical terms: these are your **design plates** that will be wrapped around the can geometry.
 
 ---
 
-## 2) UV map projection stage (RE:Map UV)
+## 2) Wrap stage: UV maps + RE:Map UV
 
-The can projection is driven by UV EXR sequences (`UVDRPS...exr`) and the plugin **RE:Map UV (UV Mapper Pete)**.
+The wrap is driven by UV EXR sequences (`UVDRPS...exr`) and the plugin **RE:Map UV (UV Mapper Pete)**.
 
-In `16_BIT_CAN`, three key UV layers are used:
+In `16_BIT_CAN`, key UV layers are:
 
 1. `UVDRPS_SF`
 2. `UV_FOP`
 3. `UVDRPS[0000-0180].exr`
 
-Each UV layer applies:
-- `EXtractoR` (channel extraction from EXR)
-- `RE:Map UV` (UV Mapper Pete)
+Each UV layer runs:
+- `EXtractoR` (pulls the needed channels from EXR)
+- `RE:Map UV` (does the actual texture wrap)
 
-Important configured details (as exported):
+Typical settings in this template:
 - `Warp Mode = 1`
-- `Texture` differs by layer (`1`, `4`, `3`) to target different texture sources
+- `Texture` set per layer (`1`, `4`, `3`) so each UV pass reads the correct source
 - `Position Offset X = 0.99`
-- GPU path enabled (`Use GPU = 2`)
+- `Use GPU = 2`
 
-So the build is: **source texture/precomp → UV EXR + RE:Map UV warp → projected can-surface pass**.
+So the flow is:
+**label input → UV wrap (RE:Map UV) → can surface pass**.
 
 ---
 
-## 3) Matte isolation stage (Set Matte)
+## 3) Region masks: Set Matte splits the can parts
 
-After UV projection, layers are carved into specific can regions with `Set Matte`.
+After the wrap, `Set Matte` is used like region masking to separate areas (print/color/metal).
 
 ### In `16_BIT_CAN`
 
@@ -65,59 +68,56 @@ After UV projection, layers are carved into specific can regions with `Set Matte
 - `SHOT04_ALU.mov`
   - `Set Matte`: `Take Matte From Layer = 7`, `Invert Matte = 1`
 
-This separates color/print zones from metal zones using UV-driven mattes.
+In motion-design terms: this is where the can gets **separated into material zones**.
 
 ---
 
-## 4) Edge refinement and integration
+## 4) Edge polish and blend-in
 
-Once matte splits are done, edges are refined and integrated with:
+Once split, transitions are softened and matched with:
 
-- `Matte Choker` (notably on ALU/metal segments)
-- Additional grading/treatment (`Lumetri`, `Selective Color`, `Tint`, `Hue/Saturation`)
+- `Matte Choker` (especially useful on metal/ALU edges)
+- Look matching effects (`Lumetri`, `Selective Color`, `Tint`, `Hue/Saturation`)
 
-This avoids hard seams between label and aluminium regions and matches the rendered plate look.
-
----
-
-## 5) Variant and country-driven switching (expression layer)
-
-The same comp uses expression-driven opacity switches to choose which projected/matted passes are visible:
-
-- `lib.sfCheck()` gates sugarfree-specific color passes
-- `lib.countryOnlyCheck()` gates country tab behavior
-- `comp("DATA").layer("COUNTRY")...` and `comp("DATA").layer("DISRUPTOR TYPE")...` drive selection logic
-
-So **UV/matte mechanics are constant**, while visible outputs are controlled by DATA-driven expressions.
+This keeps seams from looking cut out and helps the wrapped label sit naturally with the render.
 
 ---
 
-## 6) Shot-level equivalents (SHOT01/02/03)
+## 5) Version switching (data-driven visibility)
 
-`SHOT01_CAN_SL`, `SHOT02_CAN_SL`, and `SHOT03_CAN_SL` follow the same construction pattern:
+The UV/matte setup stays the same, but visible outputs are switched by expressions:
 
-1. UV EXR layers (`UVDRPS...`) loaded.
-2. `RE:Map UV` applied to build projected label/color passes.
-3. `Set Matte` uses UV-derived layers to isolate regions.
-4. `Matte Choker` refines seams where needed.
-5. Final can layers (`COL`, `ALU`, etc.) are composed with DOF/depth/background passes.
+- `lib.sfCheck()` for sugarfree variants
+- `lib.countryOnlyCheck()` for country-tab behavior
+- `comp("DATA").layer("COUNTRY")...` and `comp("DATA").layer("DISRUPTOR TYPE")...` for variant logic
 
-Examples visible in logs:
-- `SHOT01`: `SHOT01_UV_SL*` layers use `RE:Map UV`; downstream layers use `Set Matte` and `Matte Choker`.
-- `SHOT02`: `UVDRPS_*` layers with `RE:Map UV`; multiple `Set Matte` steps isolate color/alu/drips passes.
-- `SHOT03`: `UVDRPS_*` layers with `RE:Map UV`; `Set Matte` on color and metal layers plus `Matte Choker` cleanup.
+Designer-friendly view: this is the **built-in version control layer** that turns specific passes on/off per market/variant.
 
 ---
 
-## 7) Practical debug order for can issues
+## 6) Same pattern in SHOT01 / SHOT02 / SHOT03
 
-If the can looks wrong, debug in this order:
+`SHOT01_CAN_SL`, `SHOT02_CAN_SL`, and `SHOT03_CAN_SL` all follow the same structure:
 
-1. **Texture source present?** (modular-label/FOP precomps)
-2. **UV EXR valid?** (`UVDRPS...` footage online and framed correctly)
-3. **RE:Map UV active?** (effect present and mapped texture index correct)
-4. **Set Matte targets correct layer index?** (`Take Matte From Layer` points to expected UV layer)
-5. **Matte edge cleanup correct?** (`Matte Choker` settings)
-6. **Expression gating correct?** (`sfCheck`, country/disruptor logic from `DATA`)
+1. Bring in UV EXR layers.
+2. Wrap textures using `RE:Map UV`.
+3. Use `Set Matte` to isolate can zones.
+4. Refine edges with `Matte Choker`.
+5. Composite final can layers (`COL`, `ALU`, etc.) with depth/DOF/background.
 
-This sequence matches the actual build dependency chain.
+So if you understand one shot, you understand the core build logic for the others.
+
+---
+
+## 7) Fast troubleshooting order (designer workflow)
+
+If something looks wrong on the can, check in this order:
+
+1. **Is the artwork source correct?** (modular label / FOP inputs)
+2. **Is the UV EXR loaded and timed correctly?** (`UVDRPS...` online, right frame range)
+3. **Is RE:Map UV active and reading the right texture index?**
+4. **Is Set Matte pulling from the intended UV layer?** (`Take Matte From Layer`)
+5. **Are edge settings too harsh or too soft?** (`Matte Choker`)
+6. **Is a variant switch hiding your pass?** (`sfCheck`, country/disruptor logic in `DATA`)
+
+This order usually finds the issue quickly because it follows the actual dependency chain of the comp.
