@@ -1,4 +1,3 @@
-=======
 # Red Bull Summer Edition SL 2026 — AE Twin Documentation
 
 This repository is a **filesystem mirror of an After Effects project**.
