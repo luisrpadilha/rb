@@ -131,7 +131,14 @@ Notes:
     }
 
     function addDropdown(layer, name, items) {
-        var fx = layer.property("ADBE Effect Parade").addProperty("ADBE Dropdown Control");
+        var fx = null;
+        try {
+            fx = layer.property("ADBE Effect Parade").addProperty("ADBE Dropdown Control");
+        } catch (errAdd) {
+            // Dropdown Control may not exist in older AE versions.
+            return null;
+        }
+        if (!fx) return null;
         fx.name = name;
         try {
             fx.property(1).setPropertyParameters(items);
@@ -522,7 +529,12 @@ Notes:
         nullLayer.property("ADBE Transform Group").property("ADBE Position").setValue([150, 150]);
 
         var alignFx = addDropdown(nullLayer, "Align", settings.alignments);
-        tryAddToEGP(alignFx.property(1), comp, "Align");
+        var alignMenuProp = null;
+        if (alignFx) {
+            alignMenuProp = alignFx.property("Menu");
+            if (!alignMenuProp) alignMenuProp = alignFx.property(1);
+        }
+        tryAddToEGP(alignMenuProp, comp, "Align");
 
         var needCenter = hasAny(settings.alignments, ["Top Center", "Mid Center", "Bottom Center"]);
         var needRight = hasAny(settings.alignments, ["Top Right", "Mid Right", "Bottom Right"]);
@@ -532,7 +544,7 @@ Notes:
 
         // Text controllers
         var firstText = comp.layers.addText("First Line");
-        firstText.name = (needRight || needCenter) ? ((needRight && needCenter) ? "6. First Line" : "5. First Line") : "4. First Line";
+        firstText.name = "First Line CTRL";
         tryAddToEGP(firstText.property("ADBE Text Properties").property("ADBE Text Document"), comp, "First Line");
 
         var secondText = null;
@@ -540,13 +552,13 @@ Notes:
 
         if (settings.lines >= 2) {
             secondText = comp.layers.addText("Second Line");
-            secondText.name = (needRight || needCenter) ? ((needRight && needCenter) ? "7. Second Line" : "6. Second Line") : "5. Second Line";
+            secondText.name = "Second Line CTRL";
             tryAddToEGP(secondText.property("ADBE Text Properties").property("ADBE Text Document"), comp, "Second Line");
         }
 
         if (settings.lines >= 3) {
             thirdText = comp.layers.addText("Third Line");
-            thirdText.name = (needRight || needCenter) ? ((needRight && needCenter) ? "8. Third Line" : "7. Third Line") : "6. Third Line";
+            thirdText.name = "Third Line CTRL";
             tryAddToEGP(thirdText.property("ADBE Text Properties").property("ADBE Text Document"), comp, "Third Line");
         }
 
@@ -607,7 +619,7 @@ Notes:
 
         var first = makeTextLayer(comp, "2. First Line", "First Line", font1, justification);
         setTextExpression(first,
-            'comp("' + masterCompName + '").layer(/First Line$/).text.sourceText;'
+            'comp("' + masterCompName + '").layer("First Line CTRL").text.sourceText;'
         );
 
         var firstYExpr = buildVerticalYExpression(masterCompName, idxMap, firstTopY, firstMidY, firstBottomY);
@@ -619,7 +631,7 @@ Notes:
         if (settings.lines >= 2) {
             second = makeTextLayer(comp, "3. Second Line", "Second Line", font23, justification);
             setTextExpression(second,
-                'comp("' + masterCompName + '").layer(/Second Line$/).text.sourceText;'
+                'comp("' + masterCompName + '").layer("Second Line CTRL").text.sourceText;'
             );
             var secondYExpr = buildVerticalYExpression(masterCompName, idxMap, secondTopY, secondMidY, secondBottomY);
             second.property("ADBE Transform Group").property("ADBE Position").expression = buildTextPosExpr(mode, xVal, secondYExpr);
@@ -629,7 +641,7 @@ Notes:
         if (settings.lines >= 3) {
             third = makeTextLayer(comp, "4. Third Line", "Third Line", font23, justification);
             setTextExpression(third,
-                'comp("' + masterCompName + '").layer(/Third Line$/).text.sourceText;'
+                'comp("' + masterCompName + '").layer("Third Line CTRL").text.sourceText;'
             );
             var thirdYExpr = buildVerticalYExpression(masterCompName, idxMap, thirdTopY, thirdMidY, thirdBottomY);
             third.property("ADBE Transform Group").property("ADBE Position").expression = buildTextPosExpr(mode, xVal, thirdYExpr);
