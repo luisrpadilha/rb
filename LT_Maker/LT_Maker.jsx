@@ -139,13 +139,26 @@ Notes:
             return null;
         }
         if (!fx) return null;
-        fx.name = name;
+        try { fx.name = name; } catch (errName) {}
         try {
             fx.property(1).setPropertyParameters(items);
         } catch (err) {
             // older versions may fail
         }
         return fx;
+    }
+
+    function getEffectPropertySafe(effectObj, primary, fallback) {
+        var prop = null;
+        try {
+            if (effectObj) prop = effectObj.property(primary);
+        } catch (err1) {}
+        if (!prop) {
+            try {
+                if (effectObj) prop = effectObj.property(fallback);
+            } catch (err2) {}
+        }
+        return prop;
     }
 
     function tryAddToEGP(prop, comp, label) {
@@ -529,11 +542,7 @@ Notes:
         nullLayer.property("ADBE Transform Group").property("ADBE Position").setValue([150, 150]);
 
         var alignFx = addDropdown(nullLayer, "Align", settings.alignments);
-        var alignMenuProp = null;
-        if (alignFx) {
-            alignMenuProp = alignFx.property("Menu");
-            if (!alignMenuProp) alignMenuProp = alignFx.property(1);
-        }
+        var alignMenuProp = getEffectPropertySafe(alignFx, "Menu", 1);
         tryAddToEGP(alignMenuProp, comp, "Align");
 
         var needCenter = hasAny(settings.alignments, ["Top Center", "Mid Center", "Bottom Center"]);
