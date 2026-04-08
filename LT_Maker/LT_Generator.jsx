@@ -98,16 +98,36 @@ All created comps use the selected Duration + Frame Rate.
         var shape = comp.layers.addShape();
         shape.name = name;
 
-        var root = shape.property("ADBE Root Vectors Group");
-        var grp = root.addProperty("ADBE Vector Group");
+        var root = null;
+        try { root = shape.property("ADBE Root Vectors Group"); } catch (eRoot) {}
+        if (!root) return shape;
+
+        var grp = null;
+        try { grp = root.addProperty("ADBE Vector Group"); } catch (eGrp) {}
+        if (!grp) return shape;
         grp.name = "Contents";
 
-        var vecs = grp.property("ADBE Vectors Group");
-        var rect = vecs.addProperty("ADBE Vector Shape - Rect");
-        var fill = vecs.addProperty("ADBE Vector Graphic - Fill");
-        fill.property("ADBE Vector Fill Color").setValue([0, 0, 0]);
+        var vecs = null;
+        try { vecs = grp.property("ADBE Vectors Group"); } catch (eVec1) {}
+        if (!vecs) {
+            try { vecs = grp.content; } catch (eVec2) {}
+        }
+        if (!vecs) return shape;
 
-        rect.property("ADBE Vector Rect Size").expression =
+        var rect = null;
+        try { rect = vecs.addProperty("ADBE Vector Shape - Rect"); } catch (eRect) {}
+
+        var fill = null;
+        try { fill = vecs.addProperty("ADBE Vector Graphic - Fill"); } catch (eFill) {}
+        if (fill) {
+            try { fill.property("ADBE Vector Fill Color").setValue([0, 0, 0]); } catch (eFillCol) {}
+        }
+
+        var rectSize = null;
+        if (rect) {
+            try { rectSize = rect.property("ADBE Vector Rect Size"); } catch (eRectSize) {}
+        }
+        if (rectSize) rectSize.expression =
             'var t = thisComp.layer("' + textLayerName + '");\n' +
             'var sr = t.sourceRectAtTime(time,false);\n' +
             'var c = thisComp.layer("' + ctrlName + '");\n' +
@@ -115,7 +135,9 @@ All created comps use the selected Duration + Frame Rate.
             'var py = c.effect("Padding Y")("Slider");\n' +
             '[Math.max(0, sr.width + px*2), Math.max(0, sr.height + py*2)];';
 
-        grp.property("ADBE Vector Transform Group").property("ADBE Vector Position").expression =
+        var grpPos = null;
+        try { grpPos = grp.property("ADBE Vector Transform Group").property("ADBE Vector Position"); } catch (ePos) {}
+        if (grpPos) grpPos.expression =
             'var t = thisComp.layer("' + textLayerName + '");\n' +
             'var sr = t.sourceRectAtTime(time,false);\n' +
             'var p = t.transform.position;\n' +
