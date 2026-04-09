@@ -94,6 +94,72 @@ Workflow:
         }
     }
 
+    function adjustLayersAndKeyframesInFolder(rootFolder, duration) {
+        function retimeFourKeyProperty(prop, newDuration) {
+            var keyCount = 0;
+            try { keyCount = prop.numKeys; } catch (eCount) { return; }
+            if (keyCount !== 4) return;
+
+            var exprEnabled = false;
+            try { exprEnabled = prop.expressionEnabled; } catch (eExprState) {}
+            if (exprEnabled) return;
+
+            var values = [];
+            var times = [];
+            try {
+                for (var k = 1; k <= 4; k++) {
+                    values.push(prop.keyValue(k));
+                    times.push(prop.keyTime(k));
+                }
+            } catch (eRead) { return; }
+
+            var t3 = Math.max(0, newDuration - 1);
+            var t4 = Math.max(0, newDuration);
+            times[2] = t3;
+            times[3] = t4;
+
+            // Ensure non-decreasing key times
+            if (times[2] < times[1]) times[2] = times[1];
+            if (times[3] < times[2]) times[3] = times[2];
+
+            try {
+                for (var r = 4; r >= 1; r--) prop.removeKey(r);
+                for (var a = 0; a < 4; a++) prop.setValueAtTime(times[a], values[a]);
+            } catch (eWrite) {}
+        }
+
+        function walkPropsAndAdjust(propGroup, newDuration) {
+            if (!propGroup || typeof propGroup.numProperties !== "number") return;
+
+            for (var p = 1; p <= propGroup.numProperties; p++) {
+                var prop = null;
+                try { prop = propGroup.property(p); } catch (eProp) {}
+                if (!prop) continue;
+
+                var hasChildren = false;
+                try { hasChildren = (typeof prop.numProperties === "number" && prop.numProperties > 0); } catch (eChildren) {}
+                if (hasChildren) walkPropsAndAdjust(prop, newDuration);
+
+                retimeFourKeyProperty(prop, newDuration);
+            }
+        }
+
+        var items = getAllDescendants(rootFolder);
+        for (var i = 0; i < items.length; i++) {
+            var it = items[i];
+            if (!(it instanceof CompItem)) continue;
+
+            for (var l = 1; l <= it.layers.length; l++) {
+                var layer = null;
+                try { layer = it.layers[l]; } catch (eLayer) {}
+                if (!layer) continue;
+
+                try { layer.outPoint = duration; } catch (eOut) {}
+                walkPropsAndAdjust(layer, duration);
+            }
+        }
+    }
+
     function updateExpressionsInFolder(rootFolder, clientName, projectName) {
         function walkPropsAndPatch(propGroup) {
             if (!propGroup || typeof propGroup.numProperties !== "number") return;
@@ -154,7 +220,7 @@ Workflow:
 
         var gDur = p.add("group");
         gDur.add("statictext", undefined, "Duration (s):");
-        var durEt = gDur.add("edittext", undefined, "10");
+        var durEt = gDur.add("edittext", undefined, "5");
         durEt.characters = 8;
 
         var gFps = p.add("group");
@@ -260,6 +326,7 @@ Workflow:
     updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
     setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
     setCompResolutionInFolder(lowerthirds, resolutionToWH(settings.resolution));
+    adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
 
     // Remove wrapper folder if empty
     try {
