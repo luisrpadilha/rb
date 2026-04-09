@@ -94,6 +94,45 @@ Workflow:
         }
     }
 
+    function updateExpressionsInFolder(rootFolder, clientName, projectName) {
+        function walkPropsAndPatch(propGroup) {
+            if (!propGroup || typeof propGroup.numProperties !== "number") return;
+
+            for (var p = 1; p <= propGroup.numProperties; p++) {
+                var prop = null;
+                try { prop = propGroup.property(p); } catch (eProp) {}
+                if (!prop) continue;
+
+                var hasChildren = false;
+                try { hasChildren = (typeof prop.numProperties === "number" && prop.numProperties > 0); } catch (eChildren) {}
+                if (hasChildren) {
+                    walkPropsAndPatch(prop);
+                }
+
+                try {
+                    if (prop.canSetExpression && prop.expression !== "") {
+                        var oldExpr = prop.expression;
+                        var newExpr = oldExpr.replace(/STV/g, clientName).replace(/Project/g, projectName);
+                        if (newExpr !== oldExpr) prop.expression = newExpr;
+                    }
+                } catch (eExpr) {}
+            }
+        }
+
+        var items = getAllDescendants(rootFolder);
+        for (var i = 0; i < items.length; i++) {
+            var it = items[i];
+            if (!(it instanceof CompItem)) continue;
+
+            for (var l = 1; l <= it.layers.length; l++) {
+                var layer = null;
+                try { layer = it.layers[l]; } catch (eLayer) {}
+                if (!layer) continue;
+                walkPropsAndPatch(layer);
+            }
+        }
+    }
+
     function showDialog() {
         var w = new Window("dialog", "LT Generator");
         w.orientation = "column";
@@ -218,6 +257,7 @@ Workflow:
 
     // Update template names and timings
     renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
+    updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
     setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
     setCompResolutionInFolder(lowerthirds, resolutionToWH(settings.resolution));
 
