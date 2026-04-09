@@ -457,16 +457,12 @@ Workflow:
         return;
     }
 
-    // Duplicate template Lowerthirds instead of moving it out of the template wrapper.
-    var lowerthirds = null;
-    try { lowerthirds = templateLowerthirds.duplicate(); } catch (eDup) {}
-    if (!lowerthirds) {
-        alert("Could not duplicate template 'Lowerthirds' folder.");
-        return;
-    }
+    // Use the template Lowerthirds folder directly and move it to root.
+    // FolderItem.duplicate() is not reliable across AE versions.
+    var lowerthirds = templateLowerthirds;
     try { lowerthirds.parentFolder = app.project.rootFolder; } catch (eMove) {}
 
-    // Update duplicated instance
+    // Update working instance
     renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
     updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
     setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
