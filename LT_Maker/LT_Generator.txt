@@ -1,0 +1,1285 @@
+AFTER EFFECTS — EFFECTS PROPERTIES, VALUES & EXPRESSIONS LOG
+Generated: 2026-04-08 16:00:28
+Selected comps: 11
+Note: Values sampled at comp.time for each comp.
+------------------------------------------------------------
+
+COMP 1/11: STV_WM_Wir_Kommen!_Lowerthirds
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 0s  (0f)
+  Comp markers: 2
+    • Marker 1: 0s (0f)
+    • Marker 2: 4s (120f)
+------------------------------------------------------------
+
+LAYER 1: Master_Control [Null]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: Null 3
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 2
+    ----------------------------------------------------------
+    EFFECT 1: Align  (Pseudo/@@z84igtXnR5q/MonzXcq1Tw)
+      • Menu = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+    ----------------------------------------------------------
+    EFFECT 2: Lines  (Pseudo/@@1w/so2dkT2mFbZgTm6VIDw)
+      • Menu = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: LT_Main_Left_1_Line [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Left_1_Line
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100  {animated, expr:on}
+      01 | align=thisComp.layer("Master_Control").effect("Align")("Menu");
+      02 | lines=thisComp.layer("Master_Control").effect("Lines")("Menu");
+      03 | 
+      04 | align==1&&lines==1?100:0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: LT_Main_Left_2_Lines [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Left_2_Lines
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | align=thisComp.layer("Master_Control").effect("Align")("Menu");
+      02 | lines=thisComp.layer("Master_Control").effect("Lines")("Menu");
+      03 | 
+      04 | align==1&&lines==2?100:0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: LT_Main_Right_1_Line [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Right_1_Line
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | align=thisComp.layer("Master_Control").effect("Align")("Menu");
+      02 | lines=thisComp.layer("Master_Control").effect("Lines")("Menu");
+      03 | 
+      04 | align==2&&lines==1?100:0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: LT_Main_Right_2_Lines [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Right_2_Lines
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0  {animated, expr:on}
+      01 | align=thisComp.layer("Master_Control").effect("Align")("Menu");
+      02 | lines=thisComp.layer("Master_Control").effect("Lines")("Menu");
+      03 | 
+      04 | align==2&&lines==2?100:0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: First Line [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: Second Line [Text]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: CornerBug [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: CornerBug
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 9: Background Image [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: Background_Image
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 2/11: Background_Image
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: BG_Placholder.ai [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: BG_Placholder.ai
+  Footage path: G:\04_Library\16_scripts\Custom_Scripts\AFX_EXPRESSIONS\RB_LowerThirds_Generator\_footage\BG_Placholder.ai
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 3/11: CornerBug
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: STV_Cornerbug_HD_Live_white.psd [AV]
+  Parent: not parented
+  Source type: Footage
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: STV_Cornerbug_HD_Live_white.psd
+  Footage path: G:\04_Library\03_logos\stv\STV_Cornerbug_HD_Live_white.psd
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 4/11: LT_Main_Left_1_Line
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5.033s  (151f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Master_Control [Null]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: Null 1
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: First Line Padding  (ADBE Slider Control)
+      • Slider = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: First Line Position [Null]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: Null 5
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [154.916, 979.455, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: First Line [Text]
+  Parent: parented → [2] First Line Position
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [-85.618, 0, 0]  {animated}
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: BG [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-663.111, 410.667, 0]
+    • Position = [96, 951, 0]  {animated}
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [0, 100, 100]  {animated}
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: CornerBug [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: CornerBug
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: Background_Image [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: Background_Image
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 5/11: LT_Main_Left_2_Lines
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5.033s  (151f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Master_Control [Null]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: Null 1
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: First Line Padding  (ADBE Slider Control)
+      • Slider = 0
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: First Line Position [Null]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: Null 4
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [154, 959.388, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: Second Line Position [Null]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: Null 4
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [154.214, 1005.152, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 0
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 4: First Line [Text]
+  Parent: parented → [2] First Line Position
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [-85.618, 0, 0]  {animated}
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 5: Second Line [Text]
+  Parent: parented → [3] Second Line Position
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [0, 0, 0]
+    • Position = [-85.618, 0, 0]  {animated}
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 6: BG [Shape]
+  Parent: not parented
+  Source type: No source
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [-663.111, 410.667, 0]
+    • Position = [96, 951, 0]  {animated}
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [0, 100, 100]  {animated}
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 7: CornerBug [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: CornerBug
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 8: Background_Image [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: Background_Image
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 6/11: LT_Main_Right_1_Line
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5.033s  (151f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Flip [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: Adjustment Layer 1
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Transform  (ADBE Geometry2)
+      • Anchor Point = [960, 540]
+      • Position = [960, 540]
+      • Uniform Scale = 0
+      • Scale Height = 100
+      • Scale Width = -100
+      • Skew = 0
+      • Skew Axis = 0
+      • Rotation = 0
+      • Opacity = 100
+      • Use Composition’s Shutter Angle = 1
+      • Shutter Angle = 0
+      • Sampling = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: LT_Main_Left_1_Line [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Left_1_Line
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 7/11: LT_Main_Right_2_Lines
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5.033s  (151f)
+  Sample time: 0s  (0f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: Flip [AV]
+  Parent: not parented
+  Source type: Solid
+  Start frame: 0f
+  End frame (source-based): 0f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: Adjustment Layer 1
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: 1
+    ----------------------------------------------------------
+    EFFECT 1: Transform  (ADBE Geometry2)
+      • Anchor Point = [960, 540]
+      • Position = [960, 540]
+      • Uniform Scale = 0
+      • Scale Height = 100
+      • Scale Width = -100
+      • Skew = 0
+      • Skew Axis = 0
+      • Rotation = 0
+      • Opacity = 100
+      • Use Composition’s Shutter Angle = 1
+      • Shutter Angle = 0
+      • Sampling = 1
+      ▸ Compositing Options
+        ▸ Masks
+        • Effect Opacity = 100
+        • GPU Rendering = 1
+
+LAYER 2: LT_Main_Left_1_Line [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Left_1_Line
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: LT_Main_Left_2_Lines [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Left_2_Lines
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 8/11: STV_WM_Wir_Kommen!_LT_1_Line_Left_Preview
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 3.333s  (100f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: LT_Main_Left_1_Line [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Left_1_Line
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: CornerBug [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: CornerBug
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: Background Image [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: Background_Image
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 9/11: STV_WM_Wir_Kommen!_LT_1_Line_Right_Preview
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 3.333s  (100f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: LT_Main_Right_1_Line [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Right_1_Line
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: CornerBug [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: CornerBug
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: Background Image [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: Background_Image
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 10/11: STV_WM_Wir_Kommen!_LT_2_Lines_Left_Preview
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 3.333s  (100f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: LT_Main_Left_2_Lines [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Left_2_Lines
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: CornerBug [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: CornerBug
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: Background Image [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: Background_Image
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
+COMP 11/11: STV_WM_Wir_Kommen!_LT_2_Lines_Right_Preview
+  Size: 1920x1080
+  FPS: 30
+  Duration: 5s  (150f)
+  Sample time: 3.333s  (100f)
+  Comp markers: (none)
+------------------------------------------------------------
+
+LAYER 1: LT_Main_Right_2_Lines [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 151f
+  Visible trimmed range: 0f → 151f
+  Stretch: 100%
+  Source name: LT_Main_Right_2_Lines
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 2: CornerBug [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: CornerBug
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+LAYER 3: Background Image [AV]
+  Parent: not parented
+  Source type: Precomp
+  Start frame: 0f
+  End frame (source-based): 150f
+  Visible trimmed range: 0f → 150f
+  Stretch: 100%
+  Source name: Background_Image
+  Time Remap: disabled
+  Layer markers: (none)
+  Transforms:
+    • Anchor Point = [960, 540, 0]
+    • Position = [960, 540, 0]
+    • X Position = 0
+    • Y Position = 0
+    • Z Position = 0
+    • Scale = [100, 100, 100]
+    • Orientation = [0, 0, 0]
+    • X Rotation = 0
+    • Y Rotation = 0
+    • Rotation = 0
+    • Opacity = 100
+    • Appears in Reflections = 1
+  Layer Styles: (none)
+  Effects: (none)
+
+============================================================
+
