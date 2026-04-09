@@ -422,56 +422,61 @@ Workflow:
         return;
     }
 
-    var io = new ImportOptions(templateFile);
+    app.beginUndoGroup("LT Generator Import Template");
     try {
-        if (io.canImportAs && io.canImportAs(ImportAsType.PROJECT)) {
-            io.importAs = ImportAsType.PROJECT;
-        }
-    } catch (eType) {}
-
-    var importedRoot = null;
-    try {
-        importedRoot = app.project.importFile(io);
-    } catch (eImport) {
-        alert("Failed to import template project.\n" + eImport.toString());
-        return;
-    }
-
-    if (!(importedRoot instanceof FolderItem)) {
-        alert("Imported template did not return a project folder item.");
-        return;
-    }
-
-    var lowerthirds = findChildFolderByName(importedRoot, "Lowerthirds");
-    if (!lowerthirds) {
-        alert("Could not find 'Lowerthirds' inside imported template folder.");
-        return;
-    }
-
-    // Move Lowerthirds folder to root and remove imported wrapper folder
-    try { lowerthirds.parentFolder = app.project.rootFolder; } catch (eMove) {}
-
-    // Update template names and timings
-    renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
-    updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
-    setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
-    adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
-    importBackgroundTopLayer(lowerthirds, settings.backgroundImagePath);
-    updateMasterProtectedRegions(lowerthirds, settings.duration);
-
-    // Remove wrapper folder if empty
-    try {
-        var hasChildren = false;
-        for (var i = 1; i <= app.project.items.length; i++) {
-            var it = app.project.items[i];
-            if (it && it.parentFolder === importedRoot) {
-                hasChildren = true;
-                break;
+        var io = new ImportOptions(templateFile);
+        try {
+            if (io.canImportAs && io.canImportAs(ImportAsType.PROJECT)) {
+                io.importAs = ImportAsType.PROJECT;
             }
-        }
-        if (!hasChildren) importedRoot.remove();
-    } catch (eRm) {}
+        } catch (eType) {}
 
-    // Extra cleanup pass for empty root wrapper folders.
-    removeEmptyFolderByNameAtRoot(templateFile.name);
+        var importedRoot = null;
+        try {
+            importedRoot = app.project.importFile(io);
+        } catch (eImport) {
+            alert("Failed to import template project.\n" + eImport.toString());
+            return;
+        }
+
+        if (!(importedRoot instanceof FolderItem)) {
+            alert("Imported template did not return a project folder item.");
+            return;
+        }
+
+        var lowerthirds = findChildFolderByName(importedRoot, "Lowerthirds");
+        if (!lowerthirds) {
+            alert("Could not find 'Lowerthirds' inside imported template folder.");
+            return;
+        }
+
+        // Move Lowerthirds folder to root and remove imported wrapper folder
+        try { lowerthirds.parentFolder = app.project.rootFolder; } catch (eMove) {}
+
+        // Update template names and timings
+        renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
+        updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
+        setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
+        adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
+        importBackgroundTopLayer(lowerthirds, settings.backgroundImagePath);
+        updateMasterProtectedRegions(lowerthirds, settings.duration);
+
+        // Remove wrapper folder if empty
+        try {
+            var hasChildren = false;
+            for (var i = 1; i <= app.project.items.length; i++) {
+                var it = app.project.items[i];
+                if (it && it.parentFolder === importedRoot) {
+                    hasChildren = true;
+                    break;
+                }
+            }
+            if (!hasChildren) importedRoot.remove();
+        } catch (eRm) {}
+
+        // Extra cleanup pass for empty root wrapper folders.
+        removeEmptyFolderByNameAtRoot(templateFile.name);
+    } finally {
+        app.endUndoGroup();
+    }
 })();
