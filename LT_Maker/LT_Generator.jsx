@@ -13,8 +13,6 @@ Workflow:
 */
 
 (function LT_Generator_TemplateImport() {
-    app.beginUndoGroup("LT Generator (Template Import)");
-
     var DEFAULT_TEMPLATE_PATH = "G:\\04_Library\\16_scripts\\Custom_Scripts\\AFX_EXPRESSIONS\\RB_LowerThirds_Generator\\RB_LowerThirdsGenerator.aep";
 
     function sanitizeProjectName(str) {
@@ -272,6 +270,27 @@ Workflow:
         } catch (eM2) {}
     }
 
+    function removeEmptyFolderByNameAtRoot(folderName) {
+        for (var i = app.project.items.length; i >= 1; i--) {
+            var it = app.project.items[i];
+            if (!(it instanceof FolderItem)) continue;
+            if (it.name !== folderName) continue;
+            if (it.parentFolder !== app.project.rootFolder) continue;
+
+            var hasChildren = false;
+            for (var j = 1; j <= app.project.items.length; j++) {
+                var child = app.project.items[j];
+                if (child && child.parentFolder === it) {
+                    hasChildren = true;
+                    break;
+                }
+            }
+            if (!hasChildren) {
+                try { it.remove(); } catch (eRm) {}
+            }
+        }
+    }
+
     function updateExpressionsInFolder(rootFolder, clientName, projectName) {
         function walkPropsAndPatch(propGroup) {
             if (!propGroup || typeof propGroup.numProperties !== "number") return;
@@ -379,81 +398,80 @@ Workflow:
         };
     }
 
-    try {
-        if (!app.project) app.newProject();
+    if (!app.project) app.newProject();
 
-        var settings = showDialog();
-        if (!settings) return;
+    var settings = showDialog();
+    if (!settings) return;
 
-        if (!settings.projectName) {
-            alert("Please provide a project name.");
-            return;
-        }
-        if (isNaN(settings.duration) || settings.duration <= 0) {
-            alert("Duration must be a positive number.");
-            return;
-        }
-        if (isNaN(settings.fps) || settings.fps <= 0) {
-            alert("Frame Rate must be a positive number.");
-            return;
-        }
-
-        var templateFile = new File(settings.templatePath);
-        if (!templateFile.exists) {
-            alert("Template file not found:\n" + settings.templatePath);
-            return;
-        }
-
-        var io = new ImportOptions(templateFile);
-        try {
-            if (io.canImportAs && io.canImportAs(ImportAsType.PROJECT)) {
-                io.importAs = ImportAsType.PROJECT;
-            }
-        } catch (eType) {}
-
-        var importedRoot = null;
-        try {
-            importedRoot = app.project.importFile(io);
-        } catch (eImport) {
-            alert("Failed to import template project.\n" + eImport.toString());
-            return;
-        }
-
-        if (!(importedRoot instanceof FolderItem)) {
-            alert("Imported template did not return a project folder item.");
-            return;
-        }
-
-        var lowerthirds = findChildFolderByName(importedRoot, "Lowerthirds");
-        if (!lowerthirds) {
-            alert("Could not find 'Lowerthirds' inside imported template folder.");
-            return;
-        }
-
-        // Move Lowerthirds folder to root and remove imported wrapper folder
-        try { lowerthirds.parentFolder = app.project.rootFolder; } catch (eMove) {}
-
-        // Update template names and timings
-        renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
-        updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
-        setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
-        adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
-        importBackgroundTopLayer(lowerthirds, settings.backgroundImagePath);
-        updateMasterProtectedRegions(lowerthirds, settings.duration);
-
-        // Remove wrapper folder if empty
-        try {
-            var hasChildren = false;
-            for (var i = 1; i <= app.project.items.length; i++) {
-                var it = app.project.items[i];
-                if (it && it.parentFolder === importedRoot) {
-                    hasChildren = true;
-                    break;
-                }
-            }
-            if (!hasChildren) importedRoot.remove();
-        } catch (eRm) {}
-    } finally {
-        app.endUndoGroup();
+    if (!settings.projectName) {
+        alert("Please provide a project name.");
+        return;
     }
+    if (isNaN(settings.duration) || settings.duration <= 0) {
+        alert("Duration must be a positive number.");
+        return;
+    }
+    if (isNaN(settings.fps) || settings.fps <= 0) {
+        alert("Frame Rate must be a positive number.");
+        return;
+    }
+
+    var templateFile = new File(settings.templatePath);
+    if (!templateFile.exists) {
+        alert("Template file not found:\n" + settings.templatePath);
+        return;
+    }
+
+    var io = new ImportOptions(templateFile);
+    try {
+        if (io.canImportAs && io.canImportAs(ImportAsType.PROJECT)) {
+            io.importAs = ImportAsType.PROJECT;
+        }
+    } catch (eType) {}
+
+    var importedRoot = null;
+    try {
+        importedRoot = app.project.importFile(io);
+    } catch (eImport) {
+        alert("Failed to import template project.\n" + eImport.toString());
+        return;
+    }
+
+    if (!(importedRoot instanceof FolderItem)) {
+        alert("Imported template did not return a project folder item.");
+        return;
+    }
+
+    var lowerthirds = findChildFolderByName(importedRoot, "Lowerthirds");
+    if (!lowerthirds) {
+        alert("Could not find 'Lowerthirds' inside imported template folder.");
+        return;
+    }
+
+    // Move Lowerthirds folder to root and remove imported wrapper folder
+    try { lowerthirds.parentFolder = app.project.rootFolder; } catch (eMove) {}
+
+    // Update template names and timings
+    renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
+    updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
+    setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
+    adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
+    importBackgroundTopLayer(lowerthirds, settings.backgroundImagePath);
+    updateMasterProtectedRegions(lowerthirds, settings.duration);
+
+    // Remove wrapper folder if empty
+    try {
+        var hasChildren = false;
+        for (var i = 1; i <= app.project.items.length; i++) {
+            var it = app.project.items[i];
+            if (it && it.parentFolder === importedRoot) {
+                hasChildren = true;
+                break;
+            }
+        }
+        if (!hasChildren) importedRoot.remove();
+    } catch (eRm) {}
+
+    // Extra cleanup pass for empty root wrapper folders.
+    removeEmptyFolderByNameAtRoot(templateFile.name);
 })();
