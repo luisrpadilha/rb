@@ -106,10 +106,25 @@ Workflow:
 
             var values = [];
             var times = [];
+            var keyMeta = [];
             try {
                 for (var k = 1; k <= 4; k++) {
                     values.push(prop.keyValue(k));
                     times.push(prop.keyTime(k));
+
+                    var meta = {};
+                    try { meta.inInterp = prop.keyInInterpolationType(k); } catch (eInInterp) {}
+                    try { meta.outInterp = prop.keyOutInterpolationType(k); } catch (eOutInterp) {}
+                    try { meta.inEase = prop.keyInTemporalEase(k); } catch (eInEase) {}
+                    try { meta.outEase = prop.keyOutTemporalEase(k); } catch (eOutEase) {}
+                    try { meta.temporalContinuous = prop.keyTemporalContinuous(k); } catch (eTCont) {}
+                    try { meta.temporalAutoBezier = prop.keyTemporalAutoBezier(k); } catch (eTAuto) {}
+                    try { meta.roving = prop.keyRoving(k); } catch (eRove) {}
+                    try { meta.spatialContinuous = prop.keySpatialContinuous(k); } catch (eSCont) {}
+                    try { meta.spatialAutoBezier = prop.keySpatialAutoBezier(k); } catch (eSAuto) {}
+                    try { meta.inSpatialTangent = prop.keyInSpatialTangent(k); } catch (eInTan) {}
+                    try { meta.outSpatialTangent = prop.keyOutSpatialTangent(k); } catch (eOutTan) {}
+                    keyMeta.push(meta);
                 }
             } catch (eRead) { return; }
 
@@ -125,6 +140,22 @@ Workflow:
             try {
                 for (var r = 4; r >= 1; r--) prop.removeKey(r);
                 for (var a = 0; a < 4; a++) prop.setValueAtTime(times[a], values[a]);
+
+                for (var m = 1; m <= 4; m++) {
+                    var km = keyMeta[m - 1];
+                    if (!km) continue;
+                    try { if (km.inInterp !== undefined && km.outInterp !== undefined) prop.setInterpolationTypeAtKey(m, km.inInterp, km.outInterp); } catch (eSetInterp) {}
+                    try { if (km.inEase !== undefined && km.outEase !== undefined) prop.setTemporalEaseAtKey(m, km.inEase, km.outEase); } catch (eSetEase) {}
+                    try { if (km.temporalContinuous !== undefined) prop.setTemporalContinuousAtKey(m, km.temporalContinuous); } catch (eSetTCont) {}
+                    try { if (km.temporalAutoBezier !== undefined) prop.setTemporalAutoBezierAtKey(m, km.temporalAutoBezier); } catch (eSetTAuto) {}
+                    try { if (km.spatialContinuous !== undefined) prop.setSpatialContinuousAtKey(m, km.spatialContinuous); } catch (eSetSCont) {}
+                    try { if (km.spatialAutoBezier !== undefined) prop.setSpatialAutoBezierAtKey(m, km.spatialAutoBezier); } catch (eSetSAuto) {}
+                    try { if (km.inSpatialTangent !== undefined && km.outSpatialTangent !== undefined) prop.setSpatialTangentsAtKey(m, km.inSpatialTangent, km.outSpatialTangent); } catch (eSetTan) {}
+                    // Roving is valid only for interior keys.
+                    if (m > 1 && m < 4) {
+                        try { if (km.roving !== undefined) prop.setRovingAtKey(m, km.roving); } catch (eSetRove) {}
+                    }
+                }
             } catch (eWrite) {}
         }
 
@@ -154,10 +185,68 @@ Workflow:
                 try { layer = it.layers[l]; } catch (eLayer) {}
                 if (!layer) continue;
 
+                var wasLocked = false;
+                try { wasLocked = layer.locked; } catch (eLockRead) {}
+                if (wasLocked) {
+                    try { layer.locked = false; } catch (eUnlock) {}
+                }
+
                 try { layer.outPoint = duration; } catch (eOut) {}
                 walkPropsAndAdjust(layer, duration);
+
+                if (wasLocked) {
+                    try { layer.locked = true; } catch (eRelock) {}
+                }
             }
         }
+    }
+
+    function findCompByNameInFolder(rootFolder, compName) {
+        var items = getAllDescendants(rootFolder);
+        for (var i = 0; i < items.length; i++) {
+            var it = items[i];
+            if (it instanceof CompItem && it.name === compName) return it;
+        }
+        return null;
+    }
+
+    function importBackgroundTopLayer(lowerthirdsFolder, imagePath) {
+        if (!imagePath || imagePath === "") return;
+
+        var f = new File(imagePath);
+        if (!f.exists) return;
+
+        var footage = null;
+        for (var i = 1; i <= app.project.items.length; i++) {
+            var it = app.project.items[i];
+            if (it instanceof FootageItem && it.file && it.file.fsName === f.fsName) {
+                footage = it;
+                break;
+            }
+        }
+        if (!footage) {
+            try {
+                var io = new ImportOptions(f);
+                footage = app.project.importFile(io);
+            } catch (eImportBG) {}
+        }
+        if (!footage) return;
+
+        var bgComp = findCompByNameInFolder(lowerthirdsFolder, "Background_Image");
+        if (!bgComp) return;
+
+        var l = null;
+        try { l = bgComp.layers.add(footage); } catch (eAddLayer) {}
+        if (!l) return;
+
+        l.name = "User_BG_Image";
+        try { l.moveToBeginning(); } catch (eTop) {}
+        try { l.property("ADBE Transform Group").property("ADBE Position").setValue([bgComp.width / 2, bgComp.height / 2]); } catch (ePos) {}
+        try {
+            var sx = (bgComp.width / footage.width) * 100;
+            var sy = (bgComp.height / footage.height) * 100;
+            l.property("ADBE Transform Group").property("ADBE Scale").setValue([sx, sy]);
+        } catch (eScale) {}
     }
 
     function updateExpressionsInFolder(rootFolder, clientName, projectName) {
@@ -244,6 +333,17 @@ Workflow:
             if (picked) tplEt.text = picked.fsName;
         };
 
+        var gBg = p.add("group");
+        gBg.orientation = "row";
+        gBg.add("statictext", undefined, "BG Image:");
+        var bgEt = gBg.add("edittext", undefined, "");
+        bgEt.characters = 55;
+        var bgBrowseBtn = gBg.add("button", undefined, "Browse");
+        bgBrowseBtn.onClick = function () {
+            var pickedBg = File.openDialog("Select background image", "*.png;*.jpg;*.jpeg;*.psd;*.tif;*.tiff;*.ai");
+            if (pickedBg) bgEt.text = pickedBg.fsName;
+        };
+
         var btns = w.add("group");
         btns.alignment = "right";
         btns.add("button", undefined, "Import", { name: "ok" });
@@ -257,7 +357,8 @@ Workflow:
             duration: parseFloat(durEt.text),
             fps: parseFloat(fpsEt.text),
             resolution: resDD.selection.text,
-            templatePath: tplEt.text
+            templatePath: tplEt.text,
+            backgroundImagePath: bgEt.text
         };
     }
 
@@ -327,6 +428,7 @@ Workflow:
     setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
     setCompResolutionInFolder(lowerthirds, resolutionToWH(settings.resolution));
     adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
+    importBackgroundTopLayer(lowerthirds, settings.backgroundImagePath);
 
     // Remove wrapper folder if empty
     try {
