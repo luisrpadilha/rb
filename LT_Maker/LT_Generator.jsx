@@ -291,6 +291,14 @@ Workflow:
         }
     }
 
+    function findRootFolderByName(folderName) {
+        for (var i = 1; i <= app.project.items.length; i++) {
+            var it = app.project.items[i];
+            if (it instanceof FolderItem && it.parentFolder === app.project.rootFolder && it.name === folderName) return it;
+        }
+        return null;
+    }
+
     function updateExpressionsInFolder(rootFolder, clientName, projectName) {
         function walkPropsAndPatch(propGroup) {
             if (!propGroup || typeof propGroup.numProperties !== "number") return;
@@ -422,8 +430,8 @@ Workflow:
         return;
     }
 
-    app.beginUndoGroup("LT Generator Import Template");
-    try {
+    var templateRoot = findRootFolderByName(templateFile.name);
+    if (!templateRoot) {
         var io = new ImportOptions(templateFile);
         try {
             if (io.canImportAs && io.canImportAs(ImportAsType.PROJECT)) {
@@ -431,52 +439,41 @@ Workflow:
             }
         } catch (eType) {}
 
-        var importedRoot = null;
         try {
-            importedRoot = app.project.importFile(io);
+            templateRoot = app.project.importFile(io);
         } catch (eImport) {
             alert("Failed to import template project.\n" + eImport.toString());
             return;
         }
-
-        if (!(importedRoot instanceof FolderItem)) {
+        if (!(templateRoot instanceof FolderItem)) {
             alert("Imported template did not return a project folder item.");
             return;
         }
-
-        var lowerthirds = findChildFolderByName(importedRoot, "Lowerthirds");
-        if (!lowerthirds) {
-            alert("Could not find 'Lowerthirds' inside imported template folder.");
-            return;
-        }
-
-        // Move Lowerthirds folder to root and remove imported wrapper folder
-        try { lowerthirds.parentFolder = app.project.rootFolder; } catch (eMove) {}
-
-        // Update template names and timings
-        renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
-        updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
-        setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
-        adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
-        importBackgroundTopLayer(lowerthirds, settings.backgroundImagePath);
-        updateMasterProtectedRegions(lowerthirds, settings.duration);
-
-        // Remove wrapper folder if empty
-        try {
-            var hasChildren = false;
-            for (var i = 1; i <= app.project.items.length; i++) {
-                var it = app.project.items[i];
-                if (it && it.parentFolder === importedRoot) {
-                    hasChildren = true;
-                    break;
-                }
-            }
-            if (!hasChildren) importedRoot.remove();
-        } catch (eRm) {}
-
-        // Extra cleanup pass for empty root wrapper folders.
-        removeEmptyFolderByNameAtRoot(templateFile.name);
-    } finally {
-        app.endUndoGroup();
     }
+
+    var templateLowerthirds = findChildFolderByName(templateRoot, "Lowerthirds");
+    if (!templateLowerthirds) {
+        alert("Could not find 'Lowerthirds' inside template folder:\n" + templateRoot.name);
+        return;
+    }
+
+    // Duplicate template Lowerthirds instead of moving it out of the template wrapper.
+    var lowerthirds = null;
+    try { lowerthirds = templateLowerthirds.duplicate(); } catch (eDup) {}
+    if (!lowerthirds) {
+        alert("Could not duplicate template 'Lowerthirds' folder.");
+        return;
+    }
+    try { lowerthirds.parentFolder = app.project.rootFolder; } catch (eMove) {}
+
+    // Update duplicated instance
+    renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
+    updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
+    setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
+    adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
+    importBackgroundTopLayer(lowerthirds, settings.backgroundImagePath);
+    updateMasterProtectedRegions(lowerthirds, settings.duration);
+
+    // Keep root clean if there is a stale empty wrapper.
+    removeEmptyFolderByNameAtRoot(templateFile.name);
 })();
