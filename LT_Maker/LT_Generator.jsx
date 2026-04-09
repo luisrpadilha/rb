@@ -2,7 +2,7 @@
 LT_Generator.jsx (Template Import Variant)
 
 Workflow:
-1) Show setup dialog (Client, Project Name, Duration, Frame Rate, Resolution, Template path)
+1) Show setup dialog (Client, Project Name, Duration, Frame Rate, Template path)
 2) Import template project (.aep)
 3) Move imported "Lowerthirds" folder to project root
 4) Remove imported wrapper folder (e.g. RB_LowerThirdsGenerator.aep)
@@ -20,10 +20,6 @@ Workflow:
     function sanitizeProjectName(str) {
         if (!str) return "Project";
         return str.replace(/\s+/g, "_");
-    }
-
-    function resolutionToWH(label) {
-        return (label === "4K") ? { w: 3840, h: 2160 } : { w: 1920, h: 1080 };
     }
 
     function getAllDescendants(folder) {
@@ -77,141 +73,6 @@ Workflow:
             if (it instanceof CompItem) {
                 try { it.duration = duration; } catch (eDur) {}
                 try { it.frameRate = fps; } catch (eFps) {}
-            }
-        }
-    }
-
-    function setCompResolutionInFolder(rootFolder, wh) {
-        function getCompChildren(comp) {
-            var children = [];
-            for (var i = 1; i <= comp.layers.length; i++) {
-                var lyr = null;
-                try { lyr = comp.layers[i]; } catch (eLayer) {}
-                if (!lyr) continue;
-                var src = null;
-                try { src = lyr.source; } catch (eSrc) {}
-                if (src && src instanceof CompItem) children.push(src);
-            }
-            return children;
-        }
-
-        function compDepth(comp, memo, visiting) {
-            if (memo[comp.id] !== undefined) return memo[comp.id];
-            if (visiting[comp.id]) return 0;
-            visiting[comp.id] = true;
-            var children = getCompChildren(comp);
-            var maxChild = -1;
-            for (var i = 0; i < children.length; i++) {
-                maxChild = Math.max(maxChild, compDepth(children[i], memo, visiting));
-            }
-            visiting[comp.id] = false;
-            memo[comp.id] = maxChild + 1;
-            return memo[comp.id];
-        }
-
-        function scaleLayerTransforms(comp, ratioX, ratioY) {
-            for (var i = 1; i <= comp.layers.length; i++) {
-                var lyr = null;
-                try { lyr = comp.layers[i]; } catch (eLayer) {}
-                if (!lyr) continue;
-
-                var wasLocked = false;
-                try { wasLocked = lyr.locked; } catch (eLock) {}
-                if (wasLocked) {
-                    try { lyr.locked = false; } catch (eUnlock) {}
-                }
-
-                try {
-                    var posProp = lyr.property("ADBE Transform Group").property("ADBE Position");
-                    if (posProp && posProp.numKeys === 0) {
-                        var p = posProp.value;
-                        posProp.setValue([p[0] * ratioX, p[1] * ratioY]);
-                    }
-                } catch (ePos) {}
-
-                try {
-                    var anchorProp = lyr.property("ADBE Transform Group").property("ADBE Anchor Point");
-                    if (anchorProp && anchorProp.numKeys === 0) {
-                        var a = anchorProp.value;
-                        anchorProp.setValue([a[0] * ratioX, a[1] * ratioY]);
-                    }
-                } catch (eAnchor) {}
-
-                try {
-                    var src = lyr.source;
-                    var isPrecompLayer = (src && src instanceof CompItem);
-                    if (!isPrecompLayer) {
-                        var scaleProp = lyr.property("ADBE Transform Group").property("ADBE Scale");
-                        if (scaleProp && scaleProp.numKeys === 0) {
-                            var s = scaleProp.value;
-                            scaleProp.setValue([s[0] * ratioX, s[1] * ratioY]);
-                        }
-                    }
-                } catch (eScale) {}
-
-                if (wasLocked) {
-                    try { lyr.locked = true; } catch (eRelock) {}
-                }
-            }
-        }
-
-        function tryScaleCompositionWithBuiltIn(comp, targetW, targetH) {
-            // Try to use AE's built-in Scale Composition script if available.
-            // Fallback to manual transform scaling when this is not callable.
-            var scriptFile = null;
-            try { scriptFile = new File(app.path.fsName + "/Scripts/Scale Composition.jsx"); } catch (ePath) {}
-            if (!scriptFile || !scriptFile.exists) return false;
-
-            var scaled = false;
-            try {
-                var prevDialogs = app.beginSuppressDialogs();
-                try {
-                    // Some AE installs expose a callable function after evalFile.
-                    $.evalFile(scriptFile);
-                    if (typeof ScaleComposition === "function") {
-                        ScaleComposition(comp, targetW, targetH);
-                        scaled = true;
-                    } else if (typeof scaleComposition === "function") {
-                        scaleComposition(comp, targetW, targetH);
-                        scaled = true;
-                    }
-                } catch (eEval) {}
-                app.endSuppressDialogs(false);
-            } catch (eSuppress) {}
-            return scaled;
-        }
-
-        var items = getAllDescendants(rootFolder);
-        var comps = [];
-        for (var c = 0; c < items.length; c++) {
-            if (items[c] instanceof CompItem) comps.push(items[c]);
-        }
-
-        var memo = {};
-        var visiting = {};
-        for (var d = 0; d < comps.length; d++) compDepth(comps[d], memo, visiting);
-
-        comps.sort(function (a, b) {
-            return memo[a.id] - memo[b.id]; // children first
-        });
-
-        for (var i = 0; i < comps.length; i++) {
-            var comp = comps[i];
-            var oldW = comp.width;
-            var oldH = comp.height;
-            if (oldW === wh.w && oldH === wh.h) continue;
-
-            var ratioX = wh.w / oldW;
-            var ratioY = wh.h / oldH;
-
-            var usedBuiltIn = tryScaleCompositionWithBuiltIn(comp, wh.w, wh.h);
-            if (!usedBuiltIn) {
-                // Bottom-up fallback to avoid unnecessary precomp scale inflation.
-                scaleLayerTransforms(comp, ratioX, ratioY);
-                try {
-                    comp.width = wh.w;
-                    comp.height = wh.h;
-                } catch (eWH) {}
             }
         }
     }
@@ -479,11 +340,6 @@ Workflow:
         var fpsEt = gFps.add("edittext", undefined, "30");
         fpsEt.characters = 8;
 
-        var gRes = p.add("group");
-        gRes.add("statictext", undefined, "Resolution:");
-        var resDD = gRes.add("dropdownlist", undefined, ["Full HD", "4K"]);
-        resDD.selection = 0;
-
         var gTpl = p.add("group");
         gTpl.orientation = "row";
         gTpl.add("statictext", undefined, "Template:");
@@ -518,7 +374,6 @@ Workflow:
             projectName: sanitizeProjectName(nameEt.text),
             duration: parseFloat(durEt.text),
             fps: parseFloat(fpsEt.text),
-            resolution: resDD.selection.text,
             templatePath: tplEt.text,
             backgroundImagePath: bgEt.text
         };
@@ -582,7 +437,6 @@ Workflow:
         renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
         updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
         setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
-        setCompResolutionInFolder(lowerthirds, resolutionToWH(settings.resolution));
         adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
         importBackgroundTopLayer(lowerthirds, settings.backgroundImagePath);
         updateMasterProtectedRegions(lowerthirds, settings.duration);
