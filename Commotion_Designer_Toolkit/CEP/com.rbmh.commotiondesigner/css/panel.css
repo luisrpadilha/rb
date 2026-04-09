@@ -1,0 +1,164 @@
+:root {
+  --ae-bg: #323232;
+  --ae-panel: #3c3c3c;
+  --ae-border: #4c4c4c;
+  --ae-text: #d8d8d8;
+  --ae-muted: #a5a5a5;
+  --ae-accent: #4f8cc9;
+  --tile-size: 72px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ae-bg);
+  color: var(--ae-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  padding: 10px;
+  border-bottom: 1px solid var(--ae-border);
+  background: #2f2f2f;
+}
+
+.topbar h1 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+nav {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-btn,
+button {
+  background: var(--ae-panel);
+  border: 1px solid var(--ae-border);
+  color: var(--ae-text);
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+button:hover,
+.nav-btn:hover {
+  border-color: #666;
+}
+
+button.primary {
+  background: var(--ae-accent);
+  border-color: #6da5de;
+  color: #fff;
+}
+
+main {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 10px;
+}
+
+.screen h2 {
+  margin: 0 0 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.row-between {
+  justify-content: space-between;
+}
+
+input[type='text'] {
+  width: 100%;
+  min-width: 0;
+  background: #262626;
+  border: 1px solid var(--ae-border);
+  color: var(--ae-text);
+  border-radius: 4px;
+  padding: 7px;
+}
+
+.muted {
+  color: var(--ae-muted);
+  margin-top: 0;
+}
+
+.script-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.script-btn {
+  user-select: none;
+  border: 1px solid var(--ae-border);
+  background: var(--ae-panel);
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-height: calc(var(--tile-size) + 34px);
+}
+
+.script-btn.dragging {
+  opacity: 0.4;
+}
+
+.script-btn img {
+  width: var(--tile-size);
+  height: var(--tile-size);
+  object-fit: contain;
+}
+
+.script-btn span {
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.slider-wrap {
+  margin-top: 12px;
+  border-top: 1px solid var(--ae-border);
+  padding-top: 10px;
+}
+
+.slider-wrap input[type='range'] {
+  width: 100%;
+}
+
+.status {
+  border-top: 1px solid var(--ae-border);
+  color: var(--ae-muted);
+  padding: 7px 10px;
+  background: #2f2f2f;
+  font-size: 11px;
+}
