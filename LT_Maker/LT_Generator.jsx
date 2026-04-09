@@ -431,6 +431,7 @@ Workflow:
     }
 
     var templateRoot = findRootFolderByName(templateFile.name);
+    var importedNow = false;
     if (!templateRoot) {
         var io = new ImportOptions(templateFile);
         try {
@@ -449,6 +450,7 @@ Workflow:
             alert("Imported template did not return a project folder item.");
             return;
         }
+        importedNow = true;
     }
 
     var templateLowerthirds = findChildFolderByName(templateRoot, "Lowerthirds");
@@ -457,19 +459,28 @@ Workflow:
         return;
     }
 
-    // Use the template Lowerthirds folder directly and move it to root.
-    // FolderItem.duplicate() is not reliable across AE versions.
-    var lowerthirds = templateLowerthirds;
-    try { lowerthirds.parentFolder = app.project.rootFolder; } catch (eMove) {}
+    app.beginUndoGroup("LT Generator Apply Template");
+    try {
+        // Use the template Lowerthirds folder directly and move it to root.
+        // FolderItem.duplicate() is not reliable across AE versions.
+        var lowerthirds = templateLowerthirds;
+        try { lowerthirds.parentFolder = app.project.rootFolder; } catch (eMove) {}
 
-    // Update working instance
-    renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
-    updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
-    setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
-    adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
-    importBackgroundTopLayer(lowerthirds, settings.backgroundImagePath);
-    updateMasterProtectedRegions(lowerthirds, settings.duration);
+        // Update working instance
+        renameTemplateTokensInFolder(lowerthirds, settings.client, settings.projectName);
+        updateExpressionsInFolder(lowerthirds, settings.client, settings.projectName);
+        setCompTimingInFolder(lowerthirds, settings.duration, settings.fps);
+        adjustLayersAndKeyframesInFolder(lowerthirds, settings.duration);
+        importBackgroundTopLayer(lowerthirds, settings.backgroundImagePath);
+        updateMasterProtectedRegions(lowerthirds, settings.duration);
 
-    // Keep root clean if there is a stale empty wrapper.
-    removeEmptyFolderByNameAtRoot(templateFile.name);
+        // Keep root clean if there is a stale empty wrapper.
+        removeEmptyFolderByNameAtRoot(templateFile.name);
+    } finally {
+        app.endUndoGroup();
+    }
+
+    if (importedNow) {
+        // Informational only: first import can create baseline project items.
+    }
 })();
