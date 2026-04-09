@@ -41,20 +41,82 @@ YourScripts/
 
 > If `meta.json` is missing, the folder name is used as script name and description defaults to `No description available.`
 
-## Install in After Effects (CEP)
+## Where to put files to test quickly
 
-1. Copy `Commotion_Designer_Toolkit/CEP/com.rbmh.commotiondesigner` to your CEP extensions folder.
-2. Enable unsigned CEP extensions (development/testing) if needed.
-3. Launch After Effects.
-4. Open panel from: `Window > Extensions > Commotion Designer Toolkit`.
+1. Keep the extension folder here:
+   - `Commotion_Designer_Toolkit/CEP/com.rbmh.commotiondesigner`
+2. Create (or use) any scripts root folder (anywhere you have write access), e.g.:
+   - `~/Documents/AE-Toolkit-Scripts` (macOS)
+   - `%USERPROFILE%\Documents\AE-Toolkit-Scripts` (Windows)
+3. Put script packs in that folder using the format above.
+4. In the panel's **Configuration** screen, browse to that scripts root folder and click **Save & Load Scripts**.
 
-## Local example content
+### Included test pack
 
 A sample script package lives in:
 
-- `scripts_example/HelloWorld`
+- `Commotion_Designer_Toolkit/scripts_example/HelloWorld`
 
-Point the configuration screen to `scripts_example` to test quickly.
+For a first test, point the panel to:
+
+- `Commotion_Designer_Toolkit/scripts_example`
+
+## Install in After Effects (no admin required)
+
+Use the **user-level CEP extensions folder** (not system-level), then open from AE's Extensions menu.
+
+### macOS user-level CEP folder
+
+```text
+~/Library/Application Support/Adobe/CEP/extensions/
+```
+
+Copy this folder into that location:
+
+```text
+com.rbmh.commotiondesigner
+```
+
+Final path should be:
+
+```text
+~/Library/Application Support/Adobe/CEP/extensions/com.rbmh.commotiondesigner
+```
+
+### Windows user-level CEP folder
+
+```text
+%APPDATA%\Adobe\CEP\extensions\
+```
+
+Copy this folder into that location:
+
+```text
+com.rbmh.commotiondesigner
+```
+
+Final path should be:
+
+```text
+%APPDATA%\Adobe\CEP\extensions\com.rbmh.commotiondesigner
+```
+
+Then in After Effects:
+
+- Open `Window > Extensions > Commotion Designer Toolkit`.
+
+## Enable unsigned CEP panels (dev/testing)
+
+If needed, enable `PlayerDebugMode` for your CSXS version. This is typically possible without admin rights when set in user scope.
+
+- CSXS 11 (common for newer AE): `PlayerDebugMode=1`
+- CSXS 10/9 (older AE): set corresponding CSXS key similarly
+
+If your machine is locked by IT policy, ask them to allow unsigned CEP extensions for your user.
+
+## Install in After Effects (system-level, optional)
+
+If you *do* have admin rights, you can alternatively install to machine-wide CEP extension folders. This is optional.
 
 ## Notes
 
