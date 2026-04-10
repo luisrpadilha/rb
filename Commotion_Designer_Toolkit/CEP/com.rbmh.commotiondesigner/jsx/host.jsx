@@ -8,6 +8,7 @@
   var SETTINGS_SECTION = 'CommotionDesignerToolkit';
   var SETTINGS_FOLDER_KEY = 'scriptsFolder';
   var SETTINGS_ICON_SIZE_KEY = 'iconSize';
+  var SETTINGS_SHOW_LABELS_KEY = 'showLabels';
 
   function toJSON(obj) {
     try {
@@ -71,22 +72,30 @@
     var scriptsFolder = readSetting(SETTINGS_FOLDER_KEY, '');
     var iconSize = readSetting(SETTINGS_ICON_SIZE_KEY, '72');
     var orderRaw = readSetting(getOrderKey(scriptsFolder), '{}');
+    var showLabels = readSetting(SETTINGS_SHOW_LABELS_KEY, 'false');
 
     return toJSON({
       scriptsFolder: scriptsFolder,
       iconSize: iconSize,
+      showLabels: showLabels,
       order: JSON.parse(orderRaw || '{}')
     });
   };
 
-  $._cdt.saveState = function (folderPath, iconSize) {
+  $._cdt.saveState = function (folderPath, iconSize, showLabels) {
     writeSetting(SETTINGS_FOLDER_KEY, sanitizePath(folderPath));
     writeSetting(SETTINGS_ICON_SIZE_KEY, String(iconSize || 72));
+    writeSetting(SETTINGS_SHOW_LABELS_KEY, showLabels ? 'true' : 'false');
     return toJSON({ ok: true });
   };
 
   $._cdt.saveIconSize = function (iconSize) {
     writeSetting(SETTINGS_ICON_SIZE_KEY, String(iconSize || 72));
+    return toJSON({ ok: true });
+  };
+
+  $._cdt.saveShowLabels = function (showLabels) {
+    writeSetting(SETTINGS_SHOW_LABELS_KEY, showLabels ? 'true' : 'false');
     return toJSON({ ok: true });
   };
 

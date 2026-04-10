@@ -2,6 +2,7 @@
   var state = {
     scriptsFolder: '',
     iconSize: 72,
+    showLabels: false,
     scripts: [],
     order: {}
   };
@@ -11,21 +12,24 @@
     folderPath: document.getElementById('folderPath'),
     browseBtn: document.getElementById('browseBtn'),
     saveConfigBtn: document.getElementById('saveConfigBtn'),
-    refreshBtn: document.getElementById('refreshBtn'),
-    scriptsRootLabel: document.getElementById('scriptsRootLabel'),
     scriptGrid: document.getElementById('scriptGrid'),
-    iconSize: document.getElementById('iconSize')
+    iconSize: document.getElementById('iconSize'),
+    showLabelsToggle: document.getElementById('showLabelsToggle')
+  };
+
+  var SCREEN_IDS = {
+    MAIN: 'mainScreen',
+    CONFIG: 'configScreen',
+    ABOUT: 'aboutScreen'
   };
 
   function setStatus(message) {
     els.status.textContent = message;
   }
 
-  function safeEval(script) {
-    return new Promise(function (resolve) {
-      window.csInterface.evalScript(script, function (result) {
-        resolve(result);
-      });
+  function safeEval(script, done) {
+    window.csInterface.evalScript(script, function (result) {
+      done(result);
     });
   }
 
@@ -38,16 +42,9 @@
   }
 
   function switchScreen(id) {
-    Array.prototype.forEach.call(document.querySelectorAll('.screen'), function (screen) {
+    var screens = document.querySelectorAll('.screen');
+    Array.prototype.forEach.call(screens, function (screen) {
       screen.classList.toggle('hidden', screen.id !== id);
-    });
-  }
-
-  function wireNav() {
-    Array.prototype.forEach.call(document.querySelectorAll('.nav-btn'), function (btn) {
-      btn.addEventListener('click', function () {
-        switchScreen(btn.getAttribute('data-screen'));
-      });
     });
   }
 
@@ -62,23 +59,29 @@
 
   function getOrderedScripts(items) {
     var keyed = {};
-    items.forEach(function (item) {
-      keyed[item.id] = item;
+    var ordered = [];
+    var id;
+
+    for (var i = 0; i < items.length; i += 1) {
+      keyed[items[i].id] = items[i];
+    }
+
+    var orderedIds = Object.keys(state.order).sort(function (a, b) {
+      return state.order[a] - state.order[b];
     });
 
-    var ordered = [];
-    Object.keys(state.order).sort(function (a, b) {
-      return state.order[a] - state.order[b];
-    }).forEach(function (id) {
+    for (var j = 0; j < orderedIds.length; j += 1) {
+      id = orderedIds[j];
       if (keyed[id]) {
         ordered.push(keyed[id]);
         delete keyed[id];
       }
-    });
+    }
 
-    Object.keys(keyed).sort().forEach(function (id) {
-      ordered.push(keyed[id]);
-    });
+    var remaining = Object.keys(keyed).sort();
+    for (var k = 0; k < remaining.length; k += 1) {
+      ordered.push(keyed[remaining[k]]);
+    }
 
     return ordered;
   }
@@ -87,15 +90,17 @@
     if (!state.scriptsFolder) return;
 
     var payload = JSON.stringify(state.order).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-    safeEval("$._cdt.saveOrder('" + escapeForEval(state.scriptsFolder) + "','" + payload + "')");
+    safeEval("$._cdt.saveOrder('" + escapeForEval(state.scriptsFolder) + "','" + payload + "')", function () {});
   }
 
   function rebuildOrderFromDOM() {
     var nodes = els.scriptGrid.querySelectorAll('.script-btn');
     var nextOrder = {};
+
     Array.prototype.forEach.call(nodes, function (node, idx) {
       nextOrder[node.getAttribute('data-id')] = idx;
     });
+
     state.order = nextOrder;
     persistOrder();
   }
@@ -127,37 +132,55 @@
     });
   }
 
+  function renderScriptVisual(scriptItem) {
+    // Prepared for future animated vectors (e.g., Rive):
+    // read scriptItem.visualType and mount renderer accordingly.
+    var visual = document.createElement('div');
+    visual.className = 'script-visual';
+
+    var img = document.createElement('img');
+    img.alt = scriptItem.name;
+    img.src = scriptItem.iconUri || './assets/info.svg';
+    visual.appendChild(img);
+
+    return visual;
+  }
+
+  function runScript(scriptItem) {
+    setStatus('Running: ' + scriptItem.name + ' ...');
+    safeEval("$._cdt.runScript('" + escapeForEval(scriptItem.jsxPath) + "')", function (raw) {
+      var res = parseJSON(raw, { ok: false, message: 'Invalid host response.' });
+      setStatus(res.ok ? 'Done: ' + scriptItem.name : 'Error: ' + res.message);
+    });
+  }
+
   function renderScripts(items) {
     els.scriptGrid.innerHTML = '';
 
     var ordered = getOrderedScripts(items);
-    ordered.forEach(function (scriptItem) {
-      var btn = document.createElement('button');
-      btn.className = 'script-btn';
-      btn.setAttribute('title', scriptItem.description || 'No description available.');
-      btn.setAttribute('data-id', scriptItem.id);
+    for (var i = 0; i < ordered.length; i += 1) {
+      (function (scriptItem) {
+        var btn = document.createElement('button');
+        btn.className = 'script-btn';
+        btn.setAttribute('title', scriptItem.description || 'No description available.');
+        btn.setAttribute('data-id', scriptItem.id);
 
-      var img = document.createElement('img');
-      img.alt = scriptItem.name;
-      img.src = scriptItem.iconUri || './assets/info.svg';
+        btn.appendChild(renderScriptVisual(scriptItem));
 
-      var label = document.createElement('span');
-      label.textContent = scriptItem.name;
+        if (state.showLabels) {
+          var label = document.createElement('span');
+          label.textContent = scriptItem.name;
+          btn.appendChild(label);
+        }
 
-      btn.appendChild(img);
-      btn.appendChild(label);
-
-      btn.addEventListener('click', function () {
-        setStatus('Running: ' + scriptItem.name + ' ...');
-        safeEval("$._cdt.runScript('" + escapeForEval(scriptItem.jsxPath) + "')").then(function (raw) {
-          var res = parseJSON(raw, { ok: false, message: 'Invalid host response.' });
-          setStatus(res.ok ? 'Done: ' + scriptItem.name : 'Error: ' + res.message);
+        btn.addEventListener('click', function () {
+          runScript(scriptItem);
         });
-      });
 
-      enableDragAndDrop(btn);
-      els.scriptGrid.appendChild(btn);
-    });
+        enableDragAndDrop(btn);
+        els.scriptGrid.appendChild(btn);
+      })(ordered[i]);
+    }
 
     if (!ordered.length) {
       setStatus('No script packages found.');
@@ -167,12 +190,12 @@
   function loadScripts() {
     if (!state.scriptsFolder) {
       setStatus('Please configure a scripts folder first.');
-      switchScreen('configScreen');
+      switchScreen(SCREEN_IDS.CONFIG);
       return;
     }
 
     setStatus('Scanning scripts...');
-    safeEval("$._cdt.scanScripts('" + escapeForEval(state.scriptsFolder) + "')").then(function (raw) {
+    safeEval("$._cdt.scanScripts('" + escapeForEval(state.scriptsFolder) + "')", function (raw) {
       var result = parseJSON(raw, { ok: false, message: 'Unable to parse scan result.', scripts: [] });
       if (!result.ok) {
         setStatus('Scan failed: ' + (result.message || 'Unknown error'));
@@ -180,26 +203,29 @@
       }
 
       state.scripts = result.scripts || [];
-      els.scriptsRootLabel.textContent = 'Folder: ' + state.scriptsFolder;
       renderScripts(state.scripts);
-      switchScreen('mainScreen');
+      switchScreen(SCREEN_IDS.MAIN);
       setStatus('Loaded ' + state.scripts.length + ' script(s).');
     });
   }
 
   function loadState() {
-    safeEval('$._cdt.getState()').then(function (raw) {
+    safeEval('$._cdt.getState()', function (raw) {
       var result = parseJSON(raw, {});
       state.scriptsFolder = result.scriptsFolder || '';
       state.order = result.order || {};
       state.iconSize = Number(result.iconSize || 72);
+      state.showLabels = String(result.showLabels || 'false') === 'true';
 
       els.folderPath.value = state.scriptsFolder;
       els.iconSize.value = state.iconSize;
+      els.showLabelsToggle.checked = state.showLabels;
       applyIconSize(state.iconSize);
 
       if (state.scriptsFolder) {
         loadScripts();
+      } else {
+        setStatus('Configure scripts folder from panel menu > Configure.');
       }
     });
   }
@@ -212,18 +238,23 @@
     }
 
     state.scriptsFolder = folder;
+    state.showLabels = !!els.showLabelsToggle.checked;
+
     var iconSize = Number(els.iconSize.value || 72);
     applyIconSize(iconSize);
 
-    safeEval("$._cdt.saveState('" + escapeForEval(folder) + "'," + iconSize + ')').then(function () {
-      setStatus('Configuration saved.');
-      loadScripts();
-    });
+    safeEval(
+      "$._cdt.saveState('" + escapeForEval(folder) + "'," + iconSize + ',' + (state.showLabels ? 'true' : 'false') + ')',
+      function () {
+        setStatus('Configuration saved.');
+        loadScripts();
+      }
+    );
   }
 
   function browseFolder() {
     setStatus('Opening folder picker...');
-    safeEval('$._cdt.pickFolder()').then(function (raw) {
+    safeEval('$._cdt.pickFolder()', function (raw) {
       var result = parseJSON(raw, { ok: false });
       if (!result.ok || !result.path) {
         setStatus('Folder selection cancelled.');
@@ -238,16 +269,48 @@
   function wireControls() {
     els.browseBtn.addEventListener('click', browseFolder);
     els.saveConfigBtn.addEventListener('click', saveConfig);
-    els.refreshBtn.addEventListener('click', loadScripts);
 
     els.iconSize.addEventListener('input', function () {
       var size = Number(els.iconSize.value || 72);
       applyIconSize(size);
-      safeEval('$._cdt.saveIconSize(' + size + ')');
+      safeEval('$._cdt.saveIconSize(' + size + ')', function () {});
+    });
+
+    els.showLabelsToggle.addEventListener('change', function () {
+      state.showLabels = !!els.showLabelsToggle.checked;
+      safeEval('$._cdt.saveShowLabels(' + (state.showLabels ? 'true' : 'false') + ')', function () {
+        renderScripts(state.scripts || []);
+      });
     });
   }
 
-  wireNav();
+  function initializeFlyoutMenu() {
+    var menuXML =
+      '<Menu>' +
+      '<MenuItem Id="refresh" Label="Refresh" Enabled="true" Checked="false"/>' +
+      '<MenuItem Label="---"/>' +
+      '<MenuItem Id="showMain" Label="Default" Enabled="true" Checked="true"/>' +
+      '<MenuItem Id="showConfig" Label="Configure" Enabled="true" Checked="false"/>' +
+      '<MenuItem Label="---"/>' +
+      '<MenuItem Id="showAbout" Label="About &amp; License..." Enabled="true" Checked="false"/>' +
+      '</Menu>';
+
+    window.csInterface.setFlyoutMenu(menuXML);
+    window.csInterface.onFlyoutClick(function (menuId) {
+      if (menuId === 'refresh') {
+        loadScripts();
+      } else if (menuId === 'showConfig') {
+        switchScreen(SCREEN_IDS.CONFIG);
+      } else if (menuId === 'showAbout') {
+        switchScreen(SCREEN_IDS.ABOUT);
+      } else if (menuId === 'showMain') {
+        switchScreen(SCREEN_IDS.MAIN);
+      }
+    });
+  }
+
   wireControls();
+  initializeFlyoutMenu();
+  switchScreen(SCREEN_IDS.MAIN);
   loadState();
 })();
