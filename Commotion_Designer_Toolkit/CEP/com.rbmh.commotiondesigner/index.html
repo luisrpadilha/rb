@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commotion Designer Toolkit</title>
+    <link rel="stylesheet" href="./css/panel.css" />
+  </head>
+  <body>
+    <main>
+      <section id="mainScreen" class="screen">
+        <div id="scriptGrid" class="script-grid"></div>
+      </section>
+
+      <section id="configScreen" class="screen hidden">
+        <h2>Configuration</h2>
+        <p>Select the root folder that contains script subfolders.</p>
+        <div class="row">
+          <input id="folderPath" type="text" placeholder="No folder selected" />
+          <button id="browseBtn">Browse</button>
+        </div>
+        <label class="row check-row" for="showLabelsToggle">
+          <input id="showLabelsToggle" type="checkbox" />
+          <span>Show icon labels</span>
+        </label>
+        <button id="saveConfigBtn" class="primary">Save & Load Scripts</button>
+      </section>
+
+      <section id="aboutScreen" class="screen hidden">
+        <h2>About</h2>
+        <p>Commotion Designer Toolkit</p>
+        <p>Created by RBMH.</p>
+      </section>
+    </main>
+
+    <div class="bottom-controls">
+      <div class="slider-wrap">
+        <label for="iconSize">Icon Size</label>
+        <input id="iconSize" type="range" min="40" max="120" value="72" />
+      </div>
+      <footer id="status" class="status">Ready.</footer>
+    </div>
+
+    <script src="./js/bridge.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
