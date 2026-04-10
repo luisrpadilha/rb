@@ -179,10 +179,13 @@
     var visual = document.createElement('div');
     visual.className = 'script-visual';
 
-    var img = document.createElement('img');
-    img.alt = scriptItem.name;
-    img.src = scriptItem.iconUri || './assets/info.svg';
-    visual.appendChild(img);
+    var icon = document.createElement('div');
+    icon.className = 'script-icon';
+    var iconUri = scriptItem.iconUri || './assets/info.svg';
+
+    icon.style.webkitMaskImage = "url('" + iconUri + "')";
+    icon.style.maskImage = "url('" + iconUri + "')";
+    visual.appendChild(icon);
 
     return visual;
   }

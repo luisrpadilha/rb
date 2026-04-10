@@ -150,21 +150,25 @@ input[type='text'] {
   justify-content: center;
 }
 
-.script-visual img {
+.script-icon {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  display: block;
-  filter: brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(42%) hue-rotate(180deg) brightness(88%) contrast(95%);
-  transition: filter 110ms ease;
+  background: #f2f2f2;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  transition: background-color 110ms ease;
 }
 
-.script-btn:hover .script-visual img {
-  filter: brightness(0) saturate(100%) invert(62%) sepia(56%) saturate(2445%) hue-rotate(182deg) brightness(101%) contrast(95%);
+.script-btn:hover .script-icon {
+  background: #4f9ee6;
 }
 
-.script-btn.is-active .script-visual img {
-  filter: brightness(0) saturate(100%) invert(37%) sepia(89%) saturate(1960%) hue-rotate(336deg) brightness(102%) contrast(98%);
+.script-btn.is-active .script-icon {
+  background: #db4b4b;
 }
 
 .script-btn span {
