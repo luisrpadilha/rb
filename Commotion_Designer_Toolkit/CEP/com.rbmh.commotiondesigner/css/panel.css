@@ -58,6 +58,27 @@ main {
   margin: 0 0 8px;
 }
 
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.empty-state {
+  border: 1px dashed var(--ae-border);
+  border-radius: 6px;
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  margin: 0 0 10px;
+  color: var(--ae-muted);
+}
+
 .hidden {
   display: none;
 }

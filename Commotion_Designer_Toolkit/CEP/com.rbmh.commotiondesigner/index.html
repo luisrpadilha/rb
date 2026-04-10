@@ -9,11 +9,18 @@
   <body>
     <main>
       <section id="mainScreen" class="screen">
+        <div id="emptyState" class="empty-state hidden">
+          <p id="emptyStateText">No scripts loaded.</p>
+          <button id="openConfigFromMain" type="button">Open Configuration</button>
+        </div>
         <div id="scriptGrid" class="script-grid"></div>
       </section>
 
       <section id="configScreen" class="screen hidden">
-        <h2>Configuration</h2>
+        <div class="screen-header">
+          <h2>Configuration</h2>
+          <button id="closeConfigBtn" type="button">Close</button>
+        </div>
         <p>Select the root folder that contains script subfolders.</p>
         <div class="row">
           <input id="folderPath" type="text" placeholder="No folder selected" />
@@ -27,7 +34,10 @@
       </section>
 
       <section id="aboutScreen" class="screen hidden">
-        <h2>About</h2>
+        <div class="screen-header">
+          <h2>About</h2>
+          <button id="closeAboutBtn" type="button">Close</button>
+        </div>
         <p>Commotion Designer Toolkit</p>
         <p>Created by RBMH.</p>
       </section>

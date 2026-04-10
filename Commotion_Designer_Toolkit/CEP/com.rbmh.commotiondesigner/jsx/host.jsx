@@ -10,9 +10,58 @@
   var SETTINGS_ICON_SIZE_KEY = 'iconSize';
   var SETTINGS_SHOW_LABELS_KEY = 'showLabels';
 
+  function stringifyJSON(value) {
+    if (typeof JSON !== 'undefined' && JSON && typeof JSON.stringify === 'function') {
+      return JSON.stringify(value);
+    }
+
+    var type = typeof value;
+    if (value === null) return 'null';
+    if (type === 'number' || type === 'boolean') return String(value);
+    if (type === 'string') {
+      return (
+        '"' +
+        value
+          .replace(/\\/g, '\\\\')
+          .replace(/"/g, '\\"')
+          .replace(/\n/g, '\\n')
+          .replace(/\r/g, '\\r') +
+        '"'
+      );
+    }
+
+    if (Object.prototype.toString.call(value) === '[object Array]') {
+      var arr = [];
+      for (var i = 0; i < value.length; i += 1) {
+        arr.push(stringifyJSON(value[i]));
+      }
+      return '[' + arr.join(',') + ']';
+    }
+
+    var keys = [];
+    for (var key in value) {
+      if (value.hasOwnProperty(key)) {
+        keys.push('"' + key.replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '":' + stringifyJSON(value[key]));
+      }
+    }
+
+    return '{' + keys.join(',') + '}';
+  }
+
+  function parseJSON(raw, fallback) {
+    try {
+      if (typeof JSON !== 'undefined' && JSON && typeof JSON.parse === 'function') {
+        return JSON.parse(raw);
+      }
+      return eval('(' + raw + ')');
+    } catch (e) {
+      return fallback;
+    }
+  }
+
   function toJSON(obj) {
     try {
-      return JSON.stringify(obj);
+      return stringifyJSON(obj);
     } catch (err) {
       return '{"ok":false,"message":"JSON stringify failed."}';
     }
@@ -60,7 +109,7 @@
       var raw = metaFile.read();
       metaFile.close();
 
-      var parsed = JSON.parse(raw);
+      var parsed = parseJSON(raw, {});
       meta.name = parsed.name || fallbackName;
       meta.description = parsed.description || meta.description;
     } catch (e) {}
@@ -78,7 +127,7 @@
       scriptsFolder: scriptsFolder,
       iconSize: iconSize,
       showLabels: showLabels,
-      order: JSON.parse(orderRaw || '{}')
+      order: parseJSON(orderRaw || '{}', {})
     });
   };
 

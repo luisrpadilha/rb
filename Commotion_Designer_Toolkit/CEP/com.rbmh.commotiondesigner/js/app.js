@@ -12,6 +12,11 @@
     folderPath: document.getElementById('folderPath'),
     browseBtn: document.getElementById('browseBtn'),
     saveConfigBtn: document.getElementById('saveConfigBtn'),
+    closeConfigBtn: document.getElementById('closeConfigBtn'),
+    closeAboutBtn: document.getElementById('closeAboutBtn'),
+    openConfigFromMain: document.getElementById('openConfigFromMain'),
+    emptyState: document.getElementById('emptyState'),
+    emptyStateText: document.getElementById('emptyStateText'),
     scriptGrid: document.getElementById('scriptGrid'),
     iconSize: document.getElementById('iconSize'),
     showLabelsToggle: document.getElementById('showLabelsToggle')
@@ -46,6 +51,18 @@
     Array.prototype.forEach.call(screens, function (screen) {
       screen.classList.toggle('hidden', screen.id !== id);
     });
+  }
+
+  function setEmptyState(message, showConfigLink) {
+    els.emptyStateText.textContent = message;
+    els.emptyState.classList.remove('hidden');
+    els.openConfigFromMain.classList.toggle('hidden', !showConfigLink);
+    els.scriptGrid.classList.add('hidden');
+  }
+
+  function hideEmptyState() {
+    els.emptyState.classList.add('hidden');
+    els.scriptGrid.classList.remove('hidden');
   }
 
   function applyIconSize(size) {
@@ -183,14 +200,19 @@
     }
 
     if (!ordered.length) {
+      setEmptyState('No script folders were found in the selected path.', true);
       setStatus('No script packages found.');
+      return;
     }
+
+    hideEmptyState();
   }
 
   function loadScripts() {
     if (!state.scriptsFolder) {
+      setEmptyState('No scripts path selected yet.', true);
       setStatus('Please configure a scripts folder first.');
-      switchScreen(SCREEN_IDS.CONFIG);
+      switchScreen(SCREEN_IDS.MAIN);
       return;
     }
 
@@ -198,6 +220,7 @@
     safeEval("$._cdt.scanScripts('" + escapeForEval(state.scriptsFolder) + "')", function (raw) {
       var result = parseJSON(raw, { ok: false, message: 'Unable to parse scan result.', scripts: [] });
       if (!result.ok) {
+        setEmptyState('Could not load scripts. Open Configuration to verify the folder.', true);
         setStatus('Scan failed: ' + (result.message || 'Unknown error'));
         return;
       }
@@ -225,6 +248,7 @@
       if (state.scriptsFolder) {
         loadScripts();
       } else {
+        setEmptyState('No scripts path selected yet.', true);
         setStatus('Configure scripts folder from panel menu > Configure.');
       }
     });
@@ -269,6 +293,15 @@
   function wireControls() {
     els.browseBtn.addEventListener('click', browseFolder);
     els.saveConfigBtn.addEventListener('click', saveConfig);
+    els.closeConfigBtn.addEventListener('click', function () {
+      switchScreen(SCREEN_IDS.MAIN);
+    });
+    els.closeAboutBtn.addEventListener('click', function () {
+      switchScreen(SCREEN_IDS.MAIN);
+    });
+    els.openConfigFromMain.addEventListener('click', function () {
+      switchScreen(SCREEN_IDS.CONFIG);
+    });
 
     els.iconSize.addEventListener('input', function () {
       var size = Number(els.iconSize.value || 72);
