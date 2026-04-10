@@ -3,6 +3,7 @@
     scriptsFolder: '',
     iconSize: 72,
     showLabels: false,
+    showSlider: true,
     scripts: [],
     order: {}
   };
@@ -19,13 +20,20 @@
     emptyStateText: document.getElementById('emptyStateText'),
     scriptGrid: document.getElementById('scriptGrid'),
     iconSize: document.getElementById('iconSize'),
-    showLabelsToggle: document.getElementById('showLabelsToggle')
+    showLabelsToggle: document.getElementById('showLabelsToggle'),
+    bottomControls: document.querySelector('.bottom-controls')
   };
 
   var SCREEN_IDS = {
     MAIN: 'mainScreen',
     CONFIG: 'configScreen',
     ABOUT: 'aboutScreen'
+  };
+
+  var RESPONSIVE = {
+    hideSliderAtWidth: 230,
+    minAutoIconSize: 64,
+    iconPadding: 30
   };
 
   function setStatus(message) {
@@ -65,9 +73,27 @@
     els.scriptGrid.classList.remove('hidden');
   }
 
-  function applyIconSize(size) {
-    state.iconSize = size;
+  function applyTileSize(size) {
     document.documentElement.style.setProperty('--tile-size', size + 'px');
+  }
+
+  function updateResponsiveLayout() {
+    var width = window.innerWidth || 400;
+    var autoHideSlider = width < RESPONSIVE.hideSliderAtWidth;
+    var sliderVisible = state.showSlider && !autoHideSlider;
+
+    els.bottomControls.classList.toggle('slider-hidden', !sliderVisible);
+
+    if (autoHideSlider) {
+      var autoSize = Math.max(
+        RESPONSIVE.minAutoIconSize,
+        Math.min(state.iconSize, Math.floor(width - RESPONSIVE.iconPadding))
+      );
+      applyTileSize(autoSize);
+      return;
+    }
+
+    applyTileSize(state.iconSize);
   }
 
   function escapeForEval(path) {
@@ -150,8 +176,6 @@
   }
 
   function renderScriptVisual(scriptItem) {
-    // Prepared for future animated vectors (e.g., Rive):
-    // read scriptItem.visualType and mount renderer accordingly.
     var visual = document.createElement('div');
     visual.className = 'script-visual';
 
@@ -163,7 +187,12 @@
     return visual;
   }
 
-  function runScript(scriptItem) {
+  function runScript(scriptItem, btn) {
+    btn.classList.add('is-active');
+    setTimeout(function () {
+      btn.classList.remove('is-active');
+    }, 260);
+
     setStatus('Running: ' + scriptItem.name + ' ...');
     safeEval("$._cdt.runScript('" + escapeForEval(scriptItem.jsxPath) + "')", function (raw) {
       var res = parseJSON(raw, { ok: false, message: 'Invalid host response.' });
@@ -191,7 +220,7 @@
         }
 
         btn.addEventListener('click', function () {
-          runScript(scriptItem);
+          runScript(scriptItem, btn);
         });
 
         enableDragAndDrop(btn);
@@ -232,6 +261,24 @@
     });
   }
 
+  function refreshFlyoutMenu() {
+    var menuXML =
+      '<Menu>' +
+      '<MenuItem Id="refresh" Label="Refresh" Enabled="true" Checked="false"/>' +
+      '<MenuItem Label="---"/>' +
+      '<MenuItem Id="toggleSlider" Label="Show Icon Size Slider" Enabled="true" Checked="' +
+      (state.showSlider ? 'true' : 'false') +
+      '"/>' +
+      '<MenuItem Label="---"/>' +
+      '<MenuItem Id="showMain" Label="Default" Enabled="true" Checked="true"/>' +
+      '<MenuItem Id="showConfig" Label="Configure" Enabled="true" Checked="false"/>' +
+      '<MenuItem Label="---"/>' +
+      '<MenuItem Id="showAbout" Label="About &amp; License..." Enabled="true" Checked="false"/>' +
+      '</Menu>';
+
+    window.csInterface.setFlyoutMenu(menuXML);
+  }
+
   function loadState() {
     safeEval('$._cdt.getState()', function (raw) {
       var result = parseJSON(raw, {});
@@ -239,11 +286,13 @@
       state.order = result.order || {};
       state.iconSize = Number(result.iconSize || 72);
       state.showLabels = String(result.showLabels || 'false') === 'true';
+      state.showSlider = String(result.showSlider || 'true') !== 'false';
 
       els.folderPath.value = state.scriptsFolder;
       els.iconSize.value = state.iconSize;
       els.showLabelsToggle.checked = state.showLabels;
-      applyIconSize(state.iconSize);
+      updateResponsiveLayout();
+      refreshFlyoutMenu();
 
       if (state.scriptsFolder) {
         loadScripts();
@@ -264,11 +313,19 @@
     state.scriptsFolder = folder;
     state.showLabels = !!els.showLabelsToggle.checked;
 
-    var iconSize = Number(els.iconSize.value || 72);
-    applyIconSize(iconSize);
+    state.iconSize = Number(els.iconSize.value || 72);
+    updateResponsiveLayout();
 
     safeEval(
-      "$._cdt.saveState('" + escapeForEval(folder) + "'," + iconSize + ',' + (state.showLabels ? 'true' : 'false') + ')',
+      "$._cdt.saveState('" +
+        escapeForEval(folder) +
+        "'," +
+        state.iconSize +
+        ',' +
+        (state.showLabels ? 'true' : 'false') +
+        ',' +
+        (state.showSlider ? 'true' : 'false') +
+        ')',
       function () {
         setStatus('Configuration saved.');
         loadScripts();
@@ -304,9 +361,9 @@
     });
 
     els.iconSize.addEventListener('input', function () {
-      var size = Number(els.iconSize.value || 72);
-      applyIconSize(size);
-      safeEval('$._cdt.saveIconSize(' + size + ')', function () {});
+      state.iconSize = Number(els.iconSize.value || 72);
+      updateResponsiveLayout();
+      safeEval('$._cdt.saveIconSize(' + state.iconSize + ')', function () {});
     });
 
     els.showLabelsToggle.addEventListener('change', function () {
@@ -315,23 +372,21 @@
         renderScripts(state.scripts || []);
       });
     });
+
+    window.addEventListener('resize', updateResponsiveLayout);
   }
 
   function initializeFlyoutMenu() {
-    var menuXML =
-      '<Menu>' +
-      '<MenuItem Id="refresh" Label="Refresh" Enabled="true" Checked="false"/>' +
-      '<MenuItem Label="---"/>' +
-      '<MenuItem Id="showMain" Label="Default" Enabled="true" Checked="true"/>' +
-      '<MenuItem Id="showConfig" Label="Configure" Enabled="true" Checked="false"/>' +
-      '<MenuItem Label="---"/>' +
-      '<MenuItem Id="showAbout" Label="About &amp; License..." Enabled="true" Checked="false"/>' +
-      '</Menu>';
+    refreshFlyoutMenu();
 
-    window.csInterface.setFlyoutMenu(menuXML);
     window.csInterface.onFlyoutClick(function (menuId) {
       if (menuId === 'refresh') {
         loadScripts();
+      } else if (menuId === 'toggleSlider') {
+        state.showSlider = !state.showSlider;
+        safeEval('$._cdt.saveShowSlider(' + (state.showSlider ? 'true' : 'false') + ')', function () {});
+        updateResponsiveLayout();
+        refreshFlyoutMenu();
       } else if (menuId === 'showConfig') {
         switchScreen(SCREEN_IDS.CONFIG);
       } else if (menuId === 'showAbout') {

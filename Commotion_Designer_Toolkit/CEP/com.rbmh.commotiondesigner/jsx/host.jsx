@@ -9,6 +9,7 @@
   var SETTINGS_FOLDER_KEY = 'scriptsFolder';
   var SETTINGS_ICON_SIZE_KEY = 'iconSize';
   var SETTINGS_SHOW_LABELS_KEY = 'showLabels';
+  var SETTINGS_SHOW_SLIDER_KEY = 'showSlider';
 
   function stringifyJSON(value) {
     if (typeof JSON !== 'undefined' && JSON && typeof JSON.stringify === 'function') {
@@ -122,19 +123,22 @@
     var iconSize = readSetting(SETTINGS_ICON_SIZE_KEY, '72');
     var orderRaw = readSetting(getOrderKey(scriptsFolder), '{}');
     var showLabels = readSetting(SETTINGS_SHOW_LABELS_KEY, 'false');
+    var showSlider = readSetting(SETTINGS_SHOW_SLIDER_KEY, 'true');
 
     return toJSON({
       scriptsFolder: scriptsFolder,
       iconSize: iconSize,
       showLabels: showLabels,
+      showSlider: showSlider,
       order: parseJSON(orderRaw || '{}', {})
     });
   };
 
-  $._cdt.saveState = function (folderPath, iconSize, showLabels) {
+  $._cdt.saveState = function (folderPath, iconSize, showLabels, showSlider) {
     writeSetting(SETTINGS_FOLDER_KEY, sanitizePath(folderPath));
     writeSetting(SETTINGS_ICON_SIZE_KEY, String(iconSize || 72));
     writeSetting(SETTINGS_SHOW_LABELS_KEY, showLabels ? 'true' : 'false');
+    writeSetting(SETTINGS_SHOW_SLIDER_KEY, showSlider ? 'true' : 'false');
     return toJSON({ ok: true });
   };
 
@@ -145,6 +149,11 @@
 
   $._cdt.saveShowLabels = function (showLabels) {
     writeSetting(SETTINGS_SHOW_LABELS_KEY, showLabels ? 'true' : 'false');
+    return toJSON({ ok: true });
+  };
+
+  $._cdt.saveShowSlider = function (showSlider) {
+    writeSetting(SETTINGS_SHOW_SLIDER_KEY, showSlider ? 'true' : 'false');
     return toJSON({ ok: true });
   };
 

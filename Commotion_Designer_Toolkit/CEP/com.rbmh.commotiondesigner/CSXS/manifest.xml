@@ -37,8 +37,8 @@
               <Width>380</Width>
             </Size>
             <MinSize>
-              <Height>360</Height>
-              <Width>300</Width>
+              <Height>150</Height>
+              <Width>96</Width>
             </MinSize>
           </Geometry>
           <Icons />
