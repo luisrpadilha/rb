@@ -65,6 +65,7 @@ input[type='text'] {
 
 .script-grid {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(1, var(--tile-size));
   justify-content: flex-start;
   justify-items: center;
