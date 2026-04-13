@@ -15,30 +15,6 @@
         </div>
         <div id="scriptGrid" class="script-grid"></div>
       </section>
-
-      <section id="settingsScreen" class="screen hidden">
-        <div class="screen-header">
-          <h2>Settings</h2>
-          <button id="closeSettingsBtn" type="button">Close</button>
-        </div>
-        <p>Select the root folder that contains script subfolders.</p>
-        <div class="row">
-          <input id="folderPath" type="text" placeholder="No folder selected" />
-          <button id="browseBtn">Browse</button>
-        </div>
-        <label class="row check-row" for="showLabelsToggle">
-          <input id="showLabelsToggle" type="checkbox" />
-          <span>Show icon labels</span>
-        </label>
-        <label class="row check-row" for="showLogToggle">
-          <input id="showLogToggle" type="checkbox" />
-          <span>Show bottom log panel</span>
-        </label>
-        <div class="row">
-          <button id="saveSettingsBtn" class="primary">Save & Load Scripts</button>
-          <button id="localUpdateBtn" type="button">Update</button>
-        </div>
-      </section>
     </main>
 
     <div class="bottom-controls log-hidden" id="bottomControls">
