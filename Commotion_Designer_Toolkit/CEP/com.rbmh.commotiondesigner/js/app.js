@@ -381,14 +381,13 @@
     });
   }
 
-  function browseFolder() {
-    setStatus('Opening folder picker...');
-    safeEval('$._cdt.pickFolder()', function (raw) {
-      var result = parseJSON(raw, { ok: false });
-      if (!result.ok || !result.path) {
-        setStatus('Folder selection cancelled.');
-        return;
-      }
+  function openSettingsPopup() {
+    var popupOptions = 'width=430,height=320,resizable=yes,scrollbars=yes';
+    if (!settingsPopup || settingsPopup.closed) {
+      settingsPopup = window.open('./settings.html', 'cdt_settings_popup', popupOptions);
+    } else {
+      settingsPopup.focus();
+    }
 
       els.folderPath.value = result.path;
       saveSettings();
@@ -439,6 +438,15 @@
       }
     });
   }
+
+  window.cdtMain = {
+    refreshFromState: function () {
+      lastKnownGridWidth = -1;
+      loadState(function () {
+        applyResponsiveGridLayout();
+      });
+    }
+  };
 
   wireControls();
   initializeFlyoutMenu();
