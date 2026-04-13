@@ -351,6 +351,15 @@
     });
   }
 
+  function openSettingsModal() {
+    els.settingsModal.classList.remove('hidden');
+    setStatus('Settings opened.');
+  }
+
+  function closeSettingsModal() {
+    els.settingsModal.classList.add('hidden');
+  }
+
   function wireControls() {
     els.openSettingsFromMain.addEventListener('click', openSettingsDialog);
 
@@ -379,6 +388,15 @@
       }
     });
   }
+
+  window.cdtMain = {
+    refreshFromState: function () {
+      lastKnownGridWidth = -1;
+      loadState(function () {
+        applyResponsiveGridLayout();
+      });
+    }
+  };
 
   wireControls();
   initializeFlyoutMenu();
