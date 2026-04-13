@@ -12,6 +12,13 @@
   var els = {
     status: document.getElementById('status'),
     bottomControls: document.getElementById('bottomControls'),
+    settingsModal: document.getElementById('settingsModal'),
+    folderPath: document.getElementById('folderPath'),
+    browseBtn: document.getElementById('browseBtn'),
+    closeSettingsBtn: document.getElementById('closeSettingsBtn'),
+    showLabelsToggle: document.getElementById('showLabelsToggle'),
+    showLogToggle: document.getElementById('showLogToggle'),
+    localUpdateBtn: document.getElementById('localUpdateBtn'),
     openSettingsFromMain: document.getElementById('openSettingsFromMain'),
     emptyState: document.getElementById('emptyState'),
     emptyStateText: document.getElementById('emptyStateText'),
@@ -22,8 +29,8 @@
     MAIN: 'mainScreen'
   };
 
-  var settingsPopup = null;
   var lastKnownGridWidth = -1;
+  var lastKnownItemCount = -1;
 
   function setStatus(message) {
     els.status.textContent = message;
@@ -64,10 +71,12 @@
     if (!els.scriptGrid || els.scriptGrid.classList.contains('hidden')) return;
 
     var gridWidth = els.scriptGrid.clientWidth || (els.scriptGrid.parentNode ? els.scriptGrid.parentNode.clientWidth : 0);
-    if (!gridWidth || gridWidth === lastKnownGridWidth) return;
-    lastKnownGridWidth = gridWidth;
-
     var itemCount = els.scriptGrid.querySelectorAll('.script-btn').length;
+    if (!gridWidth) return;
+    if (gridWidth === lastKnownGridWidth && itemCount === lastKnownItemCount) return;
+
+    lastKnownGridWidth = gridWidth;
+    lastKnownItemCount = itemCount;
     var columns = getResponsiveColumnCount(itemCount);
     els.scriptGrid.style.gridTemplateColumns = 'repeat(' + columns + ', var(--tile-size))';
   }
@@ -235,7 +244,7 @@
       btn.appendChild(label);
     }
 
-    btn.addEventListener('click', openSettingsPopup);
+    btn.addEventListener('click', openSettingsModal);
 
     enableDragAndDrop(btn);
     return btn;
@@ -318,12 +327,57 @@
       state.showLabels = String(result.showLabels || 'false') === 'true';
       state.showLog = String(result.showLog || 'false') === 'true';
 
+      els.folderPath.value = state.scriptsFolder;
+      els.showLabelsToggle.checked = state.showLabels;
+      els.showLogToggle.checked = state.showLog;
       applyLogVisibility();
       loadScripts();
 
       if (typeof done === 'function') {
         done();
       }
+    });
+  }
+
+  function saveSettings() {
+    var folder = els.folderPath.value.trim();
+    if (!folder) {
+      setStatus('Please set a scripts folder.');
+      return;
+    }
+
+    state.scriptsFolder = folder;
+    state.showLabels = !!els.showLabelsToggle.checked;
+    state.showLog = !!els.showLogToggle.checked;
+    applyLogVisibility();
+
+    safeEval(
+      "$._cdt.saveState('" +
+        escapeForEval(folder) +
+        "',45," +
+        (state.showLabels ? 'true' : 'false') +
+        ',false,' +
+        (state.showLog ? 'true' : 'false') +
+        ')',
+      function () {
+        setStatus('Settings saved.');
+        loadScripts();
+      }
+    );
+  }
+
+  function runLocalUpdate() {
+    setStatus('Running local update...');
+    safeEval('$._cdt.localUpdate()', function (raw) {
+      var res = parseJSON(raw, { ok: false, message: 'Invalid host response.' });
+      if (!res.ok) {
+        setStatus('Local update failed: ' + res.message);
+        window.alert('Update failed: ' + res.message);
+        return;
+      }
+
+      setStatus('Local update complete: ' + res.message);
+      window.alert('Update successful: ' + res.message);
     });
   }
 
@@ -335,22 +389,36 @@
       settingsPopup.focus();
     }
 
-    if (!settingsPopup) {
-      setStatus('Unable to open settings popup.');
-      return;
-    }
+      els.folderPath.value = result.path;
+      saveSettings();
+      setStatus('Selected: ' + result.path);
+    });
+  }
 
-    setStatus('Opened settings popup.');
+  function openSettingsModal() {
+    els.settingsModal.classList.remove('hidden');
+    setStatus('Settings opened.');
+  }
+
+  function closeSettingsModal() {
+    els.settingsModal.classList.add('hidden');
   }
 
   function wireControls() {
-    els.openSettingsFromMain.addEventListener('click', openSettingsPopup);
+    els.openSettingsFromMain.addEventListener('click', openSettingsModal);
+    els.closeSettingsBtn.addEventListener('click', closeSettingsModal);
+    els.browseBtn.addEventListener('click', browseFolder);
+    els.localUpdateBtn.addEventListener('click', runLocalUpdate);
+    els.folderPath.addEventListener('change', saveSettings);
+    els.showLabelsToggle.addEventListener('change', saveSettings);
+    els.showLogToggle.addEventListener('change', saveSettings);
 
     window.addEventListener('resize', applyResponsiveGridLayout);
 
     if (typeof ResizeObserver === 'function') {
       var observer = new ResizeObserver(function () {
         lastKnownGridWidth = -1;
+        lastKnownItemCount = -1;
         applyResponsiveGridLayout();
       });
       observer.observe(document.body);
@@ -366,7 +434,7 @@
     window.csInterface.setFlyoutMenu('<Menu><MenuItem Id="showSettings" Label="Settings" Enabled="true" Checked="false"/></Menu>');
     window.csInterface.onFlyoutClick(function (menuId) {
       if (menuId === 'showSettings') {
-        openSettingsPopup();
+        openSettingsModal();
       }
     });
   }
