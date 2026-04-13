@@ -65,7 +65,9 @@ input[type='text'] {
 
 .script-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--tile-size), 1fr));
+  width: 100%;
+  grid-template-columns: repeat(1, var(--tile-size));
+  justify-content: flex-start;
   justify-items: center;
   gap: 8px;
 }
@@ -113,3 +115,25 @@ input[type='text'] {
 .bottom-controls { border-top: 1px solid var(--ae-border); background: #2a2a2a; }
 .bottom-controls.log-hidden { display: none; }
 .status { color: var(--ae-muted); padding: 7px 10px; font-size: 11px; }
+
+.settings-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.settings-dialog {
+  width: 100%;
+  max-width: 440px;
+  max-height: 100%;
+  overflow: auto;
+  background: var(--ae-panel);
+  border: 1px solid var(--ae-border);
+  border-radius: 6px;
+  padding: 10px;
+}
