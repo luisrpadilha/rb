@@ -10,50 +10,35 @@
   var SETTINGS_ICON_SIZE_KEY = 'iconSize';
   var SETTINGS_SHOW_LABELS_KEY = 'showLabels';
   var SETTINGS_SHOW_SLIDER_KEY = 'showSlider';
+  var SETTINGS_SHOW_LOG_KEY = 'showLog';
+
+  var DEFAULT_SCRIPTS_PATH = 'G:/04_Library/16_scripts/Custom_Scripts/AFX_EXPRESSIONS/RB_Commotion_Designer_Toolkit/scripts';
+  var LOCAL_UPDATE_SOURCE = 'G:/04_Library/16_scripts/Custom_Scripts/AFX_EXPRESSIONS/RB_Commotion_Designer_Toolkit/CEP/com.rbmh.commotiondesigner';
 
   function stringifyJSON(value) {
-    if (typeof JSON !== 'undefined' && JSON && typeof JSON.stringify === 'function') {
-      return JSON.stringify(value);
-    }
+    if (typeof JSON !== 'undefined' && JSON && typeof JSON.stringify === 'function') return JSON.stringify(value);
 
     var type = typeof value;
     if (value === null) return 'null';
     if (type === 'number' || type === 'boolean') return String(value);
-    if (type === 'string') {
-      return (
-        '"' +
-        value
-          .replace(/\\/g, '\\\\')
-          .replace(/"/g, '\\"')
-          .replace(/\n/g, '\\n')
-          .replace(/\r/g, '\\r') +
-        '"'
-      );
-    }
+    if (type === 'string') return '"' + value.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '\\r') + '"';
 
     if (Object.prototype.toString.call(value) === '[object Array]') {
       var arr = [];
-      for (var i = 0; i < value.length; i += 1) {
-        arr.push(stringifyJSON(value[i]));
-      }
+      for (var i = 0; i < value.length; i += 1) arr.push(stringifyJSON(value[i]));
       return '[' + arr.join(',') + ']';
     }
 
     var keys = [];
     for (var key in value) {
-      if (value.hasOwnProperty(key)) {
-        keys.push('"' + key.replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '":' + stringifyJSON(value[key]));
-      }
+      if (value.hasOwnProperty(key)) keys.push('"' + key.replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '":' + stringifyJSON(value[key]));
     }
-
     return '{' + keys.join(',') + '}';
   }
 
   function parseJSON(raw, fallback) {
     try {
-      if (typeof JSON !== 'undefined' && JSON && typeof JSON.parse === 'function') {
-        return JSON.parse(raw);
-      }
+      if (typeof JSON !== 'undefined' && JSON && typeof JSON.parse === 'function') return JSON.parse(raw);
       return eval('(' + raw + ')');
     } catch (e) {
       return fallback;
@@ -70,9 +55,7 @@
 
   function readSetting(key, fallback) {
     try {
-      if (app.settings.haveSetting(SETTINGS_SECTION, key)) {
-        return app.settings.getSetting(SETTINGS_SECTION, key);
-      }
+      if (app.settings.haveSetting(SETTINGS_SECTION, key)) return app.settings.getSetting(SETTINGS_SECTION, key);
     } catch (e) {}
     return fallback;
   }
@@ -95,14 +78,8 @@
   }
 
   function readMeta(metaFile, fallbackName) {
-    var meta = {
-      name: fallbackName,
-      description: 'No description available.'
-    };
-
-    if (!metaFile.exists) {
-      return meta;
-    }
+    var meta = { name: fallbackName, description: 'No description available.' };
+    if (!metaFile.exists) return meta;
 
     try {
       metaFile.encoding = 'UTF-8';
@@ -118,32 +95,50 @@
     return meta;
   }
 
+  function ensureFolder(path) {
+    var folder = new Folder(path);
+    if (!folder.exists) folder.create();
+    return folder.exists;
+  }
+
+  function copyFolderRecursive(sourceFolder, targetFolder) {
+    if (!targetFolder.exists) targetFolder.create();
+
+    var entries = sourceFolder.getFiles();
+    for (var i = 0; i < entries.length; i += 1) {
+      var entry = entries[i];
+      if (entry instanceof Folder) {
+        copyFolderRecursive(entry, new Folder(targetFolder.fsName + '/' + entry.name));
+      } else if (entry instanceof File) {
+        entry.copy(targetFolder.fsName + '/' + entry.name);
+      }
+    }
+  }
+
   $._cdt.getState = function () {
-    var scriptsFolder = readSetting(SETTINGS_FOLDER_KEY, '');
-    var iconSize = readSetting(SETTINGS_ICON_SIZE_KEY, '72');
+    var scriptsFolder = readSetting(SETTINGS_FOLDER_KEY, DEFAULT_SCRIPTS_PATH);
+    var iconSize = readSetting(SETTINGS_ICON_SIZE_KEY, '45');
     var orderRaw = readSetting(getOrderKey(scriptsFolder), '{}');
     var showLabels = readSetting(SETTINGS_SHOW_LABELS_KEY, 'false');
-    var showSlider = readSetting(SETTINGS_SHOW_SLIDER_KEY, 'true');
+    var showSlider = readSetting(SETTINGS_SHOW_SLIDER_KEY, 'false');
+    var showLog = readSetting(SETTINGS_SHOW_LOG_KEY, 'false');
 
     return toJSON({
       scriptsFolder: scriptsFolder,
       iconSize: iconSize,
       showLabels: showLabels,
       showSlider: showSlider,
+      showLog: showLog,
       order: parseJSON(orderRaw || '{}', {})
     });
   };
 
-  $._cdt.saveState = function (folderPath, iconSize, showLabels, showSlider) {
+  $._cdt.saveState = function (folderPath, iconSize, showLabels, showSlider, showLog) {
     writeSetting(SETTINGS_FOLDER_KEY, sanitizePath(folderPath));
-    writeSetting(SETTINGS_ICON_SIZE_KEY, String(iconSize || 72));
+    writeSetting(SETTINGS_ICON_SIZE_KEY, String(iconSize || 45));
     writeSetting(SETTINGS_SHOW_LABELS_KEY, showLabels ? 'true' : 'false');
     writeSetting(SETTINGS_SHOW_SLIDER_KEY, showSlider ? 'true' : 'false');
-    return toJSON({ ok: true });
-  };
-
-  $._cdt.saveIconSize = function (iconSize) {
-    writeSetting(SETTINGS_ICON_SIZE_KEY, String(iconSize || 72));
+    writeSetting(SETTINGS_SHOW_LOG_KEY, showLog ? 'true' : 'false');
     return toJSON({ ok: true });
   };
 
@@ -152,23 +147,19 @@
     return toJSON({ ok: true });
   };
 
-  $._cdt.saveShowSlider = function (showSlider) {
-    writeSetting(SETTINGS_SHOW_SLIDER_KEY, showSlider ? 'true' : 'false');
+  $._cdt.saveShowLog = function (showLog) {
+    writeSetting(SETTINGS_SHOW_LOG_KEY, showLog ? 'true' : 'false');
     return toJSON({ ok: true });
   };
 
   $._cdt.saveOrder = function (folderPath, orderJSON) {
-    var safeFolder = sanitizePath(folderPath || '');
-    writeSetting(getOrderKey(safeFolder), orderJSON || '{}');
+    writeSetting(getOrderKey(sanitizePath(folderPath || '')), orderJSON || '{}');
     return toJSON({ ok: true });
   };
 
   $._cdt.pickFolder = function () {
     var selected = Folder.selectDialog('Select Commotion Designer Toolkit scripts folder');
-    if (!selected) {
-      return toJSON({ ok: false, path: '' });
-    }
-
+    if (!selected) return toJSON({ ok: false, path: '' });
     return toJSON({ ok: true, path: sanitizePath(selected.fsName) });
   };
 
@@ -177,14 +168,12 @@
     var root = new Folder(safeRoot);
 
     if (!root.exists) {
-      return toJSON({ ok: false, message: 'Configured folder does not exist.', scripts: [] });
+      return toJSON({ ok: false, message: 'Configured folder does not exist or is inaccessible.', scripts: [] });
     }
 
-    var scriptFolders = root.getFiles(function (entry) {
-      return entry instanceof Folder;
-    });
-
+    var scriptFolders = root.getFiles(function (entry) { return entry instanceof Folder; });
     var scripts = [];
+
     for (var i = 0; i < scriptFolders.length; i += 1) {
       var folder = scriptFolders[i];
       var entries = folder.getFiles();
@@ -193,26 +182,15 @@
 
       for (var j = 0; j < entries.length; j += 1) {
         var file = entries[j];
-        if (!(file instanceof File)) {
-          continue;
-        }
-
+        if (!(file instanceof File)) continue;
         var name = file.name.toLowerCase();
-        if (!jsxFile && /\.jsx$/.test(name)) {
-          jsxFile = file;
-        }
-        if (!svgFile && /\.svg$/.test(name)) {
-          svgFile = file;
-        }
+        if (!jsxFile && /\.jsx$/.test(name)) jsxFile = file;
+        if (!svgFile && /\.svg$/.test(name)) svgFile = file;
       }
 
-      if (!jsxFile) {
-        continue;
-      }
+      if (!jsxFile) continue;
 
-      var metaFile = new File(folder.fsName + '/meta.json');
-      var meta = readMeta(metaFile, folder.name);
-
+      var meta = readMeta(new File(folder.fsName + '/meta.json'), folder.name);
       scripts.push({
         id: folder.name,
         name: meta.name,
@@ -225,13 +203,32 @@
     return toJSON({ ok: true, scripts: scripts });
   };
 
+  $._cdt.localUpdate = function () {
+    try {
+      var source = new Folder(LOCAL_UPDATE_SOURCE);
+      if (!source.exists) {
+        return toJSON({ ok: false, message: 'Source folder not found: ' + LOCAL_UPDATE_SOURCE });
+      }
+
+      var appData = $.getenv('APPDATA');
+      if (!appData) {
+        return toJSON({ ok: false, message: 'APPDATA environment variable not found.' });
+      }
+
+      var destRoot = sanitizePath(appData) + '/Adobe/CEP/extensions/com.rbmh.commotiondesigner';
+      ensureFolder(sanitizePath(appData) + '/Adobe/CEP/extensions');
+      copyFolderRecursive(source, new Folder(destRoot));
+
+      return toJSON({ ok: true, message: 'Copied extension to ' + destRoot });
+    } catch (e) {
+      return toJSON({ ok: false, message: String(e) });
+    }
+  };
+
   $._cdt.runScript = function (scriptPath) {
     try {
       var file = new File(sanitizePath(scriptPath));
-      if (!file.exists) {
-        return toJSON({ ok: false, message: 'Script file not found.' });
-      }
-
+      if (!file.exists) return toJSON({ ok: false, message: 'Script file not found.' });
       $.evalFile(file);
       return toJSON({ ok: true, message: 'Script executed successfully.' });
     } catch (e) {

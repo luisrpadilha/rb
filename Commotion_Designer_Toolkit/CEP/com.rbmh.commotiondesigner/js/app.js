@@ -1,39 +1,33 @@
 (function () {
+  var DEFAULT_SCRIPTS_PATH = 'G:/04_Library/16_scripts/Custom_Scripts/AFX_EXPRESSIONS/RB_Commotion_Designer_Toolkit/scripts';
+
   var state = {
-    scriptsFolder: '',
-    iconSize: 72,
+    scriptsFolder: DEFAULT_SCRIPTS_PATH,
     showLabels: false,
-    showSlider: true,
+    showLog: false,
     scripts: [],
     order: {}
   };
 
   var els = {
     status: document.getElementById('status'),
+    bottomControls: document.getElementById('bottomControls'),
     folderPath: document.getElementById('folderPath'),
     browseBtn: document.getElementById('browseBtn'),
-    saveConfigBtn: document.getElementById('saveConfigBtn'),
-    closeConfigBtn: document.getElementById('closeConfigBtn'),
-    closeAboutBtn: document.getElementById('closeAboutBtn'),
-    openConfigFromMain: document.getElementById('openConfigFromMain'),
+    saveSettingsBtn: document.getElementById('saveSettingsBtn'),
+    localUpdateBtn: document.getElementById('localUpdateBtn'),
+    closeSettingsBtn: document.getElementById('closeSettingsBtn'),
+    openSettingsFromMain: document.getElementById('openSettingsFromMain'),
     emptyState: document.getElementById('emptyState'),
     emptyStateText: document.getElementById('emptyStateText'),
     scriptGrid: document.getElementById('scriptGrid'),
-    iconSize: document.getElementById('iconSize'),
     showLabelsToggle: document.getElementById('showLabelsToggle'),
-    bottomControls: document.querySelector('.bottom-controls')
+    showLogToggle: document.getElementById('showLogToggle')
   };
 
   var SCREEN_IDS = {
     MAIN: 'mainScreen',
-    CONFIG: 'configScreen',
-    ABOUT: 'aboutScreen'
-  };
-
-  var RESPONSIVE = {
-    hideSliderAtWidth: 230,
-    minAutoIconSize: 64,
-    iconPadding: 30
+    SETTINGS: 'settingsScreen'
   };
 
   function setStatus(message) {
@@ -61,10 +55,10 @@
     });
   }
 
-  function setEmptyState(message, showConfigLink) {
+  function setEmptyState(message, showSettingsLink) {
     els.emptyStateText.textContent = message;
     els.emptyState.classList.remove('hidden');
-    els.openConfigFromMain.classList.toggle('hidden', !showConfigLink);
+    els.openSettingsFromMain.classList.toggle('hidden', !showSettingsLink);
     els.scriptGrid.classList.add('hidden');
   }
 
@@ -73,27 +67,8 @@
     els.scriptGrid.classList.remove('hidden');
   }
 
-  function applyTileSize(size) {
-    document.documentElement.style.setProperty('--tile-size', size + 'px');
-  }
-
-  function updateResponsiveLayout() {
-    var width = window.innerWidth || 400;
-    var autoHideSlider = width < RESPONSIVE.hideSliderAtWidth;
-    var sliderVisible = state.showSlider && !autoHideSlider;
-
-    els.bottomControls.classList.toggle('slider-hidden', !sliderVisible);
-
-    if (autoHideSlider) {
-      var autoSize = Math.max(
-        RESPONSIVE.minAutoIconSize,
-        Math.min(state.iconSize, Math.floor(width - RESPONSIVE.iconPadding))
-      );
-      applyTileSize(autoSize);
-      return;
-    }
-
-    applyTileSize(state.iconSize);
+  function applyLogVisibility() {
+    els.bottomControls.classList.toggle('log-hidden', !state.showLog);
   }
 
   function escapeForEval(path) {
@@ -103,28 +78,27 @@
   function getOrderedScripts(items) {
     var keyed = {};
     var ordered = [];
-    var id;
 
     for (var i = 0; i < items.length; i += 1) {
       keyed[items[i].id] = items[i];
     }
 
-    var orderedIds = Object.keys(state.order).sort(function (a, b) {
-      return state.order[a] - state.order[b];
-    });
+    Object.keys(state.order)
+      .sort(function (a, b) {
+        return state.order[a] - state.order[b];
+      })
+      .forEach(function (id) {
+        if (keyed[id]) {
+          ordered.push(keyed[id]);
+          delete keyed[id];
+        }
+      });
 
-    for (var j = 0; j < orderedIds.length; j += 1) {
-      id = orderedIds[j];
-      if (keyed[id]) {
+    Object.keys(keyed)
+      .sort()
+      .forEach(function (id) {
         ordered.push(keyed[id]);
-        delete keyed[id];
-      }
-    }
-
-    var remaining = Object.keys(keyed).sort();
-    for (var k = 0; k < remaining.length; k += 1) {
-      ordered.push(keyed[remaining[k]]);
-    }
+      });
 
     return ordered;
   }
@@ -137,11 +111,13 @@
   }
 
   function rebuildOrderFromDOM() {
-    var nodes = els.scriptGrid.querySelectorAll('.script-btn');
+    var nodes = els.scriptGrid.querySelectorAll('.script-btn[data-id]');
     var nextOrder = {};
 
     Array.prototype.forEach.call(nodes, function (node, idx) {
-      nextOrder[node.getAttribute('data-id')] = idx;
+      if (node.getAttribute('data-id') !== '__settings__') {
+        nextOrder[node.getAttribute('data-id')] = idx;
+      }
     });
 
     state.order = nextOrder;
@@ -149,6 +125,11 @@
   }
 
   function enableDragAndDrop(button) {
+    if (button.getAttribute('data-id') === '__settings__') {
+      button.setAttribute('draggable', 'false');
+      return;
+    }
+
     button.setAttribute('draggable', 'true');
 
     button.addEventListener('dragstart', function () {
@@ -163,7 +144,7 @@
     button.addEventListener('dragover', function (event) {
       event.preventDefault();
       var dragging = els.scriptGrid.querySelector('.dragging');
-      if (!dragging || dragging === button) return;
+      if (!dragging || dragging === button || button.getAttribute('data-id') === '__settings__') return;
 
       var rect = button.getBoundingClientRect();
       var before = event.clientY < rect.top + rect.height / 2;
@@ -175,18 +156,17 @@
     });
   }
 
-  function renderScriptVisual(scriptItem) {
+  function renderScriptVisual(iconUri) {
     var visual = document.createElement('div');
     visual.className = 'script-visual';
 
     var icon = document.createElement('div');
     icon.className = 'script-icon';
-    var iconUri = scriptItem.iconUri || './assets/info.svg';
+    var resolved = iconUri || './assets/info.svg';
+    icon.style.webkitMaskImage = "url('" + resolved + "')";
+    icon.style.maskImage = "url('" + resolved + "')";
 
-    icon.style.webkitMaskImage = "url('" + iconUri + "')";
-    icon.style.maskImage = "url('" + iconUri + "')";
     visual.appendChild(icon);
-
     return visual;
   }
 
@@ -203,8 +183,30 @@
     });
   }
 
+  function createSettingsButton() {
+    var btn = document.createElement('button');
+    btn.className = 'script-btn';
+    btn.setAttribute('data-id', '__settings__');
+    btn.setAttribute('title', 'Open Settings');
+    btn.appendChild(renderScriptVisual('./assets/info.svg'));
+
+    if (state.showLabels) {
+      var label = document.createElement('span');
+      label.textContent = 'Settings';
+      btn.appendChild(label);
+    }
+
+    btn.addEventListener('click', function () {
+      switchScreen(SCREEN_IDS.SETTINGS);
+    });
+
+    enableDragAndDrop(btn);
+    return btn;
+  }
+
   function renderScripts(items) {
     els.scriptGrid.innerHTML = '';
+    els.scriptGrid.appendChild(createSettingsButton());
 
     var ordered = getOrderedScripts(items);
     for (var i = 0; i < ordered.length; i += 1) {
@@ -214,7 +216,7 @@
         btn.setAttribute('title', scriptItem.description || 'No description available.');
         btn.setAttribute('data-id', scriptItem.id);
 
-        btn.appendChild(renderScriptVisual(scriptItem));
+        btn.appendChild(renderScriptVisual(scriptItem.iconUri));
 
         if (state.showLabels) {
           var label = document.createElement('span');
@@ -231,19 +233,17 @@
       })(ordered[i]);
     }
 
-    if (!ordered.length) {
-      setEmptyState('No script folders were found in the selected path.', true);
-      setStatus('No script packages found.');
-      return;
-    }
-
     hideEmptyState();
+
+    if (!ordered.length) {
+      setStatus('Warning: No scripts found in selected folder.');
+    }
   }
 
   function loadScripts() {
     if (!state.scriptsFolder) {
       setEmptyState('No scripts path selected yet.', true);
-      setStatus('Please configure a scripts folder first.');
+      setStatus('Warning: Please configure a scripts folder.');
       switchScreen(SCREEN_IDS.MAIN);
       return;
     }
@@ -252,88 +252,81 @@
     safeEval("$._cdt.scanScripts('" + escapeForEval(state.scriptsFolder) + "')", function (raw) {
       var result = parseJSON(raw, { ok: false, message: 'Unable to parse scan result.', scripts: [] });
       if (!result.ok) {
-        setEmptyState('Could not load scripts. Open Configuration to verify the folder.', true);
-        setStatus('Scan failed: ' + (result.message || 'Unknown error'));
+        setEmptyState('Script folder is not accessible or invalid. Open Settings.', true);
+        renderScripts([]);
+        setStatus('Warning: ' + (result.message || 'Could not access scripts folder.'));
         return;
       }
 
       state.scripts = result.scripts || [];
       renderScripts(state.scripts);
       switchScreen(SCREEN_IDS.MAIN);
-      setStatus('Loaded ' + state.scripts.length + ' script(s).');
+
+      if (!state.scripts.length) {
+        setStatus('Warning: Folder accessible, but no scripts found.');
+      } else {
+        setStatus('Loaded ' + state.scripts.length + ' script(s).');
+      }
     });
-  }
-
-  function refreshFlyoutMenu() {
-    var menuXML =
-      '<Menu>' +
-      '<MenuItem Id="refresh" Label="Refresh" Enabled="true" Checked="false"/>' +
-      '<MenuItem Label="---"/>' +
-      '<MenuItem Id="toggleSlider" Label="Show Icon Size Slider" Enabled="true" Checked="' +
-      (state.showSlider ? 'true' : 'false') +
-      '"/>' +
-      '<MenuItem Label="---"/>' +
-      '<MenuItem Id="showMain" Label="Default" Enabled="true" Checked="true"/>' +
-      '<MenuItem Id="showConfig" Label="Configure" Enabled="true" Checked="false"/>' +
-      '<MenuItem Label="---"/>' +
-      '<MenuItem Id="showAbout" Label="About &amp; License..." Enabled="true" Checked="false"/>' +
-      '</Menu>';
-
-    window.csInterface.setFlyoutMenu(menuXML);
   }
 
   function loadState() {
     safeEval('$._cdt.getState()', function (raw) {
       var result = parseJSON(raw, {});
-      state.scriptsFolder = result.scriptsFolder || '';
+
+      state.scriptsFolder = result.scriptsFolder || DEFAULT_SCRIPTS_PATH;
       state.order = result.order || {};
-      state.iconSize = Number(result.iconSize || 72);
       state.showLabels = String(result.showLabels || 'false') === 'true';
-      state.showSlider = String(result.showSlider || 'true') !== 'false';
+      state.showLog = String(result.showLog || 'false') === 'true';
 
       els.folderPath.value = state.scriptsFolder;
-      els.iconSize.value = state.iconSize;
       els.showLabelsToggle.checked = state.showLabels;
-      updateResponsiveLayout();
-      refreshFlyoutMenu();
+      els.showLogToggle.checked = state.showLog;
 
-      if (state.scriptsFolder) {
-        loadScripts();
-      } else {
-        setEmptyState('No scripts path selected yet.', true);
-        setStatus('Configure scripts folder from panel menu > Configure.');
-      }
+      applyLogVisibility();
+      loadScripts();
     });
   }
 
-  function saveConfig() {
+  function saveSettings() {
     var folder = els.folderPath.value.trim();
     if (!folder) {
-      setStatus('Pick a scripts folder first.');
+      setStatus('Please set a scripts folder.');
       return;
     }
 
     state.scriptsFolder = folder;
     state.showLabels = !!els.showLabelsToggle.checked;
-
-    state.iconSize = Number(els.iconSize.value || 72);
-    updateResponsiveLayout();
+    state.showLog = !!els.showLogToggle.checked;
+    applyLogVisibility();
 
     safeEval(
       "$._cdt.saveState('" +
         escapeForEval(folder) +
-        "'," +
-        state.iconSize +
-        ',' +
+        "',45," +
         (state.showLabels ? 'true' : 'false') +
-        ',' +
-        (state.showSlider ? 'true' : 'false') +
+        ',false,' +
+        (state.showLog ? 'true' : 'false') +
         ')',
       function () {
-        setStatus('Configuration saved.');
+        setStatus('Settings saved.');
         loadScripts();
+        switchScreen(SCREEN_IDS.MAIN);
       }
     );
+  }
+
+  function runLocalUpdate() {
+    setStatus('Running local update...');
+    safeEval('$._cdt.localUpdate()', function (raw) {
+      var res = parseJSON(raw, { ok: false, message: 'Invalid host response.' });
+      if (!res.ok) {
+        setStatus('Local update failed: ' + res.message);
+        return;
+      }
+
+      setStatus('Local update complete: ' + res.message);
+    });
   }
 
   function browseFolder() {
@@ -352,21 +345,15 @@
 
   function wireControls() {
     els.browseBtn.addEventListener('click', browseFolder);
-    els.saveConfigBtn.addEventListener('click', saveConfig);
-    els.closeConfigBtn.addEventListener('click', function () {
+    els.saveSettingsBtn.addEventListener('click', saveSettings);
+    els.localUpdateBtn.addEventListener('click', runLocalUpdate);
+
+    els.closeSettingsBtn.addEventListener('click', function () {
       switchScreen(SCREEN_IDS.MAIN);
-    });
-    els.closeAboutBtn.addEventListener('click', function () {
-      switchScreen(SCREEN_IDS.MAIN);
-    });
-    els.openConfigFromMain.addEventListener('click', function () {
-      switchScreen(SCREEN_IDS.CONFIG);
     });
 
-    els.iconSize.addEventListener('input', function () {
-      state.iconSize = Number(els.iconSize.value || 72);
-      updateResponsiveLayout();
-      safeEval('$._cdt.saveIconSize(' + state.iconSize + ')', function () {});
+    els.openSettingsFromMain.addEventListener('click', function () {
+      switchScreen(SCREEN_IDS.SETTINGS);
     });
 
     els.showLabelsToggle.addEventListener('change', function () {
@@ -376,26 +363,18 @@
       });
     });
 
-    window.addEventListener('resize', updateResponsiveLayout);
+    els.showLogToggle.addEventListener('change', function () {
+      state.showLog = !!els.showLogToggle.checked;
+      applyLogVisibility();
+      safeEval('$._cdt.saveShowLog(' + (state.showLog ? 'true' : 'false') + ')', function () {});
+    });
   }
 
   function initializeFlyoutMenu() {
-    refreshFlyoutMenu();
-
+    window.csInterface.setFlyoutMenu('<Menu><MenuItem Id="showSettings" Label="Settings" Enabled="true" Checked="false"/></Menu>');
     window.csInterface.onFlyoutClick(function (menuId) {
-      if (menuId === 'refresh') {
-        loadScripts();
-      } else if (menuId === 'toggleSlider') {
-        state.showSlider = !state.showSlider;
-        safeEval('$._cdt.saveShowSlider(' + (state.showSlider ? 'true' : 'false') + ')', function () {});
-        updateResponsiveLayout();
-        refreshFlyoutMenu();
-      } else if (menuId === 'showConfig') {
-        switchScreen(SCREEN_IDS.CONFIG);
-      } else if (menuId === 'showAbout') {
-        switchScreen(SCREEN_IDS.ABOUT);
-      } else if (menuId === 'showMain') {
-        switchScreen(SCREEN_IDS.MAIN);
+      if (menuId === 'showSettings') {
+        switchScreen(SCREEN_IDS.SETTINGS);
       }
     });
   }

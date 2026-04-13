@@ -11,15 +11,15 @@
       <section id="mainScreen" class="screen">
         <div id="emptyState" class="empty-state hidden">
           <p id="emptyStateText">No scripts loaded.</p>
-          <button id="openConfigFromMain" type="button">Open Configuration</button>
+          <button id="openSettingsFromMain" type="button">Open Settings</button>
         </div>
         <div id="scriptGrid" class="script-grid"></div>
       </section>
 
-      <section id="configScreen" class="screen hidden">
+      <section id="settingsScreen" class="screen hidden">
         <div class="screen-header">
-          <h2>Configuration</h2>
-          <button id="closeConfigBtn" type="button">Close</button>
+          <h2>Settings</h2>
+          <button id="closeSettingsBtn" type="button">Close</button>
         </div>
         <p>Select the root folder that contains script subfolders.</p>
         <div class="row">
@@ -30,24 +30,18 @@
           <input id="showLabelsToggle" type="checkbox" />
           <span>Show icon labels</span>
         </label>
-        <button id="saveConfigBtn" class="primary">Save & Load Scripts</button>
-      </section>
-
-      <section id="aboutScreen" class="screen hidden">
-        <div class="screen-header">
-          <h2>About</h2>
-          <button id="closeAboutBtn" type="button">Close</button>
+        <label class="row check-row" for="showLogToggle">
+          <input id="showLogToggle" type="checkbox" />
+          <span>Show bottom log panel</span>
+        </label>
+        <div class="row">
+          <button id="saveSettingsBtn" class="primary">Save & Load Scripts</button>
+          <button id="localUpdateBtn" type="button">Local Update</button>
         </div>
-        <p>Commotion Designer Toolkit</p>
-        <p>Created by RBMH.</p>
       </section>
     </main>
 
-    <div class="bottom-controls">
-      <div class="slider-wrap">
-        <label for="iconSize" class="slider-label">Icon Size</label>
-        <input id="iconSize" type="range" min="40" max="120" value="72" />
-      </div>
+    <div class="bottom-controls log-hidden" id="bottomControls">
       <footer id="status" class="status">Ready.</footer>
     </div>
 
