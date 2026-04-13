@@ -375,6 +375,15 @@
     });
   }
 
+  window.cdtMain = {
+    refreshFromState: function () {
+      lastKnownGridWidth = -1;
+      loadState(function () {
+        applyResponsiveGridLayout();
+      });
+    }
+  };
+
   wireControls();
   initializeFlyoutMenu();
   switchScreen(SCREEN_IDS.MAIN);
