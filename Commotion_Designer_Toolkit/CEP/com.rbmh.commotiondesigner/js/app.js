@@ -49,15 +49,10 @@
 
     var tileSize = getTileSizePx();
     var gap = getGridGapPx();
-    var columns = itemCount;
-
-    while (columns > 1) {
-      var required = columns * tileSize + (columns - 1) * gap;
-      if (required <= gridWidth) break;
-      columns = Math.ceil(columns / 2);
-    }
-
-    return Math.max(1, columns);
+    var slot = tileSize + gap;
+    var maxColumnsThatFit = Math.floor((gridWidth + gap) / slot);
+    var columns = Math.max(1, maxColumnsThatFit);
+    return Math.min(itemCount, columns);
   }
 
   function applyResponsiveGridLayout() {
@@ -349,15 +344,6 @@
         setStatus(result.message || 'Settings closed.');
       }
     });
-  }
-
-  function openSettingsModal() {
-    els.settingsModal.classList.remove('hidden');
-    setStatus('Settings opened.');
-  }
-
-  function closeSettingsModal() {
-    els.settingsModal.classList.add('hidden');
   }
 
   function wireControls() {
