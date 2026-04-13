@@ -4,7 +4,7 @@
   --ae-border: #4c4c4c;
   --ae-text: #d8d8d8;
   --ae-muted: #a5a5a5;
-  --tile-size: 45px;
+  --tile-size: 25px;
 }
 
 * {
@@ -34,7 +34,7 @@ button {
   border: 1px solid var(--ae-border);
   color: var(--ae-text);
   border-radius: 4px;
-  padding: 6px 10px;
+  padding: 1px 10px;
   cursor: pointer;
 }
 
@@ -49,7 +49,7 @@ main { flex: 1; min-height: 0; overflow: auto; padding: 10px; }
 .empty-state {
   border: 1px dashed var(--ae-border);
   border-radius: 6px;
-  padding: 16px;
+  padding: 8px;
   text-align: center;
   margin-bottom: 10px;
 }
