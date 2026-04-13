@@ -34,6 +34,44 @@
     els.status.textContent = message;
   }
 
+  function getGridGapPx() {
+    var computed = window.getComputedStyle(els.scriptGrid);
+    var columnGap = parseFloat(computed.columnGap || computed.gap || '0');
+    return isFinite(columnGap) ? columnGap : 0;
+  }
+
+  function getTileSizePx() {
+    var computed = window.getComputedStyle(document.documentElement);
+    var tile = parseFloat(computed.getPropertyValue('--tile-size'));
+    return isFinite(tile) ? tile : 25;
+  }
+
+  function getResponsiveColumnCount(itemCount) {
+    if (!itemCount) return 1;
+
+    var gridWidth = els.scriptGrid.clientWidth;
+    if (!gridWidth) return 1;
+
+    var tileSize = getTileSizePx();
+    var gap = getGridGapPx();
+    var columns = itemCount;
+
+    while (columns > 1) {
+      var required = columns * tileSize + (columns - 1) * gap;
+      if (required <= gridWidth) break;
+      columns = Math.ceil(columns / 2);
+    }
+
+    return Math.max(1, columns);
+  }
+
+  function applyResponsiveGridLayout() {
+    if (!els.scriptGrid || els.scriptGrid.classList.contains('hidden')) return;
+    var itemCount = els.scriptGrid.querySelectorAll('.script-btn').length;
+    var columns = getResponsiveColumnCount(itemCount);
+    els.scriptGrid.style.gridTemplateColumns = 'repeat(' + columns + ', var(--tile-size))';
+  }
+
   function safeEval(script, done) {
     window.csInterface.evalScript(script, function (result) {
       done(result);
@@ -53,6 +91,9 @@
     Array.prototype.forEach.call(screens, function (screen) {
       screen.classList.toggle('hidden', screen.id !== id);
     });
+    if (id === SCREEN_IDS.MAIN) {
+      applyResponsiveGridLayout();
+    }
   }
 
   function setEmptyState(message, showSettingsLink) {
@@ -238,6 +279,8 @@
     if (!ordered.length) {
       setStatus('Warning: No scripts found in selected folder.');
     }
+
+    applyResponsiveGridLayout();
   }
 
   function loadScripts() {
@@ -322,10 +365,12 @@
       var res = parseJSON(raw, { ok: false, message: 'Invalid host response.' });
       if (!res.ok) {
         setStatus('Local update failed: ' + res.message);
+        window.alert('Update failed: ' + res.message);
         return;
       }
 
       setStatus('Local update complete: ' + res.message);
+      window.alert('Update successful: ' + res.message);
     });
   }
 
@@ -368,6 +413,8 @@
       applyLogVisibility();
       safeEval('$._cdt.saveShowLog(' + (state.showLog ? 'true' : 'false') + ')', function () {});
     });
+
+    window.addEventListener('resize', applyResponsiveGridLayout);
   }
 
   function initializeFlyoutMenu() {
