@@ -12,13 +12,6 @@
   var els = {
     status: document.getElementById('status'),
     bottomControls: document.getElementById('bottomControls'),
-    settingsModal: document.getElementById('settingsModal'),
-    folderPath: document.getElementById('folderPath'),
-    browseBtn: document.getElementById('browseBtn'),
-    closeSettingsBtn: document.getElementById('closeSettingsBtn'),
-    showLabelsToggle: document.getElementById('showLabelsToggle'),
-    showLogToggle: document.getElementById('showLogToggle'),
-    localUpdateBtn: document.getElementById('localUpdateBtn'),
     openSettingsFromMain: document.getElementById('openSettingsFromMain'),
     emptyState: document.getElementById('emptyState'),
     emptyStateText: document.getElementById('emptyStateText'),
@@ -244,7 +237,7 @@
       btn.appendChild(label);
     }
 
-    btn.addEventListener('click', openSettingsModal);
+    btn.addEventListener('click', openSettingsDialog);
 
     enableDragAndDrop(btn);
     return btn;
@@ -327,9 +320,6 @@
       state.showLabels = String(result.showLabels || 'false') === 'true';
       state.showLog = String(result.showLog || 'false') === 'true';
 
-      els.folderPath.value = state.scriptsFolder;
-      els.showLabelsToggle.checked = state.showLabels;
-      els.showLogToggle.checked = state.showLog;
       applyLogVisibility();
       loadScripts();
 
@@ -339,59 +329,25 @@
     });
   }
 
-  function saveSettings() {
-    var folder = els.folderPath.value.trim();
-    if (!folder) {
-      setStatus('Please set a scripts folder.');
-      return;
-    }
-
-    state.scriptsFolder = folder;
-    state.showLabels = !!els.showLabelsToggle.checked;
-    state.showLog = !!els.showLogToggle.checked;
-    applyLogVisibility();
-
-    safeEval(
-      "$._cdt.saveState('" +
-        escapeForEval(folder) +
-        "',45," +
-        (state.showLabels ? 'true' : 'false') +
-        ',false,' +
-        (state.showLog ? 'true' : 'false') +
-        ')',
-      function () {
-        setStatus('Settings saved.');
-        loadScripts();
-      }
-    );
-  }
-
-  function runLocalUpdate() {
-    setStatus('Running local update...');
-    safeEval('$._cdt.localUpdate()', function (raw) {
-      var res = parseJSON(raw, { ok: false, message: 'Invalid host response.' });
-      if (!res.ok) {
-        setStatus('Local update failed: ' + res.message);
-        window.alert('Update failed: ' + res.message);
+  function openSettingsDialog() {
+    setStatus('Opening settings dialog...');
+    safeEval('$._cdt.openSettingsDialog()', function (raw) {
+      var result = parseJSON(raw, { ok: false, saved: false, message: 'Unknown settings response.' });
+      if (!result.ok) {
+        setStatus('Could not open settings dialog.');
         return;
       }
 
-      setStatus('Local update complete: ' + res.message);
-      window.alert('Update successful: ' + res.message);
-    });
-  }
-
-  function openSettingsPopup() {
-    var popupOptions = 'width=430,height=320,resizable=yes,scrollbars=yes';
-    if (!settingsPopup || settingsPopup.closed) {
-      settingsPopup = window.open('./settings.html', 'cdt_settings_popup', popupOptions);
-    } else {
-      settingsPopup.focus();
-    }
-
-      els.folderPath.value = result.path;
-      saveSettings();
-      setStatus('Selected: ' + result.path);
+      if (result.saved) {
+        setStatus('Settings updated.');
+        loadState(function () {
+          lastKnownGridWidth = -1;
+          lastKnownItemCount = -1;
+          applyResponsiveGridLayout();
+        });
+      } else {
+        setStatus(result.message || 'Settings closed.');
+      }
     });
   }
 
@@ -405,13 +361,7 @@
   }
 
   function wireControls() {
-    els.openSettingsFromMain.addEventListener('click', openSettingsModal);
-    els.closeSettingsBtn.addEventListener('click', closeSettingsModal);
-    els.browseBtn.addEventListener('click', browseFolder);
-    els.localUpdateBtn.addEventListener('click', runLocalUpdate);
-    els.folderPath.addEventListener('change', saveSettings);
-    els.showLabelsToggle.addEventListener('change', saveSettings);
-    els.showLogToggle.addEventListener('change', saveSettings);
+    els.openSettingsFromMain.addEventListener('click', openSettingsDialog);
 
     window.addEventListener('resize', applyResponsiveGridLayout);
 
@@ -434,7 +384,7 @@
     window.csInterface.setFlyoutMenu('<Menu><MenuItem Id="showSettings" Label="Settings" Enabled="true" Checked="false"/></Menu>');
     window.csInterface.onFlyoutClick(function (menuId) {
       if (menuId === 'showSettings') {
-        openSettingsModal();
+        openSettingsDialog();
       }
     });
   }

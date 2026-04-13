@@ -225,6 +225,77 @@
     }
   };
 
+  $._cdt.openSettingsDialog = function () {
+    try {
+      var currentFolder = readSetting(SETTINGS_FOLDER_KEY, DEFAULT_SCRIPTS_PATH);
+      var currentShowLabels = readSetting(SETTINGS_SHOW_LABELS_KEY, 'false') === 'true';
+      var currentShowLog = readSetting(SETTINGS_SHOW_LOG_KEY, 'false') === 'true';
+
+      var dlg = new Window('dialog', 'Commotion Designer Toolkit Settings');
+      dlg.orientation = 'column';
+      dlg.alignChildren = ['fill', 'top'];
+      dlg.spacing = 10;
+      dlg.margins = 14;
+
+      var folderGroup = dlg.add('group');
+      folderGroup.orientation = 'column';
+      folderGroup.alignChildren = ['fill', 'top'];
+      folderGroup.add('statictext', undefined, 'Scripts folder:');
+      var folderInput = folderGroup.add('edittext', undefined, currentFolder);
+      folderInput.characters = 55;
+
+      var browseBtn = folderGroup.add('button', undefined, 'Browse…');
+      browseBtn.onClick = function () {
+        var picked = Folder.selectDialog('Select Commotion Designer Toolkit scripts folder');
+        if (picked) folderInput.text = sanitizePath(picked.fsName);
+      };
+
+      var showLabelsCheckbox = dlg.add('checkbox', undefined, 'Show icon labels');
+      showLabelsCheckbox.value = currentShowLabels;
+
+      var showLogCheckbox = dlg.add('checkbox', undefined, 'Show bottom log panel');
+      showLogCheckbox.value = currentShowLog;
+
+      var buttonRow = dlg.add('group');
+      buttonRow.orientation = 'row';
+      buttonRow.alignment = ['right', 'center'];
+
+      var updateBtn = buttonRow.add('button', undefined, 'Update');
+      updateBtn.onClick = function () {
+        var updateRaw = $._cdt.localUpdate();
+        var updateRes = parseJSON(updateRaw, { ok: false, message: 'Invalid host response.' });
+        if (updateRes.ok) {
+          alert('Update successful: ' + updateRes.message);
+        } else {
+          alert('Update failed: ' + updateRes.message);
+        }
+      };
+
+      buttonRow.add('button', undefined, 'Cancel', { name: 'cancel' });
+      var saveBtn = buttonRow.add('button', undefined, 'Save', { name: 'ok' });
+
+      saveBtn.onClick = function () {
+        var folder = sanitizePath(folderInput.text || '');
+        if (!folder) {
+          alert('Please select a scripts folder.');
+          return;
+        }
+
+        $._cdt.saveState(folder, 45, showLabelsCheckbox.value, false, showLogCheckbox.value);
+        dlg.close(1);
+      };
+
+      var result = dlg.show();
+      if (result === 1) {
+        return toJSON({ ok: true, saved: true, message: 'Settings saved.' });
+      }
+
+      return toJSON({ ok: true, saved: false, message: 'Settings cancelled.' });
+    } catch (e) {
+      return toJSON({ ok: false, saved: false, message: String(e) });
+    }
+  };
+
   $._cdt.runScript = function (scriptPath) {
     try {
       var file = new File(sanitizePath(scriptPath));
