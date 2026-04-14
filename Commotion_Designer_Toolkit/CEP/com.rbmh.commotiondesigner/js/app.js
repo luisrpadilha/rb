@@ -244,7 +244,7 @@
     btn.className = 'script-btn';
     btn.setAttribute('data-id', '__update__');
     btn.setAttribute('title', 'New version found. Please update');
-    btn.appendChild(renderScriptVisual('./assets/info.svg'));
+    btn.appendChild(renderScriptVisual('./assets/update.svg'));
 
     var label = document.createElement('span');
     label.textContent = 'New version found. Please update';
