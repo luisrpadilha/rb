@@ -353,7 +353,7 @@
       list.removeAll();
       for (var i = 0; i < working.colors.length; i += 1) {
         var c = working.colors[i];
-        var item = list.add('item', c.name + ' — ' + rgbToHex(c) + ' (' + c.r + ',' + c.g + ',' + c.b + ')');
+        var item = list.add('item', c.name + ' - ' + rgbToHex(c) + ' (' + c.r + ',' + c.g + ',' + c.b + ')');
         item.indexRef = i;
       }
       if (list.items.length) list.selection = list.items[0];
@@ -362,8 +362,8 @@
     var buttons = dlg.add('group');
     buttons.orientation = 'row';
     var addBtn = buttons.add('button', undefined, 'Add Color');
-    var modalBtn = buttons.add('button', undefined, 'Color Modal…');
-    var eyeBtn = buttons.add('button', undefined, 'Eyedropper…');
+    var modalBtn = buttons.add('button', undefined, 'Color Modal');
+    var eyeBtn = buttons.add('button', undefined, 'Eyedropper');
     var removeBtn = buttons.add('button', undefined, 'Delete Color');
     var importBtn = buttons.add('button', undefined, 'Import .ase');
     var exportBtn = buttons.add('button', undefined, 'Export .ase');
