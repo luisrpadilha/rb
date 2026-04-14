@@ -246,6 +246,21 @@
     };
   }
 
+  function colorsMatchRedBullPreset(colors) {
+    if (!colors || colors.length !== 4) return false;
+    var expected = defaultRedBullPalette().colors;
+    for (var i = 0; i < expected.length; i += 1) {
+      if (
+        clamp255(colors[i].r) !== expected[i].r ||
+        clamp255(colors[i].g) !== expected[i].g ||
+        clamp255(colors[i].b) !== expected[i].b
+      ) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   function loadGlobalPalette() {
     var file = new File(GLOBAL_RED_BULL_ASE);
     var palette = defaultRedBullPalette();
@@ -256,7 +271,7 @@
     }
 
     var loaded = decodeAse(file);
-    if (loaded.length) {
+    if (loaded.length && colorsMatchRedBullPreset(loaded)) {
       palette.colors = loaded;
     } else {
       saveAseFile(file, palette.name, palette.colors);
@@ -268,13 +283,20 @@
     var folder = getLocalPaletteFolder();
     var files = folder.getFiles(function (f) { return f instanceof File && /\.ase$/i.test(f.name); });
     var palettes = [];
+    var hiddenLegacyNames = {
+      'color palette': true,
+      'standard': true,
+      'standard 2': true
+    };
 
     for (var i = 0; i < files.length; i += 1) {
       var colors = decodeAse(files[i]);
       if (!colors.length) continue;
+      var paletteName = files[i].name.replace(/\.ase$/i, '');
+      if (hiddenLegacyNames[paletteName.toLowerCase()]) continue;
       palettes.push({
         id: files[i].name,
-        name: files[i].name.replace(/\.ase$/i, ''),
+        name: paletteName,
         readOnly: false,
         filePath: files[i].fsName,
         colors: colors
@@ -321,7 +343,7 @@
     var nameInput = dlg.add('edittext', undefined, working.name);
     nameInput.characters = 34;
 
-    var infoText = dlg.add('statictext', undefined, 'Click color to edit name/RGB.');
+    var infoText = dlg.add('statictext', undefined, 'Use Color Modal or Eyedropper to pick/edit colors.');
     infoText.graphics.foregroundColor = infoText.graphics.newPen(infoText.graphics.PenType.SOLID_COLOR, [0.7, 0.7, 0.7, 1], 1);
 
     var list = dlg.add('listbox', undefined, [], { multiselect: false });
@@ -346,16 +368,62 @@
     var importBtn = buttons.add('button', undefined, 'Import .ase');
     var exportBtn = buttons.add('button', undefined, 'Export .ase');
 
+    function openColorChooser(initialColor, title) {
+      var chooser = new Window('dialog', title || 'Choose Color');
+      chooser.orientation = 'column';
+      chooser.alignChildren = ['fill', 'top'];
+      chooser.margins = 12;
+      chooser.add('statictext', undefined, 'How do you want to pick the color?');
+
+      var methodGroup = chooser.add('group');
+      methodGroup.orientation = 'row';
+      var modalPickBtn = methodGroup.add('button', undefined, 'Color Modal');
+      var eyeDropperBtn = methodGroup.add('button', undefined, 'Eyedropper');
+      var cancelPickBtn = methodGroup.add('button', undefined, 'Cancel');
+
+      var chosen = null;
+      modalPickBtn.onClick = function () {
+        var picked = $.colorPicker(initialColor ? rgbToPickerValue(initialColor) : undefined);
+        if (picked >= 0) chosen = pickerValueToRGB(picked, initialColor);
+        chooser.close(1);
+      };
+
+      eyeDropperBtn.onClick = function () {
+        alert('The eyedropper is inside the Adobe color modal.\nClick the eyedropper icon there and sample any on-screen color.');
+        var picked = $.colorPicker(initialColor ? rgbToPickerValue(initialColor) : undefined);
+        if (picked >= 0) chosen = pickerValueToRGB(picked, initialColor);
+        chooser.close(1);
+      };
+
+      cancelPickBtn.onClick = function () {
+        chooser.close(0);
+      };
+
+      chooser.show();
+      return chosen;
+    }
+
     function pickAndAppendColor() {
-      var picked = $.colorPicker();
-      if (picked < 0) return;
-      var rgb = pickerValueToRGB(picked, { name: 'Color ' + (working.colors.length + 1) });
+      var rgb = openColorChooser(null, 'Add Color');
+      if (!rgb) return;
       rgb.name = 'Color ' + (working.colors.length + 1);
       working.colors.push(rgb);
       refreshList();
     }
 
     function editSelectedColor() {
+      if (!list.selection) return;
+      var idx = list.selection.indexRef;
+      var c = working.colors[idx];
+      if (!c) return;
+      var updated = openColorChooser(c, 'Edit Color');
+      if (!updated) return;
+      updated.name = c.name;
+      working.colors[idx] = updated;
+      refreshList();
+    }
+
+    function editSelectedColorModalOnly() {
       if (!list.selection) return;
       var idx = list.selection.indexRef;
       var c = working.colors[idx];
@@ -369,7 +437,7 @@
     }
 
     addBtn.onClick = pickAndAppendColor;
-    modalBtn.onClick = editSelectedColor;
+    modalBtn.onClick = editSelectedColorModalOnly;
     eyeBtn.onClick = editSelectedColor;
 
     removeBtn.onClick = function () {
@@ -450,7 +518,7 @@
   }
 
   function buildUI(thisObj) {
-    var panel = thisObj instanceof Panel ? thisObj : new Window('palette', 'RB Color Palette', undefined, { resizeable: true });
+    var panel = new Window('palette', 'RB Color Palette', undefined, { resizeable: true });
     panel.orientation = 'column';
     panel.alignChildren = ['fill', 'top'];
     panel.spacing = 8;
@@ -470,10 +538,24 @@
       status.text = msg;
     }
 
+    function showToast(message) {
+      try {
+        var toast = new Window('palette', '');
+        toast.orientation = 'column';
+        toast.margins = 8;
+        toast.add('statictext', undefined, message);
+        toast.show();
+        toast.update();
+        $.sleep(850);
+        toast.close();
+      } catch (e) {}
+    }
+
     function copyHexWithFeedback(color) {
       var hex = rgbToHex(color);
       if (writeClipboard(hex)) {
         setStatus('Copied ' + hex + ' to clipboard.');
+        showToast('Copied ' + hex);
       } else {
         setStatus('Could not copy to clipboard: ' + hex);
       }
@@ -548,71 +630,62 @@
         paletteGrid.remove(paletteGrid.children[0]);
       }
 
-      var panelWidth = panel.size && panel.size.width ? panel.size.width : 220;
-      var cardWidth = 170;
-      var columns = Math.max(1, Math.floor((panelWidth - 24) / (cardWidth + 8)));
-      var row = null;
-      var items = [];
-      for (var i = 0; i < palettes.length; i += 1) items.push({ type: 'palette', palette: palettes[i] });
-      items.push({ type: 'add' });
-
-      for (var itemIndex = 0; itemIndex < items.length; itemIndex += 1) {
-        if (itemIndex % columns === 0) {
-          row = paletteGrid.add('group');
-          row.orientation = 'row';
-          row.alignChildren = ['left', 'top'];
-          row.spacing = 8;
+      var controls = paletteGrid.add('group');
+      controls.orientation = 'row';
+      controls.alignChildren = ['left', 'center'];
+      var addBtn = controls.add('button', undefined, 'Add Palette');
+      addBtn.helpTip = 'Create a new local ASE palette';
+      addBtn.onClick = function () {
+        var response = openPaletteDialog(null);
+        if (response.action !== 'save') return;
+        if (saveLocalPalette(response.palette)) {
+          setStatus('Created palette: ' + response.palette.name);
+          reloadPalettes();
+        } else {
+          setStatus('Could not create palette.');
         }
+      };
 
-        if (items[itemIndex].type === 'add') {
-          var addCard = row.add('panel', undefined, '');
-          addCard.preferredSize = [cardWidth, 66];
-          addCard.margins = [8, 8, 8, 8];
-          var addBtn = addCard.add('button', undefined, '+');
-          addBtn.preferredSize = [28, 22];
-          addBtn.helpTip = 'Create a new local ASE palette';
-          addBtn.onClick = function () {
-            var response = openPaletteDialog(null);
-            if (response.action !== 'save') return;
-            if (saveLocalPalette(response.palette)) {
-              setStatus('Created palette: ' + response.palette.name);
-              reloadPalettes();
-            } else {
-              setStatus('Could not create palette.');
-            }
-          };
-          continue;
-        }
+      var panelWidth = panel.size && panel.size.width ? panel.size.width : 260;
+      var usableWidth = Math.max(180, panelWidth - 32);
+      var swatchesPerRow = Math.max(1, Math.floor(usableWidth / 30));
 
+      for (var i = 0; i < palettes.length; i += 1) {
         (function (palette) {
-          var card = row.add('panel', undefined, '');
-          card.preferredSize = [cardWidth, 66];
+          var card = paletteGrid.add('panel', undefined, '');
           card.orientation = 'column';
           card.alignChildren = ['fill', 'top'];
           card.margins = [8, 8, 8, 6];
 
-          var swatchWrap = card.add('group');
-          swatchWrap.orientation = 'row';
-          swatchWrap.spacing = 6;
-          swatchWrap.alignChildren = ['left', 'center'];
-
-          for (var c = 0; c < palette.colors.length; c += 1) {
-            makeSwatch(swatchWrap, palette, palette.colors[c], c);
-          }
-
-          var bottom = card.add('group');
-          bottom.orientation = 'row';
-          bottom.alignChildren = ['fill', 'center'];
-          bottom.alignment = ['fill', 'top'];
-          var nameTxt = bottom.add('statictext', undefined, palette.name + (palette.readOnly ? ' (Standard)' : ''));
+          var cardHeader = card.add('group');
+          cardHeader.orientation = 'row';
+          cardHeader.alignChildren = ['fill', 'center'];
+          cardHeader.alignment = ['fill', 'top'];
+          var nameTxt = cardHeader.add('statictext', undefined, palette.name + (palette.readOnly ? ' (Standard)' : ''));
           nameTxt.alignment = ['fill', 'center'];
 
           if (!palette.readOnly) {
-            var editBtn = bottom.add('button', undefined, 'Edit');
+            var editBtn = cardHeader.add('button', undefined, 'Edit');
             editBtn.helpTip = 'Edit name/colors, delete palette, import/export ASE';
             editBtn.onClick = function () {
               onEditPalette(palette);
             };
+          }
+
+          var swatchArea = card.add('group');
+          swatchArea.orientation = 'column';
+          swatchArea.alignChildren = ['left', 'top'];
+          swatchArea.spacing = 4;
+
+          var swatchRow = null;
+          for (var c = 0; c < palette.colors.length; c += 1) {
+            if (c % swatchesPerRow === 0) {
+              swatchRow = swatchArea.add('group');
+              swatchRow.orientation = 'row';
+              swatchRow.spacing = 6;
+              swatchRow.alignChildren = ['left', 'center'];
+            }
+            makeSwatch(swatchRow, palette, palette.colors[c], c);
           }
         })(palettes[i]);
       }
@@ -636,8 +709,6 @@
   }
 
   var rbPanel = buildUI(thisObj);
-  if (rbPanel instanceof Window) {
-    rbPanel.center();
-    rbPanel.show();
-  }
+  rbPanel.center();
+  rbPanel.show();
 })(this);
