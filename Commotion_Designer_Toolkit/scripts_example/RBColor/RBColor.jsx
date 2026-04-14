@@ -246,6 +246,21 @@
     };
   }
 
+  function colorsMatchRedBullPreset(colors) {
+    if (!colors || colors.length !== 4) return false;
+    var expected = defaultRedBullPalette().colors;
+    for (var i = 0; i < expected.length; i += 1) {
+      if (
+        clamp255(colors[i].r) !== expected[i].r ||
+        clamp255(colors[i].g) !== expected[i].g ||
+        clamp255(colors[i].b) !== expected[i].b
+      ) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   function loadGlobalPalette() {
     var file = new File(GLOBAL_RED_BULL_ASE);
     var palette = defaultRedBullPalette();
@@ -256,7 +271,7 @@
     }
 
     var loaded = decodeAse(file);
-    if (loaded.length) {
+    if (loaded.length && colorsMatchRedBullPreset(loaded)) {
       palette.colors = loaded;
     } else {
       saveAseFile(file, palette.name, palette.colors);
@@ -503,7 +518,7 @@
   }
 
   function buildUI(thisObj) {
-    var panel = thisObj instanceof Panel ? thisObj : new Window('palette', 'RB Color Palette', undefined, { resizeable: true });
+    var panel = new Window('palette', 'RB Color Palette', undefined, { resizeable: true });
     panel.orientation = 'column';
     panel.alignChildren = ['fill', 'top'];
     panel.spacing = 8;
@@ -523,10 +538,24 @@
       status.text = msg;
     }
 
+    function showToast(message) {
+      try {
+        var toast = new Window('palette', '');
+        toast.orientation = 'column';
+        toast.margins = 8;
+        toast.add('statictext', undefined, message);
+        toast.show();
+        toast.update();
+        $.sleep(850);
+        toast.close();
+      } catch (e) {}
+    }
+
     function copyHexWithFeedback(color) {
       var hex = rgbToHex(color);
       if (writeClipboard(hex)) {
         setStatus('Copied ' + hex + ' to clipboard.');
+        showToast('Copied ' + hex);
       } else {
         setStatus('Could not copy to clipboard: ' + hex);
       }
@@ -680,8 +709,6 @@
   }
 
   var rbPanel = buildUI(thisObj);
-  if (rbPanel instanceof Window) {
-    rbPanel.center();
-    rbPanel.show();
-  }
+  rbPanel.center();
+  rbPanel.show();
 })(this);
