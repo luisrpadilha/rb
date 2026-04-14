@@ -357,21 +357,22 @@
         var name = file.name.toLowerCase();
         if (!jsxFile && /\.jsx$/.test(name)) jsxFile = file;
         if (/\.svg$/.test(name)) {
-          svgByName[name] = file;
           if (!svgFile) svgFile = file;
+          svgByName[file.name.toLowerCase()] = file;
         }
       }
 
       if (!jsxFile) continue;
 
       var meta = readMeta(new File(folder.fsName + '/meta.json'), folder.name);
-      var preferredIcon = meta.icon ? svgByName[String(meta.icon).toLowerCase()] : null;
+      var iconFromMeta = meta.icon ? svgByName[String(meta.icon).toLowerCase()] : null;
+      var resolvedIcon = iconFromMeta || svgFile;
       scripts.push({
         id: folder.name,
         name: meta.name,
         description: meta.description,
         jsxPath: sanitizePath(jsxFile.fsName),
-        iconUri: preferredIcon ? 'file:///' + sanitizePath(preferredIcon.fsName) : (svgFile ? 'file:///' + sanitizePath(svgFile.fsName) : '')
+        iconUri: resolvedIcon ? 'file:///' + sanitizePath(resolvedIcon.fsName) : ''
       });
     }
 
