@@ -4,7 +4,8 @@
   var state = {
     scriptsFolder: DEFAULT_SCRIPTS_PATH,
     showLabels: false,
-    showLog: false
+    showLog: false,
+    updateInfo: null
   };
 
   var els = {
@@ -14,7 +15,9 @@
     closeSettingsBtn: document.getElementById('closeSettingsBtn'),
     showLabelsToggle: document.getElementById('showLabelsToggle'),
     showLogToggle: document.getElementById('showLogToggle'),
-    localUpdateBtn: document.getElementById('localUpdateBtn')
+    localUpdateBtn: document.getElementById('localUpdateBtn'),
+    currentVersion: document.getElementById('currentVersion'),
+    aboutBtn: document.getElementById('aboutBtn')
   };
 
   function setStatus(message) {
@@ -43,6 +46,29 @@
     if (window.opener && window.opener.cdtMain && typeof window.opener.cdtMain.refreshFromState === 'function') {
       window.opener.cdtMain.refreshFromState();
     }
+  }
+
+  function renderVersion() {
+    var version = state.updateInfo && state.updateInfo.version ? state.updateInfo.version : '-';
+    els.currentVersion.textContent = version;
+  }
+
+  function loadUpdateInfo(done) {
+    window.fetch('./update.json?ts=' + Date.now())
+      .then(function (response) {
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.json();
+      })
+      .then(function (payload) {
+        state.updateInfo = payload || null;
+      })
+      .catch(function () {
+        state.updateInfo = null;
+      })
+      .then(function () {
+        renderVersion();
+        if (typeof done === 'function') done();
+      });
   }
 
   function saveState() {
@@ -83,8 +109,25 @@
 
       setStatus('Local update complete: ' + res.message);
       window.alert('Update successful: ' + res.message);
+      loadUpdateInfo();
       notifyMainPanel();
     });
+  }
+
+  function openAbout() {
+    var version = (state.updateInfo && state.updateInfo.version) || '-';
+    var notes = (state.updateInfo && state.updateInfo.lastUpdateNotes) || 'No update notes available.';
+    var text = [
+      'Commotion Designer Toolkit',
+      '',
+      'Current version: ' + version,
+      '',
+      'Last update notes:',
+      notes,
+      '',
+      'Created by a random guy in Red Bull Media House. All rights reserved, I guess?'
+    ];
+    window.alert(text.join('\n'));
   }
 
   function browseFolder() {
@@ -121,6 +164,7 @@
   function wireControls() {
     els.browseBtn.addEventListener('click', browseFolder);
     els.localUpdateBtn.addEventListener('click', runLocalUpdate);
+    els.aboutBtn.addEventListener('click', openAbout);
 
     els.closeSettingsBtn.addEventListener('click', function () {
       window.close();
@@ -133,5 +177,5 @@
   }
 
   wireControls();
-  loadState();
+  loadUpdateInfo(loadState);
 })();

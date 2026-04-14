@@ -6,6 +6,7 @@
     showLabels: false,
     showLog: false,
     updateAvailable: false,
+    updateInfo: null,
     scripts: [],
     order: {}
   };
@@ -209,6 +210,11 @@
   }
 
   function runScript(scriptItem, btn) {
+    if (state.updateAvailable) {
+      setStatus('Update required. Only Settings is available until update is complete.');
+      return;
+    }
+
     btn.classList.add('is-active');
     setTimeout(function () {
       btn.classList.remove('is-active');
@@ -243,7 +249,8 @@
     var btn = document.createElement('button');
     btn.className = 'script-btn';
     btn.setAttribute('data-id', '__update__');
-    btn.setAttribute('title', 'New version found. Please update');
+    var targetVersion = state.updateInfo && state.updateInfo.version ? ' (v' + state.updateInfo.version + ')' : '';
+    btn.setAttribute('title', 'New version found. Please update' + targetVersion);
     btn.appendChild(renderScriptVisual('./assets/update.svg'));
 
     var label = document.createElement('span');
@@ -298,10 +305,19 @@
         }
 
         btn.addEventListener('click', function () {
+          if (state.updateAvailable) {
+            setStatus('Update required. Only Settings is available until update is complete.');
+            return;
+          }
           runScript(scriptItem, btn);
         });
 
         enableDragAndDrop(btn);
+        if (state.updateAvailable) {
+          btn.setAttribute('draggable', 'false');
+        }
+        btn.classList.toggle('is-disabled', state.updateAvailable);
+        btn.disabled = !!state.updateAvailable;
         els.scriptGrid.appendChild(btn);
       })(ordered[i]);
     }
@@ -353,6 +369,23 @@
     });
   }
 
+  function loadUpdateInfo(done) {
+    window.fetch('./update.json?ts=' + Date.now())
+      .then(function (response) {
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.json();
+      })
+      .then(function (payload) {
+        state.updateInfo = payload || null;
+      })
+      .catch(function () {
+        state.updateInfo = null;
+      })
+      .then(function () {
+        if (typeof done === 'function') done();
+      });
+  }
+
   function loadState(done) {
     safeEval('$._cdt.getState()', function (raw) {
       var result = parseJSON(raw, {});
@@ -363,8 +396,10 @@
       state.showLog = String(result.showLog || 'false') === 'true';
 
       applyLogVisibility();
-      loadUpdateStatus(function () {
-        loadScripts();
+      loadUpdateInfo(function () {
+        loadUpdateStatus(function () {
+          loadScripts();
+        });
       });
 
       if (typeof done === 'function') {

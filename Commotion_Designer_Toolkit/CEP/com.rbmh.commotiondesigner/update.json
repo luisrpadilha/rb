@@ -1,0 +1,4 @@
+{
+  "version": "1.0.0",
+  "lastUpdateNotes": "Added strict update-lock behavior in the main panel, synchronized updates now remove stale files and folders, and introduced an About section with version and release notes."
+}
