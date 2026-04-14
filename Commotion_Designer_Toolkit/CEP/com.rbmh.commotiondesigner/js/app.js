@@ -8,7 +8,8 @@
     updateAvailable: false,
     updateInfo: null,
     scripts: [],
-    order: {}
+    order: {},
+    palettes: []
   };
 
   var els = {
@@ -17,11 +18,15 @@
     openSettingsFromMain: document.getElementById('openSettingsFromMain'),
     emptyState: document.getElementById('emptyState'),
     emptyStateText: document.getElementById('emptyStateText'),
-    scriptGrid: document.getElementById('scriptGrid')
+    scriptGrid: document.getElementById('scriptGrid'),
+    colorPaletteScreen: document.getElementById('colorPaletteScreen'),
+    paletteList: document.getElementById('paletteList'),
+    paletteBackBtn: document.getElementById('paletteBackBtn')
   };
 
   var SCREEN_IDS = {
-    MAIN: 'mainScreen'
+    MAIN: 'mainScreen',
+    COLOR_PALETTE: 'colorPaletteScreen'
   };
 
   var lastKnownGridWidth = -1;
@@ -247,6 +252,134 @@
     });
   }
 
+  function colorToCSS(color) {
+    var r = Math.max(0, Math.min(255, Number(color.r || 0)));
+    var g = Math.max(0, Math.min(255, Number(color.g || 0)));
+    var b = Math.max(0, Math.min(255, Number(color.b || 0)));
+    return 'rgb(' + Math.round(r) + ',' + Math.round(g) + ',' + Math.round(b) + ')';
+  }
+
+  function renderPaletteCard(palette) {
+    var card = document.createElement('div');
+    card.className = 'palette-card';
+
+    var swatches = document.createElement('div');
+    swatches.className = 'palette-swatches';
+
+    var colors = palette.colors || [];
+    for (var i = 0; i < colors.length; i += 1) {
+      var swatch = document.createElement('div');
+      swatch.className = 'swatch';
+      swatch.title = colors[i].name + ' (' + colors[i].r + ',' + colors[i].g + ',' + colors[i].b + ')';
+      swatch.style.background = colorToCSS(colors[i]);
+      swatches.appendChild(swatch);
+    }
+    card.appendChild(swatches);
+
+    var footer = document.createElement('div');
+    footer.className = 'palette-footer';
+    var name = document.createElement('span');
+    name.className = 'palette-name';
+    name.textContent = palette.name || 'Palette';
+    footer.appendChild(name);
+
+    if (!palette.readOnly) {
+      var editBtn = document.createElement('button');
+      editBtn.type = 'button';
+      editBtn.className = 'palette-edit';
+      editBtn.title = 'Edit palette';
+      editBtn.textContent = '✎';
+      editBtn.addEventListener('click', function () {
+        openPaletteEditor(palette);
+      });
+      footer.appendChild(editBtn);
+    }
+
+    card.appendChild(footer);
+    return card;
+  }
+
+  function renderPalettes() {
+    els.paletteList.innerHTML = '';
+    for (var i = 0; i < state.palettes.length; i += 1) {
+      els.paletteList.appendChild(renderPaletteCard(state.palettes[i]));
+    }
+
+    var plus = document.createElement('button');
+    plus.type = 'button';
+    plus.className = 'palette-add';
+    plus.title = 'Add palette';
+    plus.textContent = '+';
+    plus.addEventListener('click', openNewPaletteDialog);
+    els.paletteList.appendChild(plus);
+  }
+
+  function loadPalettes(done) {
+    safeEval('$._cdt.getColorPalettes()', function (raw) {
+      var result = parseJSON(raw, { ok: false, palettes: [], message: 'Invalid palette response.' });
+      if (!result.ok) {
+        setStatus('Error: ' + (result.message || 'Unable to load palettes.'));
+        state.palettes = [];
+      } else {
+        state.palettes = result.palettes || [];
+        setStatus('Loaded ' + state.palettes.length + ' palette(s).');
+      }
+      renderPalettes();
+      if (typeof done === 'function') done();
+    });
+  }
+
+  function openNewPaletteDialog() {
+    safeEval('$._cdt.openColorPaletteDialog("", "{\\"mode\\":\\"create\\",\\"allowDelete\\":false,\\"allowImport\\":true,\\"allowExport\\":false}")', function (raw) {
+      var result = parseJSON(raw, { ok: false, action: 'cancel' });
+      if (!result.ok || result.action === 'cancel') return;
+      if (result.action === 'save') {
+        var payload = JSON.stringify(result.palette || {}).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+        safeEval("$._cdt.saveLocalPalette('" + payload + "')", function (saveRaw) {
+          var saveRes = parseJSON(saveRaw, { ok: false, message: 'Unable to save palette.' });
+          setStatus(saveRes.ok ? 'Palette saved.' : 'Error: ' + saveRes.message);
+          loadPalettes();
+        });
+      }
+    });
+  }
+
+  function openPaletteEditor(palette) {
+    var paletteJSON = JSON.stringify(palette || {}).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    var optionsJSON = '{"mode":"edit","allowDelete":true,"allowImport":true,"allowExport":true}';
+    var evalCommand = "$._cdt.openColorPaletteDialog('" + paletteJSON + "', '" + optionsJSON + "')";
+    safeEval(
+      evalCommand,
+      function (raw) {
+        var result = parseJSON(raw, { ok: false, action: 'cancel' });
+        if (!result.ok || result.action === 'cancel') return;
+
+        if (result.action === 'delete') {
+          safeEval("$._cdt.deleteLocalPalette('" + (palette.id || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "')", function (delRaw) {
+            var delRes = parseJSON(delRaw, { ok: false, message: 'Unable to delete palette.' });
+            setStatus(delRes.ok ? 'Palette deleted.' : 'Error: ' + delRes.message);
+            loadPalettes();
+          });
+          return;
+        }
+
+        if (result.action === 'save') {
+          var payload = JSON.stringify(result.palette || {}).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+          safeEval("$._cdt.saveLocalPalette('" + payload + "')", function (saveRaw) {
+            var saveRes = parseJSON(saveRaw, { ok: false, message: 'Unable to save palette.' });
+            setStatus(saveRes.ok ? 'Palette updated.' : 'Error: ' + saveRes.message);
+            loadPalettes();
+          });
+        }
+      }
+    );
+  }
+
+  function openColorPaletteScreen() {
+    switchScreen(SCREEN_IDS.COLOR_PALETTE);
+    loadPalettes();
+  }
+
   function runLocalUpdateFromMain() {
     setStatus('Running local update...');
     safeEval('$._cdt.localUpdate()', function (raw) {
@@ -327,6 +460,10 @@
         btn.addEventListener('click', function () {
           if (state.updateAvailable) {
             setStatus('Update required. Only Settings is available until update is complete.');
+            return;
+          }
+          if (scriptItem.id === 'RBColor') {
+            openColorPaletteScreen();
             return;
           }
           runScript(scriptItem, btn);
@@ -453,6 +590,10 @@
 
   function wireControls() {
     els.openSettingsFromMain.addEventListener('click', openSettingsDialog);
+    els.paletteBackBtn.addEventListener('click', function () {
+      switchScreen(SCREEN_IDS.MAIN);
+      setStatus('Returned to main panel.');
+    });
 
     window.addEventListener('resize', applyResponsiveGridLayout);
 
