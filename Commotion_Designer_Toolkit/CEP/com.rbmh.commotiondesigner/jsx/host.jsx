@@ -115,6 +115,75 @@
     }
   }
 
+  function hashFileBinary(file) {
+    try {
+      file.encoding = 'BINARY';
+      if (!file.open('r')) return '';
+      var raw = file.read();
+      file.close();
+
+      var hash = 0;
+      for (var i = 0; i < raw.length; i += 1) {
+        hash = (hash * 31 + raw.charCodeAt(i)) % 2147483647;
+      }
+      return String(hash) + ':' + String(raw.length);
+    } catch (e) {
+      try { file.close(); } catch (ignore) {}
+      return '';
+    }
+  }
+
+  function collectFolderSnapshot(baseFolder, relativePath, snapshot) {
+    var entries = baseFolder.getFiles();
+    entries.sort(function (a, b) { return String(a.name).toLowerCase() > String(b.name).toLowerCase() ? 1 : -1; });
+
+    for (var i = 0; i < entries.length; i += 1) {
+      var entry = entries[i];
+      var rel = relativePath ? relativePath + '/' + entry.name : entry.name;
+
+      if (entry instanceof Folder) {
+        snapshot['d:' + rel] = 'dir';
+        collectFolderSnapshot(entry, rel, snapshot);
+      } else if (entry instanceof File) {
+        snapshot['f:' + rel] = hashFileBinary(entry);
+      }
+    }
+  }
+
+  function foldersAreIdentical(sourcePath, destPath) {
+    var source = new Folder(sourcePath);
+    var dest = new Folder(destPath);
+
+    if (!source.exists || !dest.exists) return false;
+
+    var sourceSnapshot = {};
+    var destSnapshot = {};
+    collectFolderSnapshot(source, '', sourceSnapshot);
+    collectFolderSnapshot(dest, '', destSnapshot);
+
+    var sourceKeys = [];
+    var destKeys = [];
+    var key;
+
+    for (key in sourceSnapshot) {
+      if (sourceSnapshot.hasOwnProperty(key)) sourceKeys.push(key);
+    }
+
+    for (key in destSnapshot) {
+      if (destSnapshot.hasOwnProperty(key)) destKeys.push(key);
+    }
+
+    if (sourceKeys.length !== destKeys.length) return false;
+
+    for (var i = 0; i < sourceKeys.length; i += 1) {
+      key = sourceKeys[i];
+      if (!destSnapshot.hasOwnProperty(key)) return false;
+      if (sourceSnapshot[key] !== destSnapshot[key]) return false;
+    }
+
+    return true;
+  }
+
   $._cdt.getState = function () {
     var scriptsFolder = readSetting(SETTINGS_FOLDER_KEY, DEFAULT_SCRIPTS_PATH);
     var iconSize = readSetting(SETTINGS_ICON_SIZE_KEY, '45');
@@ -225,6 +294,35 @@
     }
   };
 
+  $._cdt.checkLocalUpdateStatus = function () {
+    try {
+      var source = new Folder(LOCAL_UPDATE_SOURCE);
+      if (!source.exists) {
+        return toJSON({ ok: false, different: false, message: 'Source folder not found.' });
+      }
+
+      var appData = $.getenv('APPDATA');
+      if (!appData) {
+        return toJSON({ ok: false, different: false, message: 'APPDATA environment variable not found.' });
+      }
+
+      var destRoot = sanitizePath(appData) + '/Adobe/CEP/extensions/com.rbmh.commotiondesigner';
+      var dest = new Folder(destRoot);
+      if (!dest.exists) {
+        return toJSON({ ok: true, different: true, message: 'Installed extension folder is missing.' });
+      }
+
+      var same = foldersAreIdentical(source.fsName, dest.fsName);
+      return toJSON({
+        ok: true,
+        different: !same,
+        message: same ? 'You are up to date.' : 'New version found. Please update.'
+      });
+    } catch (e) {
+      return toJSON({ ok: false, different: false, message: String(e) });
+    }
+  };
+
   $._cdt.openSettingsDialog = function () {
     try {
       var currentFolder = readSetting(SETTINGS_FOLDER_KEY, DEFAULT_SCRIPTS_PATH);
@@ -256,16 +354,23 @@
       var showLogCheckbox = dlg.add('checkbox', undefined, 'Show bottom log panel');
       showLogCheckbox.value = currentShowLog;
 
+      var updateState = parseJSON($._cdt.checkLocalUpdateStatus(), { ok: false, different: false, message: '' });
+      var updateStatusText = dlg.add('statictext', undefined, updateState.message || '');
+
       var buttonRow = dlg.add('group');
       buttonRow.orientation = 'row';
       buttonRow.alignment = ['right', 'center'];
 
-      var updateBtn = buttonRow.add('button', undefined, 'Update');
+      var updateBtn = buttonRow.add('button', undefined, updateState.different ? 'Update' : "You're up to date");
+      updateBtn.enabled = !!updateState.different;
       updateBtn.onClick = function () {
         var updateRaw = $._cdt.localUpdate();
         var updateRes = parseJSON(updateRaw, { ok: false, message: 'Invalid host response.' });
         if (updateRes.ok) {
           alert('Update successful: ' + updateRes.message);
+          updateBtn.text = "You're up to date";
+          updateBtn.enabled = false;
+          updateStatusText.text = 'You are up to date.';
         } else {
           alert('Update failed: ' + updateRes.message);
         }

@@ -5,6 +5,7 @@
     scriptsFolder: DEFAULT_SCRIPTS_PATH,
     showLabels: false,
     showLog: false,
+    updateAvailable: false,
     scripts: [],
     order: {}
   };
@@ -67,6 +68,7 @@
     lastKnownItemCount = itemCount;
     var columns = getResponsiveColumnCount(itemCount);
     els.scriptGrid.style.gridTemplateColumns = 'repeat(' + columns + ', var(--tile-size))';
+    updateCompactUpdateButton();
   }
 
   function safeEval(script, done) {
@@ -219,6 +221,40 @@
     });
   }
 
+  function runLocalUpdateFromMain() {
+    setStatus('Running local update...');
+    safeEval('$._cdt.localUpdate()', function (raw) {
+      var res = parseJSON(raw, { ok: false, message: 'Invalid host response.' });
+      if (!res.ok) {
+        setStatus('Local update failed: ' + res.message);
+        window.alert('Update failed: ' + res.message);
+        return;
+      }
+
+      setStatus('Local update complete: ' + res.message);
+      window.alert('Update successful: ' + res.message);
+      loadState(function () {
+        applyResponsiveGridLayout();
+      });
+    });
+  }
+
+  function createUpdateButton() {
+    var btn = document.createElement('button');
+    btn.className = 'script-btn';
+    btn.setAttribute('data-id', '__update__');
+    btn.setAttribute('title', 'New version found. Please update');
+    btn.appendChild(renderScriptVisual('./assets/info.svg'));
+
+    var label = document.createElement('span');
+    label.textContent = 'New version found. Please update';
+    label.className = 'update-btn-label';
+    btn.appendChild(label);
+
+    btn.addEventListener('click', runLocalUpdateFromMain);
+    return btn;
+  }
+
   function createSettingsButton() {
     var btn = document.createElement('button');
     btn.className = 'script-btn';
@@ -240,6 +276,9 @@
 
   function renderScripts(items) {
     els.scriptGrid.innerHTML = '';
+    if (state.updateAvailable) {
+      els.scriptGrid.appendChild(createUpdateButton());
+    }
     els.scriptGrid.appendChild(createSettingsButton());
 
     var ordered = getOrderedScripts(items);
@@ -306,6 +345,14 @@
     });
   }
 
+  function loadUpdateStatus(done) {
+    safeEval('$._cdt.checkLocalUpdateStatus()', function (raw) {
+      var result = parseJSON(raw, { ok: false, different: false });
+      state.updateAvailable = !!(result && result.ok && result.different);
+      if (typeof done === 'function') done();
+    });
+  }
+
   function loadState(done) {
     safeEval('$._cdt.getState()', function (raw) {
       var result = parseJSON(raw, {});
@@ -316,7 +363,9 @@
       state.showLog = String(result.showLog || 'false') === 'true';
 
       applyLogVisibility();
-      loadScripts();
+      loadUpdateStatus(function () {
+        loadScripts();
+      });
 
       if (typeof done === 'function') {
         done();
@@ -356,14 +405,23 @@
         lastKnownGridWidth = -1;
         lastKnownItemCount = -1;
         applyResponsiveGridLayout();
+        updateCompactUpdateButton();
       });
       observer.observe(document.body);
       observer.observe(els.scriptGrid);
     } else {
       setInterval(function () {
         applyResponsiveGridLayout();
+        updateCompactUpdateButton();
       }, 200);
     }
+  }
+
+  function updateCompactUpdateButton() {
+    var updateBtnLabel = els.scriptGrid.querySelector('.update-btn-label');
+    if (!updateBtnLabel) return;
+    var columns = getResponsiveColumnCount(els.scriptGrid.querySelectorAll('.script-btn').length);
+    updateBtnLabel.textContent = columns <= 1 ? '!' : 'New version found. Please update';
   }
 
   function initializeFlyoutMenu() {
@@ -387,5 +445,7 @@
   wireControls();
   initializeFlyoutMenu();
   switchScreen(SCREEN_IDS.MAIN);
-  loadState();
+  loadState(function () {
+    updateCompactUpdateButton();
+  });
 })();
