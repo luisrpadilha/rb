@@ -115,6 +115,106 @@
     }
   }
 
+  function deleteFolderRecursive(folder) {
+    if (!folder.exists) return true;
+
+    var entries = folder.getFiles();
+    for (var i = 0; i < entries.length; i += 1) {
+      var entry = entries[i];
+      if (entry instanceof Folder) {
+        if (!deleteFolderRecursive(entry)) return false;
+      } else if (entry instanceof File) {
+        if (!entry.remove()) return false;
+      }
+    }
+
+    return folder.remove();
+  }
+
+  function syncFolderRecursive(sourceFolder, targetFolder) {
+    if (!targetFolder.exists) targetFolder.create();
+
+    var sourceEntries = sourceFolder.getFiles();
+    var sourceMap = {};
+    var i;
+
+    for (i = 0; i < sourceEntries.length; i += 1) {
+      sourceMap[sourceEntries[i].name] = sourceEntries[i];
+    }
+
+    var targetEntries = targetFolder.getFiles();
+    for (i = 0; i < targetEntries.length; i += 1) {
+      var targetEntry = targetEntries[i];
+      var sourceMatch = sourceMap[targetEntry.name];
+      if (!sourceMatch) {
+        if (targetEntry instanceof Folder) {
+          if (!deleteFolderRecursive(targetEntry)) throw new Error('Could not remove folder: ' + targetEntry.fsName);
+        } else if (targetEntry instanceof File) {
+          if (!targetEntry.remove()) throw new Error('Could not remove file: ' + targetEntry.fsName);
+        }
+        continue;
+      }
+
+      if (sourceMatch instanceof Folder && targetEntry instanceof Folder) {
+        syncFolderRecursive(sourceMatch, targetEntry);
+      } else if (sourceMatch instanceof File && targetEntry instanceof File) {
+        if (!sourceMatch.copy(targetEntry.fsName)) {
+          throw new Error('Could not overwrite file: ' + targetEntry.fsName);
+        }
+      } else {
+        if (targetEntry instanceof Folder) {
+          if (!deleteFolderRecursive(targetEntry)) throw new Error('Could not replace folder: ' + targetEntry.fsName);
+        } else if (targetEntry instanceof File) {
+          if (!targetEntry.remove()) throw new Error('Could not replace file: ' + targetEntry.fsName);
+        }
+
+        if (sourceMatch instanceof Folder) {
+          copyFolderRecursive(sourceMatch, new Folder(targetFolder.fsName + '/' + sourceMatch.name));
+        } else if (sourceMatch instanceof File) {
+          if (!sourceMatch.copy(targetFolder.fsName + '/' + sourceMatch.name)) {
+            throw new Error('Could not copy file: ' + sourceMatch.fsName);
+          }
+        }
+      }
+    }
+
+    for (i = 0; i < sourceEntries.length; i += 1) {
+      var sourceEntry = sourceEntries[i];
+      var targetPath = targetFolder.fsName + '/' + sourceEntry.name;
+      var targetFile = new File(targetPath);
+      var targetSubfolder = new Folder(targetPath);
+      if (sourceEntry instanceof Folder) {
+        if (!targetSubfolder.exists) copyFolderRecursive(sourceEntry, targetSubfolder);
+      } else if (sourceEntry instanceof File) {
+        if (!targetFile.exists && !sourceEntry.copy(targetPath)) {
+          throw new Error('Could not copy file: ' + sourceEntry.fsName);
+        }
+      }
+    }
+  }
+
+  function getUpdateInfo() {
+    var updateFile = new File(LOCAL_UPDATE_SOURCE + '/update.json');
+    if (!updateFile.exists) {
+      return { version: 'unknown', lastUpdateNotes: 'No update notes available.' };
+    }
+
+    try {
+      updateFile.encoding = 'UTF-8';
+      updateFile.open('r');
+      var raw = updateFile.read();
+      updateFile.close();
+      var parsed = parseJSON(raw, {});
+      return {
+        version: parsed.version || 'unknown',
+        lastUpdateNotes: parsed.lastUpdateNotes || 'No update notes available.'
+      };
+    } catch (e) {
+      try { updateFile.close(); } catch (ignore) {}
+      return { version: 'unknown', lastUpdateNotes: 'No update notes available.' };
+    }
+  }
+
   function hashFileBinary(file) {
     try {
       file.encoding = 'BINARY';
@@ -286,9 +386,9 @@
 
       var destRoot = sanitizePath(appData) + '/Adobe/CEP/extensions/com.rbmh.commotiondesigner';
       ensureFolder(sanitizePath(appData) + '/Adobe/CEP/extensions');
-      copyFolderRecursive(source, new Folder(destRoot));
+      syncFolderRecursive(source, new Folder(destRoot));
 
-      return toJSON({ ok: true, message: 'Copied extension to ' + destRoot });
+      return toJSON({ ok: true, message: 'Synchronized extension at ' + destRoot });
     } catch (e) {
       return toJSON({ ok: false, message: String(e) });
     }
@@ -355,7 +455,9 @@
       showLogCheckbox.value = currentShowLog;
 
       var updateState = parseJSON($._cdt.checkLocalUpdateStatus(), { ok: false, different: false, message: '' });
+      var updateInfo = getUpdateInfo();
       var updateStatusText = dlg.add('statictext', undefined, updateState.message || '');
+      var versionText = dlg.add('statictext', undefined, 'Current version: ' + updateInfo.version);
 
       var buttonRow = dlg.add('group');
       buttonRow.orientation = 'row';
@@ -374,6 +476,18 @@
         } else {
           alert('Update failed: ' + updateRes.message);
         }
+      };
+
+      var aboutBtn = buttonRow.add('button', undefined, 'About');
+      aboutBtn.onClick = function () {
+        alert(
+          'Commotion Designer Toolkit\n\n' +
+            'Current version: ' +
+            updateInfo.version +
+            '\n\nLast update notes:\n' +
+            updateInfo.lastUpdateNotes +
+            '\n\nCreated by a random guy in Red Bull Media House. All rights reserved, I guess?'
+        );
       };
 
       buttonRow.add('button', undefined, 'Cancel', { name: 'cancel' });

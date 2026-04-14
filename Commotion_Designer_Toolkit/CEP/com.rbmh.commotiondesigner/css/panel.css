@@ -85,6 +85,11 @@ input[type='text'] {
   gap: 3px;
 }
 
+.script-btn.is-disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
 .script-btn.dragging { opacity: 0.45; }
 
 .script-visual {
@@ -109,10 +114,13 @@ input[type='text'] {
 }
 
 .script-btn:hover .script-icon { background: #4f9ee6; }
+.script-btn.is-disabled:hover .script-icon { background: #f2f2f2; }
 .script-btn.is-active .script-icon { background: #db4b4b; }
 .script-btn[data-id="__update__"] .script-icon { background: #db4b4b; }
 .script-btn[data-id="__update__"]:hover .script-icon { background: #4f9ee6; }
 .script-btn span { width: 100%; text-align: center; font-size: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.version-row { justify-content: space-between; }
 
 .bottom-controls { border-top: 1px solid var(--ae-border); background: #2a2a2a; }
 .bottom-controls.log-hidden { display: none; }
