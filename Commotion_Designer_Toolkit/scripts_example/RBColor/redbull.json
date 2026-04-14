@@ -1,0 +1,10 @@
+{
+  "id": "rb_redbull",
+  "name": "Red Bull",
+  "colors": [
+    { "name": "RED", "r": 15, "g": 0, "b": 105 },
+    { "name": "BLUE", "r": 15, "g": 0, "b": 105 },
+    { "name": "YELLOW", "r": 255, "g": 204, "b": 0 },
+    { "name": "GREY", "r": 218, "g": 218, "b": 218 }
+  ]
+}
