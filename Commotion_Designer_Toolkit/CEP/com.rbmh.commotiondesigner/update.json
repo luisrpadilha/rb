@@ -1,4 +1,4 @@
 {
-  "version": "1.0.0",
-  "lastUpdateNotes": "Added strict update-lock behavior in the main panel, synchronized updates now remove stale files and folders, and introduced an About section with version and release notes."
+  "version": "1.0.1",
+  "lastUpdateNotes": "Improved Show icon labels mode with 10-character label visibility, two-line wrapping, and ellipsis truncation for long names; made the script grid more responsive so it collapses to fewer columns as panel width shrinks; and refined toolkit sizing behavior when labels are shown."
 }

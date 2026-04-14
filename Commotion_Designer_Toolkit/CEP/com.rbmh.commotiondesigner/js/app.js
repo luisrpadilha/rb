@@ -27,6 +27,10 @@
   var lastKnownGridWidth = -1;
   var lastKnownItemCount = -1;
 
+  function getEffectiveTileSizePx() {
+    return state.showLabels ? 92 : 25;
+  }
+
   function setStatus(message) {
     els.status.textContent = message;
   }
@@ -40,7 +44,23 @@
   function getTileSizePx() {
     var computed = window.getComputedStyle(document.documentElement);
     var tile = parseFloat(computed.getPropertyValue('--tile-size'));
-    return isFinite(tile) ? tile : 25;
+    return isFinite(tile) ? tile : getEffectiveTileSizePx();
+  }
+
+  function applyLabelModeSizing() {
+    var tileSize = getEffectiveTileSizePx();
+    document.documentElement.style.setProperty('--tile-size', tileSize + 'px');
+    els.scriptGrid.classList.toggle('labels-visible', !!state.showLabels);
+    lastKnownGridWidth = -1;
+    lastKnownItemCount = -1;
+  }
+
+  function formatScriptLabel(name) {
+    var text = String(name || '').trim();
+    if (!text) return '';
+    if (text.length <= 10) return text;
+    if (text.length <= 20) return text.slice(0, 10) + '\n' + text.slice(10);
+    return text.slice(0, 10) + '\n' + text.slice(10, 17) + '...';
   }
 
   function getResponsiveColumnCount(itemCount) {
@@ -68,7 +88,7 @@
     lastKnownGridWidth = gridWidth;
     lastKnownItemCount = itemCount;
     var columns = getResponsiveColumnCount(itemCount);
-    els.scriptGrid.style.gridTemplateColumns = 'repeat(' + columns + ', var(--tile-size))';
+    els.scriptGrid.style.gridTemplateColumns = 'repeat(' + columns + ', minmax(0, var(--tile-size)))';
     updateCompactUpdateButton();
   }
 
@@ -271,7 +291,7 @@
 
     if (state.showLabels) {
       var label = document.createElement('span');
-      label.textContent = 'Settings';
+      label.textContent = formatScriptLabel('Settings');
       btn.appendChild(label);
     }
 
@@ -300,7 +320,7 @@
 
         if (state.showLabels) {
           var label = document.createElement('span');
-          label.textContent = scriptItem.name;
+          label.textContent = formatScriptLabel(scriptItem.name);
           btn.appendChild(label);
         }
 
@@ -396,6 +416,7 @@
       state.showLog = String(result.showLog || 'false') === 'true';
 
       applyLogVisibility();
+      applyLabelModeSizing();
       loadUpdateInfo(function () {
         loadUpdateStatus(function () {
           loadScripts();
@@ -480,6 +501,7 @@
     }
   };
 
+  applyLabelModeSizing();
   wireControls();
   initializeFlyoutMenu();
   switchScreen(SCREEN_IDS.MAIN);
