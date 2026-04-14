@@ -78,7 +78,7 @@
   }
 
   function readMeta(metaFile, fallbackName) {
-    var meta = { name: fallbackName, description: 'No description available.' };
+    var meta = { name: fallbackName, description: 'No description available.', icon: '' };
     if (!metaFile.exists) return meta;
 
     try {
@@ -90,6 +90,7 @@
       var parsed = parseJSON(raw, {});
       meta.name = parsed.name || fallbackName;
       meta.description = parsed.description || meta.description;
+      meta.icon = parsed.icon || '';
     } catch (e) {}
 
     return meta;
@@ -348,24 +349,30 @@
       var entries = folder.getFiles();
       var jsxFile = null;
       var svgFile = null;
+      var svgByName = {};
 
       for (var j = 0; j < entries.length; j += 1) {
         var file = entries[j];
         if (!(file instanceof File)) continue;
         var name = file.name.toLowerCase();
         if (!jsxFile && /\.jsx$/.test(name)) jsxFile = file;
-        if (!svgFile && /\.svg$/.test(name)) svgFile = file;
+        if (/\.svg$/.test(name)) {
+          if (!svgFile) svgFile = file;
+          svgByName[file.name.toLowerCase()] = file;
+        }
       }
 
       if (!jsxFile) continue;
 
       var meta = readMeta(new File(folder.fsName + '/meta.json'), folder.name);
+      var iconFromMeta = meta.icon ? svgByName[String(meta.icon).toLowerCase()] : null;
+      var resolvedIcon = iconFromMeta || svgFile;
       scripts.push({
         id: folder.name,
         name: meta.name,
         description: meta.description,
         jsxPath: sanitizePath(jsxFile.fsName),
-        iconUri: svgFile ? 'file:///' + sanitizePath(svgFile.fsName) : ''
+        iconUri: resolvedIcon ? 'file:///' + sanitizePath(resolvedIcon.fsName) : ''
       });
     }
 
