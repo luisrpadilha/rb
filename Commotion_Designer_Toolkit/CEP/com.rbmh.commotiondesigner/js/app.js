@@ -474,6 +474,9 @@
       loadState(function () {
         applyResponsiveGridLayout();
       });
+    },
+    reloadPanel: function () {
+      window.location.reload();
     }
   };
 
