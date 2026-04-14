@@ -456,20 +456,13 @@
     panel.spacing = 8;
     panel.margins = 8;
 
-    var paletteStack = panel.add('group');
-    paletteStack.orientation = 'column';
-    paletteStack.alignChildren = ['fill', 'top'];
-    paletteStack.spacing = 8;
+    var paletteGrid = panel.add('group');
+    paletteGrid.orientation = 'column';
+    paletteGrid.alignChildren = ['fill', 'top'];
+    paletteGrid.spacing = 8;
 
-    var footer = panel.add('group');
-    footer.orientation = 'row';
-    footer.alignment = ['fill', 'bottom'];
-    var addBtn = footer.add('button', undefined, '+');
-    addBtn.preferredSize = [28, 22];
-    addBtn.helpTip = 'Create a new local ASE palette';
-
-    var status = footer.add('statictext', undefined, 'Ready');
-    status.alignment = ['fill', 'center'];
+    var status = panel.add('statictext', undefined, 'Ready');
+    status.alignment = ['fill', 'bottom'];
 
     var palettes = [];
 
@@ -551,13 +544,49 @@
     }
 
     function renderPalettes() {
-      while (paletteStack.children.length) {
-        paletteStack.remove(paletteStack.children[0]);
+      while (paletteGrid.children.length) {
+        paletteGrid.remove(paletteGrid.children[0]);
       }
 
-      for (var i = 0; i < palettes.length; i += 1) {
+      var panelWidth = panel.size && panel.size.width ? panel.size.width : 220;
+      var cardWidth = 170;
+      var columns = Math.max(1, Math.floor((panelWidth - 24) / (cardWidth + 8)));
+      var row = null;
+      var items = [];
+      for (var i = 0; i < palettes.length; i += 1) items.push({ type: 'palette', palette: palettes[i] });
+      items.push({ type: 'add' });
+
+      for (var itemIndex = 0; itemIndex < items.length; itemIndex += 1) {
+        if (itemIndex % columns === 0) {
+          row = paletteGrid.add('group');
+          row.orientation = 'row';
+          row.alignChildren = ['left', 'top'];
+          row.spacing = 8;
+        }
+
+        if (items[itemIndex].type === 'add') {
+          var addCard = row.add('panel', undefined, '');
+          addCard.preferredSize = [cardWidth, 66];
+          addCard.margins = [8, 8, 8, 8];
+          var addBtn = addCard.add('button', undefined, '+');
+          addBtn.preferredSize = [28, 22];
+          addBtn.helpTip = 'Create a new local ASE palette';
+          addBtn.onClick = function () {
+            var response = openPaletteDialog(null);
+            if (response.action !== 'save') return;
+            if (saveLocalPalette(response.palette)) {
+              setStatus('Created palette: ' + response.palette.name);
+              reloadPalettes();
+            } else {
+              setStatus('Could not create palette.');
+            }
+          };
+          continue;
+        }
+
         (function (palette) {
-          var card = paletteStack.add('panel', undefined, '');
+          var card = row.add('panel', undefined, '');
+          card.preferredSize = [cardWidth, 66];
           card.orientation = 'column';
           card.alignChildren = ['fill', 'top'];
           card.margins = [8, 8, 8, 6];
@@ -597,18 +626,8 @@
       renderPalettes();
     }
 
-    addBtn.onClick = function () {
-      var response = openPaletteDialog(null);
-      if (response.action !== 'save') return;
-      if (saveLocalPalette(response.palette)) {
-        setStatus('Created palette: ' + response.palette.name);
-        reloadPalettes();
-      } else {
-        setStatus('Could not create palette.');
-      }
-    };
-
     panel.onResizing = panel.onResize = function () {
+      renderPalettes();
       this.layout.resize();
     };
 
