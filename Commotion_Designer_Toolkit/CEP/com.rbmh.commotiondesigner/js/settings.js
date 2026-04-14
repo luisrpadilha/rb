@@ -15,6 +15,7 @@
     closeSettingsBtn: document.getElementById('closeSettingsBtn'),
     showLabelsToggle: document.getElementById('showLabelsToggle'),
     showLogToggle: document.getElementById('showLogToggle'),
+    reloadPanelBtn: document.getElementById('reloadPanelBtn'),
     localUpdateBtn: document.getElementById('localUpdateBtn'),
     currentVersion: document.getElementById('currentVersion'),
     aboutBtn: document.getElementById('aboutBtn')
@@ -46,6 +47,27 @@
     if (window.opener && window.opener.cdtMain && typeof window.opener.cdtMain.refreshFromState === 'function') {
       window.opener.cdtMain.refreshFromState();
     }
+  }
+
+  function reloadMainPanel() {
+    if (!window.opener) {
+      setStatus('Main panel window is not available to reload.');
+      return;
+    }
+
+    if (window.opener.cdtMain && typeof window.opener.cdtMain.reloadPanel === 'function') {
+      setStatus('Reloading main panel...');
+      window.opener.cdtMain.reloadPanel();
+      return;
+    }
+
+    if (window.opener.location && typeof window.opener.location.reload === 'function') {
+      setStatus('Reloading main panel...');
+      window.opener.location.reload();
+      return;
+    }
+
+    setStatus('Main panel reload is not supported in this environment.');
   }
 
   function renderVersion() {
@@ -163,6 +185,7 @@
 
   function wireControls() {
     els.browseBtn.addEventListener('click', browseFolder);
+    els.reloadPanelBtn.addEventListener('click', reloadMainPanel);
     els.localUpdateBtn.addEventListener('click', runLocalUpdate);
     els.aboutBtn.addEventListener('click', openAbout);
 
