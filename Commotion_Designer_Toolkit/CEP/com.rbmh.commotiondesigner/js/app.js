@@ -5,6 +5,7 @@
     scriptsFolder: DEFAULT_SCRIPTS_PATH,
     showLabels: false,
     showLog: false,
+    updateAvailable: false,
     scripts: [],
     order: {}
   };
@@ -12,26 +13,62 @@
   var els = {
     status: document.getElementById('status'),
     bottomControls: document.getElementById('bottomControls'),
-    folderPath: document.getElementById('folderPath'),
-    browseBtn: document.getElementById('browseBtn'),
-    saveSettingsBtn: document.getElementById('saveSettingsBtn'),
-    localUpdateBtn: document.getElementById('localUpdateBtn'),
-    closeSettingsBtn: document.getElementById('closeSettingsBtn'),
     openSettingsFromMain: document.getElementById('openSettingsFromMain'),
     emptyState: document.getElementById('emptyState'),
     emptyStateText: document.getElementById('emptyStateText'),
-    scriptGrid: document.getElementById('scriptGrid'),
-    showLabelsToggle: document.getElementById('showLabelsToggle'),
-    showLogToggle: document.getElementById('showLogToggle')
+    scriptGrid: document.getElementById('scriptGrid')
   };
 
   var SCREEN_IDS = {
-    MAIN: 'mainScreen',
-    SETTINGS: 'settingsScreen'
+    MAIN: 'mainScreen'
   };
+
+  var lastKnownGridWidth = -1;
+  var lastKnownItemCount = -1;
 
   function setStatus(message) {
     els.status.textContent = message;
+  }
+
+  function getGridGapPx() {
+    var computed = window.getComputedStyle(els.scriptGrid);
+    var columnGap = parseFloat(computed.columnGap || computed.gap || '0');
+    return isFinite(columnGap) ? columnGap : 0;
+  }
+
+  function getTileSizePx() {
+    var computed = window.getComputedStyle(document.documentElement);
+    var tile = parseFloat(computed.getPropertyValue('--tile-size'));
+    return isFinite(tile) ? tile : 25;
+  }
+
+  function getResponsiveColumnCount(itemCount) {
+    if (!itemCount) return 1;
+
+    var gridWidth = els.scriptGrid.clientWidth || (els.scriptGrid.parentNode ? els.scriptGrid.parentNode.clientWidth : 0);
+    if (!gridWidth) return 1;
+
+    var tileSize = getTileSizePx();
+    var gap = getGridGapPx();
+    var slot = tileSize + gap;
+    var maxColumnsThatFit = Math.floor((gridWidth + gap) / slot);
+    var columns = Math.max(1, maxColumnsThatFit);
+    return Math.min(itemCount, columns);
+  }
+
+  function applyResponsiveGridLayout() {
+    if (!els.scriptGrid || els.scriptGrid.classList.contains('hidden')) return;
+
+    var gridWidth = els.scriptGrid.clientWidth || (els.scriptGrid.parentNode ? els.scriptGrid.parentNode.clientWidth : 0);
+    var itemCount = els.scriptGrid.querySelectorAll('.script-btn').length;
+    if (!gridWidth) return;
+    if (gridWidth === lastKnownGridWidth && itemCount === lastKnownItemCount) return;
+
+    lastKnownGridWidth = gridWidth;
+    lastKnownItemCount = itemCount;
+    var columns = getResponsiveColumnCount(itemCount);
+    els.scriptGrid.style.gridTemplateColumns = 'repeat(' + columns + ', var(--tile-size))';
+    updateCompactUpdateButton();
   }
 
   function safeEval(script, done) {
@@ -53,6 +90,7 @@
     Array.prototype.forEach.call(screens, function (screen) {
       screen.classList.toggle('hidden', screen.id !== id);
     });
+    if (id === SCREEN_IDS.MAIN) applyResponsiveGridLayout();
   }
 
   function setEmptyState(message, showSettingsLink) {
@@ -183,6 +221,40 @@
     });
   }
 
+  function runLocalUpdateFromMain() {
+    setStatus('Running local update...');
+    safeEval('$._cdt.localUpdate()', function (raw) {
+      var res = parseJSON(raw, { ok: false, message: 'Invalid host response.' });
+      if (!res.ok) {
+        setStatus('Local update failed: ' + res.message);
+        window.alert('Update failed: ' + res.message);
+        return;
+      }
+
+      setStatus('Local update complete: ' + res.message);
+      window.alert('Update successful: ' + res.message);
+      loadState(function () {
+        applyResponsiveGridLayout();
+      });
+    });
+  }
+
+  function createUpdateButton() {
+    var btn = document.createElement('button');
+    btn.className = 'script-btn';
+    btn.setAttribute('data-id', '__update__');
+    btn.setAttribute('title', 'New version found. Please update');
+    btn.appendChild(renderScriptVisual('./assets/info.svg'));
+
+    var label = document.createElement('span');
+    label.textContent = 'New version found. Please update';
+    label.className = 'update-btn-label';
+    btn.appendChild(label);
+
+    btn.addEventListener('click', runLocalUpdateFromMain);
+    return btn;
+  }
+
   function createSettingsButton() {
     var btn = document.createElement('button');
     btn.className = 'script-btn';
@@ -196,9 +268,7 @@
       btn.appendChild(label);
     }
 
-    btn.addEventListener('click', function () {
-      switchScreen(SCREEN_IDS.SETTINGS);
-    });
+    btn.addEventListener('click', openSettingsDialog);
 
     enableDragAndDrop(btn);
     return btn;
@@ -206,6 +276,9 @@
 
   function renderScripts(items) {
     els.scriptGrid.innerHTML = '';
+    if (state.updateAvailable) {
+      els.scriptGrid.appendChild(createUpdateButton());
+    }
     els.scriptGrid.appendChild(createSettingsButton());
 
     var ordered = getOrderedScripts(items);
@@ -238,6 +311,8 @@
     if (!ordered.length) {
       setStatus('Warning: No scripts found in selected folder.');
     }
+
+    applyResponsiveGridLayout();
   }
 
   function loadScripts() {
@@ -270,7 +345,15 @@
     });
   }
 
-  function loadState() {
+  function loadUpdateStatus(done) {
+    safeEval('$._cdt.checkLocalUpdateStatus()', function (raw) {
+      var result = parseJSON(raw, { ok: false, different: false });
+      state.updateAvailable = !!(result && result.ok && result.different);
+      if (typeof done === 'function') done();
+    });
+  }
+
+  function loadState(done) {
     safeEval('$._cdt.getState()', function (raw) {
       var result = parseJSON(raw, {});
 
@@ -279,102 +362,73 @@
       state.showLabels = String(result.showLabels || 'false') === 'true';
       state.showLog = String(result.showLog || 'false') === 'true';
 
-      els.folderPath.value = state.scriptsFolder;
-      els.showLabelsToggle.checked = state.showLabels;
-      els.showLogToggle.checked = state.showLog;
-
       applyLogVisibility();
-      loadScripts();
-    });
-  }
-
-  function saveSettings() {
-    var folder = els.folderPath.value.trim();
-    if (!folder) {
-      setStatus('Please set a scripts folder.');
-      return;
-    }
-
-    state.scriptsFolder = folder;
-    state.showLabels = !!els.showLabelsToggle.checked;
-    state.showLog = !!els.showLogToggle.checked;
-    applyLogVisibility();
-
-    safeEval(
-      "$._cdt.saveState('" +
-        escapeForEval(folder) +
-        "',45," +
-        (state.showLabels ? 'true' : 'false') +
-        ',false,' +
-        (state.showLog ? 'true' : 'false') +
-        ')',
-      function () {
-        setStatus('Settings saved.');
+      loadUpdateStatus(function () {
         loadScripts();
-        switchScreen(SCREEN_IDS.MAIN);
-      }
-    );
-  }
+      });
 
-  function runLocalUpdate() {
-    setStatus('Running local update...');
-    safeEval('$._cdt.localUpdate()', function (raw) {
-      var res = parseJSON(raw, { ok: false, message: 'Invalid host response.' });
-      if (!res.ok) {
-        setStatus('Local update failed: ' + res.message);
-        return;
+      if (typeof done === 'function') {
+        done();
       }
-
-      setStatus('Local update complete: ' + res.message);
     });
   }
 
-  function browseFolder() {
-    setStatus('Opening folder picker...');
-    safeEval('$._cdt.pickFolder()', function (raw) {
-      var result = parseJSON(raw, { ok: false });
-      if (!result.ok || !result.path) {
-        setStatus('Folder selection cancelled.');
+  function openSettingsDialog() {
+    setStatus('Opening settings dialog...');
+    safeEval('$._cdt.openSettingsDialog()', function (raw) {
+      var result = parseJSON(raw, { ok: false, saved: false, message: 'Unknown settings response.' });
+      if (!result.ok) {
+        setStatus('Could not open settings dialog.');
         return;
       }
 
-      els.folderPath.value = result.path;
-      setStatus('Selected: ' + result.path);
+      if (result.saved) {
+        setStatus('Settings updated.');
+        loadState(function () {
+          lastKnownGridWidth = -1;
+          lastKnownItemCount = -1;
+          applyResponsiveGridLayout();
+        });
+      } else {
+        setStatus(result.message || 'Settings closed.');
+      }
     });
   }
 
   function wireControls() {
-    els.browseBtn.addEventListener('click', browseFolder);
-    els.saveSettingsBtn.addEventListener('click', saveSettings);
-    els.localUpdateBtn.addEventListener('click', runLocalUpdate);
+    els.openSettingsFromMain.addEventListener('click', openSettingsDialog);
 
-    els.closeSettingsBtn.addEventListener('click', function () {
-      switchScreen(SCREEN_IDS.MAIN);
-    });
+    window.addEventListener('resize', applyResponsiveGridLayout);
 
-    els.openSettingsFromMain.addEventListener('click', function () {
-      switchScreen(SCREEN_IDS.SETTINGS);
-    });
-
-    els.showLabelsToggle.addEventListener('change', function () {
-      state.showLabels = !!els.showLabelsToggle.checked;
-      safeEval('$._cdt.saveShowLabels(' + (state.showLabels ? 'true' : 'false') + ')', function () {
-        renderScripts(state.scripts || []);
+    if (typeof ResizeObserver === 'function') {
+      var observer = new ResizeObserver(function () {
+        lastKnownGridWidth = -1;
+        lastKnownItemCount = -1;
+        applyResponsiveGridLayout();
+        updateCompactUpdateButton();
       });
-    });
+      observer.observe(document.body);
+      observer.observe(els.scriptGrid);
+    } else {
+      setInterval(function () {
+        applyResponsiveGridLayout();
+        updateCompactUpdateButton();
+      }, 200);
+    }
+  }
 
-    els.showLogToggle.addEventListener('change', function () {
-      state.showLog = !!els.showLogToggle.checked;
-      applyLogVisibility();
-      safeEval('$._cdt.saveShowLog(' + (state.showLog ? 'true' : 'false') + ')', function () {});
-    });
+  function updateCompactUpdateButton() {
+    var updateBtnLabel = els.scriptGrid.querySelector('.update-btn-label');
+    if (!updateBtnLabel) return;
+    var columns = getResponsiveColumnCount(els.scriptGrid.querySelectorAll('.script-btn').length);
+    updateBtnLabel.textContent = columns <= 1 ? '!' : 'New version found. Please update';
   }
 
   function initializeFlyoutMenu() {
     window.csInterface.setFlyoutMenu('<Menu><MenuItem Id="showSettings" Label="Settings" Enabled="true" Checked="false"/></Menu>');
     window.csInterface.onFlyoutClick(function (menuId) {
       if (menuId === 'showSettings') {
-        switchScreen(SCREEN_IDS.SETTINGS);
+        openSettingsDialog();
       }
     });
   }
@@ -382,5 +436,7 @@
   wireControls();
   initializeFlyoutMenu();
   switchScreen(SCREEN_IDS.MAIN);
-  loadState();
+  loadState(function () {
+    updateCompactUpdateButton();
+  });
 })();

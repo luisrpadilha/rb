@@ -65,7 +65,9 @@ input[type='text'] {
 
 .script-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--tile-size), 1fr));
+  width: 100%;
+  grid-template-columns: repeat(1, var(--tile-size));
+  justify-content: flex-start;
   justify-items: center;
   gap: 8px;
 }
