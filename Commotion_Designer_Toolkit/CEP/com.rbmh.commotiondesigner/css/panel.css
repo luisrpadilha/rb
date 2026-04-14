@@ -110,6 +110,8 @@ input[type='text'] {
 
 .script-btn:hover .script-icon { background: #4f9ee6; }
 .script-btn.is-active .script-icon { background: #db4b4b; }
+.script-btn[data-id="__update__"] .script-icon { background: #db4b4b; }
+.script-btn[data-id="__update__"]:hover .script-icon { background: #4f9ee6; }
 .script-btn span { width: 100%; text-align: center; font-size: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .bottom-controls { border-top: 1px solid var(--ae-border); background: #2a2a2a; }
