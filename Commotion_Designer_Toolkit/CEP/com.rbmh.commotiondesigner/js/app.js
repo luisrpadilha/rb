@@ -462,10 +462,6 @@
             setStatus('Update required. Only Settings is available until update is complete.');
             return;
           }
-          if (scriptItem.id === 'RBColor') {
-            openColorPaletteScreen();
-            return;
-          }
           runScript(scriptItem, btn);
         });
 
