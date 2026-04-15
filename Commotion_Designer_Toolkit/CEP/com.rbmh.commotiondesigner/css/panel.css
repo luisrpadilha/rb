@@ -175,6 +175,13 @@ input[type='text'] {
 
 .icon-btn:hover { color: #4f9ee6; }
 .palette-back-inline { margin-right: 0; }
+.palette-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 8px;
+  min-height: 24px;
+}
 
 .palette-list {
   display: flex;

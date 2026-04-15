@@ -21,7 +21,8 @@
     scriptGrid: document.getElementById('scriptGrid'),
     colorPaletteScreen: document.getElementById('colorPaletteScreen'),
     paletteList: document.getElementById('paletteList'),
-    paletteBackBtn: document.getElementById('paletteBackBtn')
+    paletteBackBtn: document.getElementById('paletteBackBtn'),
+    paletteAddBtn: document.getElementById('paletteAddBtn')
   };
 
   var SCREEN_IDS = {
@@ -643,7 +644,6 @@
 
   function renderPalettes() {
     els.paletteList.innerHTML = '';
-    els.paletteList.appendChild(els.paletteBackBtn);
     for (var i = 0; i < state.palettes.length; i += 1) {
       els.paletteList.appendChild(renderPaletteCard(state.palettes[i]));
     }
@@ -933,6 +933,7 @@
       switchScreen(SCREEN_IDS.MAIN);
       setStatus('Returned to main panel.');
     });
+    els.paletteAddBtn.addEventListener('click', openNewPaletteDialog);
 
     window.addEventListener('resize', applyResponsiveGridLayout);
 
