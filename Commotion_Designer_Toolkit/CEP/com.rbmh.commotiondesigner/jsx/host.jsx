@@ -431,18 +431,187 @@
   };
 
   var RB_COLOR_GLOBAL_PATH = 'G:/04_Library/16_scripts/Custom_Scripts/AFX_EXPRESSIONS/RB_Commotion_Designer_Toolkit/scripts/RBColor';
+  var RB_COLOR_GLOBAL_ASE = RB_COLOR_GLOBAL_PATH + '/redbull.ase';
   var RB_COLOR_LOCAL_FOLDER_KEY = 'rbColorLocalFolder';
+  var LEGACY_HIDDEN = { 'color palette': true, 'standard': true, 'standard 2': true };
   var DEFAULT_RB_PALETTE = {
-    id: 'rb_redbull',
+    id: 'redbull.ase',
     name: 'Red Bull',
     readOnly: true,
+    filePath: RB_COLOR_GLOBAL_ASE,
     colors: [
-      { name: 'RED', r: 15, g: 0, b: 105 },
+      { name: 'RED', r: 210, g: 0, b: 60 },
       { name: 'BLUE', r: 15, g: 0, b: 105 },
       { name: 'YELLOW', r: 255, g: 204, b: 0 },
       { name: 'GREY', r: 218, g: 218, b: 218 }
     ]
   };
+
+  function clamp255(value) {
+    var n = Number(value);
+    if (!isFinite(n)) n = 0;
+    if (n < 0) n = 0;
+    if (n > 255) n = 255;
+    return Math.round(n);
+  }
+
+  function sanitizeName(name) {
+    var value = String(name || '').replace(/[\/:*?"<>|]/g, '_').replace(/^\s+|\s+$/g, '').replace(/\s+/g, ' ');
+    return value || 'Palette';
+  }
+
+  function u16be(n) {
+    return String.fromCharCode((n >> 8) & 255) + String.fromCharCode(n & 255);
+  }
+
+  function u32be(n) {
+    return String.fromCharCode((n >> 24) & 255) + String.fromCharCode((n >> 16) & 255) + String.fromCharCode((n >> 8) & 255) + String.fromCharCode(n & 255);
+  }
+
+  function readU16(raw, offset) {
+    return (raw.charCodeAt(offset) << 8) | raw.charCodeAt(offset + 1);
+  }
+
+  function readU32(raw, offset) {
+    return (raw.charCodeAt(offset) << 24) | (raw.charCodeAt(offset + 1) << 16) | (raw.charCodeAt(offset + 2) << 8) | raw.charCodeAt(offset + 3);
+  }
+
+  function floatToBinary32BE(value) {
+    var sign = value < 0 ? 1 : 0;
+    var abs = Math.abs(value);
+    var exponent;
+    var mantissa;
+
+    if (abs === 0) {
+      exponent = 0;
+      mantissa = 0;
+    } else {
+      exponent = Math.floor(Math.log(abs) / Math.LN2);
+      var normalized = abs / Math.pow(2, exponent);
+      exponent += 127;
+      if (exponent <= 0) {
+        exponent = 0;
+        mantissa = Math.round(abs / Math.pow(2, -126 - 23));
+      } else {
+        mantissa = Math.round((normalized - 1) * Math.pow(2, 23));
+      }
+    }
+
+    var bits = (sign << 31) | ((exponent & 255) << 23) | (mantissa & 0x7fffff);
+    return u32be(bits >>> 0);
+  }
+
+  function binary32ToFloatBE(raw, offset) {
+    var bits = readU32(raw, offset);
+    var sign = (bits >>> 31) ? -1 : 1;
+    var exponent = (bits >>> 23) & 255;
+    var mantissa = bits & 0x7fffff;
+
+    if (exponent === 0) {
+      if (mantissa === 0) return 0;
+      return sign * (mantissa / Math.pow(2, 23)) * Math.pow(2, -126);
+    }
+
+    if (exponent === 255) return 0;
+    return sign * (1 + mantissa / Math.pow(2, 23)) * Math.pow(2, exponent - 127);
+  }
+
+  function normalizeColor(color, fallbackName) {
+    var c = color || {};
+    return {
+      name: c.name || fallbackName || 'Color',
+      r: clamp255(c.r),
+      g: clamp255(c.g),
+      b: clamp255(c.b)
+    };
+  }
+
+  function encodeAse(colors) {
+    var blocks = '';
+    for (var i = 0; i < colors.length; i += 1) {
+      var color = normalizeColor(colors[i], 'Color ' + (i + 1));
+      var swatchName = String(color.name || ('Color ' + (i + 1)));
+      var charCount = swatchName.length + 1;
+      var nameBytes = u16be(charCount);
+      var j;
+      for (j = 0; j < swatchName.length; j += 1) {
+        nameBytes += u16be(swatchName.charCodeAt(j));
+      }
+      nameBytes += u16be(0);
+
+      var rgbPart = 'RGB ' +
+        floatToBinary32BE(color.r / 255) +
+        floatToBinary32BE(color.g / 255) +
+        floatToBinary32BE(color.b / 255) +
+        u16be(0);
+
+      var blockBody = nameBytes + rgbPart;
+      blocks += u16be(1) + u32be(blockBody.length) + blockBody;
+    }
+
+    return 'ASEF' + u16be(1) + u16be(0) + u32be(colors.length) + blocks;
+  }
+
+  function decodeAse(file) {
+    var colors = [];
+    if (!file || !file.exists) return colors;
+
+    try {
+      file.encoding = 'BINARY';
+      if (!file.open('r')) return colors;
+      var raw = file.read();
+      file.close();
+
+      if (raw.substr(0, 4) !== 'ASEF') return colors;
+      var blockCount = readU32(raw, 8);
+      var offset = 12;
+
+      var i;
+      for (i = 0; i < blockCount && offset + 6 <= raw.length; i += 1) {
+        var blockType = readU16(raw, offset); offset += 2;
+        var blockLen = readU32(raw, offset); offset += 4;
+        if (offset + blockLen > raw.length) break;
+        if (blockType !== 1) { offset += blockLen; continue; }
+
+        var nameLen = readU16(raw, offset); offset += 2;
+        var name = '';
+        var n;
+        for (n = 0; n < nameLen - 1; n += 1) {
+          name += String.fromCharCode(readU16(raw, offset));
+          offset += 2;
+        }
+        offset += 2;
+
+        var model = raw.substr(offset, 4); offset += 4;
+        if (model === 'RGB ') {
+          var r = clamp255(Math.round(binary32ToFloatBE(raw, offset) * 255)); offset += 4;
+          var g = clamp255(Math.round(binary32ToFloatBE(raw, offset) * 255)); offset += 4;
+          var b = clamp255(Math.round(binary32ToFloatBE(raw, offset) * 255)); offset += 4;
+          colors.push({ name: name || ('Color ' + (colors.length + 1)), r: r, g: g, b: b });
+        }
+
+        offset += 2;
+      }
+
+      return colors;
+    } catch (e) {
+      try { file.close(); } catch (ignore) {}
+      return [];
+    }
+  }
+
+  function saveAseFile(file, colors) {
+    try {
+      file.encoding = 'BINARY';
+      if (!file.open('w')) return false;
+      file.write(encodeAse(colors));
+      file.close();
+      return true;
+    } catch (e) {
+      try { file.close(); } catch (ignore2) {}
+      return false;
+    }
+  }
 
   function getRBColorLocalFolderPath() {
     var current = readSetting(RB_COLOR_LOCAL_FOLDER_KEY, '');
@@ -450,8 +619,8 @@
 
     var appData = $.getenv('APPDATA');
     var fallback = appData
-      ? sanitizePath(appData) + '/RB_Commotion_Designer_Toolkit/local_palettes'
-      : '~/RB_Commotion_Designer_Toolkit/local_palettes';
+      ? sanitizePath(appData) + '/RB_Commotion_Designer_Toolkit/local_palettes_ase'
+      : '~/RB_Commotion_Designer_Toolkit/local_palettes_ase';
     writeSetting(RB_COLOR_LOCAL_FOLDER_KEY, fallback);
     return fallback;
   }
@@ -462,80 +631,56 @@
     return folder;
   }
 
-  function sanitizePalette(palette, readOnlyFlag) {
-    var result = {
-      id: String((palette && palette.id) || ('palette_' + Date.now())),
-      name: String((palette && palette.name) || 'Custom'),
-      readOnly: !!readOnlyFlag,
-      colors: []
+  function loadGlobalPalette() {
+    var file = new File(RB_COLOR_GLOBAL_ASE);
+    var palette = {
+      id: DEFAULT_RB_PALETTE.id,
+      name: DEFAULT_RB_PALETTE.name,
+      readOnly: true,
+      filePath: RB_COLOR_GLOBAL_ASE,
+      colors: DEFAULT_RB_PALETTE.colors
     };
-    var colors = palette && palette.colors ? palette.colors : [];
-    for (var i = 0; i < colors.length; i += 1) {
-      var c = colors[i] || {};
-      result.colors.push({
-        name: String(c.name || ('Color ' + (i + 1))),
-        r: Math.max(0, Math.min(255, Number(c.r || 0))),
-        g: Math.max(0, Math.min(255, Number(c.g || 0))),
-        b: Math.max(0, Math.min(255, Number(c.b || 0)))
+
+    ensurePaletteFolder(RB_COLOR_GLOBAL_PATH);
+    if (!file.exists) {
+      saveAseFile(file, DEFAULT_RB_PALETTE.colors);
+      return palette;
+    }
+
+    var loaded = decodeAse(file);
+    if (loaded.length) palette.colors = loaded;
+    return palette;
+  }
+
+  function loadLocalPalettes() {
+    var path = getRBColorLocalFolderPath();
+    var folder = ensurePaletteFolder(path);
+    var files = folder.getFiles(function (entry) { return entry instanceof File && /\.ase$/i.test(entry.name); });
+    var palettes = [];
+
+    var i;
+    for (i = 0; i < files.length; i += 1) {
+      var name = files[i].name.replace(/\.ase$/i, '');
+      if (LEGACY_HIDDEN[name.toLowerCase()]) continue;
+      var colors = decodeAse(files[i]);
+      if (!colors.length) continue;
+      palettes.push({
+        id: files[i].name,
+        name: name,
+        readOnly: false,
+        filePath: sanitizePath(files[i].fsName),
+        colors: colors
       });
     }
-    return result;
-  }
 
-  function readPaletteFile(file, readOnlyFlag) {
-    try {
-      file.encoding = 'UTF-8';
-      if (!file.open('r')) return null;
-      var raw = file.read();
-      file.close();
-      var parsed = parseJSON(raw, null);
-      if (!parsed) return null;
-      if (!parsed.id) parsed.id = file.displayName.replace(/\.json$/i, '');
-      return sanitizePalette(parsed, readOnlyFlag);
-    } catch (e) {
-      try { file.close(); } catch (ignore) {}
-      return null;
-    }
-  }
-
-  function writePaletteFile(folderPath, palette) {
-    var safe = sanitizePalette(palette, false);
-    var file = new File(folderPath + '/' + safe.id + '.json');
-    file.encoding = 'UTF-8';
-    if (!file.open('w')) return false;
-    file.write(stringifyJSON(safe));
-    file.close();
-    return true;
-  }
-
-  function listPaletteFiles(folderPath, readOnlyFlag) {
-    var folder = new Folder(folderPath);
-    if (!folder.exists) return [];
-    var files = folder.getFiles(function (entry) { return entry instanceof File && /\.json$/i.test(entry.name); });
-    var palettes = [];
-    for (var i = 0; i < files.length; i += 1) {
-      var palette = readPaletteFile(files[i], readOnlyFlag);
-      if (palette) palettes.push(palette);
-    }
+    palettes.sort(function (a, b) { return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1; });
     return palettes;
   }
 
   $._cdt.getColorPalettes = function () {
     try {
-      var palettes = [];
-      var globalFolder = new Folder(RB_COLOR_GLOBAL_PATH);
-      if (globalFolder.exists) {
-        palettes = palettes.concat(listPaletteFiles(RB_COLOR_GLOBAL_PATH, true));
-      }
-
-      if (!palettes.length) {
-        palettes.push(sanitizePalette(DEFAULT_RB_PALETTE, true));
-      }
-
-      var localPath = getRBColorLocalFolderPath();
-      ensurePaletteFolder(localPath);
-      palettes = palettes.concat(listPaletteFiles(localPath, false));
-      return toJSON({ ok: true, palettes: palettes, localPath: localPath });
+      var palettes = [loadGlobalPalette()].concat(loadLocalPalettes());
+      return toJSON({ ok: true, palettes: palettes, localPath: getRBColorLocalFolderPath() });
     } catch (e) {
       return toJSON({ ok: false, palettes: [], message: String(e) });
     }
@@ -544,11 +689,25 @@
   $._cdt.saveLocalPalette = function (paletteJSON) {
     try {
       var parsed = parseJSON(paletteJSON || '{}', {});
+      var paletteName = sanitizeName(parsed.name || 'Palette');
+      var colors = parsed.colors || [];
+      if (!colors.length) return toJSON({ ok: false, message: 'Palette needs at least one color.' });
+
       var localPath = getRBColorLocalFolderPath();
       ensurePaletteFolder(localPath);
-      if (!parsed.id) parsed.id = 'palette_' + String(new Date().getTime());
-      var ok = writePaletteFile(localPath, parsed);
-      return toJSON({ ok: ok, id: parsed.id, message: ok ? 'Palette saved.' : 'Could not write file.' });
+
+      var previousId = String(parsed.id || '');
+      var nextName = paletteName + '.ase';
+      var file = new File(localPath + '/' + nextName);
+      var saved = saveAseFile(file, colors);
+      if (!saved) return toJSON({ ok: false, message: 'Could not write ASE file.' });
+
+      if (previousId && previousId !== nextName) {
+        var oldFile = new File(localPath + '/' + previousId);
+        if (oldFile.exists) oldFile.remove();
+      }
+
+      return toJSON({ ok: true, id: nextName, message: 'Palette saved.' });
     } catch (e) {
       return toJSON({ ok: false, message: String(e) });
     }
@@ -557,7 +716,7 @@
   $._cdt.deleteLocalPalette = function (paletteId) {
     try {
       var localPath = getRBColorLocalFolderPath();
-      var file = new File(localPath + '/' + String(paletteId || '') + '.json');
+      var file = new File(localPath + '/' + String(paletteId || ''));
       if (!file.exists) return toJSON({ ok: false, message: 'Palette file not found.' });
       var removed = file.remove();
       return toJSON({ ok: removed, message: removed ? 'Deleted.' : 'Could not delete file.' });
@@ -566,125 +725,151 @@
     }
   };
 
+  $._cdt.copyToClipboard = function (text) {
+    try {
+      var payload = String(text || '').replace(/"/g, '\\"');
+      system.callSystem('cmd.exe /c echo ' + payload + '| clip');
+      return toJSON({ ok: true });
+    } catch (e) {
+      return toJSON({ ok: false, message: String(e) });
+    }
+  };
+
+  $._cdt.pickColor = function (colorJSON) {
+    try {
+      var parsed = parseJSON(colorJSON || '{}', {});
+      var start = (clamp255(parsed.r) << 16) | (clamp255(parsed.g) << 8) | clamp255(parsed.b);
+      var picked = $.colorPicker(start);
+      if (picked < 0) return toJSON({ ok: false, cancelled: true });
+      return toJSON({
+        ok: true,
+        color: {
+          name: parsed.name || 'Color',
+          r: (picked >> 16) & 255,
+          g: (picked >> 8) & 255,
+          b: picked & 255
+        }
+      });
+    } catch (e) {
+      return toJSON({ ok: false, message: String(e) });
+    }
+  };
+
   $._cdt.openColorPaletteDialog = function (paletteJSON, optionsJSON) {
     try {
-      var palette = sanitizePalette(parseJSON(paletteJSON || '{}', { colors: [] }), false);
+      var palette = parseJSON(paletteJSON || '{}', {});
+      palette.name = sanitizeName(palette.name || 'New Palette');
+      palette.colors = palette.colors || [];
+
       var options = parseJSON(optionsJSON || '{}', {});
       var allowDelete = !!options.allowDelete;
       var allowImport = !!options.allowImport;
       var allowExport = !!options.allowExport;
-      var mode = options.mode || 'edit';
+      var mode = options.mode || 'create';
 
-      var dlg = new Window('dialog', mode === 'create' ? 'New Color Palette' : 'Edit Color Palette');
+      var dlg = new Window('dialog', mode === 'create' ? 'Add Palette' : 'Edit Palette');
       dlg.orientation = 'column';
       dlg.alignChildren = ['fill', 'top'];
       dlg.spacing = 8;
       dlg.margins = 12;
 
       dlg.add('statictext', undefined, 'Palette name:');
-      var nameInput = dlg.add('edittext', undefined, palette.name || '');
+      var nameInput = dlg.add('edittext', undefined, palette.name);
       nameInput.characters = 35;
 
       var list = dlg.add('listbox', undefined, [], { multiselect: false });
-      list.preferredSize = [360, 130];
+      list.preferredSize = [420, 180];
 
       function refreshList() {
         list.removeAll();
-        for (var i = 0; i < palette.colors.length; i += 1) {
-          var c = palette.colors[i];
-          list.add('item', c.name + ' (' + c.r + ',' + c.g + ',' + c.b + ')');
+        var i;
+        for (i = 0; i < palette.colors.length; i += 1) {
+          var c = normalizeColor(palette.colors[i], 'Color ' + (i + 1));
+          list.add('item', c.name + ' (#' + ((c.r << 16) | (c.g << 8) | c.b).toString(16).toUpperCase() + ')');
         }
-        if (palette.colors.length) list.selection = 0;
+        if (list.items.length) list.selection = list.items[0];
       }
 
-      var colorRow = dlg.add('group');
-      colorRow.orientation = 'row';
-      var colorName = colorRow.add('edittext', undefined, 'Color');
-      colorName.characters = 14;
-      var rInput = colorRow.add('edittext', undefined, '255'); rInput.characters = 4;
-      var gInput = colorRow.add('edittext', undefined, '255'); gInput.characters = 4;
-      var bInput = colorRow.add('edittext', undefined, '255'); bInput.characters = 4;
+      function pickColor(initial) {
+        var picked = $.colorPicker(initial);
+        if (picked < 0) return null;
+        return { r: (picked >> 16) & 255, g: (picked >> 8) & 255, b: picked & 255 };
+      }
 
-      var actionRow = dlg.add('group');
-      actionRow.orientation = 'row';
-      var addBtn = actionRow.add('button', undefined, 'Add Color');
-      var updateBtn = actionRow.add('button', undefined, 'Update');
-      var removeBtn = actionRow.add('button', undefined, 'Delete Color');
+      var buttons = dlg.add('group');
+      buttons.orientation = 'row';
+      var addColorBtn = buttons.add('button', undefined, 'Add Color');
+      var editColorBtn = buttons.add('button', undefined, 'Edit Color');
+      var deleteColorBtn = buttons.add('button', undefined, 'Delete Color');
 
-      addBtn.onClick = function () {
+      addColorBtn.onClick = function () {
+        var picked = pickColor();
+        if (!picked) return;
         palette.colors.push({
-          name: colorName.text || 'Color',
-          r: Math.max(0, Math.min(255, Number(rInput.text || 0))),
-          g: Math.max(0, Math.min(255, Number(gInput.text || 0))),
-          b: Math.max(0, Math.min(255, Number(bInput.text || 0)))
+          name: 'Color ' + (palette.colors.length + 1),
+          r: picked.r,
+          g: picked.g,
+          b: picked.b
         });
         refreshList();
       };
 
-      updateBtn.onClick = function () {
+      editColorBtn.onClick = function () {
         if (!list.selection) return;
         var idx = list.selection.index;
-        palette.colors[idx] = {
-          name: colorName.text || 'Color',
-          r: Math.max(0, Math.min(255, Number(rInput.text || 0))),
-          g: Math.max(0, Math.min(255, Number(gInput.text || 0))),
-          b: Math.max(0, Math.min(255, Number(bInput.text || 0)))
-        };
+        var current = normalizeColor(palette.colors[idx], 'Color ' + (idx + 1));
+        var picked = pickColor((current.r << 16) | (current.g << 8) | current.b);
+        if (!picked) return;
+        palette.colors[idx] = { name: current.name, r: picked.r, g: picked.g, b: picked.b };
         refreshList();
       };
 
-      removeBtn.onClick = function () {
+      deleteColorBtn.onClick = function () {
         if (!list.selection) return;
         palette.colors.splice(list.selection.index, 1);
         refreshList();
       };
 
-      list.onChange = function () {
-        if (!list.selection) return;
-        var current = palette.colors[list.selection.index];
-        colorName.text = current.name;
-        rInput.text = String(current.r);
-        gInput.text = String(current.g);
-        bInput.text = String(current.b);
-      };
-
-      var topButtons = dlg.add('group');
-      topButtons.orientation = 'row';
+      var ioRow = dlg.add('group');
+      ioRow.orientation = 'row';
       if (allowImport) {
-        var importBtn = topButtons.add('button', undefined, 'Load JSON');
+        var importBtn = ioRow.add('button', undefined, 'Import .ase');
         importBtn.onClick = function () {
-          var file = File.openDialog('Select palette JSON', '*.json');
+          var file = File.openDialog('Import ASE palette', '*.ase');
           if (!file) return;
-          var imported = readPaletteFile(file, false);
-          if (!imported) {
-            alert('Could not parse JSON palette.');
+          var imported = decodeAse(file);
+          if (!imported.length) {
+            alert('Could not read ASE palette.');
             return;
           }
-          palette = sanitizePalette(imported, false);
+          palette.colors = imported;
+          palette.name = sanitizeName(file.displayName.replace(/\.ase$/i, ''));
           nameInput.text = palette.name;
           refreshList();
         };
       }
       if (allowExport) {
-        var exportBtn = topButtons.add('button', undefined, 'Export JSON');
+        var exportBtn = ioRow.add('button', undefined, 'Export .ase');
         exportBtn.onClick = function () {
-          var target = File.saveDialog('Export palette as JSON', '*.json');
-          if (!target) return;
-          target.encoding = 'UTF-8';
-          if (!target.open('w')) return;
-          target.write(stringifyJSON(sanitizePalette(palette, false)));
-          target.close();
-          alert('Palette exported.');
+          if (!palette.colors.length) {
+            alert('Add at least one color before exporting.');
+            return;
+          }
+          var file = File.saveDialog('Export ASE palette', '*.ase');
+          if (!file) return;
+          if (!/\.ase$/i.test(file.name)) file = new File(file.fsName + '.ase');
+          if (!saveAseFile(file, palette.colors)) alert('Could not export ASE file.');
         };
       }
 
-      var buttons = dlg.add('group');
-      buttons.orientation = 'row';
-      buttons.alignment = ['right', 'center'];
+      var bottom = dlg.add('group');
+      bottom.orientation = 'row';
+      bottom.alignment = ['right', 'center'];
+
       var deleteBtn = null;
-      if (allowDelete) deleteBtn = buttons.add('button', undefined, 'Delete Palette');
-      buttons.add('button', undefined, 'Cancel', { name: 'cancel' });
-      var saveBtn = buttons.add('button', undefined, 'Save', { name: 'ok' });
+      if (allowDelete) deleteBtn = bottom.add('button', undefined, 'Delete Palette');
+      bottom.add('button', undefined, 'Cancel', { name: 'cancel' });
+      var saveBtn = bottom.add('button', undefined, 'Save', { name: 'ok' });
 
       var response = { ok: true, action: 'cancel' };
       if (deleteBtn) {
@@ -694,15 +879,26 @@
           dlg.close(1);
         };
       }
+
       saveBtn.onClick = function () {
-        palette.name = nameInput.text || 'Custom';
+        if (!palette.colors.length) {
+          alert('Please add at least one color.');
+          return;
+        }
+        palette.name = sanitizeName(nameInput.text || 'Palette');
         response.action = 'save';
-        response.palette = sanitizePalette(palette, false);
+        response.palette = {
+          id: palette.id || '',
+          name: palette.name,
+          readOnly: false,
+          colors: palette.colors
+        };
         dlg.close(1);
       };
 
       refreshList();
-      dlg.show();
+      var shown = dlg.show();
+      if (shown !== 1) return toJSON({ ok: true, action: 'cancel' });
       return toJSON(response);
     } catch (e) {
       return toJSON({ ok: false, action: 'cancel', message: String(e) });
@@ -728,7 +924,7 @@
       var folderInput = folderGroup.add('edittext', undefined, currentFolder);
       folderInput.characters = 55;
 
-      var browseBtn = folderGroup.add('button', undefined, 'Browse…');
+      var browseBtn = folderGroup.add('button', undefined, 'Browse...');
       browseBtn.onClick = function () {
         var picked = Folder.selectDialog('Select Commotion Designer Toolkit scripts folder');
         if (picked) folderInput.text = sanitizePath(picked.fsName);

@@ -259,6 +259,23 @@
     return 'rgb(' + Math.round(r) + ',' + Math.round(g) + ',' + Math.round(b) + ')';
   }
 
+  function rgbToHex(color) {
+    function p(v) {
+      var s = Math.max(0, Math.min(255, Number(v || 0))).toString(16).toUpperCase();
+      return s.length < 2 ? '0' + s : s;
+    }
+    return '#' + p(color.r) + p(color.g) + p(color.b);
+  }
+
+  function showTransientStatus(message) {
+    setStatus(message);
+    setTimeout(function () {
+      if (els.status.textContent === message) {
+        els.status.textContent = 'Ready';
+      }
+    }, 1300);
+  }
+
   function renderPaletteCard(palette) {
     var card = document.createElement('div');
     card.className = 'palette-card';
@@ -270,8 +287,53 @@
     for (var i = 0; i < colors.length; i += 1) {
       var swatch = document.createElement('div');
       swatch.className = 'swatch';
-      swatch.title = colors[i].name + ' (' + colors[i].r + ',' + colors[i].g + ',' + colors[i].b + ')';
+      swatch.title = 'Click: copy HEX | Double-click: edit color\n' + colors[i].name + ' (' + colors[i].r + ',' + colors[i].g + ',' + colors[i].b + ')';
       swatch.style.background = colorToCSS(colors[i]);
+      (function (colorIndex) {
+        var clickTimer = null;
+        swatch.addEventListener('click', function () {
+          if (clickTimer) return;
+          clickTimer = window.setTimeout(function () {
+            clickTimer = null;
+            var hex = rgbToHex(palette.colors[colorIndex]);
+            safeEval("$._cdt.copyToClipboard('" + hex.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "')", function (raw) {
+              var res = parseJSON(raw, { ok: false });
+              if (res.ok) {
+                showTransientStatus(hex + ' copied to clipboard');
+              } else {
+                setStatus('Could not copy ' + hex);
+              }
+            });
+          }, 220);
+        });
+
+        swatch.addEventListener('dblclick', function () {
+          if (clickTimer) {
+            window.clearTimeout(clickTimer);
+            clickTimer = null;
+          }
+
+          if (palette.readOnly) {
+            showTransientStatus('Global Red Bull palette is locked');
+            return;
+          }
+
+          var current = palette.colors[colorIndex];
+          var currentJSON = JSON.stringify(current || {}).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+          safeEval("$._cdt.pickColor('" + currentJSON + "')", function (pickRaw) {
+            var pickRes = parseJSON(pickRaw, { ok: false });
+            if (!pickRes.ok || !pickRes.color) return;
+            palette.colors[colorIndex] = pickRes.color;
+
+            var paletteJSON = JSON.stringify(palette).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+            safeEval("$._cdt.saveLocalPalette('" + paletteJSON + "')", function (saveRaw) {
+              var saveRes = parseJSON(saveRaw, { ok: false, message: 'Unable to save palette.' });
+              setStatus(saveRes.ok ? 'Palette updated.' : 'Error: ' + saveRes.message);
+              loadPalettes();
+            });
+          });
+        });
+      })(i);
       swatches.appendChild(swatch);
     }
     card.appendChild(swatches);
@@ -288,7 +350,7 @@
       editBtn.type = 'button';
       editBtn.className = 'palette-edit';
       editBtn.title = 'Edit palette';
-      editBtn.textContent = '✎';
+      editBtn.textContent = 'Edit';
       editBtn.addEventListener('click', function () {
         openPaletteEditor(palette);
       });
