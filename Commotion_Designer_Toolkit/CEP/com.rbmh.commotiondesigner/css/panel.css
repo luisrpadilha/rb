@@ -164,7 +164,7 @@ input[type='text'] {
 .icon-btn {
   width: 24px;
   min-width: 24px;
-  height: 52px;
+  height: 48px;
   padding: 0;
   background: transparent;
   border: none;
@@ -174,7 +174,7 @@ input[type='text'] {
 }
 
 .icon-btn:hover { color: #4f9ee6; }
-.palette-back-inline { margin-right: 2px; }
+.palette-back-inline { margin-right: 0; }
 
 .palette-list {
   display: flex;
@@ -187,8 +187,9 @@ input[type='text'] {
   width: 122px;
   background: #060606;
   border: 1px solid #1f1f1f;
-  border-radius: 2px;
-  padding: 4px 4px 2px;
+  border-radius: 10px;
+  padding: 2px 2px 2px;
+  margin-top: 0;
 }
 
 .palette-swatches {
@@ -202,18 +203,16 @@ input[type='text'] {
   width: 24px;
   height: 24px;
   border-radius: 8px;
-  border: 2px solid #d8d8d8;
+  border: 1px solid #d8d8d8;
 }
 
 .palette-footer {
-  margin-top: 5px;
-  background: #2f2f2f;
-  border-radius: 2px;
-  height: 16px;
+  margin-top: 2px;
+  height: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 4px;
+  padding: 0;
 }
 
 .palette-name {
@@ -245,12 +244,12 @@ input[type='text'] {
 }
 
 .palette-add {
-  width: 36px;
-  height: 52px;
+  width: 24px;
+  height: 24px;
   border: none;
   background: transparent;
   color: #d8d8d8;
-  font-size: 44px;
+  font-size: 24px;
   line-height: 1;
   padding: 0;
 }
