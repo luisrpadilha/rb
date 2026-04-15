@@ -161,21 +161,10 @@ input[type='text'] {
   padding: 10px;
 }
 
-.palette-topbar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.palette-title {
-  font-size: 14px;
-  color: #d8d8d8;
-}
-
 .icon-btn {
+  width: 24px;
   min-width: 24px;
-  height: 24px;
+  height: 52px;
   padding: 0;
   background: transparent;
   border: none;
@@ -185,6 +174,7 @@ input[type='text'] {
 }
 
 .icon-btn:hover { color: #4f9ee6; }
+.palette-back-inline { margin-right: 2px; }
 
 .palette-list {
   display: flex;
@@ -238,16 +228,20 @@ input[type='text'] {
   border: none;
   padding: 0;
   margin: 0;
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   background: transparent;
-  color: #bdbdbd;
-  font-size: 10px;
-  line-height: 1;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  background-color: #bdbdbd;
 }
 
 .palette-edit:hover {
-  color: #4f9ee6;
+  background-color: #4f9ee6;
 }
 
 .palette-add {
@@ -263,4 +257,19 @@ input[type='text'] {
 
 .palette-add:hover {
   color: #4f9ee6;
+}
+
+.copy-toast {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #5d5d5d;
+  background: rgba(24, 24, 24, 0.97);
+  color: #e8e8e8;
+  font-size: 11px;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
