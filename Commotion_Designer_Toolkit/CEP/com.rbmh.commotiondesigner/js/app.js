@@ -524,6 +524,17 @@
             setStatus('Update required. Only Settings is available until update is complete.');
             return;
           }
+          var idLower = String(scriptItem.id || '').toLowerCase();
+          var nameLower = String(scriptItem.name || '').toLowerCase();
+          var isRBColorLauncher =
+            idLower === 'rbcolor' ||
+            nameLower === 'rbcolor' ||
+            nameLower === 'color palette';
+
+          if (isRBColorLauncher) {
+            openColorPaletteScreen();
+            return;
+          }
           runScript(scriptItem, btn);
         });
 
