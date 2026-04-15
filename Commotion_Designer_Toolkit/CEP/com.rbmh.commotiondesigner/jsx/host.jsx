@@ -743,21 +743,23 @@
     }
   };
 
-  function pickColorValue(initialValue) {
-    var fallback = $.colorPicker(typeof initialValue === 'number' ? initialValue : undefined);
-    if (fallback < 0) return null;
-    return fallback;
-  }
-
   function pickColorWithAE(initialValue) {
-    if (!(app && app.project && app.project.activeItem && (app.project.activeItem instanceof CompItem))) return null;
+    if (!(app && app.project)) return null;
 
-    var comp = app.project.activeItem;
+    var comp = null;
+    var createdComp = false;
     var tempLayer = null;
     var colorEffect = null;
     var colorProp = null;
 
     try {
+      if (app.project.activeItem && (app.project.activeItem instanceof CompItem)) {
+        comp = app.project.activeItem;
+      } else {
+        comp = app.project.items.addComp('__CDT_ColorPickerComp__', 8, 8, 1, 1, 24);
+        createdComp = true;
+      }
+
       tempLayer = comp.layers.addSolid([0, 0, 0], '__CDT_ColorPicker__', 8, 8, comp.pixelAspect, comp.duration);
       tempLayer.enabled = false;
       colorEffect = tempLayer.property('ADBE Effect Parade').addProperty('ADBE Color Control');
@@ -774,7 +776,9 @@
 
       tempLayer.selected = true;
       colorProp.selected = true;
-      app.executeCommand(app.findMenuCommandId('Edit Value...'));
+      var editValueCommandId = app.findMenuCommandId('Edit Value...');
+      if (!editValueCommandId || editValueCommandId <= 0) return null;
+      app.executeCommand(editValueCommandId);
 
       var picked = colorProp.value;
       return ((clamp255(picked[0] * 255) << 16) | (clamp255(picked[1] * 255) << 8) | clamp255(picked[2] * 255));
@@ -784,6 +788,9 @@
       try {
         if (tempLayer && tempLayer.isValid) tempLayer.remove();
       } catch (ignoreRemoveError) {}
+      try {
+        if (createdComp && comp && comp.isValid) comp.remove();
+      } catch (ignoreCompError) {}
     }
   }
 
@@ -791,7 +798,7 @@
     var normalized = typeof initialValue === 'number' ? initialValue : 0;
     var aePicked = pickColorWithAE(normalized);
     if (aePicked !== null) return aePicked;
-    return pickColorValue(normalized);
+    return null;
   }
 
   $._cdt.pickColor = function (colorJSON) {
