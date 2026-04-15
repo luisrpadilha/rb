@@ -743,12 +743,63 @@
     }
   };
 
+  function pickColorValue(initialValue) {
+    var fallback = $.colorPicker(typeof initialValue === 'number' ? initialValue : undefined);
+    if (fallback < 0) return null;
+    return fallback;
+  }
+
+  function pickColorWithAE(initialValue) {
+    if (!(app && app.project && app.project.activeItem && (app.project.activeItem instanceof CompItem))) return null;
+
+    var comp = app.project.activeItem;
+    var tempLayer = null;
+    var colorEffect = null;
+    var colorProp = null;
+
+    try {
+      tempLayer = comp.layers.addSolid([0, 0, 0], '__CDT_ColorPicker__', 8, 8, comp.pixelAspect, comp.duration);
+      tempLayer.enabled = false;
+      colorEffect = tempLayer.property('ADBE Effect Parade').addProperty('ADBE Color Control');
+      colorProp = colorEffect.property(1);
+
+      var r = ((initialValue >> 16) & 255) / 255;
+      var g = ((initialValue >> 8) & 255) / 255;
+      var b = (initialValue & 255) / 255;
+      colorProp.setValue([r, g, b]);
+
+      for (var i = 1; i <= comp.numLayers; i += 1) {
+        comp.layer(i).selected = false;
+      }
+
+      tempLayer.selected = true;
+      colorProp.selected = true;
+      app.executeCommand(app.findMenuCommandId('Edit Value...'));
+
+      var picked = colorProp.value;
+      return ((clamp255(picked[0] * 255) << 16) | (clamp255(picked[1] * 255) << 8) | clamp255(picked[2] * 255));
+    } catch (e) {
+      return null;
+    } finally {
+      try {
+        if (tempLayer && tempLayer.isValid) tempLayer.remove();
+      } catch (ignoreRemoveError) {}
+    }
+  }
+
+  function openPreferredColorPicker(initialValue) {
+    var normalized = typeof initialValue === 'number' ? initialValue : 0;
+    var aePicked = pickColorWithAE(normalized);
+    if (aePicked !== null) return aePicked;
+    return pickColorValue(normalized);
+  }
+
   $._cdt.pickColor = function (colorJSON) {
     try {
       var parsed = parseJSON(colorJSON || '{}', {});
       var start = (clamp255(parsed.r) << 16) | (clamp255(parsed.g) << 8) | clamp255(parsed.b);
-      var picked = $.colorPicker(start);
-      if (picked < 0) return toJSON({ ok: false, cancelled: true });
+      var picked = openPreferredColorPicker(start);
+      if (picked === null || picked < 0) return toJSON({ ok: false, cancelled: true });
       return toJSON({
         ok: true,
         color: {
@@ -799,8 +850,8 @@
       }
 
       function pickColor(initial) {
-        var picked = $.colorPicker(initial);
-        if (picked < 0) return null;
+        var picked = openPreferredColorPicker(initial);
+        if (picked === null || picked < 0) return null;
         return { r: (picked >> 16) & 255, g: (picked >> 8) & 255, b: picked & 255 };
       }
 

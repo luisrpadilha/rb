@@ -276,6 +276,27 @@
     }, 1300);
   }
 
+  var activeCopyToast = null;
+
+  function showCopyToastAt(x, y) {
+    if (activeCopyToast && activeCopyToast.parentNode) {
+      activeCopyToast.parentNode.removeChild(activeCopyToast);
+    }
+
+    var toast = document.createElement('div');
+    toast.className = 'copy-toast';
+    toast.textContent = 'Copied to clipboard';
+    toast.style.left = Math.max(8, Math.round(x + 14)) + 'px';
+    toast.style.top = Math.max(8, Math.round(y - 10)) + 'px';
+    document.body.appendChild(toast);
+    activeCopyToast = toast;
+
+    window.setTimeout(function () {
+      if (toast.parentNode) toast.parentNode.removeChild(toast);
+      if (activeCopyToast === toast) activeCopyToast = null;
+    }, 1000);
+  }
+
   function renderPaletteCard(palette) {
     var card = document.createElement('div');
     card.className = 'palette-card';
@@ -290,31 +311,21 @@
       swatch.title = 'Click: copy HEX | Double-click: edit color\n' + colors[i].name + ' (' + colors[i].r + ',' + colors[i].g + ',' + colors[i].b + ')';
       swatch.style.background = colorToCSS(colors[i]);
       (function (colorIndex) {
-        var clickTimer = null;
-        swatch.addEventListener('click', function () {
-          if (clickTimer) return;
-          clickTimer = window.setTimeout(function () {
-            clickTimer = null;
-            var hex = rgbToHex(palette.colors[colorIndex]);
-            safeEval("$._cdt.copyToClipboard('" + hex.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "')", function (raw) {
-              var res = parseJSON(raw, { ok: false });
-              if (res.ok) {
-                showTransientStatus(hex + ' copied to clipboard');
-              } else {
-                setStatus('Could not copy ' + hex);
-              }
-            });
-          }, 220);
+        swatch.addEventListener('click', function (event) {
+          var hex = rgbToHex(palette.colors[colorIndex]);
+          safeEval("$._cdt.copyToClipboard('" + hex.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "')", function (raw) {
+            var res = parseJSON(raw, { ok: false });
+            if (res.ok) {
+              showCopyToastAt(event.clientX, event.clientY);
+              showTransientStatus(hex + ' copied to clipboard');
+            } else {
+              setStatus('Could not copy ' + hex);
+            }
+          });
         });
 
         swatch.addEventListener('dblclick', function () {
-          if (clickTimer) {
-            window.clearTimeout(clickTimer);
-            clickTimer = null;
-          }
-
           if (palette.readOnly) {
-            showTransientStatus('Global Red Bull palette is locked');
             return;
           }
 
@@ -350,7 +361,8 @@
       editBtn.type = 'button';
       editBtn.className = 'palette-edit';
       editBtn.title = 'Edit palette';
-      editBtn.textContent = 'Edit';
+      editBtn.style.webkitMaskImage = "url('./assets/edit.svg')";
+      editBtn.style.maskImage = "url('./assets/edit.svg')";
       editBtn.addEventListener('click', function () {
         openPaletteEditor(palette);
       });
@@ -363,6 +375,7 @@
 
   function renderPalettes() {
     els.paletteList.innerHTML = '';
+    els.paletteList.appendChild(els.paletteBackBtn);
     for (var i = 0; i < state.palettes.length; i += 1) {
       els.paletteList.appendChild(renderPaletteCard(state.palettes[i]));
     }
