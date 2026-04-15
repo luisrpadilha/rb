@@ -456,7 +456,15 @@
   }
 
   function sanitizeName(name) {
-    var value = String(name || '').replace(/[\/:*?"<>|]/g, '_').replace(/^\s+|\s+$/g, '').replace(/\s+/g, ' ');
+    var value = String(name || '');
+    var illegal = ['\\', '/', ':', '*', '?', '"', '<', '>', '|'];
+    var i;
+    for (i = 0; i < illegal.length; i += 1) {
+      while (value.indexOf(illegal[i]) !== -1) {
+        value = value.replace(illegal[i], '_');
+      }
+    }
+    value = value.replace(/^\s+|\s+$/g, '').replace(/\s+/g, ' ');
     return value || 'Palette';
   }
 
