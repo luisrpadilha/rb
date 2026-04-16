@@ -191,6 +191,12 @@ input[type='text'] {
   min-width: 0;
 }
 
+#colorPaletteScreen.is-horizontal .palette-list {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .palette-card {
   width: auto;
   min-width: auto;
@@ -204,7 +210,7 @@ input[type='text'] {
 
 .palette-swatches {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 6px;
   align-items: flex-start;
   min-height: 24px;

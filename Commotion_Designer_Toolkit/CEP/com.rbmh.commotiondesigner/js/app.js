@@ -573,11 +573,12 @@
             return;
           }
 
-          var current = normalizeColor(palette.colors[colorIndex], 'Color ' + (colorIndex + 1));
-          openColorPickerDialog(current, 'Edit Color', function (updated) {
-            if (!updated) return;
-            updated.name = current.name;
-            palette.colors[colorIndex] = updated;
+          var current = palette.colors[colorIndex];
+          var currentJSON = JSON.stringify(current || {}).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+          safeEval("$._cdt.pickColor('" + currentJSON + "')", function (pickRaw) {
+            var pickRes = parseJSON(pickRaw, { ok: false });
+            if (!pickRes.ok || !pickRes.color) return;
+            palette.colors[colorIndex] = pickRes.color;
             var paletteJSON = JSON.stringify(palette).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
             safeEval("$._cdt.saveLocalPalette('" + paletteJSON + "')", function (saveRaw) {
               var saveRes = parseJSON(saveRaw, { ok: false, message: 'Unable to save palette.' });
@@ -622,6 +623,13 @@
     }
   }
 
+  function updatePaletteLayoutMode() {
+    var width = els.colorPaletteScreen.clientWidth || 0;
+    var height = els.colorPaletteScreen.clientHeight || 0;
+    var isHorizontal = width > 0 && height > 0 && width >= (height * 1.2);
+    els.colorPaletteScreen.classList.toggle('is-horizontal', isHorizontal);
+  }
+
   function loadPalettes(done) {
     safeEval('$._cdt.getColorPalettes()', function (raw) {
       var result = parseJSON(raw, { ok: false, palettes: [], message: 'Invalid palette response.' });
@@ -633,6 +641,7 @@
         setStatus('Loaded ' + state.palettes.length + ' palette(s).');
       }
       renderPalettes();
+      updatePaletteLayoutMode();
       if (typeof done === 'function') done();
     });
   }
@@ -785,6 +794,7 @@
 
   function openColorPaletteScreen() {
     switchScreen(SCREEN_IDS.COLOR_PALETTE);
+    updatePaletteLayoutMode();
     loadPalettes();
   }
 
@@ -1011,7 +1021,10 @@
     });
     els.paletteAddBtn.addEventListener('click', openNewPaletteDialog);
 
-    window.addEventListener('resize', applyResponsiveGridLayout);
+    window.addEventListener('resize', function () {
+      applyResponsiveGridLayout();
+      updatePaletteLayoutMode();
+    });
 
     if (typeof ResizeObserver === 'function') {
       var observer = new ResizeObserver(function () {
@@ -1019,13 +1032,16 @@
         lastKnownItemCount = -1;
         applyResponsiveGridLayout();
         updateCompactUpdateButton();
+        updatePaletteLayoutMode();
       });
       observer.observe(document.body);
       observer.observe(els.scriptGrid);
+      observer.observe(els.colorPaletteScreen);
     } else {
       setInterval(function () {
         applyResponsiveGridLayout();
         updateCompactUpdateButton();
+        updatePaletteLayoutMode();
       }, 200);
     }
   }
