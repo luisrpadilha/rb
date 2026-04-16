@@ -298,9 +298,22 @@
     }, 1000);
   }
 
+  function getCardWidthPx(colorCount) {
+    var count = Math.max(1, Number(colorCount) || 1);
+    var swatch = 24;
+    var gap = 6;
+    var innerPadding = 12;
+    return innerPadding + count * swatch + Math.max(0, count - 1) * gap;
+  }
+
   function renderPaletteCard(palette) {
     var card = document.createElement('div');
     card.className = 'palette-card';
+    if (els.colorPaletteScreen.classList.contains('is-horizontal')) {
+      card.style.width = getCardWidthPx((palette.colors || []).length) + 'px';
+    } else {
+      card.style.width = '100%';
+    }
 
     var swatches = document.createElement('div');
     swatches.className = 'palette-swatches';
@@ -336,7 +349,6 @@
             var pickRes = parseJSON(pickRaw, { ok: false });
             if (!pickRes.ok || !pickRes.color) return;
             palette.colors[colorIndex] = pickRes.color;
-
             var paletteJSON = JSON.stringify(palette).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
             safeEval("$._cdt.saveLocalPalette('" + paletteJSON + "')", function (saveRaw) {
               var saveRes = parseJSON(saveRaw, { ok: false, message: 'Unable to save palette.' });
@@ -381,6 +393,18 @@
     }
   }
 
+  function updatePaletteLayoutMode() {
+    var width = els.colorPaletteScreen.clientWidth || 0;
+    var height = els.colorPaletteScreen.clientHeight || 0;
+    var isHorizontal = width > 0 && height > 0 && width >= Math.max(460, height * 1.2);
+    var isCompact = width > 0 && width < 310;
+    var hadHorizontal = els.colorPaletteScreen.classList.contains('is-horizontal');
+    var hadCompact = els.colorPaletteScreen.classList.contains('is-compact');
+    els.colorPaletteScreen.classList.toggle('is-horizontal', isHorizontal);
+    els.colorPaletteScreen.classList.toggle('is-compact', isCompact);
+    return hadHorizontal !== isHorizontal || hadCompact !== isCompact;
+  }
+
   function loadPalettes(done) {
     safeEval('$._cdt.getColorPalettes()', function (raw) {
       var result = parseJSON(raw, { ok: false, palettes: [], message: 'Invalid palette response.' });
@@ -392,6 +416,7 @@
         setStatus('Loaded ' + state.palettes.length + ' palette(s).');
       }
       renderPalettes();
+      updatePaletteLayoutMode();
       if (typeof done === 'function') done();
     });
   }
@@ -444,6 +469,7 @@
 
   function openColorPaletteScreen() {
     switchScreen(SCREEN_IDS.COLOR_PALETTE);
+    updatePaletteLayoutMode();
     loadPalettes();
   }
 
@@ -670,7 +696,10 @@
     });
     els.paletteAddBtn.addEventListener('click', openNewPaletteDialog);
 
-    window.addEventListener('resize', applyResponsiveGridLayout);
+    window.addEventListener('resize', function () {
+      applyResponsiveGridLayout();
+      if (updatePaletteLayoutMode()) renderPalettes();
+    });
 
     if (typeof ResizeObserver === 'function') {
       var observer = new ResizeObserver(function () {
@@ -678,13 +707,16 @@
         lastKnownItemCount = -1;
         applyResponsiveGridLayout();
         updateCompactUpdateButton();
+        if (updatePaletteLayoutMode()) renderPalettes();
       });
       observer.observe(document.body);
       observer.observe(els.scriptGrid);
+      observer.observe(els.colorPaletteScreen);
     } else {
       setInterval(function () {
         applyResponsiveGridLayout();
         updateCompactUpdateButton();
+        if (updatePaletteLayoutMode()) renderPalettes();
       }, 200);
     }
   }
