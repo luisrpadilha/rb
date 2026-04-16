@@ -743,61 +743,86 @@
     }
   };
 
-  function pickColorWithAE(initialValue) {
-    if (!(app && app.project)) return null;
-
-    var comp = null;
-    var createdComp = false;
-    var tempLayer = null;
-    var colorEffect = null;
-    var colorProp = null;
-
-    try {
-      if (app.project.activeItem && (app.project.activeItem instanceof CompItem)) {
-        comp = app.project.activeItem;
-      } else {
-        comp = app.project.items.addComp('__CDT_ColorPickerComp__', 8, 8, 1, 1, 24);
-        createdComp = true;
-      }
-
-      tempLayer = comp.layers.addSolid([0, 0, 0], '__CDT_ColorPicker__', 8, 8, comp.pixelAspect, comp.duration);
-      tempLayer.enabled = false;
-      colorEffect = tempLayer.property('ADBE Effect Parade').addProperty('ADBE Color Control');
-      colorProp = colorEffect.property(1);
-
-      var r = ((initialValue >> 16) & 255) / 255;
-      var g = ((initialValue >> 8) & 255) / 255;
-      var b = (initialValue & 255) / 255;
-      colorProp.setValue([r, g, b]);
-
-      for (var i = 1; i <= comp.numLayers; i += 1) {
-        comp.layer(i).selected = false;
-      }
-
-      tempLayer.selected = true;
-      colorProp.selected = true;
-      var editValueCommandId = app.findMenuCommandId('Edit Value...');
-      if (!editValueCommandId || editValueCommandId <= 0) return null;
-      app.executeCommand(editValueCommandId);
-
-      var picked = colorProp.value;
-      return ((clamp255(picked[0] * 255) << 16) | (clamp255(picked[1] * 255) << 8) | clamp255(picked[2] * 255));
-    } catch (e) {
-      return null;
-    } finally {
-      try {
-        if (tempLayer && tempLayer.isValid) tempLayer.remove();
-      } catch (ignoreRemoveError) {}
-      try {
-        if (createdComp && comp && comp.isValid) comp.remove();
-      } catch (ignoreCompError) {}
+  function colorToHexRGB(r, g, b) {
+    function pad(v) {
+      var s = clamp255(v).toString(16).toUpperCase();
+      return s.length < 2 ? '0' + s : s;
     }
+    return '#' + pad(r) + pad(g) + pad(b);
+  }
+
+  function pickColorWithDialog(initialValue, title) {
+    var r = clamp255((initialValue >> 16) & 255);
+    var g = clamp255((initialValue >> 8) & 255);
+    var b = clamp255(initialValue & 255);
+
+    var dlg = new Window('dialog', title || 'Pick Color');
+    dlg.orientation = 'column';
+    dlg.alignChildren = ['fill', 'top'];
+    dlg.spacing = 8;
+    dlg.margins = 12;
+
+    var hexLabel = dlg.add('statictext', undefined, colorToHexRGB(r, g, b));
+    hexLabel.alignment = ['fill', 'top'];
+
+    function addChannelRow(labelText, value) {
+      var row = dlg.add('group');
+      row.orientation = 'row';
+      row.alignChildren = ['left', 'center'];
+      row.add('statictext', undefined, labelText + ':');
+      var slider = row.add('slider', undefined, value, 0, 255);
+      slider.preferredSize.width = 210;
+      var input = row.add('edittext', undefined, String(value));
+      input.characters = 4;
+      return { slider: slider, input: input };
+    }
+
+    var rRow = addChannelRow('R', r);
+    var gRow = addChannelRow('G', g);
+    var bRow = addChannelRow('B', b);
+
+    function refreshHex() {
+      hexLabel.text = colorToHexRGB(r, g, b);
+    }
+
+    function bindChannel(row, setValue) {
+      row.slider.onChanging = function () {
+        var v = clamp255(row.slider.value);
+        row.input.text = String(v);
+        setValue(v);
+        refreshHex();
+      };
+      row.input.onChange = function () {
+        var v = clamp255(Number(row.input.text));
+        row.slider.value = v;
+        row.input.text = String(v);
+        setValue(v);
+        refreshHex();
+      };
+    }
+
+    bindChannel(rRow, function (v) { r = v; });
+    bindChannel(gRow, function (v) { g = v; });
+    bindChannel(bRow, function (v) { b = v; });
+
+    var buttonRow = dlg.add('group');
+    buttonRow.alignment = ['right', 'center'];
+    buttonRow.add('button', undefined, 'Cancel', { name: 'cancel' });
+    var okBtn = buttonRow.add('button', undefined, 'Apply', { name: 'ok' });
+
+    okBtn.onClick = function () {
+      dlg.close(1);
+    };
+
+    var result = dlg.show();
+    if (result !== 1) return null;
+    return ((clamp255(r) << 16) | (clamp255(g) << 8) | clamp255(b));
   }
 
   function openPreferredColorPicker(initialValue) {
     var normalized = typeof initialValue === 'number' ? initialValue : 0;
-    var aePicked = pickColorWithAE(normalized);
-    if (aePicked !== null) return aePicked;
+    var picked = pickColorWithDialog(normalized, 'Pick Color');
+    if (picked !== null) return picked;
     return null;
   }
 
@@ -866,7 +891,8 @@
       buttons.orientation = 'row';
       var addColorBtn = buttons.add('button', undefined, 'Add Color');
       var editColorBtn = buttons.add('button', undefined, 'Edit Color');
-      var deleteColorBtn = buttons.add('button', undefined, 'Delete Color');
+      var deleteColorBtn = buttons.add('button', undefined, '✕ Color');
+      deleteColorBtn.helpTip = 'Delete selected color';
 
       addColorBtn.onClick = function () {
         var picked = pickColor();
