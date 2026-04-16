@@ -175,29 +175,50 @@ input[type='text'] {
 
 .icon-btn:hover { color: #4f9ee6; }
 .palette-back-inline { margin-right: 0; }
-.palette-toolbar {
+.palette-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 0 8px;
-  min-height: 24px;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 28px;
 }
 
 .palette-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
-  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 10px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+#colorPaletteScreen.is-horizontal .palette-list {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#colorPaletteScreen.is-compact .palette-row {
+  flex-wrap: wrap;
+}
+
+#colorPaletteScreen.is-compact .palette-list {
+  order: 2;
+  flex: 1 1 100%;
+}
+
+#colorPaletteScreen.is-horizontal .palette-swatches {
+  flex-wrap: nowrap;
 }
 
 .palette-card {
-  width: 100%;
-  min-width: 0;
+  width: auto;
+  min-width: auto;
   background: #060606;
   border: 1px solid #1f1f1f;
   border-radius: 10px;
   padding: 6px;
   margin-top: 0;
+  flex: 0 0 auto;
 }
 
 .palette-swatches {
