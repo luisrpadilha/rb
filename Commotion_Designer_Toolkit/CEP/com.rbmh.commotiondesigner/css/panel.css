@@ -177,7 +177,7 @@ input[type='text'] {
 .palette-back-inline { margin-right: 0; }
 .palette-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   min-height: 28px;
 }
@@ -195,6 +195,19 @@ input[type='text'] {
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
+}
+
+#colorPaletteScreen.is-compact .palette-row {
+  flex-wrap: wrap;
+}
+
+#colorPaletteScreen.is-compact .palette-list {
+  order: 2;
+  flex: 1 1 100%;
+}
+
+#colorPaletteScreen.is-horizontal .palette-swatches {
+  flex-wrap: nowrap;
 }
 
 .palette-card {
