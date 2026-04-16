@@ -260,6 +260,7 @@ input[type='text'] {
   margin: 0;
   width: 14px;
   height: 14px;
+  flex: 0 0 auto;
   background: transparent;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -268,6 +269,11 @@ input[type='text'] {
   mask-position: center;
   mask-size: contain;
   background-color: #bdbdbd;
+}
+
+#colorPaletteScreen.is-horizontal .palette-edit {
+  width: 18px;
+  height: 18px;
 }
 
 .palette-edit:hover {

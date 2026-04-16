@@ -743,87 +743,15 @@
     }
   };
 
-  function colorToHexRGB(r, g, b) {
-    function pad(v) {
-      var s = clamp255(v).toString(16).toUpperCase();
-      return s.length < 2 ? '0' + s : s;
-    }
-    return '#' + pad(r) + pad(g) + pad(b);
-  }
-
-  function pickColorWithDialog(initialValue, title) {
-    var r = clamp255((initialValue >> 16) & 255);
-    var g = clamp255((initialValue >> 8) & 255);
-    var b = clamp255(initialValue & 255);
-
-    var dlg = new Window('dialog', title || 'Pick Color');
-    dlg.orientation = 'column';
-    dlg.alignChildren = ['fill', 'top'];
-    dlg.spacing = 8;
-    dlg.margins = 12;
-
-    var hexLabel = dlg.add('statictext', undefined, colorToHexRGB(r, g, b));
-    hexLabel.alignment = ['fill', 'top'];
-
-    function addChannelRow(labelText, value) {
-      var row = dlg.add('group');
-      row.orientation = 'row';
-      row.alignChildren = ['left', 'center'];
-      row.add('statictext', undefined, labelText + ':');
-      var slider = row.add('slider', undefined, value, 0, 255);
-      slider.preferredSize.width = 210;
-      var input = row.add('edittext', undefined, String(value));
-      input.characters = 4;
-      return { slider: slider, input: input };
-    }
-
-    var rRow = addChannelRow('R', r);
-    var gRow = addChannelRow('G', g);
-    var bRow = addChannelRow('B', b);
-
-    function refreshHex() {
-      hexLabel.text = colorToHexRGB(r, g, b);
-    }
-
-    function bindChannel(row, setValue) {
-      row.slider.onChanging = function () {
-        var v = clamp255(row.slider.value);
-        row.input.text = String(v);
-        setValue(v);
-        refreshHex();
-      };
-      row.input.onChange = function () {
-        var v = clamp255(Number(row.input.text));
-        row.slider.value = v;
-        row.input.text = String(v);
-        setValue(v);
-        refreshHex();
-      };
-    }
-
-    bindChannel(rRow, function (v) { r = v; });
-    bindChannel(gRow, function (v) { g = v; });
-    bindChannel(bRow, function (v) { b = v; });
-
-    var buttonRow = dlg.add('group');
-    buttonRow.alignment = ['right', 'center'];
-    buttonRow.add('button', undefined, 'Cancel', { name: 'cancel' });
-    var okBtn = buttonRow.add('button', undefined, 'Apply', { name: 'ok' });
-
-    okBtn.onClick = function () {
-      dlg.close(1);
-    };
-
-    var result = dlg.show();
-    if (result !== 1) return null;
-    return ((clamp255(r) << 16) | (clamp255(g) << 8) | clamp255(b));
-  }
-
   function openPreferredColorPicker(initialValue) {
     var normalized = typeof initialValue === 'number' ? initialValue : 0;
-    var picked = pickColorWithDialog(normalized, 'Pick Color');
-    if (picked !== null) return picked;
-    return null;
+    try {
+      var picked = $.colorPicker(normalized);
+      if (picked >= 0) return picked;
+      return null;
+    } catch (e) {
+      return null;
+    }
   }
 
   $._cdt.pickColor = function (colorJSON) {
@@ -891,7 +819,7 @@
       buttons.orientation = 'row';
       var addColorBtn = buttons.add('button', undefined, 'Add Color');
       var editColorBtn = buttons.add('button', undefined, 'Edit Color');
-      var deleteColorBtn = buttons.add('button', undefined, '✕ Color');
+      var deleteColorBtn = buttons.add('button', undefined, 'Delete Color');
       deleteColorBtn.helpTip = 'Delete selected color';
 
       addColorBtn.onClick = function () {
