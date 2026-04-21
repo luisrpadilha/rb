@@ -436,135 +436,42 @@
     for (var i = 0; i < sourceColors.length; i += 1) {
       working.colors.push(normalizeColor(sourceColors[i], 'Color ' + (i + 1)));
     }
-
-    var overlay = document.createElement('div');
-    overlay.className = 'modal-overlay';
-    var dialog = document.createElement('div');
-    dialog.className = 'modal-dialog';
-    overlay.appendChild(dialog);
-
-    var title = document.createElement('h3');
-    title.className = 'modal-title';
-    title.textContent = editing ? 'Edit Palette' : 'Add Palette';
-    dialog.appendChild(title);
-
-    var nameLabel = document.createElement('label');
-    nameLabel.className = 'field-label';
-    nameLabel.textContent = 'Palette name';
-    dialog.appendChild(nameLabel);
-    var nameInput = document.createElement('input');
-    nameInput.type = 'text';
-    nameInput.className = 'text-input';
-    nameInput.value = working.name;
-    dialog.appendChild(nameInput);
-
-    var swatchLabel = document.createElement('label');
-    swatchLabel.className = 'field-label';
-    swatchLabel.style.marginTop = '10px';
-    swatchLabel.textContent = 'Colors';
-    dialog.appendChild(swatchLabel);
-    var swatchList = document.createElement('div');
-    swatchList.className = 'palette-chip-list';
-    dialog.appendChild(swatchList);
-
-    var row = document.createElement('div');
-    row.className = 'dialog-actions';
-    row.style.justifyContent = 'space-between';
-    var addColorBtn = document.createElement('button');
-    addColorBtn.type = 'button';
-    addColorBtn.textContent = 'Add Color';
-    row.appendChild(addColorBtn);
-    dialog.appendChild(row);
-
-    var actions = document.createElement('div');
-    actions.className = 'dialog-actions';
-    if (editing) {
-      var del = document.createElement('button');
-      del.type = 'button';
-      del.textContent = 'Delete Palette';
-      actions.appendChild(del);
-      del.addEventListener('click', function () {
-        safeEval("$._cdt.deleteLocalPalette('" + (palette.id || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "')", function (delRaw) {
-          var delRes = parseJSON(delRaw, { ok: false, message: 'Unable to delete palette.' });
-          setStatus(delRes.ok ? 'Palette deleted.' : 'Error: ' + delRes.message);
-          if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
-          loadPalettes();
-        });
-      });
-    }
-    var cancel = document.createElement('button');
-    cancel.type = 'button';
-    cancel.textContent = 'Cancel';
-    actions.appendChild(cancel);
-    var save = document.createElement('button');
-    save.type = 'button';
-    save.className = 'primary';
-    save.textContent = 'Save';
-    actions.appendChild(save);
-    dialog.appendChild(actions);
-
-    function refreshColorList() {
-      swatchList.innerHTML = '';
-      for (var c = 0; c < working.colors.length; c += 1) {
-        (function (idx) {
-          var chip = document.createElement('button');
-          chip.type = 'button';
-          chip.className = 'palette-chip';
-          chip.title = 'Click: edit | Double-click: delete';
-          chip.style.background = colorToCSS(working.colors[idx]);
-          chip.addEventListener('click', function () {
-            var initial = normalizeColor(working.colors[idx], 'Color ' + (idx + 1));
-            openColorPickerDialog(initial, 'Edit Color', function (updated) {
-              if (!updated) return;
-              updated.name = initial.name;
-              working.colors[idx] = updated;
-              refreshColorList();
-            });
-          });
-          chip.addEventListener('dblclick', function () {
-            working.colors.splice(idx, 1);
-            refreshColorList();
-          });
-          swatchList.appendChild(chip);
-        })(c);
-      }
-    }
-
-    addColorBtn.addEventListener('click', function () {
-      openColorPickerDialog({ name: 'Color ' + (working.colors.length + 1), r: 255, g: 255, b: 255 }, 'Add Color', function (picked) {
-        if (!picked) return;
-        picked.name = 'Color ' + (working.colors.length + 1);
-        working.colors.push(picked);
-        refreshColorList();
-      });
+    var dialogPayload = JSON.stringify(working);
+    var dialogOptions = JSON.stringify({
+      mode: editing ? 'edit' : 'create',
+      allowDelete: editing,
+      allowImport: true,
+      allowExport: true
     });
 
-    function close() {
-      if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
-    }
-
-    cancel.addEventListener('click', close);
-    overlay.addEventListener('click', function (event) {
-      if (event.target === overlay) close();
-    });
-    save.addEventListener('click', function () {
-      if (!working.colors.length) {
-        window.alert('Add at least one color.');
+    var dialogScript = '$._cdt.openColorPaletteDialog(' + JSON.stringify(dialogPayload) + ', ' + JSON.stringify(dialogOptions) + ')';
+    safeEval(dialogScript, function (raw) {
+      var res = parseJSON(raw, { ok: false, action: 'cancel', message: 'Unable to open palette dialog.' });
+      if (!res.ok) {
+        setStatus('Error: ' + (res.message || 'Unable to open palette dialog.'));
         return;
       }
-      working.name = String(nameInput.value || '').trim() || 'Palette';
-      var payloadPalette = { id: working.id, name: working.name, colors: working.colors };
-      var payload = JSON.stringify(payloadPalette).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-      safeEval("$._cdt.saveLocalPalette('" + payload + "')", function (saveRaw) {
+
+      if (res.action === 'cancel') return;
+
+      if (res.action === 'delete') {
+        var deleteScript = '$._cdt.deleteLocalPalette(' + JSON.stringify(String((palette && palette.id) || '')) + ')';
+        safeEval(deleteScript, function (delRaw) {
+          var delRes = parseJSON(delRaw, { ok: false, message: 'Unable to delete palette.' });
+          setStatus(delRes.ok ? 'Palette deleted.' : 'Error: ' + delRes.message);
+          loadPalettes();
+        });
+        return;
+      }
+
+      if (res.action !== 'save' || !res.palette) return;
+      var saveScript = '$._cdt.saveLocalPalette(' + JSON.stringify(JSON.stringify(res.palette)) + ')';
+      safeEval(saveScript, function (saveRaw) {
         var saveRes = parseJSON(saveRaw, { ok: false, message: 'Unable to save palette.' });
         setStatus(saveRes.ok ? (editing ? 'Palette updated.' : 'Palette saved.') : 'Error: ' + saveRes.message);
-        close();
         loadPalettes();
       });
     });
-
-    refreshColorList();
-    document.body.appendChild(overlay);
   }
 
   function openColorPaletteScreen() {

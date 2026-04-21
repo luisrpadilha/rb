@@ -334,7 +334,7 @@
       }
     }
 
-    var dlg = new Window('dialog', isEdit ? 'Edit Palette' : 'New Palette');
+    var dlg = new Window('dialog', isEdit ? 'Edit Palette' : 'New Palette', undefined, { closeButton: true });
     dlg.orientation = 'column';
     dlg.alignChildren = ['fill', 'top'];
     dlg.margins = 12;
@@ -343,11 +343,14 @@
     var nameInput = dlg.add('edittext', undefined, working.name);
     nameInput.characters = 34;
 
-    var infoText = dlg.add('statictext', undefined, 'Use Color Modal or Eyedropper to pick/edit colors.');
-    infoText.graphics.foregroundColor = infoText.graphics.newPen(infoText.graphics.PenType.SOLID_COLOR, [0.7, 0.7, 0.7, 1], 1);
+    dlg.add('statictext', undefined, 'Use the native After Effects color picker for visual selection.');
 
     var list = dlg.add('listbox', undefined, [], { multiselect: false });
     list.preferredSize = [440, 180];
+    var swatchStrip = dlg.add('group');
+    swatchStrip.orientation = 'row';
+    swatchStrip.alignChildren = ['left', 'center'];
+    swatchStrip.spacing = 6;
 
     function refreshList() {
       list.removeAll();
@@ -357,54 +360,44 @@
         item.indexRef = i;
       }
       if (list.items.length) list.selection = list.items[0];
+      refreshSwatchStrip();
+    }
+
+    function refreshSwatchStrip() {
+      while (swatchStrip.children.length) {
+        swatchStrip.remove(swatchStrip.children[0]);
+      }
+      if (!working.colors.length) {
+        swatchStrip.add('statictext', undefined, 'No colors yet');
+        return;
+      }
+
+      for (var i = 0; i < working.colors.length; i += 1) {
+        (function (index) {
+          var c = working.colors[index];
+          var sw = swatchStrip.add('button', undefined, '');
+          sw.preferredSize = [20, 20];
+          sw.helpTip = c.name + ' ' + rgbToHex(c);
+          sw.graphics.backgroundColor = sw.graphics.newBrush(sw.graphics.BrushType.SOLID_COLOR, [c.r / 255, c.g / 255, c.b / 255, 1]);
+          sw.onClick = function () {
+            if (list.items[index]) list.selection = list.items[index];
+          };
+        })(i);
+      }
     }
 
     var buttons = dlg.add('group');
     buttons.orientation = 'row';
     var addBtn = buttons.add('button', undefined, 'Add Color');
-    var modalBtn = buttons.add('button', undefined, 'Color Modal');
-    var eyeBtn = buttons.add('button', undefined, 'Eyedropper');
-    var removeBtn = buttons.add('button', undefined, 'Delete Color');
+    var editBtn = buttons.add('button', undefined, 'Edit Color');
+    var removeBtn = buttons.add('button', undefined, 'Remove Color');
     var importBtn = buttons.add('button', undefined, 'Import .ase');
     var exportBtn = buttons.add('button', undefined, 'Export .ase');
 
-    function openColorChooser(initialColor, title) {
-      var chooser = new Window('dialog', title || 'Choose Color');
-      chooser.orientation = 'column';
-      chooser.alignChildren = ['fill', 'top'];
-      chooser.margins = 12;
-      chooser.add('statictext', undefined, 'How do you want to pick the color?');
-
-      var methodGroup = chooser.add('group');
-      methodGroup.orientation = 'row';
-      var modalPickBtn = methodGroup.add('button', undefined, 'Color Modal');
-      var eyeDropperBtn = methodGroup.add('button', undefined, 'Eyedropper');
-      var cancelPickBtn = methodGroup.add('button', undefined, 'Cancel');
-
-      var chosen = null;
-      modalPickBtn.onClick = function () {
-        var picked = $.colorPicker(initialColor ? rgbToPickerValue(initialColor) : undefined);
-        if (picked >= 0) chosen = pickerValueToRGB(picked, initialColor);
-        chooser.close(1);
-      };
-
-      eyeDropperBtn.onClick = function () {
-        alert('The eyedropper is inside the Adobe color modal.\nClick the eyedropper icon there and sample any on-screen color.');
-        var picked = $.colorPicker(initialColor ? rgbToPickerValue(initialColor) : undefined);
-        if (picked >= 0) chosen = pickerValueToRGB(picked, initialColor);
-        chooser.close(1);
-      };
-
-      cancelPickBtn.onClick = function () {
-        chooser.close(0);
-      };
-
-      chooser.show();
-      return chosen;
-    }
-
     function pickAndAppendColor() {
-      var rgb = openColorChooser(null, 'Add Color');
+      var picked = $.colorPicker();
+      if (picked < 0) return;
+      var rgb = pickerValueToRGB(picked, null);
       if (!rgb) return;
       rgb.name = 'Color ' + (working.colors.length + 1);
       working.colors.push(rgb);
@@ -416,34 +409,26 @@
       var idx = list.selection.indexRef;
       var c = working.colors[idx];
       if (!c) return;
-      var updated = openColorChooser(c, 'Edit Color');
-      if (!updated) return;
-      updated.name = c.name;
-      working.colors[idx] = updated;
-      refreshList();
-    }
-
-    function editSelectedColorModalOnly() {
-      if (!list.selection) return;
-      var idx = list.selection.indexRef;
-      var c = working.colors[idx];
-      if (!c) return;
       var picked = $.colorPicker(rgbToPickerValue(c));
       if (picked < 0) return;
       var updated = pickerValueToRGB(picked, c);
       updated.name = c.name;
       working.colors[idx] = updated;
       refreshList();
+      if (list.items[idx]) list.selection = list.items[idx];
     }
 
     addBtn.onClick = pickAndAppendColor;
-    modalBtn.onClick = editSelectedColorModalOnly;
-    eyeBtn.onClick = editSelectedColor;
+    editBtn.onClick = editSelectedColor;
 
     removeBtn.onClick = function () {
       if (!list.selection) return;
-      working.colors.splice(list.selection.indexRef, 1);
+      var removeIdx = list.selection.indexRef;
+      working.colors.splice(removeIdx, 1);
       refreshList();
+      if (list.items.length) {
+        list.selection = list.items[Math.min(removeIdx, list.items.length - 1)];
+      }
     };
 
     list.onDoubleClick = function () {
@@ -518,7 +503,8 @@
   }
 
   function buildUI(thisObj) {
-    var panel = new Window('palette', 'RB Color Palette', undefined, { resizeable: true });
+    var isDockedPanel = (typeof Panel !== 'undefined') && (thisObj instanceof Panel);
+    var panel = isDockedPanel ? thisObj : new Window('palette', 'RB Color Palette', undefined, { resizeable: true });
     panel.orientation = 'column';
     panel.alignChildren = ['fill', 'top'];
     panel.spacing = 8;
@@ -709,6 +695,11 @@
   }
 
   var rbPanel = buildUI(thisObj);
-  rbPanel.center();
-  rbPanel.show();
+  if (rbPanel instanceof Window) {
+    rbPanel.center();
+    rbPanel.show();
+  } else {
+    rbPanel.layout.layout(true);
+    rbPanel.layout.resize();
+  }
 })(this);
