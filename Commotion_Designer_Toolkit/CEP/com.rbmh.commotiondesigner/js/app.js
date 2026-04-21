@@ -436,15 +436,16 @@
     for (var i = 0; i < sourceColors.length; i += 1) {
       working.colors.push(normalizeColor(sourceColors[i], 'Color ' + (i + 1)));
     }
-    var dialogPayload = JSON.stringify(working).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    var dialogPayload = JSON.stringify(working);
     var dialogOptions = JSON.stringify({
       mode: editing ? 'edit' : 'create',
       allowDelete: editing,
       allowImport: true,
       allowExport: true
-    }).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    });
 
-    safeEval("$._cdt.openColorPaletteDialog('" + dialogPayload + "', '" + dialogOptions + "')", function (raw) {
+    var dialogScript = '$._cdt.openColorPaletteDialog(' + JSON.stringify(dialogPayload) + ', ' + JSON.stringify(dialogOptions) + ')';
+    safeEval(dialogScript, function (raw) {
       var res = parseJSON(raw, { ok: false, action: 'cancel', message: 'Unable to open palette dialog.' });
       if (!res.ok) {
         setStatus('Error: ' + (res.message || 'Unable to open palette dialog.'));
@@ -454,7 +455,8 @@
       if (res.action === 'cancel') return;
 
       if (res.action === 'delete') {
-        safeEval("$._cdt.deleteLocalPalette('" + String(palette.id || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "')", function (delRaw) {
+        var deleteScript = '$._cdt.deleteLocalPalette(' + JSON.stringify(String((palette && palette.id) || '')) + ')';
+        safeEval(deleteScript, function (delRaw) {
           var delRes = parseJSON(delRaw, { ok: false, message: 'Unable to delete palette.' });
           setStatus(delRes.ok ? 'Palette deleted.' : 'Error: ' + delRes.message);
           loadPalettes();
@@ -463,8 +465,8 @@
       }
 
       if (res.action !== 'save' || !res.palette) return;
-      var savePayload = JSON.stringify(res.palette).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-      safeEval("$._cdt.saveLocalPalette('" + savePayload + "')", function (saveRaw) {
+      var saveScript = '$._cdt.saveLocalPalette(' + JSON.stringify(JSON.stringify(res.palette)) + ')';
+      safeEval(saveScript, function (saveRaw) {
         var saveRes = parseJSON(saveRaw, { ok: false, message: 'Unable to save palette.' });
         setStatus(saveRes.ok ? (editing ? 'Palette updated.' : 'Palette saved.') : 'Error: ' + saveRes.message);
         loadPalettes();
