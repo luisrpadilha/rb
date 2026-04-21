@@ -786,7 +786,7 @@
       var allowExport = !!options.allowExport;
       var mode = options.mode || 'create';
 
-      var dlg = new Window('dialog', mode === 'create' ? 'Add Palette' : 'Edit Palette');
+      var dlg = new Window('dialog', mode === 'create' ? 'Add Palette' : 'Edit Palette', undefined, { closeButton: true });
       dlg.orientation = 'column';
       dlg.alignChildren = ['fill', 'top'];
       dlg.spacing = 8;
@@ -798,19 +798,52 @@
 
       var list = dlg.add('listbox', undefined, [], { multiselect: false });
       list.preferredSize = [420, 180];
+      var swatchStrip = dlg.add('group');
+      swatchStrip.orientation = 'row';
+      swatchStrip.alignChildren = ['left', 'center'];
+      swatchStrip.spacing = 6;
 
       function refreshList() {
         list.removeAll();
         var i;
         for (i = 0; i < palette.colors.length; i += 1) {
           var c = normalizeColor(palette.colors[i], 'Color ' + (i + 1));
-          list.add('item', c.name + ' (#' + ((c.r << 16) | (c.g << 8) | c.b).toString(16).toUpperCase() + ')');
+          var hex = ((c.r << 16) | (c.g << 8) | c.b).toString(16).toUpperCase();
+          while (hex.length < 6) hex = '0' + hex;
+          var item = list.add('item', c.name + ' (#' + hex + ')');
+          item.indexRef = i;
         }
         if (list.items.length) list.selection = list.items[0];
+        refreshSwatchStrip();
+      }
+
+      function refreshSwatchStrip() {
+        while (swatchStrip.children.length) {
+          swatchStrip.remove(swatchStrip.children[0]);
+        }
+
+        if (!palette.colors.length) {
+          swatchStrip.add('statictext', undefined, 'No colors yet');
+          return;
+        }
+
+        for (var i = 0; i < palette.colors.length; i += 1) {
+          (function (idx) {
+            var c = normalizeColor(palette.colors[idx], 'Color ' + (idx + 1));
+            var sw = swatchStrip.add('button', undefined, '');
+            sw.preferredSize = [20, 20];
+            sw.helpTip = c.name + ' (' + c.r + ',' + c.g + ',' + c.b + ')';
+            sw.graphics.backgroundColor = sw.graphics.newBrush(sw.graphics.BrushType.SOLID_COLOR, [c.r / 255, c.g / 255, c.b / 255, 1]);
+            sw.onClick = function () {
+              if (list.items[idx]) list.selection = list.items[idx];
+            };
+          })(i);
+        }
       }
 
       function pickColor(initial) {
-        var picked = openPreferredColorPicker(initial);
+        var start = typeof initial === 'number' ? initial : ((255 << 16) | (255 << 8) | 255);
+        var picked = openPreferredColorPicker(start);
         if (picked === null || picked < 0) return null;
         return { r: (picked >> 16) & 255, g: (picked >> 8) & 255, b: picked & 255 };
       }
@@ -832,22 +865,30 @@
           b: picked.b
         });
         refreshList();
+        if (list.items.length) list.selection = list.items[list.items.length - 1];
       };
 
       editColorBtn.onClick = function () {
         if (!list.selection) return;
-        var idx = list.selection.index;
+        var idx = typeof list.selection.indexRef === 'number' ? list.selection.indexRef : list.selection.index;
         var current = normalizeColor(palette.colors[idx], 'Color ' + (idx + 1));
         var picked = pickColor((current.r << 16) | (current.g << 8) | current.b);
         if (!picked) return;
         palette.colors[idx] = { name: current.name, r: picked.r, g: picked.g, b: picked.b };
         refreshList();
+        if (list.items[idx]) list.selection = list.items[idx];
+      };
+
+      list.onDoubleClick = function () {
+        editColorBtn.notify();
       };
 
       deleteColorBtn.onClick = function () {
         if (!list.selection) return;
-        palette.colors.splice(list.selection.index, 1);
+        var removeIdx = typeof list.selection.indexRef === 'number' ? list.selection.indexRef : list.selection.index;
+        palette.colors.splice(removeIdx, 1);
         refreshList();
+        if (list.items.length) list.selection = list.items[Math.min(removeIdx, list.items.length - 1)];
       };
 
       var ioRow = dlg.add('group');
